@@ -101,10 +101,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Presentacion\frmCliente.Designer.vb">
+    <Compile Include="Presentacion\Cliente\dlgEditarCliente.Designer.vb">
+      <DependentUpon>dlgEditarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Cliente\dlgEditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Cliente\dlgNuevoCliente.Designer.vb">
+      <DependentUpon>dlgNuevoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Cliente\dlgNuevoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Cliente\frmCliente.Designer.vb">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmCliente.vb">
+    <Compile Include="Presentacion\Cliente\frmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\dlgEditarEstudio.Designer.vb">
+      <DependentUpon>dlgEditarEstudio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\dlgEditarEstudio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\dlgNuevoEstudio.Designer.vb">
+      <DependentUpon>dlgNuevoEstudio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\dlgNuevoEstudio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\frmEstudio.Designer.vb">
+      <DependentUpon>frmEstudio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Estudio\frmEstudio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmInicio.Designer.vb">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -115,8 +151,26 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmCliente.resx">
+    <EmbeddedResource Include="Presentacion\Cliente\dlgEditarCliente.resx">
+      <DependentUpon>dlgEditarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cliente\dlgNuevoCliente.resx">
+      <DependentUpon>dlgNuevoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cliente\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Estudio\dlgEditarEstudio.resx">
+      <DependentUpon>dlgEditarEstudio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Estudio\dlgNuevoEstudio.resx">
+      <DependentUpon>dlgNuevoEstudio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Estudio\frmEstudio.resx">
+      <DependentUpon>frmEstudio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmInicio.resx">
+      <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +186,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presentacion\Atencion\" />
+    <Folder Include="Presentacion\Campania\" />
+    <Folder Include="Presentacion\Categoria\" />
+    <Folder Include="Presentacion\Convenio\" />
+    <Folder Include="Presentacion\Detalle de Atencion\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
