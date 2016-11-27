@@ -43,7 +43,6 @@ Partial Class frmEstudio
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbListadoPaciente = New System.Windows.Forms.GroupBox()
         Me.gbPaciente = New System.Windows.Forms.GroupBox()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbEdad = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -56,10 +55,7 @@ Partial Class frmEstudio
         Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbCI = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -242,7 +238,6 @@ Partial Class frmEstudio
         '
         'gbPaciente
         '
-        Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
         Me.gbPaciente.Controls.Add(Me.Label15)
         Me.gbPaciente.Controls.Add(Me.tbEdad)
         Me.gbPaciente.Controls.Add(Me.Label10)
@@ -255,25 +250,14 @@ Partial Class frmEstudio
         Me.gbPaciente.Controls.Add(Me.tbSexo)
         Me.gbPaciente.Controls.Add(Me.Label5)
         Me.gbPaciente.Controls.Add(Me.tbCI)
-        Me.gbPaciente.Controls.Add(Me.Label6)
-        Me.gbPaciente.Controls.Add(Me.Label4)
         Me.gbPaciente.Controls.Add(Me.Label3)
-        Me.gbPaciente.Controls.Add(Me.tbApellidos)
         Me.gbPaciente.Controls.Add(Me.tbNombres)
         Me.gbPaciente.Location = New System.Drawing.Point(383, 43)
         Me.gbPaciente.Name = "gbPaciente"
         Me.gbPaciente.Size = New System.Drawing.Size(389, 270)
         Me.gbPaciente.TabIndex = 15
         Me.gbPaciente.TabStop = False
-        Me.gbPaciente.Text = "Datos del Paciente"
-        '
-        'dtpFechaNacimiento
-        '
-        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(214, 94)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(169, 20)
-        Me.dtpFechaNacimiento.TabIndex = 20
+        Me.gbPaciente.Text = "Datos del Estudio"
         '
         'Label15
         '
@@ -342,74 +326,49 @@ Partial Class frmEstudio
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(75, 123)
+        Me.Label7.Location = New System.Drawing.Point(20, 78)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.Size = New System.Drawing.Size(37, 13)
         Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Sexo"
+        Me.Label7.Text = "Precio"
         '
         'tbSexo
         '
-        Me.tbSexo.Location = New System.Drawing.Point(6, 144)
+        Me.tbSexo.Location = New System.Drawing.Point(118, 75)
         Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.Size = New System.Drawing.Size(170, 20)
+        Me.tbSexo.Size = New System.Drawing.Size(260, 20)
         Me.tbSexo.TabIndex = 10
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(83, 74)
+        Me.Label5.Location = New System.Drawing.Point(20, 52)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 13)
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "CI"
+        Me.Label5.Text = "Categoria"
         '
         'tbCI
         '
-        Me.tbCI.Location = New System.Drawing.Point(7, 95)
+        Me.tbCI.Location = New System.Drawing.Point(118, 49)
         Me.tbCI.Name = "tbCI"
-        Me.tbCI.Size = New System.Drawing.Size(170, 20)
+        Me.tbCI.Size = New System.Drawing.Size(260, 20)
         Me.tbCI.TabIndex = 8
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(250, 74)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Fecha de Nacimiento"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(274, 25)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Apellidos"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(67, 25)
+        Me.Label3.Location = New System.Drawing.Point(20, 26)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Nombres"
-        '
-        'tbApellidos
-        '
-        Me.tbApellidos.Location = New System.Drawing.Point(213, 46)
-        Me.tbApellidos.Name = "tbApellidos"
-        Me.tbApellidos.Size = New System.Drawing.Size(170, 20)
-        Me.tbApellidos.TabIndex = 1
+        Me.Label3.Text = "Estudio"
         '
         'tbNombres
         '
-        Me.tbNombres.Location = New System.Drawing.Point(6, 46)
+        Me.tbNombres.Location = New System.Drawing.Point(118, 23)
         Me.tbNombres.Name = "tbNombres"
-        Me.tbNombres.Size = New System.Drawing.Size(170, 20)
+        Me.tbNombres.Size = New System.Drawing.Size(260, 20)
         Me.tbNombres.TabIndex = 0
         '
         'MenuStrip1
@@ -473,7 +432,6 @@ Partial Class frmEstudio
     Friend WithEvents Label1 As Label
     Friend WithEvents gbListadoPaciente As GroupBox
     Friend WithEvents gbPaciente As GroupBox
-    Friend WithEvents dtpFechaNacimiento As DateTimePicker
     Friend WithEvents Label15 As Label
     Friend WithEvents tbEdad As TextBox
     Friend WithEvents Label10 As Label
@@ -486,10 +444,7 @@ Partial Class frmEstudio
     Friend WithEvents tbSexo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents tbCI As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents tbApellidos As TextBox
     Friend WithEvents tbNombres As TextBox
     Friend WithEvents MenuStrip1 As MenuStrip
 End Class
