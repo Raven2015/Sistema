@@ -29,29 +29,29 @@ Partial Class dlgNuevoCliente
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tbCelular = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.tbTelefono = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbDireccion = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbCI = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbNIT = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbRazonSocial = New System.Windows.Forms.TextBox()
+        Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
         Me.tbInstitucion = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.tbRazonSocial = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.gbPaciente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -132,12 +132,28 @@ Partial Class dlgNuevoCliente
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Telefono"
         '
-        'tbTelefono
+        'tbApellidos
         '
-        Me.tbTelefono.Location = New System.Drawing.Point(73, 79)
-        Me.tbTelefono.Name = "tbTelefono"
-        Me.tbTelefono.Size = New System.Drawing.Size(170, 20)
-        Me.tbTelefono.TabIndex = 14
+        Me.tbApellidos.Location = New System.Drawing.Point(316, 27)
+        Me.tbApellidos.Name = "tbApellidos"
+        Me.tbApellidos.Size = New System.Drawing.Size(170, 20)
+        Me.tbApellidos.TabIndex = 1
+        '
+        'tbDireccion
+        '
+        Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
+        Me.tbDireccion.Name = "tbDireccion"
+        Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
+        Me.tbDireccion.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 137)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Fecha de Nacimiento"
         '
         'Label8
         '
@@ -148,12 +164,12 @@ Partial Class dlgNuevoCliente
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Dirección"
         '
-        'tbDireccion
+        'tbTelefono
         '
-        Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
-        Me.tbDireccion.Name = "tbDireccion"
-        Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
-        Me.tbDireccion.TabIndex = 12
+        Me.tbTelefono.Location = New System.Drawing.Point(73, 79)
+        Me.tbTelefono.Name = "tbTelefono"
+        Me.tbTelefono.Size = New System.Drawing.Size(170, 20)
+        Me.tbTelefono.TabIndex = 14
         '
         'Label7
         '
@@ -163,6 +179,15 @@ Partial Class dlgNuevoCliente
         Me.Label7.Size = New System.Drawing.Size(31, 13)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Sexo"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(264, 30)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Apellidos"
         '
         'tbSexo
         '
@@ -187,24 +212,6 @@ Partial Class dlgNuevoCliente
         Me.tbCI.Size = New System.Drawing.Size(170, 20)
         Me.tbCI.TabIndex = 8
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 137)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Fecha de Nacimiento"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(264, 30)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Apellidos"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -213,13 +220,6 @@ Partial Class dlgNuevoCliente
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Nombres"
-        '
-        'tbApellidos
-        '
-        Me.tbApellidos.Location = New System.Drawing.Point(316, 27)
-        Me.tbApellidos.Name = "tbApellidos"
-        Me.tbApellidos.Size = New System.Drawing.Size(170, 20)
-        Me.tbApellidos.TabIndex = 1
         '
         'tbNombres
         '
@@ -270,12 +270,35 @@ Partial Class dlgNuevoCliente
         Me.Label12.TabIndex = 7
         Me.Label12.Text = "Código de Asegurado"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(16, 25)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(118, 13)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "Institucion Aseguradora"
+        '
         'tbCodigoAsegurado
         '
         Me.tbCodigoAsegurado.Location = New System.Drawing.Point(140, 101)
         Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
         Me.tbCodigoAsegurado.Size = New System.Drawing.Size(346, 20)
         Me.tbCodigoAsegurado.TabIndex = 6
+        '
+        'tbInstitucion
+        '
+        Me.tbInstitucion.Location = New System.Drawing.Point(140, 23)
+        Me.tbInstitucion.Name = "tbInstitucion"
+        Me.tbInstitucion.Size = New System.Drawing.Size(346, 20)
+        Me.tbInstitucion.TabIndex = 0
+        '
+        'tbRazonSocial
+        '
+        Me.tbRazonSocial.Location = New System.Drawing.Point(140, 75)
+        Me.tbRazonSocial.Name = "tbRazonSocial"
+        Me.tbRazonSocial.Size = New System.Drawing.Size(346, 20)
+        Me.tbRazonSocial.TabIndex = 1
         '
         'Label13
         '
@@ -286,54 +309,31 @@ Partial Class dlgNuevoCliente
         Me.Label13.TabIndex = 3
         Me.Label13.Text = "Razon Social"
         '
-        'Label14
+        'btnGuardar
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(16, 25)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(118, 13)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "Institucion Aseguradora"
+        Me.btnGuardar.Location = New System.Drawing.Point(131, 324)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 16
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'tbRazonSocial
+        'btnCancelar
         '
-        Me.tbRazonSocial.Location = New System.Drawing.Point(140, 75)
-        Me.tbRazonSocial.Name = "tbRazonSocial"
-        Me.tbRazonSocial.Size = New System.Drawing.Size(346, 20)
-        Me.tbRazonSocial.TabIndex = 1
-        '
-        'tbInstitucion
-        '
-        Me.tbInstitucion.Location = New System.Drawing.Point(140, 23)
-        Me.tbInstitucion.Name = "tbInstitucion"
-        Me.tbInstitucion.Size = New System.Drawing.Size(346, 20)
-        Me.tbInstitucion.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(131, 324)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(318, 324)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 17
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(318, 324)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 17
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'dlgNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 361)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbPaciente)
         Me.Name = "dlgNuevoCliente"
@@ -374,6 +374,6 @@ Partial Class dlgNuevoCliente
     Friend WithEvents tbInstitucion As TextBox
     Friend WithEvents tbRazonSocial As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCancelar As Button
 End Class

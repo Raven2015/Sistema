@@ -22,358 +22,168 @@ Partial Class dlgEditarEstudio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.tbNIT = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
-        Me.tbInstitucion = New System.Windows.Forms.TextBox()
-        Me.tbRazonSocial = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.gbPaciente = New System.Windows.Forms.GroupBox()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.gbEstudio = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.tbEdad = New System.Windows.Forms.TextBox()
+        Me.tbDescuento = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.tbCelular = New System.Windows.Forms.TextBox()
+        Me.tbPrecio = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.tbApellidos = New System.Windows.Forms.TextBox()
-        Me.tbDireccion = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbTelefono = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.tbCategoria = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.tbSexo = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.tbCI = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
-        Me.GroupBox1.SuspendLayout()
-        Me.gbPaciente.SuspendLayout()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.gbEstudio.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button2
+        'gbEstudio
         '
-        Me.Button2.Location = New System.Drawing.Point(317, 325)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 25
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.tbNIT)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Controls.Add(Me.tbCodigoAsegurado)
-        Me.GroupBox1.Controls.Add(Me.tbInstitucion)
-        Me.GroupBox1.Controls.Add(Me.tbRazonSocial)
-        Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 184)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(503, 130)
-        Me.GroupBox1.TabIndex = 23
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos para la factura"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 52)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(25, 13)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "NIT"
-        '
-        'tbNIT
-        '
-        Me.tbNIT.Location = New System.Drawing.Point(140, 49)
-        Me.tbNIT.Name = "tbNIT"
-        Me.tbNIT.Size = New System.Drawing.Size(346, 20)
-        Me.tbNIT.TabIndex = 8
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(16, 104)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(109, 13)
-        Me.Label12.TabIndex = 7
-        Me.Label12.Text = "Código de Asegurado"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(16, 25)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(118, 13)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "Institucion Aseguradora"
-        '
-        'tbCodigoAsegurado
-        '
-        Me.tbCodigoAsegurado.Location = New System.Drawing.Point(140, 101)
-        Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
-        Me.tbCodigoAsegurado.Size = New System.Drawing.Size(346, 20)
-        Me.tbCodigoAsegurado.TabIndex = 6
-        '
-        'tbInstitucion
-        '
-        Me.tbInstitucion.Location = New System.Drawing.Point(140, 23)
-        Me.tbInstitucion.Name = "tbInstitucion"
-        Me.tbInstitucion.Size = New System.Drawing.Size(346, 20)
-        Me.tbInstitucion.TabIndex = 0
-        '
-        'tbRazonSocial
-        '
-        Me.tbRazonSocial.Location = New System.Drawing.Point(140, 75)
-        Me.tbRazonSocial.Name = "tbRazonSocial"
-        Me.tbRazonSocial.Size = New System.Drawing.Size(346, 20)
-        Me.tbRazonSocial.TabIndex = 1
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(16, 78)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(70, 13)
-        Me.Label13.TabIndex = 3
-        Me.Label13.Text = "Razon Social"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(130, 325)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'gbPaciente
-        '
-        Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
-        Me.gbPaciente.Controls.Add(Me.Label15)
-        Me.gbPaciente.Controls.Add(Me.tbEdad)
-        Me.gbPaciente.Controls.Add(Me.Label10)
-        Me.gbPaciente.Controls.Add(Me.tbCelular)
-        Me.gbPaciente.Controls.Add(Me.Label9)
-        Me.gbPaciente.Controls.Add(Me.tbApellidos)
-        Me.gbPaciente.Controls.Add(Me.tbDireccion)
-        Me.gbPaciente.Controls.Add(Me.Label6)
-        Me.gbPaciente.Controls.Add(Me.Label8)
-        Me.gbPaciente.Controls.Add(Me.tbTelefono)
-        Me.gbPaciente.Controls.Add(Me.Label7)
-        Me.gbPaciente.Controls.Add(Me.Label4)
-        Me.gbPaciente.Controls.Add(Me.tbSexo)
-        Me.gbPaciente.Controls.Add(Me.Label5)
-        Me.gbPaciente.Controls.Add(Me.tbCI)
-        Me.gbPaciente.Controls.Add(Me.Label3)
-        Me.gbPaciente.Controls.Add(Me.tbNombres)
-        Me.gbPaciente.Location = New System.Drawing.Point(11, 13)
-        Me.gbPaciente.Name = "gbPaciente"
-        Me.gbPaciente.Size = New System.Drawing.Size(503, 165)
-        Me.gbPaciente.TabIndex = 22
-        Me.gbPaciente.TabStop = False
-        Me.gbPaciente.Text = "Datos del Paciente"
-        '
-        'dtpFechaNacimiento
-        '
-        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(144, 131)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(169, 20)
-        Me.dtpFechaNacimiento.TabIndex = 20
+        Me.gbEstudio.Controls.Add(Me.Label15)
+        Me.gbEstudio.Controls.Add(Me.tbDescuento)
+        Me.gbEstudio.Controls.Add(Me.Label10)
+        Me.gbEstudio.Controls.Add(Me.tbPrecio)
+        Me.gbEstudio.Controls.Add(Me.Label9)
+        Me.gbEstudio.Controls.Add(Me.tbCategoria)
+        Me.gbEstudio.Controls.Add(Me.Label4)
+        Me.gbEstudio.Controls.Add(Me.Label3)
+        Me.gbEstudio.Controls.Add(Me.tbIDCategoria)
+        Me.gbEstudio.Controls.Add(Me.tbNombres)
+        Me.gbEstudio.Location = New System.Drawing.Point(9, 12)
+        Me.gbEstudio.Name = "gbEstudio"
+        Me.gbEstudio.Size = New System.Drawing.Size(389, 166)
+        Me.gbEstudio.TabIndex = 25
+        Me.gbEstudio.TabStop = False
+        Me.gbEstudio.Text = "Nuevos Datos de Estudio"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(264, 83)
+        Me.Label15.Location = New System.Drawing.Point(18, 135)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(32, 13)
+        Me.Label15.Size = New System.Drawing.Size(59, 13)
         Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Edad"
+        Me.Label15.Text = "Descuento"
         '
-        'tbEdad
+        'tbDescuento
         '
-        Me.tbEdad.Location = New System.Drawing.Point(316, 79)
-        Me.tbEdad.Name = "tbEdad"
-        Me.tbEdad.Size = New System.Drawing.Size(170, 20)
-        Me.tbEdad.TabIndex = 18
+        Me.tbDescuento.Location = New System.Drawing.Point(100, 132)
+        Me.tbDescuento.Name = "tbDescuento"
+        Me.tbDescuento.Size = New System.Drawing.Size(280, 20)
+        Me.tbDescuento.TabIndex = 18
+        Me.tbDescuento.Text = "0"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(264, 108)
+        Me.Label10.Location = New System.Drawing.Point(18, 109)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(39, 13)
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
         Me.Label10.TabIndex = 17
-        Me.Label10.Text = "Celular"
+        Me.Label10.Text = "Precio"
         '
-        'tbCelular
+        'tbPrecio
         '
-        Me.tbCelular.Location = New System.Drawing.Point(316, 105)
-        Me.tbCelular.Name = "tbCelular"
-        Me.tbCelular.Size = New System.Drawing.Size(170, 20)
-        Me.tbCelular.TabIndex = 16
+        Me.tbPrecio.Location = New System.Drawing.Point(100, 106)
+        Me.tbPrecio.Name = "tbPrecio"
+        Me.tbPrecio.Size = New System.Drawing.Size(280, 20)
+        Me.tbPrecio.TabIndex = 16
+        Me.tbPrecio.Text = "0"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(16, 82)
+        Me.Label9.Location = New System.Drawing.Point(18, 83)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 13)
+        Me.Label9.Size = New System.Drawing.Size(52, 13)
         Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Telefono"
+        Me.Label9.Text = "Categoria"
         '
-        'tbApellidos
+        'tbCategoria
         '
-        Me.tbApellidos.Location = New System.Drawing.Point(316, 27)
-        Me.tbApellidos.Name = "tbApellidos"
-        Me.tbApellidos.Size = New System.Drawing.Size(170, 20)
-        Me.tbApellidos.TabIndex = 1
-        '
-        'tbDireccion
-        '
-        Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
-        Me.tbDireccion.Name = "tbDireccion"
-        Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
-        Me.tbDireccion.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 137)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Fecha de Nacimiento"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 108)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 13)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Dirección"
-        '
-        'tbTelefono
-        '
-        Me.tbTelefono.Location = New System.Drawing.Point(73, 79)
-        Me.tbTelefono.Name = "tbTelefono"
-        Me.tbTelefono.Size = New System.Drawing.Size(170, 20)
-        Me.tbTelefono.TabIndex = 14
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(264, 56)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Sexo"
+        Me.tbCategoria.Location = New System.Drawing.Point(100, 80)
+        Me.tbCategoria.Name = "tbCategoria"
+        Me.tbCategoria.Size = New System.Drawing.Size(280, 20)
+        Me.tbCategoria.TabIndex = 14
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(264, 30)
+        Me.Label4.Location = New System.Drawing.Point(18, 57)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Apellidos"
-        '
-        'tbSexo
-        '
-        Me.tbSexo.Location = New System.Drawing.Point(316, 53)
-        Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.Size = New System.Drawing.Size(170, 20)
-        Me.tbSexo.TabIndex = 10
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 56)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "CI"
-        '
-        'tbCI
-        '
-        Me.tbCI.Location = New System.Drawing.Point(73, 53)
-        Me.tbCI.Name = "tbCI"
-        Me.tbCI.Size = New System.Drawing.Size(170, 20)
-        Me.tbCI.TabIndex = 8
+        Me.Label4.Text = "ID Categoria"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 30)
+        Me.Label3.Location = New System.Drawing.Point(18, 31)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Nombres"
+        Me.Label3.Text = "Nombre"
+        '
+        'tbIDCategoria
+        '
+        Me.tbIDCategoria.Location = New System.Drawing.Point(100, 54)
+        Me.tbIDCategoria.Name = "tbIDCategoria"
+        Me.tbIDCategoria.Size = New System.Drawing.Size(280, 20)
+        Me.tbIDCategoria.TabIndex = 1
         '
         'tbNombres
         '
-        Me.tbNombres.Location = New System.Drawing.Point(73, 27)
+        Me.tbNombres.Location = New System.Drawing.Point(100, 28)
         Me.tbNombres.Name = "tbNombres"
-        Me.tbNombres.Size = New System.Drawing.Size(170, 20)
+        Me.tbNombres.Size = New System.Drawing.Size(280, 20)
         Me.tbNombres.TabIndex = 0
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(248, 184)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 24
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(75, 184)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 23
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'dlgEditarEstudio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(524, 361)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.gbPaciente)
+        Me.ClientSize = New System.Drawing.Size(407, 214)
+        Me.Controls.Add(Me.gbEstudio)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Name = "dlgEditarEstudio"
-        Me.Text = "dlgEditarEstudio"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.gbPaciente.ResumeLayout(False)
-        Me.gbPaciente.PerformLayout()
+        Me.Text = "Editar Estudio"
+        Me.gbEstudio.ResumeLayout(False)
+        Me.gbEstudio.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button2 As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents tbNIT As TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents tbCodigoAsegurado As TextBox
-    Friend WithEvents tbInstitucion As TextBox
-    Friend WithEvents tbRazonSocial As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents gbPaciente As GroupBox
-    Friend WithEvents dtpFechaNacimiento As DateTimePicker
+    Friend WithEvents gbEstudio As GroupBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents tbEdad As TextBox
+    Friend WithEvents tbDescuento As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents tbCelular As TextBox
+    Friend WithEvents tbPrecio As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents tbApellidos As TextBox
-    Friend WithEvents tbDireccion As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents tbTelefono As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents tbCategoria As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents tbSexo As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents tbCI As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents tbIDCategoria As TextBox
     Friend WithEvents tbNombres As TextBox
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnGuardar As Button
 End Class

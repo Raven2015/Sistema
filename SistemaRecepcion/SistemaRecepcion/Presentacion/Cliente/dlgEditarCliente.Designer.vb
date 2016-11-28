@@ -38,12 +38,12 @@ Partial Class dlgEditarCliente
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbEdad = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -183,14 +183,14 @@ Partial Class dlgEditarCliente
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Celular"
         '
-        'Button2
+        'btnCancelar
         '
-        Me.Button2.Location = New System.Drawing.Point(317, 325)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(317, 325)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 21
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -236,14 +236,14 @@ Partial Class dlgEditarCliente
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Nombres"
         '
-        'Button1
+        'btnGuardar
         '
-        Me.Button1.Location = New System.Drawing.Point(130, 325)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnGuardar.Location = New System.Drawing.Point(130, 325)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 20
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -332,9 +332,9 @@ Partial Class dlgEditarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 361)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbPaciente)
         Me.Name = "dlgEditarCliente"
         Me.Text = "Editar Paciente"
@@ -362,12 +362,12 @@ Partial Class dlgEditarCliente
     Friend WithEvents Label15 As Label
     Friend WithEvents tbEdad As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnGuardar As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents tbTelefono As TextBox
     Friend WithEvents Label7 As Label
