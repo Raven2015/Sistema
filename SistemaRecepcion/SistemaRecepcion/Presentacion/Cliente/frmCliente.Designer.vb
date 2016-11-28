@@ -23,6 +23,8 @@ Partial Class frmCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbPaciente = New System.Windows.Forms.GroupBox()
+        Me.cbSexo = New System.Windows.Forms.ComboBox()
+        Me.tbIDCliente = New System.Windows.Forms.TextBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbEdad = New System.Windows.Forms.TextBox()
@@ -33,7 +35,6 @@ Partial Class frmCliente
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbDireccion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbCI = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,10 +43,11 @@ Partial Class frmCliente
         Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbListadoPaciente = New System.Windows.Forms.GroupBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
@@ -61,7 +63,8 @@ Partial Class frmCliente
         Me.Label14 = New System.Windows.Forms.Label()
         Me.tbRazonSocial = New System.Windows.Forms.TextBox()
         Me.tbInstitucion = New System.Windows.Forms.TextBox()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.gbPaciente.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.gbListadoPaciente.SuspendLayout()
@@ -71,6 +74,8 @@ Partial Class frmCliente
         '
         'gbPaciente
         '
+        Me.gbPaciente.Controls.Add(Me.cbSexo)
+        Me.gbPaciente.Controls.Add(Me.tbIDCliente)
         Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
         Me.gbPaciente.Controls.Add(Me.Label15)
         Me.gbPaciente.Controls.Add(Me.tbEdad)
@@ -81,7 +86,6 @@ Partial Class frmCliente
         Me.gbPaciente.Controls.Add(Me.Label8)
         Me.gbPaciente.Controls.Add(Me.tbDireccion)
         Me.gbPaciente.Controls.Add(Me.Label7)
-        Me.gbPaciente.Controls.Add(Me.tbSexo)
         Me.gbPaciente.Controls.Add(Me.Label5)
         Me.gbPaciente.Controls.Add(Me.tbCI)
         Me.gbPaciente.Controls.Add(Me.Label6)
@@ -95,6 +99,24 @@ Partial Class frmCliente
         Me.gbPaciente.TabIndex = 0
         Me.gbPaciente.TabStop = False
         Me.gbPaciente.Text = "Datos del Paciente"
+        '
+        'cbSexo
+        '
+        Me.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSexo.FormattingEnabled = True
+        Me.cbSexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.cbSexo.Location = New System.Drawing.Point(7, 144)
+        Me.cbSexo.Name = "cbSexo"
+        Me.cbSexo.Size = New System.Drawing.Size(170, 21)
+        Me.cbSexo.TabIndex = 22
+        '
+        'tbIDCliente
+        '
+        Me.tbIDCliente.Location = New System.Drawing.Point(302, -4)
+        Me.tbIDCliente.Name = "tbIDCliente"
+        Me.tbIDCliente.Size = New System.Drawing.Size(87, 20)
+        Me.tbIDCliente.TabIndex = 21
+        Me.tbIDCliente.Visible = False
         '
         'dtpFechaNacimiento
         '
@@ -177,13 +199,6 @@ Partial Class frmCliente
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Sexo"
         '
-        'tbSexo
-        '
-        Me.tbSexo.Location = New System.Drawing.Point(6, 144)
-        Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.Size = New System.Drawing.Size(170, 20)
-        Me.tbSexo.TabIndex = 10
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -250,6 +265,13 @@ Partial Class frmCliente
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        '
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
@@ -266,7 +288,7 @@ Partial Class frmCliente
         '
         'gbListadoPaciente
         '
-        Me.gbListadoPaciente.Controls.Add(Me.LinkLabel1)
+        Me.gbListadoPaciente.Controls.Add(Me.lknInexistente)
         Me.gbListadoPaciente.Controls.Add(Me.dgvListado)
         Me.gbListadoPaciente.Location = New System.Drawing.Point(12, 90)
         Me.gbListadoPaciente.Name = "gbListadoPaciente"
@@ -275,22 +297,25 @@ Partial Class frmCliente
         Me.gbListadoPaciente.TabStop = False
         Me.gbListadoPaciente.Text = "Listado de Pacientes"
         '
-        'LinkLabel1
+        'lknInexistente
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(125, 168)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(94, 13)
-        Me.LinkLabel1.TabIndex = 1
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Datos Inexistentes"
+        Me.lknInexistente.AutoSize = True
+        Me.lknInexistente.Location = New System.Drawing.Point(125, 168)
+        Me.lknInexistente.Name = "lknInexistente"
+        Me.lknInexistente.Size = New System.Drawing.Size(94, 13)
+        Me.lknInexistente.TabIndex = 1
+        Me.lknInexistente.TabStop = True
+        Me.lknInexistente.Text = "Datos Inexistentes"
         '
         'dgvListado
         '
         Me.dgvListado.BackgroundColor = System.Drawing.Color.White
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.dgvListado.Location = New System.Drawing.Point(6, 19)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
+        Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado.Size = New System.Drawing.Size(343, 334)
         Me.dgvListado.TabIndex = 0
         '
@@ -321,10 +346,12 @@ Partial Class frmCliente
         'cbCampo
         '
         Me.cbCampo.FormattingEnabled = True
+        Me.cbCampo.Items.AddRange(New Object() {"ci", "nombres", "apellidos"})
         Me.cbCampo.Location = New System.Drawing.Point(59, 37)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(142, 21)
         Me.cbCampo.TabIndex = 5
+        Me.cbCampo.Text = "ci"
         '
         'chbxEliminar
         '
@@ -417,18 +444,26 @@ Partial Class frmCliente
         Me.tbInstitucion.Size = New System.Drawing.Size(170, 20)
         Me.tbInstitucion.TabIndex = 0
         '
-        'NuevoToolStripMenuItem
+        'btnActualizar
         '
-        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        Me.btnActualizar.Location = New System.Drawing.Point(297, 64)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(69, 19)
+        Me.btnActualizar.TabIndex = 15
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
         '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.chbxEliminar)
         Me.Controls.Add(Me.cbCampo)
@@ -471,7 +506,6 @@ Partial Class frmCliente
     Friend WithEvents Label8 As Label
     Friend WithEvents tbDireccion As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents tbSexo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents tbCI As TextBox
     Friend WithEvents Label6 As Label
@@ -493,6 +527,10 @@ Partial Class frmCliente
     Friend WithEvents tbEdad As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents tbCelular As TextBox
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents lknInexistente As LinkLabel
     Friend WithEvents dgvListado As DataGridView
+    Friend WithEvents tbIDCliente As TextBox
+    Friend WithEvents cbSexo As ComboBox
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
 End Class

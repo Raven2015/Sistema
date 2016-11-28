@@ -1,5 +1,13 @@
 ﻿Public Class frmCategoria
     Private dt As New DataTable
+
+    '------------------ Botones del Menú ------------------
+    '------------Nuevo
+    '------------Editar
+    '------------Eliminar
+    '------------Reportes
+
+
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         dlgNuevaCategoria.ShowDialog()
     End Sub
@@ -11,9 +19,51 @@
         dlgEditarCategoria.ShowDialog()
     End Sub
 
+    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
+        Dim result As DialogResult
+        result = MessageBox.Show("Realmente desea eliminar los datos seleccionados?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In dgvListado.Rows
+                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                    If marcado Then
+                        Dim onekey As Integer = Convert.ToInt32(row.Cells("id_categoria").Value)
+                        Dim vdb As New vCategoria
+                        Dim func As New fCategoria
+                        vdb.gid_categoria = onekey
+
+                        If func.eliminar(vdb) Then
+                        Else
+                            MessageBox.Show("No se pudo eliminar los datos seleccionados", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+                Call mostrar()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Eliminación cancelada", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Call mostrar()
+        End If
+        'Call limpiar()
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        frmReporteCategorias.ShowDialog()
+    End Sub
+
+    '------------------ Método que carga el formulario principal ------------------
     Private Sub frmCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
     End Sub
+
+
+    '------------------ Funciones Básicas ------------------
+    '------------mostrar()
+    '------------buscar()
+    '------------ocultar_columnas()
+    '------------
 
     Private Sub mostrar()
         Try
@@ -63,6 +113,21 @@
         dgvListado.Columns(1).Visible = False
     End Sub
 
+    Private Sub limpiar()
+        tbCodigoCategoria.Text = ""
+        tbNombres.Text = ""
+        tbIDCategoria.Text = ""
+    End Sub
+
+
+    '------------------ Funciones del Data Grid View ------------------
+    '------------Caja de Texto buscar
+    '------------Click en contenido del listado
+    '------------Botón Actualizar
+    '------------CheckBox Eliminar
+    '------------Click en chkbox eliminar para seleccionar elementos
+
+
     Private Sub tbBuscar_TextChanged(sender As Object, e As EventArgs) Handles tbBuscar.TextChanged
         buscar()
     End Sub
@@ -92,43 +157,5 @@
         End If
     End Sub
 
-    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Dim result As DialogResult
-        result = MessageBox.Show("Realmente desea eliminar los datos seleccionados?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If result = DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In dgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If marcado Then
-                        Dim onekey As Integer = Convert.ToInt32(row.Cells("id_categoria").Value)
-                        Dim vdb As New vCategoria
-                        Dim func As New fCategoria
-                        vdb.gid_categoria = onekey
 
-                        If func.eliminar(vdb) Then
-                        Else
-                            MessageBox.Show("No se pudo eliminar los datos seleccionados", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-                Call mostrar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Eliminación cancelada", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Call mostrar()
-        End If
-        'Call limpiar()
-    End Sub
-
-    Private Sub limpiar()
-        tbCodigoCategoria.Text = ""
-        tbNombres.Text = ""
-        tbIDCategoria.Text = ""
-    End Sub
-
-    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        frmReporteCategorias.ShowDialog()
-    End Sub
 End Class
