@@ -26,6 +26,7 @@
                 tbBuscar.Enabled = True
                 dgvListado.ColumnHeadersVisible = True
                 lknInexistente.Visible = False
+                chbxEliminar.CheckState = CheckState.Unchecked
             Else
                 dgvListado.DataSource = Nothing
                 tbBuscar.Enabled = False
@@ -74,5 +75,60 @@
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         mostrar()
+    End Sub
+
+    Private Sub chbxEliminar_CheckedChanged(sender As Object, e As EventArgs) Handles chbxEliminar.CheckedChanged
+        If chbxEliminar.CheckState = CheckState.Checked Then
+            dgvListado.Columns.Item("Eliminar").Visible = True
+        Else
+            dgvListado.Columns.Item("Eliminar").Visible = False
+        End If
+    End Sub
+
+    Private Sub dgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellContentClick
+        If e.ColumnIndex = Me.dgvListado.Columns.Item("Eliminar").Index Then
+            Dim chkcell As DataGridViewCheckBoxCell = Me.dgvListado.Rows(e.RowIndex).Cells("Eliminar")
+            chkcell.Value = Not chkcell.Value
+        End If
+    End Sub
+
+    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
+        Dim result As DialogResult
+        result = MessageBox.Show("Realmente desea eliminar los datos seleccionados?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In dgvListado.Rows
+                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                    If marcado Then
+                        Dim onekey As Integer = Convert.ToInt32(row.Cells("id_categoria").Value)
+                        Dim vdb As New vCategoria
+                        Dim func As New fCategoria
+                        vdb.gid_categoria = onekey
+
+                        If func.eliminar(vdb) Then
+                        Else
+                            MessageBox.Show("No se pudo eliminar los datos seleccionados", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+                Call mostrar()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Eliminación cancelada", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Call mostrar()
+        End If
+        'Call limpiar()
+    End Sub
+
+    Private Sub limpiar()
+        tbCodigoCategoria.Text = ""
+        tbNombres.Text = ""
+        tbIDCategoria.Text = ""
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        frmReporteCategorias.ShowDialog()
     End Sub
 End Class
