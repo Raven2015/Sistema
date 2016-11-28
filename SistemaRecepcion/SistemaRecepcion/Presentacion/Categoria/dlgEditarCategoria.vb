@@ -30,4 +30,8 @@
             End If
         End If
     End Sub
+
+    Private Sub dlgEditarCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

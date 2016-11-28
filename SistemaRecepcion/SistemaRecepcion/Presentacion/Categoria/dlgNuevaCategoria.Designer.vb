@@ -112,6 +112,7 @@ Partial Class dlgNuevaCategoria
         Me.Controls.Add(Me.gbEstudio)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgNuevaCategoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "dlgNuevaCategoria"
         Me.gbEstudio.ResumeLayout(False)
         Me.gbEstudio.PerformLayout()

@@ -37,11 +37,12 @@ Partial Class frmCategoria
         Me.gbEstudio = New System.Windows.Forms.GroupBox()
         Me.tbCodigoCategoria = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbListadoPaciente.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEstudio.SuspendLayout()
@@ -178,12 +179,29 @@ Partial Class frmCategoria
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(766, 24)
         Me.MenuStrip1.TabIndex = 28
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'tbIDCategoria
+        '
+        Me.tbIDCategoria.Location = New System.Drawing.Point(368, 128)
+        Me.tbIDCategoria.Name = "tbIDCategoria"
+        Me.tbIDCategoria.Size = New System.Drawing.Size(99, 20)
+        Me.tbIDCategoria.TabIndex = 4
+        Me.tbIDCategoria.Visible = False
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(287, 61)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 35
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'NuevoToolStripMenuItem
         '
@@ -206,22 +224,12 @@ Partial Class frmCategoria
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
-        'tbIDCategoria
+        'ReportesToolStripMenuItem
         '
-        Me.tbIDCategoria.Location = New System.Drawing.Point(368, 128)
-        Me.tbIDCategoria.Name = "tbIDCategoria"
-        Me.tbIDCategoria.Size = New System.Drawing.Size(99, 20)
-        Me.tbIDCategoria.TabIndex = 4
-        Me.tbIDCategoria.Visible = False
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(287, 61)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 35
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'frmCategoria
         '
@@ -240,6 +248,7 @@ Partial Class frmCategoria
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmCategoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Categorias de Estudios"
         Me.gbListadoPaciente.ResumeLayout(False)
         Me.gbListadoPaciente.PerformLayout()
@@ -273,4 +282,5 @@ Partial Class frmCategoria
     Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents tbIDCategoria As TextBox
     Friend WithEvents btnActualizar As Button
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class

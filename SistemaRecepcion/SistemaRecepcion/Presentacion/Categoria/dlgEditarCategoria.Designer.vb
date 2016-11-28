@@ -115,6 +115,7 @@ Partial Class dlgEditarCategoria
         Me.Controls.Add(Me.gbEstudio)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgEditarCategoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Categoria"
         Me.gbEstudio.ResumeLayout(False)
         Me.gbEstudio.PerformLayout()

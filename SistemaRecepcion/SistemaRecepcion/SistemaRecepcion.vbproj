@@ -81,6 +81,11 @@
     <Compile Include="Datos\fcliente.vb" />
     <Compile Include="Datos\fDetalle.vb" />
     <Compile Include="Datos\fEstudio.vb" />
+    <Compile Include="dbBioDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbBioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logica\vAtencion.vb" />
     <Compile Include="Logica\vCategoria.vb" />
     <Compile Include="Logica\vCliente.vb" />
@@ -179,6 +184,12 @@
     <Compile Include="Presentacion\frmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReporteCategorias.Designer.vb">
+      <DependentUpon>frmReporteCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -220,8 +231,23 @@
     <EmbeddedResource Include="Presentacion\frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteCategorias.resx">
+      <DependentUpon>frmReporteCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RCategorias.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="dbBioDataSet.xsc">
+      <DependentUpon>dbBioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbBioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbBioDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbBioDataSet.xss">
+      <DependentUpon>dbBioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -237,7 +263,6 @@
     <Folder Include="Presentacion\Campania\" />
     <Folder Include="Presentacion\Convenio\" />
     <Folder Include="Presentacion\Detalle de Atencion\" />
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
@@ -256,6 +281,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bookmark-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-14.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
