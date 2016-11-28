@@ -190,6 +190,12 @@
     <Compile Include="Reportes\frmReporteCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReportePacientes.Designer.vb">
+      <DependentUpon>frmReportePacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportePacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -234,7 +240,11 @@
     <EmbeddedResource Include="Reportes\frmReporteCategorias.resx">
       <DependentUpon>frmReporteCategorias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePacientes.resx">
+      <DependentUpon>frmReportePacientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RCategorias.rdlc" />
+    <EmbeddedResource Include="Reportes\RPacientes.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbBioDataSet.xsc">

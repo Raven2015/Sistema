@@ -22,7 +22,9 @@ Partial Class dlgNuevoCliente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gbPaciente = New System.Windows.Forms.GroupBox()
+        Me.cbSexo = New System.Windows.Forms.ComboBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbEdad = New System.Windows.Forms.TextBox()
@@ -36,7 +38,6 @@ Partial Class dlgNuevoCliente
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbCI = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -52,12 +53,15 @@ Partial Class dlgNuevoCliente
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.gbPaciente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbPaciente
         '
+        Me.gbPaciente.Controls.Add(Me.cbSexo)
         Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
         Me.gbPaciente.Controls.Add(Me.Label15)
         Me.gbPaciente.Controls.Add(Me.tbEdad)
@@ -71,7 +75,6 @@ Partial Class dlgNuevoCliente
         Me.gbPaciente.Controls.Add(Me.tbTelefono)
         Me.gbPaciente.Controls.Add(Me.Label7)
         Me.gbPaciente.Controls.Add(Me.Label4)
-        Me.gbPaciente.Controls.Add(Me.tbSexo)
         Me.gbPaciente.Controls.Add(Me.Label5)
         Me.gbPaciente.Controls.Add(Me.tbCI)
         Me.gbPaciente.Controls.Add(Me.Label3)
@@ -82,6 +85,16 @@ Partial Class dlgNuevoCliente
         Me.gbPaciente.TabIndex = 1
         Me.gbPaciente.TabStop = False
         Me.gbPaciente.Text = "Datos del Paciente"
+        '
+        'cbSexo
+        '
+        Me.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSexo.FormattingEnabled = True
+        Me.cbSexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.cbSexo.Location = New System.Drawing.Point(316, 53)
+        Me.cbSexo.Name = "cbSexo"
+        Me.cbSexo.Size = New System.Drawing.Size(170, 21)
+        Me.cbSexo.TabIndex = 21
         '
         'dtpFechaNacimiento
         '
@@ -102,6 +115,7 @@ Partial Class dlgNuevoCliente
         '
         'tbEdad
         '
+        Me.tbEdad.Enabled = False
         Me.tbEdad.Location = New System.Drawing.Point(316, 79)
         Me.tbEdad.Name = "tbEdad"
         Me.tbEdad.Size = New System.Drawing.Size(170, 20)
@@ -188,13 +202,6 @@ Partial Class dlgNuevoCliente
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Apellidos"
-        '
-        'tbSexo
-        '
-        Me.tbSexo.Location = New System.Drawing.Point(316, 53)
-        Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.Size = New System.Drawing.Size(170, 20)
-        Me.tbSexo.TabIndex = 10
         '
         'Label5
         '
@@ -327,6 +334,10 @@ Partial Class dlgNuevoCliente
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'errorIcono
+        '
+        Me.errorIcono.ContainerControl = Me
+        '
         'dlgNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -337,11 +348,13 @@ Partial Class dlgNuevoCliente
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbPaciente)
         Me.Name = "dlgNuevoCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Paciente"
         Me.gbPaciente.ResumeLayout(False)
         Me.gbPaciente.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -360,7 +373,6 @@ Partial Class dlgNuevoCliente
     Friend WithEvents tbTelefono As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents tbSexo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents tbCI As TextBox
     Friend WithEvents Label3 As Label
@@ -376,4 +388,6 @@ Partial Class dlgNuevoCliente
     Friend WithEvents Label13 As Label
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents cbSexo As ComboBox
+    Friend WithEvents errorIcono As ErrorProvider
 End Class

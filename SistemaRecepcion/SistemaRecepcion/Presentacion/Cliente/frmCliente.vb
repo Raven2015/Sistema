@@ -13,9 +13,23 @@
     End Sub
 
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
-        'dlgEditarCategoria.tbNombres.Text = tbNombres.Text
-        'dlgEditarCategoria.tbCodigoCategoria.Text = tbCodigoCategoria.Text
-        'dlgEditarCategoria.tbIDCategoria.Text = tbIDCategoria.Text
+
+        'Se pasan los datos existentes en las cajas de texto a la variable dts a traves de sus getters
+        dlgEditarCliente.tbIDCliente.Text = tbIDCliente.Text
+        dlgEditarCliente.tbNombres.Text = tbNombres.Text
+        dlgEditarCliente.tbApellidos.Text = tbApellidos.Text
+        dlgEditarCliente.dtpFechaNacimiento.Text = dtpFechaNacimiento.Value
+        dlgEditarCliente.tbDireccion.Text = tbDireccion.Text
+        dlgEditarCliente.tbCodigoAsegurado.Text = tbCodigoAsegurado.Text
+        dlgEditarCliente.tbInstitucion.Text = tbInstitucion.Text
+        dlgEditarCliente.tbRazonSocial.Text = tbRazonSocial.Text
+        dlgEditarCliente.tbNIT.Text = tbNIT.Text
+        dlgEditarCliente.tbTelefono.Text = tbTelefono.Text
+        dlgEditarCliente.tbCelular.Text = tbCelular.Text
+        dlgEditarCliente.cbSexo.Text = cbSexo.Text
+        dlgEditarCliente.tbCI.Text = tbCI.Text
+        dlgEditarCliente.tbEdad.Text = DateTime.Now.Date.Year - Convert.ToDateTime(dgvListado.SelectedCells.Item(5).Value).Year
+
         dlgEditarCliente.ShowDialog()
     End Sub
 
@@ -164,6 +178,7 @@
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         mostrar()
+        limpiar()
     End Sub
 
     Private Sub chbxEliminar_CheckedChanged(sender As Object, e As EventArgs) Handles chbxEliminar.CheckedChanged
@@ -181,5 +196,7 @@
         End If
     End Sub
 
-
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        frmReportePacientes.ShowDialog()
+    End Sub
 End Class

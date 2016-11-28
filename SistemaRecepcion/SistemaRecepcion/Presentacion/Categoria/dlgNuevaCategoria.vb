@@ -1,24 +1,18 @@
 ﻿Imports System.ComponentModel
 
 Public Class dlgNuevaCategoria
+
+
+    '-------------- Metodo principal del formulario --------------
+    Private Sub dlgNuevaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        limpiar()
+    End Sub
+
+    '-------------- Botones de Interfaz --------------
+    '-Cancelar
+    '-Guardar
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
-    End Sub
-
-    Private Sub tbNombres_Validating(sender As Object, e As CancelEventArgs) Handles tbNombres.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese un Nombre para la Categoria por favor. Este dato es obligatorio")
-        End If
-    End Sub
-
-    Private Sub tbIDCategoria_Validating(sender As Object, e As CancelEventArgs) Handles tbCodigoCategoria.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese un ID para la Categoria por favor. Este dato es obligatorio")
-        End If
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -44,11 +38,32 @@ Public Class dlgNuevaCategoria
         End If
     End Sub
 
+
+
+    '-------------- Metodos de Validacion --------------
+    '-Nombre de Estudio
+    '-ID Categoria
+    Private Sub tbNombres_Validating(sender As Object, e As CancelEventArgs) Handles tbNombres.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorIcono.SetError(sender, "")
+        Else
+            Me.errorIcono.SetError(sender, "Ingrese un Nombre para la Categoria por favor. Este dato es obligatorio")
+        End If
+    End Sub
+
+    Private Sub tbIDCategoria_Validating(sender As Object, e As CancelEventArgs) Handles tbCodigoCategoria.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorIcono.SetError(sender, "")
+        Else
+            Me.errorIcono.SetError(sender, "Ingrese un ID para la Categoria por favor. Este dato es obligatorio")
+        End If
+    End Sub
+
+    '-------------- Metodos Internos --------------
+    '-Limpiar
     Public Sub limpiar()
         tbCodigoCategoria.Text = ""
         tbNombres.Text = ""
     End Sub
-    Private Sub dlgNuevaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        limpiar()
-    End Sub
+
 End Class

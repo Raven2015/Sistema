@@ -22,6 +22,7 @@ Partial Class dlgEditarCliente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tbNIT = New System.Windows.Forms.TextBox()
@@ -47,13 +48,16 @@ Partial Class dlgEditarCliente
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbCI = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.gbPaciente = New System.Windows.Forms.GroupBox()
+        Me.cbSexo = New System.Windows.Forms.ComboBox()
+        Me.tbIDCliente = New System.Windows.Forms.TextBox()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.gbPaciente.SuspendLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbApellidos
@@ -169,6 +173,7 @@ Partial Class dlgEditarCliente
         '
         'tbEdad
         '
+        Me.tbEdad.Enabled = False
         Me.tbEdad.Location = New System.Drawing.Point(316, 79)
         Me.tbEdad.Name = "tbEdad"
         Me.tbEdad.Size = New System.Drawing.Size(170, 20)
@@ -270,13 +275,6 @@ Partial Class dlgEditarCliente
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Sexo"
         '
-        'tbSexo
-        '
-        Me.tbSexo.Location = New System.Drawing.Point(316, 53)
-        Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.Size = New System.Drawing.Size(170, 20)
-        Me.tbSexo.TabIndex = 10
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -302,6 +300,8 @@ Partial Class dlgEditarCliente
         '
         'gbPaciente
         '
+        Me.gbPaciente.Controls.Add(Me.cbSexo)
+        Me.gbPaciente.Controls.Add(Me.tbIDCliente)
         Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
         Me.gbPaciente.Controls.Add(Me.Label15)
         Me.gbPaciente.Controls.Add(Me.tbEdad)
@@ -315,7 +315,6 @@ Partial Class dlgEditarCliente
         Me.gbPaciente.Controls.Add(Me.tbTelefono)
         Me.gbPaciente.Controls.Add(Me.Label7)
         Me.gbPaciente.Controls.Add(Me.Label4)
-        Me.gbPaciente.Controls.Add(Me.tbSexo)
         Me.gbPaciente.Controls.Add(Me.Label5)
         Me.gbPaciente.Controls.Add(Me.tbCI)
         Me.gbPaciente.Controls.Add(Me.Label3)
@@ -327,6 +326,28 @@ Partial Class dlgEditarCliente
         Me.gbPaciente.TabStop = False
         Me.gbPaciente.Text = "Datos del Paciente"
         '
+        'cbSexo
+        '
+        Me.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSexo.FormattingEnabled = True
+        Me.cbSexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.cbSexo.Location = New System.Drawing.Point(316, 52)
+        Me.cbSexo.Name = "cbSexo"
+        Me.cbSexo.Size = New System.Drawing.Size(170, 21)
+        Me.cbSexo.TabIndex = 23
+        '
+        'tbIDCliente
+        '
+        Me.tbIDCliente.Location = New System.Drawing.Point(426, -1)
+        Me.tbIDCliente.Name = "tbIDCliente"
+        Me.tbIDCliente.Size = New System.Drawing.Size(77, 20)
+        Me.tbIDCliente.TabIndex = 21
+        Me.tbIDCliente.Visible = False
+        '
+        'errorIcono
+        '
+        Me.errorIcono.ContainerControl = Me
+        '
         'dlgEditarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,12 +357,15 @@ Partial Class dlgEditarCliente
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbPaciente)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgEditarCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Paciente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbPaciente.ResumeLayout(False)
         Me.gbPaciente.PerformLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -371,9 +395,11 @@ Partial Class dlgEditarCliente
     Friend WithEvents Label8 As Label
     Friend WithEvents tbTelefono As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents tbSexo As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents tbCI As TextBox
     Friend WithEvents tbNombres As TextBox
     Friend WithEvents gbPaciente As GroupBox
+    Friend WithEvents tbIDCliente As TextBox
+    Friend WithEvents cbSexo As ComboBox
+    Friend WithEvents errorIcono As ErrorProvider
 End Class
