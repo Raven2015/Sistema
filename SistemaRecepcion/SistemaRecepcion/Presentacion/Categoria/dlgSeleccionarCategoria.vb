@@ -1,63 +1,12 @@
-﻿Public Class frmCategoria
+﻿Public Class dlgSeleccionarCategoria
+
     Private dt As New DataTable
 
-    '------------------ Botones del Menú ------------------
-    '------------Nuevo
-    '------------Editar
-    '------------Eliminar
-    '------------Reportes
-
-
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        dlgNuevaCategoria.ShowDialog()
-    End Sub
-
-    Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
-        dlgEditarCategoria.tbNombres.Text = tbNombres.Text
-        dlgEditarCategoria.tbCodigoCategoria.Text = tbCodigoCategoria.Text
-        dlgEditarCategoria.tbIDCategoria.Text = tbIDCategoria.Text
-        dlgEditarCategoria.ShowDialog()
-    End Sub
-
-    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Dim result As DialogResult
-        result = MessageBox.Show("Realmente desea eliminar los datos seleccionados?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If result = DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In dgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If marcado Then
-                        Dim onekey As Integer = Convert.ToInt32(row.Cells("id_categoria").Value)
-                        Dim vdb As New vCategoria
-                        Dim func As New fCategoria
-                        vdb.gid_categoria = onekey
-
-                        If func.eliminar(vdb) Then
-                        Else
-                            MessageBox.Show("No se pudo eliminar los datos seleccionados", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-                Call mostrar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Eliminación cancelada", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Call mostrar()
-        End If
-        'Call limpiar()
-    End Sub
-
-    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        frmReporteCategorias.ShowDialog()
-    End Sub
-
     '------------------ Método que carga el formulario principal ------------------
-    Private Sub frmCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub dlgSeleccionarCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        limpiar()
         mostrar()
     End Sub
-
 
     '------------------ Funciones Básicas ------------------
     '------------mostrar()
@@ -117,6 +66,7 @@
         tbCodigoCategoria.Text = ""
         tbNombres.Text = ""
         tbIDCategoria.Text = ""
+        'tbIndicador.Text = ""
     End Sub
 
 
@@ -142,7 +92,7 @@
         End Try
     End Sub
 
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs)
         mostrar()
     End Sub
 
@@ -159,6 +109,19 @@
             Dim chkcell As DataGridViewCheckBoxCell = Me.dgvListado.Rows(e.RowIndex).Cells("Eliminar")
             chkcell.Value = Not chkcell.Value
         End If
+    End Sub
+
+    Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
+        If tbIndicador.Text = 0 Then
+            dlgNuevoEstudio.tbIDCategoria.Text = dgvListado.SelectedCells.Item(1).Value
+            dlgNuevoEstudio.tbCategoria.Text = dgvListado.SelectedCells.Item(2).Value
+            dlgNuevoEstudio.tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(3).Value
+        Else
+            dlgEditarEstudio.tbIDCategoria.Text = dgvListado.SelectedCells.Item(1).Value
+            dlgEditarEstudio.tbCategoria.Text = dgvListado.SelectedCells.Item(2).Value
+            dlgEditarEstudio.tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(3).Value
+        End If
+        Me.Close()
     End Sub
 
 

@@ -31,6 +31,7 @@ Public Class fEstudio
         End Try
     End Function
 
+
     Public Function insertar(ByVal dts As vEstudio) As Boolean
         Try
             conectado()

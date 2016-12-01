@@ -43,6 +43,10 @@ Partial Class frmCliente
         Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbListadoPaciente = New System.Windows.Forms.GroupBox()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
@@ -62,10 +66,6 @@ Partial Class frmCliente
         Me.tbRazonSocial = New System.Windows.Forms.TextBox()
         Me.tbInstitucion = New System.Windows.Forms.TextBox()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbPaciente.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.gbListadoPaciente.SuspendLayout()
@@ -266,6 +266,34 @@ Partial Class frmCliente
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
         'gbListadoPaciente
         '
         Me.gbListadoPaciente.Controls.Add(Me.lknInexistente)
@@ -439,34 +467,6 @@ Partial Class frmCliente
         Me.btnActualizar.TabIndex = 15
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'frmCliente
         '

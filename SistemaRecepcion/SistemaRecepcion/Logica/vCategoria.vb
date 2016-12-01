@@ -34,10 +34,9 @@
 
     End Sub
 
-    Public Sub New(ByVal id_categoria As String, ByVal nombre_categoria As String)
+    Public Sub New(ByVal id_categoria As String, ByVal nombre_categoria As String, ByVal codigo_categoria As String)
         gid_categoria = id_categoria
         gnombre_categoria = nombre_categoria
         gcodigo_categoria = codigo_categoria
-
     End Sub
 End Class

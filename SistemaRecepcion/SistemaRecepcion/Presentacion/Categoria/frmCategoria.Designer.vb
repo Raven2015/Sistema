@@ -145,6 +145,7 @@ Partial Class frmCategoria
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.dgvListado.Location = New System.Drawing.Point(6, 19)
+        Me.dgvListado.MultiSelect = False
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
