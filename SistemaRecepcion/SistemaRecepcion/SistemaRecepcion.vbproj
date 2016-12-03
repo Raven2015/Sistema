@@ -165,6 +165,12 @@
     <Compile Include="Presentacion\Cliente\dlgNuevoCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Cliente\dlgSeleccionarCliente.Designer.vb">
+      <DependentUpon>dlgSeleccionarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Cliente\dlgSeleccionarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Cliente\frmCliente.Designer.vb">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </Compile>
@@ -201,6 +207,12 @@
     <Compile Include="Reportes\frmReporteCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmReporteEstudios.Designer.vb">
+      <DependentUpon>frmReporteEstudios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteEstudios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReportePacientes.Designer.vb">
       <DependentUpon>frmReportePacientes.vb</DependentUpon>
     </Compile>
@@ -214,6 +226,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Atencion\dlgNuevaAtencion.resx">
+      <DependentUpon>dlgNuevaAtencion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Atencion\frmAtencion.resx">
       <DependentUpon>frmAtencion.vb</DependentUpon>
@@ -236,6 +251,9 @@
     <EmbeddedResource Include="Presentacion\Cliente\dlgNuevoCliente.resx">
       <DependentUpon>dlgNuevoCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cliente\dlgSeleccionarCliente.resx">
+      <DependentUpon>dlgSeleccionarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Cliente\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,10 +272,14 @@
     <EmbeddedResource Include="Reportes\frmReporteCategorias.resx">
       <DependentUpon>frmReporteCategorias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteEstudios.resx">
+      <DependentUpon>frmReporteEstudios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportePacientes.resx">
       <DependentUpon>frmReportePacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RCategorias.rdlc" />
+    <EmbeddedResource Include="Reportes\REstudios.rdlc" />
     <EmbeddedResource Include="Reportes\RPacientes.rdlc" />
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +350,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folder-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

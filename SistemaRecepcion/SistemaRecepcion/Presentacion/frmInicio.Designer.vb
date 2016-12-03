@@ -22,18 +22,32 @@ Partial Class frmInicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.btnAtencion = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnEstudio = New System.Windows.Forms.Button()
         Me.btnPaciente = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
+        'btnAtencion
+        '
+        Me.btnAtencion.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.calendar_1
+        Me.btnAtencion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAtencion.FlatAppearance.BorderSize = 0
+        Me.btnAtencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAtencion.Location = New System.Drawing.Point(7, 287)
+        Me.btnAtencion.Name = "btnAtencion"
+        Me.btnAtencion.Size = New System.Drawing.Size(70, 70)
+        Me.btnAtencion.TabIndex = 3
+        Me.btnAtencion.UseVisualStyleBackColor = True
+        '
         'Button1
         '
-        Me.Button1.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.folder_14
+        Me.Button1.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.folder_7
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(7, 163)
+        Me.Button1.Location = New System.Drawing.Point(7, 195)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 70)
         Me.Button1.TabIndex = 2
@@ -42,11 +56,12 @@ Partial Class frmInicio
         'btnEstudio
         '
         Me.btnEstudio.BackColor = System.Drawing.Color.Transparent
-        Me.btnEstudio.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
+        Me.btnEstudio.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.bookmark_11
         Me.btnEstudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEstudio.FlatAppearance.BorderSize = 0
         Me.btnEstudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEstudio.ForeColor = System.Drawing.Color.Silver
-        Me.btnEstudio.Location = New System.Drawing.Point(7, 87)
+        Me.btnEstudio.Location = New System.Drawing.Point(7, 103)
         Me.btnEstudio.Name = "btnEstudio"
         Me.btnEstudio.Size = New System.Drawing.Size(70, 70)
         Me.btnEstudio.TabIndex = 1
@@ -54,8 +69,9 @@ Partial Class frmInicio
         '
         'btnPaciente
         '
-        Me.btnPaciente.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.users_1
+        Me.btnPaciente.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.users
         Me.btnPaciente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPaciente.FlatAppearance.BorderSize = 0
         Me.btnPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPaciente.ForeColor = System.Drawing.Color.Silver
         Me.btnPaciente.Location = New System.Drawing.Point(7, 11)
@@ -68,8 +84,9 @@ Partial Class frmInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(85, 369)
+        Me.Controls.Add(Me.btnAtencion)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnEstudio)
         Me.Controls.Add(Me.btnPaciente)
@@ -84,4 +101,5 @@ Partial Class frmInicio
     Friend WithEvents btnPaciente As Button
     Friend WithEvents btnEstudio As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnAtencion As Button
 End Class

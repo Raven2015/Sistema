@@ -10,4 +10,8 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         frmCategoria.ShowDialog()
     End Sub
+
+    Private Sub btnAtencion_Click(sender As Object, e As EventArgs) Handles btnAtencion.Click
+        frmAtencion.ShowDialog()
+    End Sub
 End Class

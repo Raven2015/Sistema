@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class dlgNuevaAtencion
+Partial Class dlgSeleccionarCliente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,11 +22,6 @@ Partial Class dlgNuevaAtencion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtpFechaAtencion = New System.Windows.Forms.DateTimePicker()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.tbMedicoRemitente = New System.Windows.Forms.TextBox()
         Me.gbPaciente = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbIDCliente = New System.Windows.Forms.TextBox()
@@ -45,68 +40,28 @@ Partial Class dlgNuevaAtencion
         Me.tbCI = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNombres = New System.Windows.Forms.TextBox()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.AñadirEstudiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarPacienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cbSexo = New System.Windows.Forms.ComboBox()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox1.SuspendLayout()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.chbxEliminar = New System.Windows.Forms.CheckBox()
+        Me.cbCampo = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbBuscar = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.gbListadoPaciente = New System.Windows.Forms.GroupBox()
+        Me.lknInexistente = New System.Windows.Forms.LinkLabel()
+        Me.dgvListado = New System.Windows.Forms.DataGridView()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.tbFechaNacimiento = New System.Windows.Forms.TextBox()
+        Me.tbSexo = New System.Windows.Forms.TextBox()
         Me.gbPaciente.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        Me.gbListadoPaciente.SuspendLayout()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.dtpFechaAtencion)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Controls.Add(Me.tbMedicoRemitente)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 297)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(333, 77)
-        Me.GroupBox1.TabIndex = 27
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos de Atención"
-        '
-        'dtpFechaAtencion
-        '
-        Me.dtpFechaAtencion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaAtencion.Location = New System.Drawing.Point(127, 45)
-        Me.dtpFechaAtencion.Name = "dtpFechaAtencion"
-        Me.dtpFechaAtencion.Size = New System.Drawing.Size(186, 20)
-        Me.dtpFechaAtencion.TabIndex = 12
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 49)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(97, 13)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "Fecha de Atención"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(18, 22)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(90, 13)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "Doctor Remitente"
-        '
-        'tbMedicoRemitente
-        '
-        Me.tbMedicoRemitente.Location = New System.Drawing.Point(127, 19)
-        Me.tbMedicoRemitente.Name = "tbMedicoRemitente"
-        Me.tbMedicoRemitente.Size = New System.Drawing.Size(186, 20)
-        Me.tbMedicoRemitente.TabIndex = 10
         '
         'gbPaciente
         '
-        Me.gbPaciente.Controls.Add(Me.dtpFechaNacimiento)
-        Me.gbPaciente.Controls.Add(Me.cbSexo)
+        Me.gbPaciente.Controls.Add(Me.tbFechaNacimiento)
+        Me.gbPaciente.Controls.Add(Me.tbSexo)
         Me.gbPaciente.Controls.Add(Me.Label15)
-        Me.gbPaciente.Controls.Add(Me.tbIDCliente)
         Me.gbPaciente.Controls.Add(Me.tbEdad)
         Me.gbPaciente.Controls.Add(Me.Label10)
         Me.gbPaciente.Controls.Add(Me.tbCelular)
@@ -122,10 +77,10 @@ Partial Class dlgNuevaAtencion
         Me.gbPaciente.Controls.Add(Me.tbCI)
         Me.gbPaciente.Controls.Add(Me.Label3)
         Me.gbPaciente.Controls.Add(Me.tbNombres)
-        Me.gbPaciente.Location = New System.Drawing.Point(12, 31)
+        Me.gbPaciente.Location = New System.Drawing.Point(369, 7)
         Me.gbPaciente.Name = "gbPaciente"
         Me.gbPaciente.Size = New System.Drawing.Size(333, 260)
-        Me.gbPaciente.TabIndex = 26
+        Me.gbPaciente.TabIndex = 27
         Me.gbPaciente.TabStop = False
         Me.gbPaciente.Text = "Datos del Paciente"
         '
@@ -140,7 +95,7 @@ Partial Class dlgNuevaAtencion
         '
         'tbIDCliente
         '
-        Me.tbIDCliente.Location = New System.Drawing.Point(246, -5)
+        Me.tbIDCliente.Location = New System.Drawing.Point(369, 273)
         Me.tbIDCliente.Name = "tbIDCliente"
         Me.tbIDCliente.Size = New System.Drawing.Size(87, 20)
         Me.tbIDCliente.TabIndex = 21
@@ -149,6 +104,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbEdad.Location = New System.Drawing.Point(80, 178)
         Me.tbEdad.Name = "tbEdad"
+        Me.tbEdad.ReadOnly = True
         Me.tbEdad.Size = New System.Drawing.Size(233, 20)
         Me.tbEdad.TabIndex = 7
         '
@@ -165,6 +121,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbCelular.Location = New System.Drawing.Point(80, 204)
         Me.tbCelular.Name = "tbCelular"
+        Me.tbCelular.ReadOnly = True
         Me.tbCelular.Size = New System.Drawing.Size(233, 20)
         Me.tbCelular.TabIndex = 8
         '
@@ -172,6 +129,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbApellidos.Location = New System.Drawing.Point(80, 47)
         Me.tbApellidos.Name = "tbApellidos"
+        Me.tbApellidos.ReadOnly = True
         Me.tbApellidos.Size = New System.Drawing.Size(233, 20)
         Me.tbApellidos.TabIndex = 2
         '
@@ -206,6 +164,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbDireccion.Location = New System.Drawing.Point(80, 125)
         Me.tbDireccion.Name = "tbDireccion"
+        Me.tbDireccion.ReadOnly = True
         Me.tbDireccion.Size = New System.Drawing.Size(233, 20)
         Me.tbDireccion.TabIndex = 5
         '
@@ -231,6 +190,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbTelefono.Location = New System.Drawing.Point(80, 99)
         Me.tbTelefono.Name = "tbTelefono"
+        Me.tbTelefono.ReadOnly = True
         Me.tbTelefono.Size = New System.Drawing.Size(233, 20)
         Me.tbTelefono.TabIndex = 4
         '
@@ -247,6 +207,7 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbCI.Location = New System.Drawing.Point(80, 73)
         Me.tbCI.Name = "tbCI"
+        Me.tbCI.ReadOnly = True
         Me.tbCI.Size = New System.Drawing.Size(233, 20)
         Me.tbCI.TabIndex = 3
         '
@@ -263,78 +224,149 @@ Partial Class dlgNuevaAtencion
         '
         Me.tbNombres.Location = New System.Drawing.Point(80, 21)
         Me.tbNombres.Name = "tbNombres"
+        Me.tbNombres.ReadOnly = True
         Me.tbNombres.Size = New System.Drawing.Size(233, 20)
         Me.tbNombres.TabIndex = 1
         '
-        'MenuStrip1
+        'btnActualizar
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AñadirEstudiosToolStripMenuItem, Me.BuscarPacienteToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(350, 24)
-        Me.MenuStrip1.TabIndex = 28
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.btnActualizar.Location = New System.Drawing.Point(292, 34)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(69, 19)
+        Me.btnActualizar.TabIndex = 34
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
-        'AñadirEstudiosToolStripMenuItem
+        'chbxEliminar
         '
-        Me.AñadirEstudiosToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.add_11
-        Me.AñadirEstudiosToolStripMenuItem.Name = "AñadirEstudiosToolStripMenuItem"
-        Me.AñadirEstudiosToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
-        Me.AñadirEstudiosToolStripMenuItem.Text = "Añadir Estudios"
+        Me.chbxEliminar.AutoSize = True
+        Me.chbxEliminar.Location = New System.Drawing.Point(11, 37)
+        Me.chbxEliminar.Name = "chbxEliminar"
+        Me.chbxEliminar.Size = New System.Drawing.Size(62, 17)
+        Me.chbxEliminar.TabIndex = 33
+        Me.chbxEliminar.Text = "Eliminar"
+        Me.chbxEliminar.UseVisualStyleBackColor = True
+        Me.chbxEliminar.Visible = False
         '
-        'BuscarPacienteToolStripMenuItem
+        'cbCampo
         '
-        Me.BuscarPacienteToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.search
-        Me.BuscarPacienteToolStripMenuItem.Name = "BuscarPacienteToolStripMenuItem"
-        Me.BuscarPacienteToolStripMenuItem.Size = New System.Drawing.Size(118, 20)
-        Me.BuscarPacienteToolStripMenuItem.Text = "Buscar Paciente"
+        Me.cbCampo.FormattingEnabled = True
+        Me.cbCampo.Items.AddRange(New Object() {"ci", "nombres", "apellidos"})
+        Me.cbCampo.Location = New System.Drawing.Point(54, 7)
+        Me.cbCampo.Name = "cbCampo"
+        Me.cbCampo.Size = New System.Drawing.Size(142, 21)
+        Me.cbCampo.TabIndex = 32
+        Me.cbCampo.Text = "ci"
         '
-        'cbSexo
+        'Label2
         '
-        Me.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSexo.FormattingEnabled = True
-        Me.cbSexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
-        Me.cbSexo.Location = New System.Drawing.Point(80, 151)
-        Me.cbSexo.Name = "cbSexo"
-        Me.cbSexo.Size = New System.Drawing.Size(233, 21)
-        Me.cbSexo.TabIndex = 39
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Buscar:"
         '
-        'dtpFechaNacimiento
+        'tbBuscar
         '
-        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(132, 230)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(181, 20)
-        Me.dtpFechaNacimiento.TabIndex = 40
+        Me.tbBuscar.Location = New System.Drawing.Point(202, 7)
+        Me.tbBuscar.Name = "tbBuscar"
+        Me.tbBuscar.Size = New System.Drawing.Size(160, 20)
+        Me.tbBuscar.TabIndex = 30
         '
-        'dlgNuevaAtencion
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
+        Me.Label1.TabIndex = 29
+        '
+        'gbListadoPaciente
+        '
+        Me.gbListadoPaciente.Controls.Add(Me.lknInexistente)
+        Me.gbListadoPaciente.Controls.Add(Me.dgvListado)
+        Me.gbListadoPaciente.Location = New System.Drawing.Point(7, 60)
+        Me.gbListadoPaciente.Name = "gbListadoPaciente"
+        Me.gbListadoPaciente.Size = New System.Drawing.Size(355, 252)
+        Me.gbListadoPaciente.TabIndex = 28
+        Me.gbListadoPaciente.TabStop = False
+        Me.gbListadoPaciente.Text = "Listado de Pacientes"
+        '
+        'lknInexistente
+        '
+        Me.lknInexistente.AutoSize = True
+        Me.lknInexistente.Location = New System.Drawing.Point(125, 168)
+        Me.lknInexistente.Name = "lknInexistente"
+        Me.lknInexistente.Size = New System.Drawing.Size(94, 13)
+        Me.lknInexistente.TabIndex = 1
+        Me.lknInexistente.TabStop = True
+        Me.lknInexistente.Text = "Datos Inexistentes"
+        '
+        'dgvListado
+        '
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.White
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
+        Me.dgvListado.Location = New System.Drawing.Point(6, 19)
+        Me.dgvListado.MultiSelect = False
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
+        Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvListado.Size = New System.Drawing.Size(343, 226)
+        Me.dgvListado.TabIndex = 0
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        '
+        'tbFechaNacimiento
+        '
+        Me.tbFechaNacimiento.Location = New System.Drawing.Point(127, 230)
+        Me.tbFechaNacimiento.Name = "tbFechaNacimiento"
+        Me.tbFechaNacimiento.ReadOnly = True
+        Me.tbFechaNacimiento.Size = New System.Drawing.Size(186, 20)
+        Me.tbFechaNacimiento.TabIndex = 40
+        '
+        'tbSexo
+        '
+        Me.tbSexo.Location = New System.Drawing.Point(80, 152)
+        Me.tbSexo.Name = "tbSexo"
+        Me.tbSexo.ReadOnly = True
+        Me.tbSexo.Size = New System.Drawing.Size(233, 20)
+        Me.tbSexo.TabIndex = 39
+        '
+        'dlgSeleccionarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(350, 382)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(708, 317)
+        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.chbxEliminar)
+        Me.Controls.Add(Me.cbCampo)
+        Me.Controls.Add(Me.tbIDCliente)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.tbBuscar)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.gbListadoPaciente)
         Me.Controls.Add(Me.gbPaciente)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "dlgNuevaAtencion"
-        Me.Text = "Nueva Atención"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.Name = "dlgSeleccionarCliente"
+        Me.Text = "dlgSeleccionarCliente"
         Me.gbPaciente.ResumeLayout(False)
         Me.gbPaciente.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.gbListadoPaciente.ResumeLayout(False)
+        Me.gbListadoPaciente.PerformLayout()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents tbMedicoRemitente As TextBox
     Friend WithEvents gbPaciente As GroupBox
     Friend WithEvents Label15 As Label
+    Friend WithEvents tbIDCliente As TextBox
     Friend WithEvents tbEdad As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents tbCelular As TextBox
@@ -350,11 +382,16 @@ Partial Class dlgNuevaAtencion
     Friend WithEvents tbCI As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbNombres As TextBox
-    Friend WithEvents tbIDCliente As TextBox
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents AñadirEstudiosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents dtpFechaAtencion As DateTimePicker
-    Friend WithEvents BuscarPacienteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents cbSexo As ComboBox
-    Friend WithEvents dtpFechaNacimiento As DateTimePicker
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents chbxEliminar As CheckBox
+    Friend WithEvents cbCampo As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents tbBuscar As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents gbListadoPaciente As GroupBox
+    Friend WithEvents lknInexistente As LinkLabel
+    Friend WithEvents dgvListado As DataGridView
+    Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
+    Friend WithEvents tbFechaNacimiento As TextBox
+    Friend WithEvents tbSexo As TextBox
 End Class

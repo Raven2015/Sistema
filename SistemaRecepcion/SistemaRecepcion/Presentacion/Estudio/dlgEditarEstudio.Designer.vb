@@ -240,6 +240,7 @@ Partial Class dlgEditarEstudio
         Me.Controls.Add(Me.btnGuardar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgEditarEstudio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Estudio"
         Me.gbEstudio.ResumeLayout(False)
         Me.gbEstudio.PerformLayout()

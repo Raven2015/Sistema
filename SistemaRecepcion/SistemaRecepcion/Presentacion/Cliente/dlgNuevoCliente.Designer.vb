@@ -94,7 +94,7 @@ Partial Class dlgNuevoCliente
         Me.cbSexo.Location = New System.Drawing.Point(316, 53)
         Me.cbSexo.Name = "cbSexo"
         Me.cbSexo.Size = New System.Drawing.Size(170, 21)
-        Me.cbSexo.TabIndex = 21
+        Me.cbSexo.TabIndex = 3
         '
         'dtpFechaNacimiento
         '
@@ -102,7 +102,7 @@ Partial Class dlgNuevoCliente
         Me.dtpFechaNacimiento.Location = New System.Drawing.Point(144, 131)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(169, 20)
-        Me.dtpFechaNacimiento.TabIndex = 20
+        Me.dtpFechaNacimiento.TabIndex = 8
         '
         'Label15
         '
@@ -119,7 +119,7 @@ Partial Class dlgNuevoCliente
         Me.tbEdad.Location = New System.Drawing.Point(316, 79)
         Me.tbEdad.Name = "tbEdad"
         Me.tbEdad.Size = New System.Drawing.Size(170, 20)
-        Me.tbEdad.TabIndex = 18
+        Me.tbEdad.TabIndex = 5
         '
         'Label10
         '
@@ -135,7 +135,7 @@ Partial Class dlgNuevoCliente
         Me.tbCelular.Location = New System.Drawing.Point(316, 105)
         Me.tbCelular.Name = "tbCelular"
         Me.tbCelular.Size = New System.Drawing.Size(170, 20)
-        Me.tbCelular.TabIndex = 16
+        Me.tbCelular.TabIndex = 7
         '
         'Label9
         '
@@ -158,7 +158,7 @@ Partial Class dlgNuevoCliente
         Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
         Me.tbDireccion.Name = "tbDireccion"
         Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
-        Me.tbDireccion.TabIndex = 12
+        Me.tbDireccion.TabIndex = 6
         '
         'Label6
         '
@@ -183,7 +183,7 @@ Partial Class dlgNuevoCliente
         Me.tbTelefono.Location = New System.Drawing.Point(73, 79)
         Me.tbTelefono.Name = "tbTelefono"
         Me.tbTelefono.Size = New System.Drawing.Size(170, 20)
-        Me.tbTelefono.TabIndex = 14
+        Me.tbTelefono.TabIndex = 4
         '
         'Label7
         '
@@ -217,7 +217,7 @@ Partial Class dlgNuevoCliente
         Me.tbCI.Location = New System.Drawing.Point(73, 53)
         Me.tbCI.Name = "tbCI"
         Me.tbCI.Size = New System.Drawing.Size(170, 20)
-        Me.tbCI.TabIndex = 8
+        Me.tbCI.TabIndex = 2
         '
         'Label3
         '
@@ -266,7 +266,7 @@ Partial Class dlgNuevoCliente
         Me.tbNIT.Location = New System.Drawing.Point(140, 49)
         Me.tbNIT.Name = "tbNIT"
         Me.tbNIT.Size = New System.Drawing.Size(346, 20)
-        Me.tbNIT.TabIndex = 8
+        Me.tbNIT.TabIndex = 11
         '
         'Label12
         '
@@ -291,21 +291,21 @@ Partial Class dlgNuevoCliente
         Me.tbCodigoAsegurado.Location = New System.Drawing.Point(140, 101)
         Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
         Me.tbCodigoAsegurado.Size = New System.Drawing.Size(346, 20)
-        Me.tbCodigoAsegurado.TabIndex = 6
+        Me.tbCodigoAsegurado.TabIndex = 13
         '
         'tbInstitucion
         '
         Me.tbInstitucion.Location = New System.Drawing.Point(140, 23)
         Me.tbInstitucion.Name = "tbInstitucion"
         Me.tbInstitucion.Size = New System.Drawing.Size(346, 20)
-        Me.tbInstitucion.TabIndex = 0
+        Me.tbInstitucion.TabIndex = 10
         '
         'tbRazonSocial
         '
         Me.tbRazonSocial.Location = New System.Drawing.Point(140, 75)
         Me.tbRazonSocial.Name = "tbRazonSocial"
         Me.tbRazonSocial.Size = New System.Drawing.Size(346, 20)
-        Me.tbRazonSocial.TabIndex = 1
+        Me.tbRazonSocial.TabIndex = 12
         '
         'Label13
         '

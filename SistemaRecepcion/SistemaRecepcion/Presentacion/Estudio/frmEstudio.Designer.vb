@@ -24,6 +24,7 @@ Partial Class frmEstudio
     Private Sub InitializeComponent()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.chbxEliminar = New System.Windows.Forms.CheckBox()
         Me.cbCampo = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,6 +41,10 @@ Partial Class frmEstudio
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbIDEstudio = New System.Windows.Forms.TextBox()
         Me.grbDatosCategoria = New System.Windows.Forms.GroupBox()
         Me.tbCategoria = New System.Windows.Forms.TextBox()
@@ -47,11 +52,7 @@ Partial Class frmEstudio
         Me.tbCodigoCategoria = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.tbIDCategoria = New System.Windows.Forms.TextBox()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListadoPaciente.SuspendLayout()
         Me.gbEstudio.SuspendLayout()
@@ -81,6 +82,12 @@ Partial Class frmEstudio
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado.Size = New System.Drawing.Size(343, 182)
         Me.dgvListado.TabIndex = 0
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
         '
         'chbxEliminar
         '
@@ -226,12 +233,40 @@ Partial Class frmEstudio
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(763, 24)
         Me.MenuStrip1.TabIndex = 17
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'tbIDEstudio
         '
@@ -298,12 +333,6 @@ Partial Class frmEstudio
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        '
         'tbIDCategoria
         '
         Me.tbIDCategoria.Enabled = False
@@ -312,27 +341,6 @@ Partial Class frmEstudio
         Me.tbIDCategoria.Size = New System.Drawing.Size(100, 20)
         Me.tbIDCategoria.TabIndex = 30
         Me.tbIDCategoria.Visible = False
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'frmEstudio
         '
@@ -353,6 +361,7 @@ Partial Class frmEstudio
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmEstudio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Estudio"
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbListadoPaciente.ResumeLayout(False)
@@ -397,4 +406,5 @@ Partial Class frmEstudio
     Friend WithEvents btnActualizar As Button
     Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents tbIDCategoria As TextBox
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class

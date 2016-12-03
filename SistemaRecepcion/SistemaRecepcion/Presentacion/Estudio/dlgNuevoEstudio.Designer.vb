@@ -230,6 +230,7 @@ Partial Class dlgNuevoEstudio
         Me.Controls.Add(Me.btnGuardar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgNuevoEstudio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Estudio"
         Me.grbDatosCategoria.ResumeLayout(False)
         Me.grbDatosCategoria.PerformLayout()

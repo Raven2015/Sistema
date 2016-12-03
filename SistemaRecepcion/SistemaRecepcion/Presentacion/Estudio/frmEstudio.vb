@@ -58,6 +58,10 @@ Public Class frmEstudio
         'Call limpiar()
     End Sub
 
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        frmReporteEstudios.ShowDialog()
+    End Sub
+
 
 
     '------------------ Método que carga el formulario principal ------------------
