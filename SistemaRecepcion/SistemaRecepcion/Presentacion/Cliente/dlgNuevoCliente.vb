@@ -6,6 +6,13 @@ Public Class dlgNuevoCliente
     '-------------- Metodo principal del formulario --------------
     Private Sub dlgNuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpiar()
+        Try
+            Dim dts As New vCliente
+            Dim func As New fcliente
+            tbIDCliente.Text = Format(func.generar_cliente, "0000")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     '-------------- Botones de Interfaz --------------
@@ -26,7 +33,7 @@ Public Class dlgNuevoCliente
                 dts.gfecha_nacimiento = dtpFechaNacimiento.Value
                 dts.gdireccion = tbDireccion.Text
                 dts.gcodigo_asegurado = tbCodigoAsegurado.Text
-                dts.ginstitucion = tbInstitucion.Text
+                dts.gid_institucion = tbInstitucion.Text
                 dts.grazon_social = tbRazonSocial.Text
                 dts.gnit = tbNIT.Text
                 dts.gtelefono = tbTelefono.Text

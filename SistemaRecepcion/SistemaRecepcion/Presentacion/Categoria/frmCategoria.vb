@@ -50,7 +50,7 @@
     End Sub
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        frmReporteCategorias.ShowDialog()
+        'frmReporteCategorias.ShowDialog()
     End Sub
 
     '------------------ Método que carga el formulario principal ------------------

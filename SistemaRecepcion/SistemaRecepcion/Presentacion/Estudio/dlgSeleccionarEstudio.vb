@@ -1,74 +1,10 @@
-﻿Imports System.Data.SqlClient
-Public Class frmEstudio
+﻿Public Class dlgSeleccionarEstudio
 
     Private dt As New DataTable
-
-    '------------------ Botones del Menú ------------------
-    '------------Nuevo
-    '------------Editar
-    '------------Eliminar
-    '------------Reportes
-
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        dlgNuevoEstudio.ShowDialog()
-    End Sub
-
-    Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
-
-        'Se pasan los datos existentes en las cajas de texto a la variable dts a traves de sus getters
-        dlgEditarEstudio.tbCodigoCategoria.Text = tbCodigoCategoria.Text
-        dlgEditarEstudio.tbCategoria.Text = tbCategoria.Text
-        dlgEditarEstudio.tbCodigoEstudio.Text = tbCodigoEstudio.Text
-        dlgEditarEstudio.tbNombres.Text = tbNombres.Text
-        dlgEditarEstudio.tbPrecio.Text = tbPrecio.Text
-        dlgEditarEstudio.tbDescuento.Text = tbDescuento.Text
-        dlgEditarEstudio.tbIDEstudio.Text = tbIDEstudio.Text
-        dlgEditarEstudio.tbIDCategoria.Text = tbIDCategoria.Text
-
-        dlgEditarEstudio.ShowDialog()
-    End Sub
-
-    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Dim result As DialogResult
-        result = MessageBox.Show("Realmente desea eliminar los datos seleccionados?", "Eliminando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If result = DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In dgvListado.Rows
-                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If marcado Then
-                        Dim onekey As Integer = Convert.ToInt32(row.Cells("id_estudio").Value)
-                        Dim vdb As New vEstudio
-                        Dim func As New fEstudio
-                        vdb.gid_estudio = onekey
-
-                        If func.eliminar(vdb) Then
-                        Else
-                            MessageBox.Show("No se pudo eliminar los datos seleccionados", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-                Call mostrar()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Eliminación cancelada", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Call mostrar()
-        End If
-        'Call limpiar()
-    End Sub
-
-    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        'frmReporteEstudios.ShowDialog()
-    End Sub
-
-
-
-    '------------------ Método que carga el formulario principal ------------------
-    Private Sub frmEstudio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub dlgSeleccionarEstudio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        limpiar() 'Asegura que cualquier dato que quedo en los text box sea eliminado para que no exista confusion
         mostrar()
     End Sub
-
 
     '------------------ Funciones Básicas ------------------
     '------------mostrar()
@@ -128,6 +64,7 @@ Public Class frmEstudio
     Private Sub ocultar_filas()
         Dim nfilas As Integer
         nfilas = dgvListado.Rows.Count
+
     End Sub
 
     Private Sub limpiar()
@@ -165,7 +102,6 @@ Public Class frmEstudio
             tbPrecio.Text = dgvListado.SelectedCells.Item(7).Value
             tbDescuento.Text = dgvListado.SelectedCells.Item(8).Value
             tbIDCategoria.Text = dgvListado.SelectedCells.Item(2).Value
-
         Catch ex As Exception
             MsgBox("Seleccione una fila con contenido por favor.")
         End Try
@@ -178,13 +114,6 @@ Public Class frmEstudio
         limpiar()
     End Sub
 
-    Private Sub chbxEliminar_CheckedChanged(sender As Object, e As EventArgs) Handles chbxEliminar.CheckedChanged
-        If chbxEliminar.CheckState = CheckState.Checked Then
-            dgvListado.Columns.Item("Eliminar").Visible = True
-        Else
-            dgvListado.Columns.Item("Eliminar").Visible = False
-        End If
-    End Sub
 
     Private Sub dgvListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellContentClick
         If e.ColumnIndex = Me.dgvListado.Columns.Item("Eliminar").Index Then
@@ -193,4 +122,26 @@ Public Class frmEstudio
         End If
     End Sub
 
+    Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
+        Dim indicador As Integer
+        indicador = tbIndicador.Text
+        Try
+            Select Case indicador
+                Case 0
+                    tbIDEstudio.Text = dgvListado.SelectedCells.Item(1).Value
+                    tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(3).Value
+                    tbCategoria.Text = dgvListado.SelectedCells.Item(4).Value
+                    tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(6).Value
+                    tbNombres.Text = dgvListado.SelectedCells.Item(5).Value
+                    tbPrecio.Text = dgvListado.SelectedCells.Item(7).Value
+                    tbDescuento.Text = dgvListado.SelectedCells.Item(8).Value
+                    tbIDCategoria.Text = dgvListado.SelectedCells.Item(2).Value
+                Case 1
+                    MsgBox("Aun no se ha definido un caso para este valor")
+            End Select
+
+        Catch ex As Exception
+            MsgBox("Seleccione una fila con contenido por favor.")
+        End Try
+    End Sub
 End Class

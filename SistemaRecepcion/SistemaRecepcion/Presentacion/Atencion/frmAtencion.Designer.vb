@@ -23,15 +23,9 @@ Partial Class frmAtencion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.AtencionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnSeleccionarPaciente = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.chbxEliminar = New System.Windows.Forms.CheckBox()
         Me.cbCampo = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblBuscar = New System.Windows.Forms.Label()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbListadoPaciente = New System.Windows.Forms.GroupBox()
@@ -64,9 +58,17 @@ Partial Class frmAtencion
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.AñadirEstudiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dtpFechaAtencion = New System.Windows.Forms.DateTimePicker()
+        Me.btnOcultarLista = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnVerLista = New System.Windows.Forms.Button()
+        Me.AtencionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnSeleccionarPaciente = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AñadirEstudiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.gbListadoPaciente.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,49 +86,6 @@ Partial Class frmAtencion
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'AtencionToolStripMenuItem
-        '
-        Me.AtencionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem2, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.AtencionToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.calendar
-        Me.AtencionToolStripMenuItem.Name = "AtencionToolStripMenuItem"
-        Me.AtencionToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
-        Me.AtencionToolStripMenuItem.Text = "Atención"
-        '
-        'NuevoToolStripMenuItem2
-        '
-        Me.NuevoToolStripMenuItem2.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
-        Me.NuevoToolStripMenuItem2.Name = "NuevoToolStripMenuItem2"
-        Me.NuevoToolStripMenuItem2.Size = New System.Drawing.Size(117, 22)
-        Me.NuevoToolStripMenuItem2.Text = "Nuevo"
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'mnSeleccionarPaciente
-        '
-        Me.mnSeleccionarPaciente.Image = Global.SistemaRecepcion.My.Resources.Resources.user
-        Me.mnSeleccionarPaciente.Name = "mnSeleccionarPaciente"
-        Me.mnSeleccionarPaciente.Size = New System.Drawing.Size(143, 20)
-        Me.mnSeleccionarPaciente.Text = "Seleccionar Paciente"
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
-        '
         'chbxEliminar
         '
         Me.chbxEliminar.AutoSize = True
@@ -136,6 +95,7 @@ Partial Class frmAtencion
         Me.chbxEliminar.TabIndex = 22
         Me.chbxEliminar.Text = "Eliminar"
         Me.chbxEliminar.UseVisualStyleBackColor = True
+        Me.chbxEliminar.Visible = False
         '
         'cbCampo
         '
@@ -146,15 +106,17 @@ Partial Class frmAtencion
         Me.cbCampo.Size = New System.Drawing.Size(129, 21)
         Me.cbCampo.TabIndex = 21
         Me.cbCampo.Text = "ci"
+        Me.cbCampo.Visible = False
         '
-        'Label2
+        'lblBuscar
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 37)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 13)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Buscar:"
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Location = New System.Drawing.Point(3, 37)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(43, 13)
+        Me.lblBuscar.TabIndex = 20
+        Me.lblBuscar.Text = "Buscar:"
+        Me.lblBuscar.Visible = False
         '
         'tbBuscar
         '
@@ -162,6 +124,7 @@ Partial Class frmAtencion
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(143, 20)
         Me.tbBuscar.TabIndex = 22
+        Me.tbBuscar.Visible = False
         '
         'Label1
         '
@@ -173,6 +136,7 @@ Partial Class frmAtencion
         '
         'gbListadoPaciente
         '
+        Me.gbListadoPaciente.Controls.Add(Me.btnVerLista)
         Me.gbListadoPaciente.Controls.Add(Me.lknInexistente)
         Me.gbListadoPaciente.Controls.Add(Me.dgvListado)
         Me.gbListadoPaciente.Location = New System.Drawing.Point(2, 87)
@@ -204,6 +168,7 @@ Partial Class frmAtencion
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado.Size = New System.Drawing.Size(308, 294)
         Me.dgvListado.TabIndex = 0
+        Me.dgvListado.Visible = False
         '
         'Eliminar
         '
@@ -246,7 +211,6 @@ Partial Class frmAtencion
         Me.tbIDAtencion.Name = "tbIDAtencion"
         Me.tbIDAtencion.Size = New System.Drawing.Size(87, 20)
         Me.tbIDAtencion.TabIndex = 39
-        Me.tbIDAtencion.Visible = False
         '
         'tbFechaNacimiento
         '
@@ -407,7 +371,6 @@ Partial Class frmAtencion
         Me.tbIDCliente.Name = "tbIDCliente"
         Me.tbIDCliente.Size = New System.Drawing.Size(87, 20)
         Me.tbIDCliente.TabIndex = 21
-        Me.tbIDCliente.Visible = False
         '
         'btnActualizar
         '
@@ -417,6 +380,7 @@ Partial Class frmAtencion
         Me.btnActualizar.TabIndex = 24
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.Visible = False
         '
         'tbMedicoRemitente
         '
@@ -456,6 +420,24 @@ Partial Class frmAtencion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Atención"
         '
+        'dtpFechaAtencion
+        '
+        Me.dtpFechaAtencion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaAtencion.Location = New System.Drawing.Point(127, 43)
+        Me.dtpFechaAtencion.Name = "dtpFechaAtencion"
+        Me.dtpFechaAtencion.Size = New System.Drawing.Size(186, 20)
+        Me.dtpFechaAtencion.TabIndex = 13
+        '
+        'btnOcultarLista
+        '
+        Me.btnOcultarLista.Location = New System.Drawing.Point(183, 61)
+        Me.btnOcultarLista.Name = "btnOcultarLista"
+        Me.btnOcultarLista.Size = New System.Drawing.Size(69, 19)
+        Me.btnOcultarLista.TabIndex = 27
+        Me.btnOcultarLista.Text = "Ocultar"
+        Me.btnOcultarLista.UseVisualStyleBackColor = True
+        Me.btnOcultarLista.Visible = False
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
@@ -471,6 +453,62 @@ Partial Class frmAtencion
         Me.Button1.TabIndex = 26
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'btnVerLista
+        '
+        Me.btnVerLista.BackColor = System.Drawing.SystemColors.Control
+        Me.btnVerLista.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.view_2
+        Me.btnVerLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnVerLista.FlatAppearance.BorderSize = 0
+        Me.btnVerLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerLista.Location = New System.Drawing.Point(117, 118)
+        Me.btnVerLista.Name = "btnVerLista"
+        Me.btnVerLista.Size = New System.Drawing.Size(102, 84)
+        Me.btnVerLista.TabIndex = 27
+        Me.btnVerLista.UseVisualStyleBackColor = False
+        '
+        'AtencionToolStripMenuItem
+        '
+        Me.AtencionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem2, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.AtencionToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.calendar
+        Me.AtencionToolStripMenuItem.Name = "AtencionToolStripMenuItem"
+        Me.AtencionToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
+        Me.AtencionToolStripMenuItem.Text = "Atención"
+        '
+        'NuevoToolStripMenuItem2
+        '
+        Me.NuevoToolStripMenuItem2.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
+        Me.NuevoToolStripMenuItem2.Name = "NuevoToolStripMenuItem2"
+        Me.NuevoToolStripMenuItem2.Size = New System.Drawing.Size(117, 22)
+        Me.NuevoToolStripMenuItem2.Text = "Nuevo"
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.garbage
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'mnSeleccionarPaciente
+        '
+        Me.mnSeleccionarPaciente.Image = Global.SistemaRecepcion.My.Resources.Resources.user
+        Me.mnSeleccionarPaciente.Name = "mnSeleccionarPaciente"
+        Me.mnSeleccionarPaciente.Size = New System.Drawing.Size(143, 20)
+        Me.mnSeleccionarPaciente.Text = "Seleccionar Paciente"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.print
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
         'AñadirEstudiosToolStripMenuItem
         '
         Me.AñadirEstudiosToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.add_11
@@ -478,25 +516,18 @@ Partial Class frmAtencion
         Me.AñadirEstudiosToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
         Me.AñadirEstudiosToolStripMenuItem.Text = "Añadir Estudios"
         '
-        'dtpFechaAtencion
-        '
-        Me.dtpFechaAtencion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaAtencion.Location = New System.Drawing.Point(127, 43)
-        Me.dtpFechaAtencion.Name = "dtpFechaAtencion"
-        Me.dtpFechaAtencion.Size = New System.Drawing.Size(186, 20)
-        Me.dtpFechaAtencion.TabIndex = 13
-        '
         'frmAtencion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(666, 413)
+        Me.Controls.Add(Me.btnOcultarLista)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.chbxEliminar)
         Me.Controls.Add(Me.cbCampo)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.tbBuscar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.gbListadoPaciente)
@@ -526,7 +557,7 @@ Partial Class frmAtencion
     Friend WithEvents btnActualizar As Button
     Friend WithEvents chbxEliminar As CheckBox
     Friend WithEvents cbCampo As ComboBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblBuscar As Label
     Friend WithEvents tbBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents gbListadoPaciente As GroupBox
@@ -565,4 +596,6 @@ Partial Class frmAtencion
     Friend WithEvents Button1 As Button
     Friend WithEvents AñadirEstudiosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents dtpFechaAtencion As DateTimePicker
+    Friend WithEvents btnVerLista As Button
+    Friend WithEvents btnOcultarLista As Button
 End Class

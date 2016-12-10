@@ -57,10 +57,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=RAVEN\SQLEXPRESS;Initial Catalog=dbBio;Integrated Security=True")>  _
-        Public ReadOnly Property dbBioConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=RAVEN\SQLSERVER2008;Initial Catalog=dbBIOMEDICA;Integrated Security=T"& _ 
+            "rue")>  _
+        Public ReadOnly Property Conexion() As String
             Get
-                Return CType(Me("dbBioConnectionString"),String)
+                Return CType(Me("Conexion"),String)
             End Get
         End Property
     End Class

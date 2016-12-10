@@ -8,7 +8,8 @@ Public Class conexion
     Protected Function conectado()
         Try
             'Se crea la conexion a la base de datos dando una direccion inicial y los parametros.
-            cnn = New SqlConnection("data source=RAVEN\SQLEXPRESS; initial catalog=dbBio;integrated security=true")
+            'cnn = New SqlConnection("data source=RAVEN\SQLEXPRESS; initial catalog=dbBio;integrated security=true")
+            cnn = New SqlConnection(My.Settings.Conexion)
             'Se abre la conexion
             cnn.Open()
             'Se devuelve verdadero, se realizo la conexion

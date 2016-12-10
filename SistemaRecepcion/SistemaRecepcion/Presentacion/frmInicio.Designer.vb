@@ -26,6 +26,8 @@ Partial Class frmInicio
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnEstudio = New System.Windows.Forms.Button()
         Me.btnPaciente = New System.Windows.Forms.Button()
+        Me.btnLista = New System.Windows.Forms.Button()
+        Me.btnCentral = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnAtencion
@@ -80,12 +82,38 @@ Partial Class frmInicio
         Me.btnPaciente.TabIndex = 0
         Me.btnPaciente.UseVisualStyleBackColor = True
         '
+        'btnLista
+        '
+        Me.btnLista.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.search
+        Me.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLista.FlatAppearance.BorderSize = 0
+        Me.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLista.Location = New System.Drawing.Point(7, 377)
+        Me.btnLista.Name = "btnLista"
+        Me.btnLista.Size = New System.Drawing.Size(70, 70)
+        Me.btnLista.TabIndex = 4
+        Me.btnLista.UseVisualStyleBackColor = True
+        '
+        'btnCentral
+        '
+        Me.btnCentral.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.notepad
+        Me.btnCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCentral.FlatAppearance.BorderSize = 0
+        Me.btnCentral.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCentral.Location = New System.Drawing.Point(7, 479)
+        Me.btnCentral.Name = "btnCentral"
+        Me.btnCentral.Size = New System.Drawing.Size(70, 70)
+        Me.btnCentral.TabIndex = 5
+        Me.btnCentral.UseVisualStyleBackColor = True
+        '
         'frmInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(85, 369)
+        Me.ClientSize = New System.Drawing.Size(85, 561)
+        Me.Controls.Add(Me.btnCentral)
+        Me.Controls.Add(Me.btnLista)
         Me.Controls.Add(Me.btnAtencion)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnEstudio)
@@ -102,4 +130,6 @@ Partial Class frmInicio
     Friend WithEvents btnEstudio As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents btnAtencion As Button
+    Friend WithEvents btnLista As Button
+    Friend WithEvents btnCentral As Button
 End Class

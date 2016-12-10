@@ -360,13 +360,13 @@ Partial Class frmCliente
         '
         'cbCampo
         '
+        Me.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCampo.FormattingEnabled = True
         Me.cbCampo.Items.AddRange(New Object() {"ci", "nombres", "apellidos"})
         Me.cbCampo.Location = New System.Drawing.Point(59, 37)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(142, 21)
         Me.cbCampo.TabIndex = 5
-        Me.cbCampo.Text = "ci"
         '
         'chbxEliminar
         '

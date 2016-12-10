@@ -1,16 +1,20 @@
 ﻿Imports System.Data.SqlClient
 Public Class fDetalle
+
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
 
+    Dim bd As New SqlConnection(My.Settings.Conexion)
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
 
-    Public Function mostrar() As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
+    Public Function mostrar(ByVal dts As vDetalleAtencion) As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
         Try
             conectado() 'Llama a la funcion conectado de la clase Conexion
             cmd = New SqlCommand("mostrar_detalle_atencion") 'Llama al procedimiento almacenado en la BD.
             cmd.CommandType = CommandType.StoredProcedure 'Selecciona el tipo de comando a enviar (Procedimiento Almacenado)
 
             cmd.Connection = cnn 'Se establece la variable cnn para la conexion de cmd
+
+            cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
 
             If cmd.ExecuteNonQuery Then 'Verifica que la consulta se realize exitosamente
                 Dim dt As New DataTable 'Crea una variable que almacena el resultado obtenido de la consulta
@@ -37,8 +41,9 @@ Public Class fDetalle
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
+            cmd.Parameters.AddWithValue("@id_detalle", dts.gid_detalle)
             cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
-            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_estudio)
+            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_entidad)
             'cmd.Parameters.AddWithValue("@id_convenio", dts.gid_convenio)
             'cmd.Parameters.AddWithValue("@gid_campania", dts.gid_campania)
             cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
@@ -66,7 +71,7 @@ Public Class fDetalle
 
             cmd.Parameters.AddWithValue("@id_detalle", dts.gid_detalle)
             cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
-            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_estudio)
+            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_entidad)
             'cmd.Parameters.AddWithValue("@id_convenio", dts.gid_convenio)
             'cmd.Parameters.AddWithValue("@gid_campania", dts.gid_campania)
             cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
@@ -100,6 +105,27 @@ Public Class fDetalle
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
+        End Try
+    End Function
+
+
+    Public Function generar_detalle() As Integer
+
+        Try
+            bd.Open()
+            cmd = New SqlCommand("generar_detalle", bd)
+            Dim param As New SqlParameter("@id_detalle", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                bd.Close()
+                Return .Parameters("@id_detalle").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo crear el detalle: RAZON>> " + ex.Message)
+            Return 0
         End Try
     End Function
 End Class

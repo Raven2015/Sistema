@@ -1,6 +1,6 @@
 ﻿Public Class vDetalleAtencion
-    Dim id_detalle, id_atencion, id_estudio, id_convenio, id_campania As Integer
-    Dim precio_parcial, precio_total As Double
+    Dim id_detalle, id_atencion, id_entidad As Integer
+    Dim precio_parcial As Double
 
     Public Property gid_detalle
         Get
@@ -20,30 +20,12 @@
         End Set
     End Property
 
-    Public Property gid_estudio
+    Public Property gid_entidad
         Get
-            Return id_estudio
+            Return id_entidad
         End Get
         Set(value)
-            id_estudio = value
-        End Set
-    End Property
-
-    Public Property gid_campania
-        Get
-            Return id_campania
-        End Get
-        Set(value)
-            id_campania = value
-        End Set
-    End Property
-
-    Public Property gid_convenio
-        Get
-            Return id_convenio
-        End Get
-        Set(value)
-            id_convenio = value
+            id_entidad = value
         End Set
     End Property
 
@@ -72,30 +54,14 @@
 
     End Sub
 
-    Public Sub New(ByVal id_detalle As Integer,
-                   ByVal id_atencion As Integer,
-                   ByVal id_estudio As Integer,
-                   ByVal id_convenio As Integer,
-                   ByVal id_campania As Integer,
-                   ByVal precio_parcial As Double,
-                   ByVal precio_total As Double)
-        gid_detalle = id_detalle
-        gid_atencion = id_atencion
-        gid_estudio = id_estudio
-        gid_convenio = id_convenio
-        gid_campania = id_campania
-        gprecio_parcial = precio_parcial
-        'gprecio_total = precio_total -----COLUMNA ELIMINADA-----
-    End Sub
 
     Public Sub New(ByVal id_detalle As Integer,
                    ByVal id_atencion As Integer,
-                   ByVal id_estudio As Integer,
-                   ByVal precio_parcial As Double,
-                   ByVal precio_total As Double)
+                   ByVal id_entidad As Integer,
+                   ByVal precio_parcial As Double)
         gid_detalle = id_detalle
         gid_atencion = id_atencion
-        gid_estudio = id_estudio
+        gid_entidad = id_entidad
         gprecio_parcial = precio_parcial
         'gprecio_total = precio_total -----COLUMNA ELIMINADA-----
     End Sub

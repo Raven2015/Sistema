@@ -2,6 +2,7 @@
 Public Class fcliente
 
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
+    Dim BD As New SqlConnection(My.Settings.Conexion)
 
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
 
@@ -38,12 +39,13 @@ Public Class fcliente
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
+            cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
             cmd.Parameters.AddWithValue("@nombres", dts.gnombres)
             cmd.Parameters.AddWithValue("@apellidos", dts.gapellidos)
             cmd.Parameters.AddWithValue("@fecha_nacimiento", dts.gfecha_nacimiento)
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@codigo_asegurado", dts.gcodigo_asegurado)
-            cmd.Parameters.AddWithValue("@institucion", dts.ginstitucion)
+            cmd.Parameters.AddWithValue("@id_institucion", dts.gid_institucion)
             cmd.Parameters.AddWithValue("@razon_social", dts.grazon_social)
             cmd.Parameters.AddWithValue("@nit", dts.gnit)
             cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
@@ -77,7 +79,7 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@fecha_nacimiento", dts.gfecha_nacimiento)
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@codigo_asegurado", dts.gcodigo_asegurado)
-            cmd.Parameters.AddWithValue("@institucion", dts.ginstitucion)
+            cmd.Parameters.AddWithValue("@institucion", dts.gid_institucion)
             cmd.Parameters.AddWithValue("@razon_social", dts.grazon_social)
             cmd.Parameters.AddWithValue("@nit", dts.gnit)
             cmd.Parameters.AddWithValue("@telefono", dts.gtelefono)
@@ -115,4 +117,26 @@ Public Class fcliente
             Return False
         End Try
     End Function
+
+
+    'Metodo Nuevo que permite crear una instancia en blanco de cliente. Solo con el ID_CLIENTE
+    Public Function generar_cliente() As Integer
+        Try
+            BD.Open()
+            cmd = New SqlCommand("generar_cliente", BD)
+            Dim param As New SqlParameter("@id_cliente", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                BD.Close()
+                Return .Parameters("@id_cliente").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo crear el cliente: RAZON>> " + ex.Message)
+            Return 0
+        End Try
+    End Function
+
 End Class

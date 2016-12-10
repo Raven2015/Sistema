@@ -3,6 +3,7 @@ Public Class fAtencion
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
 
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
+    Dim bd As New SqlConnection(My.Settings.Conexion)
 
     Public Function mostrar() As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
         Try
@@ -100,4 +101,25 @@ Public Class fAtencion
             Return False
         End Try
     End Function
+
+    'Metodo Nuevo que permite crear una instancia en blanco de Atencion. Solo con el ID_ATENCION
+    Public Function generar_atencion() As Integer
+        Try
+            bd.Open()
+            cmd = New SqlCommand("generar_atencion", bd)
+            Dim param As New SqlParameter("@id_atencion", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                bd.Close()
+                Return .Parameters("@id_atencion").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo crear la Atencion: RAZON>> " + ex.Message)
+            Return 0
+        End Try
+    End Function
+
 End Class

@@ -64,7 +64,7 @@
     End Sub
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        frmReportePacientes.ShowDialog()
+        'frmReportePacientes.ShowDialog()
     End Sub
 
 
@@ -101,6 +101,7 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        cbCampo.SelectedIndex = "0"
         buscar()
     End Sub
 
@@ -144,6 +145,7 @@
         cbSexo.Text = ""
         tbTelefono.Text = ""
         dtpFechaNacimiento.Text = DateTime.Today
+
     End Sub
 
     '------------------ Funciones del Data Grid View ------------------
@@ -162,21 +164,26 @@
         'En caso de errror verificar el tipo de seleccion en el Data Grid Vuiew del modo Gráfico
         'Seleccionar: FullRowSelect
         'En Read Only: True
+        limpiar()
+        Try
+            tbIDCliente.Text = dgvListado.SelectedCells.Item(1).Value
+            tbNombres.Text = dgvListado.SelectedCells.Item(2).Value
+            tbApellidos.Text = dgvListado.SelectedCells.Item(3).Value
+            tbDireccion.Text = dgvListado.SelectedCells.Item(6).Value
+            tbCelular.Text = dgvListado.SelectedCells.Item(8).Value
+            tbTelefono.Text = dgvListado.SelectedCells.Item(7).Value
+            cbSexo.Text = dgvListado.SelectedCells.Item(9).Value
+            dtpFechaNacimiento.Text = dgvListado.SelectedCells.Item(5).Value
+            tbCodigoAsegurado.Text = dgvListado.SelectedCells.Item(10).Value
+            tbInstitucion.Text = dgvListado.SelectedCells.Item(11).Value
+            tbRazonSocial.Text = dgvListado.SelectedCells.Item(12).Value
+            tbNIT.Text = dgvListado.SelectedCells.Item(13).Value
+            tbCI.Text = dgvListado.SelectedCells.Item(4).Value
+            tbEdad.Text = DateTime.Now.Date.Year - Convert.ToDateTime(dgvListado.SelectedCells.Item(5).Value).Year
+        Catch ex As Exception
+            MsgBox("Seleccione una fila con contenido por favor")
+        End Try
 
-        tbIDCliente.Text = dgvListado.SelectedCells.Item(1).Value
-        tbNombres.Text = dgvListado.SelectedCells.Item(2).Value
-        tbApellidos.Text = dgvListado.SelectedCells.Item(3).Value
-        tbDireccion.Text = dgvListado.SelectedCells.Item(6).Value
-        tbCelular.Text = dgvListado.SelectedCells.Item(8).Value
-        tbTelefono.Text = dgvListado.SelectedCells.Item(7).Value
-        cbSexo.Text = dgvListado.SelectedCells.Item(9).Value
-        dtpFechaNacimiento.Text = dgvListado.SelectedCells.Item(5).Value
-        tbCodigoAsegurado.Text = dgvListado.SelectedCells.Item(10).Value
-        tbInstitucion.Text = dgvListado.SelectedCells.Item(11).Value
-        tbRazonSocial.Text = dgvListado.SelectedCells.Item(12).Value
-        tbNIT.Text = dgvListado.SelectedCells.Item(13).Value
-        tbCI.Text = dgvListado.SelectedCells.Item(4).Value
-        tbEdad.Text = DateTime.Now.Date.Year - Convert.ToDateTime(dgvListado.SelectedCells.Item(5).Value).Year
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -198,4 +205,5 @@
             chkcell.Value = Not chkcell.Value
         End If
     End Sub
+
 End Class

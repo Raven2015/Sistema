@@ -92,6 +92,7 @@
     End Sub
 
     Private Sub limpiar()
+        tbIDAtencion.Text = "" 'Borrar el textBox del ID Atencion para que no existan errores
         tbIDCliente.Text = ""
         tbNombres.Text = ""
         tbApellidos.Text = ""
@@ -132,7 +133,7 @@
             tbCI.Text = dgvListado.SelectedCells.Item(5).Value
             tbTelefono.Text = dgvListado.SelectedCells.Item(8).Value
             tbDireccion.Text = dgvListado.SelectedCells.Item(7).Value
-            tbEdad.Text = DateTime.Now.Date.Year - Convert.ToDateTime(dgvListado.SelectedCells.Item(6).Value).Year
+            tbEdad.Text = Date.Now.Date.Year - Convert.ToDateTime(dgvListado.SelectedCells.Item(6).Value).Year
             tbSexo.Text = dgvListado.SelectedCells.Item(10).Value
             tbFechaNacimiento.Text = dgvListado.SelectedCells.Item(6).Value
             tbCelular.Text = dgvListado.SelectedCells.Item(9).Value
@@ -166,4 +167,30 @@
         End If
     End Sub
 
+    Private Sub AñadirEstudiosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AñadirEstudiosToolStripMenuItem.Click
+        dlgSeleccionarEstudio.ShowDialog()
+    End Sub
+
+    Private Sub btnVerLista_Click(sender As Object, e As EventArgs) Handles btnVerLista.Click
+        'dgvListado.Visible = True
+        btnVerLista.Visible = False
+        lblBuscar.Visible = True
+        cbCampo.Visible = True
+        tbBuscar.Visible = True
+        chbxEliminar.Visible = True
+        btnActualizar.Visible = True
+        dgvListado.Visible = True
+        btnOcultarLista.Visible = True
+    End Sub
+
+    Private Sub btnOcultarLista_Click(sender As Object, e As EventArgs) Handles btnOcultarLista.Click
+        btnVerLista.Visible = True
+        lblBuscar.Visible = False
+        cbCampo.Visible = False
+        tbBuscar.Visible = False
+        chbxEliminar.Visible = False
+        btnActualizar.Visible = False
+        dgvListado.Visible = False
+        btnOcultarLista.Visible = False
+    End Sub
 End Class

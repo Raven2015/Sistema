@@ -14,4 +14,12 @@
     Private Sub btnAtencion_Click(sender As Object, e As EventArgs) Handles btnAtencion.Click
         frmAtencion.ShowDialog()
     End Sub
+
+    Private Sub btnLista_Click(sender As Object, e As EventArgs) Handles btnLista.Click
+        frmListaPrecios.ShowDialog()
+    End Sub
+
+    Private Sub btnCentral_Click(sender As Object, e As EventArgs) Handles btnCentral.Click
+        frmCentral.ShowDialog()
+    End Sub
 End Class

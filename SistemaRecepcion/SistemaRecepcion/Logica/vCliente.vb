@@ -6,7 +6,7 @@
     Dim fecha_nacimiento As Date
     Dim direccion As String
     Dim codigo_asegurado As String
-    Dim institucion As String
+    Dim id_institucion As Integer
     Dim razon_social As String
     Dim nit As String
     Dim telefono As String
@@ -70,12 +70,12 @@
         End Set
     End Property
 
-    Public Property ginstitucion
+    Public Property gid_institucion
         Get
-            Return institucion
+            Return id_institucion
         End Get
         Set(value)
-            institucion = value
+            id_institucion = value
         End Set
     End Property
 
@@ -139,14 +139,14 @@
 
     End Sub
 
-    Public Sub New(ByVal id_cliente As Integer, ByVal nombres As String, ByVal apellidos As String, ByVal fecha_nacimento As Date, ByVal direccion As String, ByVal codigo_asegurado As String, ByVal institucion As String, ByVal razon_social As String, ByVal nit As String, ByVal telefono As String, ByVal celular As String, ByVal sexo As String, ByVal ci As String)
+    Public Sub New(ByVal id_cliente As Integer, ByVal nombres As String, ByVal apellidos As String, ByVal fecha_nacimento As Date, ByVal direccion As String, ByVal codigo_asegurado As String, ByVal id_institucion As String, ByVal razon_social As String, ByVal nit As String, ByVal telefono As String, ByVal celular As String, ByVal sexo As String, ByVal ci As String)
         gid_cliente = id_cliente
         gnombres = nombres
         gapellidos = apellidos
         gfecha_nacimiento = fecha_nacimento
         gdireccion = direccion
         gcodigo_asegurado = codigo_asegurado
-        ginstitucion = institucion
+        gid_institucion = id_institucion
         grazon_social = razon_social
         gnit = nit
         gtelefono = telefono

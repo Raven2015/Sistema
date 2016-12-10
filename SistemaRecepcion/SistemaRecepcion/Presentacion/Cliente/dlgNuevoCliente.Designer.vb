@@ -54,6 +54,7 @@ Partial Class dlgNuevoCliente
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.tbIDCliente = New System.Windows.Forms.TextBox()
         Me.gbPaciente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -338,11 +339,19 @@ Partial Class dlgNuevoCliente
         '
         Me.errorIcono.ContainerControl = Me
         '
+        'tbIDCliente
+        '
+        Me.tbIDCliente.Location = New System.Drawing.Point(440, 340)
+        Me.tbIDCliente.Name = "tbIDCliente"
+        Me.tbIDCliente.Size = New System.Drawing.Size(84, 20)
+        Me.tbIDCliente.TabIndex = 20
+        '
         'dlgNuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 361)
+        Me.Controls.Add(Me.tbIDCliente)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
@@ -356,6 +365,7 @@ Partial Class dlgNuevoCliente
         Me.GroupBox1.PerformLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -390,4 +400,5 @@ Partial Class dlgNuevoCliente
     Friend WithEvents btnCancelar As Button
     Friend WithEvents cbSexo As ComboBox
     Friend WithEvents errorIcono As ErrorProvider
+    Friend WithEvents tbIDCliente As TextBox
 End Class
