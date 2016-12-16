@@ -37,12 +37,12 @@ Partial Class frmCategoria
         Me.gbEstudio = New System.Windows.Forms.GroupBox()
         Me.tbCodigoCategoria = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.gbListadoPaciente.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEstudio.SuspendLayout()
@@ -86,13 +86,13 @@ Partial Class frmCategoria
         '
         'cbCampo
         '
+        Me.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCampo.FormattingEnabled = True
         Me.cbCampo.Items.AddRange(New Object() {"nombre_categoria", "codigo_categoria"})
         Me.cbCampo.Location = New System.Drawing.Point(54, 35)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(142, 21)
         Me.cbCampo.TabIndex = 32
-        Me.cbCampo.Text = "codigo_categoria"
         '
         'Label2
         '
@@ -187,23 +187,6 @@ Partial Class frmCategoria
         Me.MenuStrip1.TabIndex = 28
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'tbIDCategoria
-        '
-        Me.tbIDCategoria.Location = New System.Drawing.Point(368, 128)
-        Me.tbIDCategoria.Name = "tbIDCategoria"
-        Me.tbIDCategoria.Size = New System.Drawing.Size(99, 20)
-        Me.tbIDCategoria.TabIndex = 4
-        Me.tbIDCategoria.Visible = False
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(287, 61)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 35
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
-        '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_1
@@ -231,6 +214,23 @@ Partial Class frmCategoria
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'tbIDCategoria
+        '
+        Me.tbIDCategoria.Location = New System.Drawing.Point(368, 128)
+        Me.tbIDCategoria.Name = "tbIDCategoria"
+        Me.tbIDCategoria.Size = New System.Drawing.Size(99, 20)
+        Me.tbIDCategoria.TabIndex = 4
+        Me.tbIDCategoria.Visible = False
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(287, 61)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 35
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'frmCategoria
         '

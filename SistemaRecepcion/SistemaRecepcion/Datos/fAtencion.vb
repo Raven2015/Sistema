@@ -31,18 +31,59 @@ Public Class fAtencion
         End Try
     End Function
 
-    Public Function insertar(ByVal dts As vAtencion) As Boolean
+    Public Function insertarOpcional(ByVal dts As vAtencion) As Boolean
         Try
             conectado()
             cmd = New SqlCommand("insertar_atencion")
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
+            cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
+            cmd.Parameters.AddWithValue("@medico_remitente", dts.gdoctor_remitente)
+            cmd.Parameters.AddWithValue("@fecha_atencion", dts.gfecha)
             cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
-            cmd.Parameters.AddWithValue("@fecha", dts.gfecha)
-            cmd.Parameters.AddWithValue("@doctor_remitente", dts.gdoctor_remitente)
-            cmd.Parameters.AddWithValue("@tipo_documento", dts.gtipo_documento)
-            cmd.Parameters.AddWithValue("@numero_documento", dts.gnumero_documento)
+            cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
+    End Function
+
+    Public Sub insertar(ByVal dts As vAtencion)
+        bd.Open()
+        cmd = New SqlCommand("insertar_atencion", bd)
+        cmd.CommandType = CommandType.StoredProcedure
+        With cmd.Parameters
+            .AddWithValue("@id_atencion", dts.gid_atencion)
+            .AddWithValue("@medico_remitente", dts.gdoctor_remitente)
+            .AddWithValue("@fecha_atencion", dts.gfecha)
+            .AddWithValue("@id_cliente", dts.gid_cliente)
+            .AddWithValue("@precio_parcial", dts.gprecio_parcial)
+        End With
+        cmd.ExecuteNonQuery()
+        bd.Close()
+    End Sub
+
+    Public Function editarTODO(ByVal dts As vAtencion) As Boolean
+        Try
+            conectado()
+            cmd = New SqlCommand("editar_atencion")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = cnn
+
+            cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
+            cmd.Parameters.AddWithValue("@medico_remitente", dts.gdoctor_remitente)
+            cmd.Parameters.AddWithValue("@fecha_atencion", dts.gfecha)
+            cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
+            cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -65,11 +106,7 @@ Public Class fAtencion
             cmd.Connection = cnn
 
             cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
-            cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
-            cmd.Parameters.AddWithValue("@fecha", dts.gfecha)
-            cmd.Parameters.AddWithValue("@doctor_remitente", dts.gdoctor_remitente)
-            cmd.Parameters.AddWithValue("@tipo_documento", dts.gtipo_documento)
-            cmd.Parameters.AddWithValue("@numero_documento", dts.gnumero_documento)
+            cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
 
             If cmd.ExecuteNonQuery Then
                 Return True

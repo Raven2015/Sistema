@@ -6,6 +6,7 @@ Public Class dlgNuevaCategoria
     '-------------- Metodo principal del formulario --------------
     Private Sub dlgNuevaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpiar()
+        generar_categoria()
     End Sub
 
     '-------------- Botones de Interfaz --------------
@@ -21,6 +22,7 @@ Public Class dlgNuevaCategoria
                 Dim dts As New vCategoria
                 Dim func As New fCategoria
 
+                dts.gid_categoria = tbIDCategoria.Text
                 dts.gnombre_categoria = tbNombres.Text
                 dts.gcodigo_categoria = tbCodigoCategoria.Text
 
@@ -36,6 +38,17 @@ Public Class dlgNuevaCategoria
         Else
             MessageBox.Show("Datos faltantes. Llene todos los campos marcados por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Public Sub generar_categoria()
+        Try
+            Dim dts As New vCategoria
+            Dim func As New fCategoria
+            tbIDCategoria.Text = Format(func.generar_categoria, "000")
+            Debug.Write("Categoria Generada OK :)")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -65,5 +78,7 @@ Public Class dlgNuevaCategoria
         tbCodigoCategoria.Text = ""
         tbNombres.Text = ""
     End Sub
+
+
 
 End Class

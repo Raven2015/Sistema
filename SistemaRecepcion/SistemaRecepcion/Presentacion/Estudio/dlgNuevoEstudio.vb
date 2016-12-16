@@ -3,6 +3,7 @@
 Public Class dlgNuevoEstudio
     Private Sub dlgNuevoEstudio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpiar()
+        generar_estudio()
     End Sub
 
     '-------------- Botones de Interfaz --------------
@@ -13,16 +14,15 @@ Public Class dlgNuevoEstudio
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If Me.ValidateChildren = True And tbIDCategoria.Text <> "" And tbNombres.Text <> "" And tbCodigoEstudio.Text <> "" And tbPrecio.Text <> "" Then
+        If Me.ValidateChildren = True And tbIDCategoria.Text <> "" And tbNombres.Text <> "" And tbCodigoEstudio.Text <> "" Then
             Try
                 Dim dts As New vEstudio
                 Dim func As New fEstudio
 
+                dts.gid_estudio = tbIDEstudio.Text
                 dts.gid_categoria = tbIDCategoria.Text
                 dts.gcodigo_estudio = tbCodigoEstudio.Text
                 dts.gnombre_estudio = tbNombres.Text
-                dts.gprecio = tbPrecio.Text
-                dts.gdescuento = tbDescuento.Text
 
                 If func.insertar(dts) Then
                     MessageBox.Show("Estudio registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -36,6 +36,17 @@ Public Class dlgNuevoEstudio
         Else
             MessageBox.Show("Datos faltantes. Llene todos los campos marcados por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Public Sub generar_estudio()
+        Try
+            Dim dts As New vEstudio
+            Dim func As New fEstudio
+            tbIDEstudio.Text = Format(func.generar_estudio, "000")
+            Debug.Write("Estudio Generado OK :)")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 
@@ -93,23 +104,6 @@ Public Class dlgNuevoEstudio
             Me.errorIcono.SetError(sender, "Ingrese un nombre de estudio por favor, Este dato es obligatorio")
         End If
     End Sub
-    Private Sub tbPrecio_Validating(sender As Object, e As CancelEventArgs) Handles tbPrecio.Validating
-        'Permite validar que se seleccione por lo menos uno de los valores del checkBox Sexo para evitar datos nulos.
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese un valor valido en precio por favor, Este dato es obligatorio")
-        End If
-    End Sub
-
-    Private Sub tbDescuento_Validating(sender As Object, e As CancelEventArgs) Handles tbDescuento.Validating
-        'Permite validar que el campo CI no este vacio
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese el numero de carnet del cliente por favor, Este dato es obligatorio")
-        End If
-    End Sub
 
 
     '-------------- Metodos Internos --------------
@@ -121,8 +115,6 @@ Public Class dlgNuevoEstudio
         tbCategoria.Text = ""
         tbCodigoEstudio.Text = ""
         tbNombres.Text = ""
-        tbPrecio.Text = "0"
-        tbDescuento.Text = "0"
     End Sub
 
     Private Sub btnSeleccionarCategoria_Click(sender As Object, e As EventArgs) Handles btnSeleccionarCategoria.Click

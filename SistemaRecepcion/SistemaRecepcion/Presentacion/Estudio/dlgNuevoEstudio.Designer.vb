@@ -34,14 +34,11 @@ Partial Class dlgNuevoEstudio
         Me.gbEstudio = New System.Windows.Forms.GroupBox()
         Me.tbCodigoEstudio = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.tbDescuento = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.tbPrecio = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.tbIDCategoria = New System.Windows.Forms.TextBox()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.tbIDEstudio = New System.Windows.Forms.TextBox()
         Me.grbDatosCategoria.SuspendLayout()
         Me.gbEstudio.SuspendLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +46,7 @@ Partial Class dlgNuevoEstudio
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(247, 224)
+        Me.btnCancelar.Location = New System.Drawing.Point(247, 177)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 21
@@ -58,7 +55,7 @@ Partial Class dlgNuevoEstudio
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(74, 224)
+        Me.btnGuardar.Location = New System.Drawing.Point(74, 177)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 20
@@ -126,15 +123,11 @@ Partial Class dlgNuevoEstudio
         '
         Me.gbEstudio.Controls.Add(Me.tbCodigoEstudio)
         Me.gbEstudio.Controls.Add(Me.Label5)
-        Me.gbEstudio.Controls.Add(Me.Label15)
-        Me.gbEstudio.Controls.Add(Me.tbDescuento)
-        Me.gbEstudio.Controls.Add(Me.Label10)
-        Me.gbEstudio.Controls.Add(Me.tbPrecio)
         Me.gbEstudio.Controls.Add(Me.Label3)
         Me.gbEstudio.Controls.Add(Me.tbNombres)
         Me.gbEstudio.Location = New System.Drawing.Point(7, 89)
         Me.gbEstudio.Name = "gbEstudio"
-        Me.gbEstudio.Size = New System.Drawing.Size(398, 128)
+        Me.gbEstudio.Size = New System.Drawing.Size(398, 82)
         Me.gbEstudio.TabIndex = 30
         Me.gbEstudio.TabStop = False
         Me.gbEstudio.Text = "Datos de Estudio"
@@ -155,40 +148,6 @@ Partial Class dlgNuevoEstudio
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "Código Estudio"
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(18, 104)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(59, 13)
-        Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Descuento"
-        '
-        'tbDescuento
-        '
-        Me.tbDescuento.Location = New System.Drawing.Point(112, 101)
-        Me.tbDescuento.Name = "tbDescuento"
-        Me.tbDescuento.Size = New System.Drawing.Size(268, 20)
-        Me.tbDescuento.TabIndex = 18
-        Me.tbDescuento.Text = "0"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 78)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 13)
-        Me.Label10.TabIndex = 17
-        Me.Label10.Text = "Precio"
-        '
-        'tbPrecio
-        '
-        Me.tbPrecio.Location = New System.Drawing.Point(112, 75)
-        Me.tbPrecio.Name = "tbPrecio"
-        Me.tbPrecio.Size = New System.Drawing.Size(268, 20)
-        Me.tbPrecio.TabIndex = 16
-        Me.tbPrecio.Text = "0"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -207,22 +166,30 @@ Partial Class dlgNuevoEstudio
         '
         'tbIDCategoria
         '
-        Me.tbIDCategoria.Location = New System.Drawing.Point(346, 224)
+        Me.tbIDCategoria.Location = New System.Drawing.Point(346, 177)
         Me.tbIDCategoria.Name = "tbIDCategoria"
         Me.tbIDCategoria.ReadOnly = True
         Me.tbIDCategoria.Size = New System.Drawing.Size(59, 20)
         Me.tbIDCategoria.TabIndex = 30
-        Me.tbIDCategoria.Visible = False
         '
         'errorIcono
         '
         Me.errorIcono.ContainerControl = Me
         '
+        'tbIDEstudio
+        '
+        Me.tbIDEstudio.Location = New System.Drawing.Point(7, 180)
+        Me.tbIDEstudio.Name = "tbIDEstudio"
+        Me.tbIDEstudio.ReadOnly = True
+        Me.tbIDEstudio.Size = New System.Drawing.Size(59, 20)
+        Me.tbIDEstudio.TabIndex = 31
+        '
         'dlgNuevoEstudio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(411, 253)
+        Me.ClientSize = New System.Drawing.Size(411, 205)
+        Me.Controls.Add(Me.tbIDEstudio)
         Me.Controls.Add(Me.tbIDCategoria)
         Me.Controls.Add(Me.gbEstudio)
         Me.Controls.Add(Me.grbDatosCategoria)
@@ -252,12 +219,9 @@ Partial Class dlgNuevoEstudio
     Friend WithEvents gbEstudio As GroupBox
     Friend WithEvents tbCodigoEstudio As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents tbDescuento As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents tbPrecio As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbNombres As TextBox
     Friend WithEvents tbIDCategoria As TextBox
     Friend WithEvents errorIcono As ErrorProvider
+    Friend WithEvents tbIDEstudio As TextBox
 End Class

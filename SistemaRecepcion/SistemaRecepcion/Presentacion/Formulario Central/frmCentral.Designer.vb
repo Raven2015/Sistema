@@ -23,10 +23,21 @@ Partial Class frmCentral
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbFechaEstudioVP = New System.Windows.Forms.TextBox()
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.dgvListadoAtenciones = New System.Windows.Forms.DataGridView()
+        Me.id_entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_pecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -60,7 +71,7 @@ Partial Class frmCentral
         Me.tbNombresVP = New System.Windows.Forms.TextBox()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.pnListaEstudios = New System.Windows.Forms.Panel()
         Me.grbDatosCategoria = New System.Windows.Forms.GroupBox()
         Me.tbCategoria = New System.Windows.Forms.TextBox()
         Me.lbCategoria = New System.Windows.Forms.Label()
@@ -85,11 +96,11 @@ Partial Class frmCentral
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.tbIDEstudio = New System.Windows.Forms.TextBox()
         Me.grbxSeleccionEstudio = New System.Windows.Forms.GroupBox()
-        Me.btnEliminarEstudios = New System.Windows.Forms.Button()
         Me.btnInsertarEstudios = New System.Windows.Forms.Button()
         Me.tbIDEstudio2 = New System.Windows.Forms.TextBox()
         Me.lbEstudio = New System.Windows.Forms.Label()
         Me.grbxDatosAtencion = New System.Windows.Forms.GroupBox()
+        Me.btnDatosAtencion = New System.Windows.Forms.Button()
         Me.dtpFechaAtencion = New System.Windows.Forms.DateTimePicker()
         Me.lbMedicoRemit = New System.Windows.Forms.Label()
         Me.tbMedicoRemitente = New System.Windows.Forms.TextBox()
@@ -124,21 +135,11 @@ Partial Class frmCentral
         Me.lbNombreCliente = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.id_entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_pecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.grbxVIstaPrevia.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.pnListaEstudios.SuspendLayout()
         Me.grbDatosCategoria.SuspendLayout()
         Me.gbEstudio.SuspendLayout()
         Me.gbListadoEstudios.SuspendLayout()
@@ -214,11 +215,32 @@ Partial Class frmCentral
         Me.grbxVIstaPrevia.TabStop = False
         Me.grbxVIstaPrevia.Text = "*"
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.print
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnImprimir.FlatAppearance.BorderSize = 0
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimir.Location = New System.Drawing.Point(327, 544)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(60, 60)
+        Me.btnImprimir.TabIndex = 60
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'dgvListadoAtenciones
         '
         Me.dgvListadoAtenciones.BackgroundColor = System.Drawing.Color.White
         Me.dgvListadoAtenciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListadoAtenciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entidad, Me.id_estudio, Me.id_pecio, Me.entidad, Me.codigo_categoria, Me.nombre_categoria, Me.codigo_estudio, Me.estudio, Me.precio})
         Me.dgvListadoAtenciones.Location = New System.Drawing.Point(9, 241)
@@ -228,6 +250,63 @@ Partial Class frmCentral
         Me.dgvListadoAtenciones.Size = New System.Drawing.Size(384, 296)
         Me.dgvListadoAtenciones.TabIndex = 59
         '
+        'id_entidad
+        '
+        Me.id_entidad.HeaderText = "id_entidad"
+        Me.id_entidad.Name = "id_entidad"
+        Me.id_entidad.ReadOnly = True
+        Me.id_entidad.Visible = False
+        '
+        'id_estudio
+        '
+        Me.id_estudio.HeaderText = "id_estudio"
+        Me.id_estudio.Name = "id_estudio"
+        Me.id_estudio.ReadOnly = True
+        Me.id_estudio.Visible = False
+        '
+        'id_pecio
+        '
+        Me.id_pecio.HeaderText = "id_pecio"
+        Me.id_pecio.Name = "id_pecio"
+        Me.id_pecio.ReadOnly = True
+        Me.id_pecio.Visible = False
+        '
+        'entidad
+        '
+        Me.entidad.HeaderText = "ENTIDAD"
+        Me.entidad.Name = "entidad"
+        Me.entidad.ReadOnly = True
+        '
+        'codigo_categoria
+        '
+        Me.codigo_categoria.HeaderText = "CODIGO CATEGORIA"
+        Me.codigo_categoria.Name = "codigo_categoria"
+        Me.codigo_categoria.ReadOnly = True
+        '
+        'nombre_categoria
+        '
+        Me.nombre_categoria.HeaderText = "NOMBRE CATEGORIA"
+        Me.nombre_categoria.Name = "nombre_categoria"
+        Me.nombre_categoria.ReadOnly = True
+        '
+        'codigo_estudio
+        '
+        Me.codigo_estudio.HeaderText = "CODIGO ESTUDIO"
+        Me.codigo_estudio.Name = "codigo_estudio"
+        Me.codigo_estudio.ReadOnly = True
+        '
+        'estudio
+        '
+        Me.estudio.HeaderText = "ESTUDIO"
+        Me.estudio.Name = "estudio"
+        Me.estudio.ReadOnly = True
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "PRECIO"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
         'Label39
         '
         Me.Label39.AutoSize = True
@@ -236,6 +315,7 @@ Partial Class frmCentral
         Me.Label39.Size = New System.Drawing.Size(56, 13)
         Me.Label39.TabIndex = 58
         Me.Label39.Text = "id_entidad"
+        Me.Label39.Visible = False
         '
         'Label38
         '
@@ -245,6 +325,7 @@ Partial Class frmCentral
         Me.Label38.Size = New System.Drawing.Size(62, 13)
         Me.Label38.TabIndex = 57
         Me.Label38.Text = "id_atencion"
+        Me.Label38.Visible = False
         '
         'Label37
         '
@@ -254,6 +335,7 @@ Partial Class frmCentral
         Me.Label37.Size = New System.Drawing.Size(52, 13)
         Me.Label37.TabIndex = 56
         Me.Label37.Text = "id_cliente"
+        Me.Label37.Visible = False
         '
         'Label33
         '
@@ -263,6 +345,7 @@ Partial Class frmCentral
         Me.Label33.Size = New System.Drawing.Size(52, 13)
         Me.Label33.TabIndex = 23
         Me.Label33.Text = "id_detalle"
+        Me.Label33.Visible = False
         '
         'tbIDEntidad
         '
@@ -271,6 +354,7 @@ Partial Class frmCentral
         Me.tbIDEntidad.Name = "tbIDEntidad"
         Me.tbIDEntidad.Size = New System.Drawing.Size(62, 23)
         Me.tbIDEntidad.TabIndex = 55
+        Me.tbIDEntidad.Visible = False
         '
         'tbIDAtencion
         '
@@ -280,6 +364,7 @@ Partial Class frmCentral
         Me.tbIDAtencion.Name = "tbIDAtencion"
         Me.tbIDAtencion.Size = New System.Drawing.Size(62, 23)
         Me.tbIDAtencion.TabIndex = 54
+        Me.tbIDAtencion.Visible = False
         '
         'tbIDCliente
         '
@@ -288,6 +373,7 @@ Partial Class frmCentral
         Me.tbIDCliente.Name = "tbIDCliente"
         Me.tbIDCliente.Size = New System.Drawing.Size(62, 23)
         Me.tbIDCliente.TabIndex = 21
+        Me.tbIDCliente.Visible = False
         '
         'tbIDDetalle
         '
@@ -297,6 +383,7 @@ Partial Class frmCentral
         Me.tbIDDetalle.Name = "tbIDDetalle"
         Me.tbIDDetalle.Size = New System.Drawing.Size(62, 23)
         Me.tbIDDetalle.TabIndex = 53
+        Me.tbIDDetalle.Visible = False
         '
         'tbPrecioParcial
         '
@@ -304,8 +391,10 @@ Partial Class frmCentral
         Me.tbPrecioParcial.Location = New System.Drawing.Point(87, 544)
         Me.tbPrecioParcial.MaxLength = 8
         Me.tbPrecioParcial.Name = "tbPrecioParcial"
+        Me.tbPrecioParcial.ReadOnly = True
         Me.tbPrecioParcial.Size = New System.Drawing.Size(131, 23)
         Me.tbPrecioParcial.TabIndex = 52
+        Me.tbPrecioParcial.Text = "0"
         '
         'Label36
         '
@@ -548,7 +637,7 @@ Partial Class frmCentral
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.pnListaEstudios)
         Me.Panel1.Controls.Add(Me.grbxSeleccionEstudio)
         Me.Panel1.Controls.Add(Me.grbxDatosAtencion)
         Me.Panel1.Controls.Add(Me.grbxDatosFactura)
@@ -559,19 +648,20 @@ Partial Class frmCentral
         Me.Panel1.Size = New System.Drawing.Size(699, 661)
         Me.Panel1.TabIndex = 4
         '
-        'Panel3
+        'pnListaEstudios
         '
-        Me.Panel3.BackColor = System.Drawing.Color.LightGray
-        Me.Panel3.Controls.Add(Me.grbDatosCategoria)
-        Me.Panel3.Controls.Add(Me.gbEstudio)
-        Me.Panel3.Controls.Add(Me.cbCampo)
-        Me.Panel3.Controls.Add(Me.Label35)
-        Me.Panel3.Controls.Add(Me.tbBuscar)
-        Me.Panel3.Controls.Add(Me.gbListadoEstudios)
-        Me.Panel3.Location = New System.Drawing.Point(8, 314)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(681, 344)
-        Me.Panel3.TabIndex = 34
+        Me.pnListaEstudios.BackColor = System.Drawing.Color.LightGray
+        Me.pnListaEstudios.Controls.Add(Me.grbDatosCategoria)
+        Me.pnListaEstudios.Controls.Add(Me.gbEstudio)
+        Me.pnListaEstudios.Controls.Add(Me.cbCampo)
+        Me.pnListaEstudios.Controls.Add(Me.Label35)
+        Me.pnListaEstudios.Controls.Add(Me.tbBuscar)
+        Me.pnListaEstudios.Controls.Add(Me.gbListadoEstudios)
+        Me.pnListaEstudios.Location = New System.Drawing.Point(8, 314)
+        Me.pnListaEstudios.Name = "pnListaEstudios"
+        Me.pnListaEstudios.Size = New System.Drawing.Size(681, 344)
+        Me.pnListaEstudios.TabIndex = 34
+        Me.pnListaEstudios.Visible = False
         '
         'grbDatosCategoria
         '
@@ -797,7 +887,6 @@ Partial Class frmCentral
         '
         'grbxSeleccionEstudio
         '
-        Me.grbxSeleccionEstudio.Controls.Add(Me.btnEliminarEstudios)
         Me.grbxSeleccionEstudio.Controls.Add(Me.btnInsertarEstudios)
         Me.grbxSeleccionEstudio.Controls.Add(Me.tbIDEstudio2)
         Me.grbxSeleccionEstudio.Controls.Add(Me.lbEstudio)
@@ -810,23 +899,13 @@ Partial Class frmCentral
         Me.grbxSeleccionEstudio.TabStop = False
         Me.grbxSeleccionEstudio.Text = "SELECCIONAR ESTUDIOS"
         '
-        'btnEliminarEstudios
-        '
-        Me.btnEliminarEstudios.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarEstudios.Location = New System.Drawing.Point(489, 11)
-        Me.btnEliminarEstudios.Name = "btnEliminarEstudios"
-        Me.btnEliminarEstudios.Size = New System.Drawing.Size(80, 38)
-        Me.btnEliminarEstudios.TabIndex = 56
-        Me.btnEliminarEstudios.Text = "Eliminar  Estudios"
-        Me.btnEliminarEstudios.UseVisualStyleBackColor = True
-        '
         'btnInsertarEstudios
         '
         Me.btnInsertarEstudios.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInsertarEstudios.Location = New System.Drawing.Point(586, 10)
         Me.btnInsertarEstudios.Name = "btnInsertarEstudios"
         Me.btnInsertarEstudios.Size = New System.Drawing.Size(80, 38)
-        Me.btnInsertarEstudios.TabIndex = 13
+        Me.btnInsertarEstudios.TabIndex = 0
         Me.btnInsertarEstudios.Text = "Insertar Estudios"
         Me.btnInsertarEstudios.UseVisualStyleBackColor = True
         '
@@ -852,6 +931,7 @@ Partial Class frmCentral
         '
         'grbxDatosAtencion
         '
+        Me.grbxDatosAtencion.Controls.Add(Me.btnDatosAtencion)
         Me.grbxDatosAtencion.Controls.Add(Me.dtpFechaAtencion)
         Me.grbxDatosAtencion.Controls.Add(Me.lbMedicoRemit)
         Me.grbxDatosAtencion.Controls.Add(Me.tbMedicoRemitente)
@@ -864,6 +944,16 @@ Partial Class frmCentral
         Me.grbxDatosAtencion.TabIndex = 32
         Me.grbxDatosAtencion.TabStop = False
         Me.grbxDatosAtencion.Text = "DATOS DE ATENCION"
+        '
+        'btnDatosAtencion
+        '
+        Me.btnDatosAtencion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDatosAtencion.Location = New System.Drawing.Point(0, 0)
+        Me.btnDatosAtencion.Name = "btnDatosAtencion"
+        Me.btnDatosAtencion.Size = New System.Drawing.Size(320, 83)
+        Me.btnDatosAtencion.TabIndex = 0
+        Me.btnDatosAtencion.Text = "DATOS DE ATENCIÓN"
+        Me.btnDatosAtencion.UseVisualStyleBackColor = True
         '
         'dtpFechaAtencion
         '
@@ -931,7 +1021,7 @@ Partial Class frmCentral
         Me.tbNIT.MaxLength = 20
         Me.tbNIT.Name = "tbNIT"
         Me.tbNIT.Size = New System.Drawing.Size(177, 23)
-        Me.tbNIT.TabIndex = 19
+        Me.tbNIT.TabIndex = 3
         '
         'tbRazonSocial
         '
@@ -940,7 +1030,7 @@ Partial Class frmCentral
         Me.tbRazonSocial.MaxLength = 100
         Me.tbRazonSocial.Name = "tbRazonSocial"
         Me.tbRazonSocial.Size = New System.Drawing.Size(177, 23)
-        Me.tbRazonSocial.TabIndex = 18
+        Me.tbRazonSocial.TabIndex = 2
         '
         'tbInstitucion
         '
@@ -949,7 +1039,7 @@ Partial Class frmCentral
         Me.tbInstitucion.MaxLength = 50
         Me.tbInstitucion.Name = "tbInstitucion"
         Me.tbInstitucion.Size = New System.Drawing.Size(177, 23)
-        Me.tbInstitucion.TabIndex = 17
+        Me.tbInstitucion.TabIndex = 1
         '
         'tbCodigoAsegurado
         '
@@ -958,7 +1048,7 @@ Partial Class frmCentral
         Me.tbCodigoAsegurado.MaxLength = 50
         Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
         Me.tbCodigoAsegurado.Size = New System.Drawing.Size(177, 23)
-        Me.tbCodigoAsegurado.TabIndex = 16
+        Me.tbCodigoAsegurado.TabIndex = 0
         '
         'lbNit
         '
@@ -986,7 +1076,7 @@ Partial Class frmCentral
         '
         Me.lbInstitucion.AutoSize = True
         Me.lbInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInstitucion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lbInstitucion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lbInstitucion.Location = New System.Drawing.Point(7, 56)
         Me.lbInstitucion.Name = "lbInstitucion"
         Me.lbInstitucion.Size = New System.Drawing.Size(64, 15)
@@ -1050,7 +1140,7 @@ Partial Class frmCentral
         Me.tbci.Location = New System.Drawing.Point(123, 143)
         Me.tbci.Name = "tbci"
         Me.tbci.Size = New System.Drawing.Size(216, 23)
-        Me.tbci.TabIndex = 18
+        Me.tbci.TabIndex = 4
         '
         'dtpFechaNacimiento
         '
@@ -1059,7 +1149,7 @@ Partial Class frmCentral
         Me.dtpFechaNacimiento.Location = New System.Drawing.Point(139, 85)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(200, 23)
-        Me.dtpFechaNacimiento.TabIndex = 17
+        Me.dtpFechaNacimiento.TabIndex = 2
         '
         'cbSexo
         '
@@ -1071,7 +1161,7 @@ Partial Class frmCentral
         Me.cbSexo.Location = New System.Drawing.Point(248, 170)
         Me.cbSexo.Name = "cbSexo"
         Me.cbSexo.Size = New System.Drawing.Size(91, 23)
-        Me.cbSexo.TabIndex = 16
+        Me.cbSexo.TabIndex = 5
         '
         'tbCelular
         '
@@ -1080,7 +1170,7 @@ Partial Class frmCentral
         Me.tbCelular.MaxLength = 8
         Me.tbCelular.Name = "tbCelular"
         Me.tbCelular.Size = New System.Drawing.Size(91, 23)
-        Me.tbCelular.TabIndex = 15
+        Me.tbCelular.TabIndex = 7
         '
         'tbTelefono
         '
@@ -1089,7 +1179,7 @@ Partial Class frmCentral
         Me.tbTelefono.MaxLength = 9
         Me.tbTelefono.Name = "tbTelefono"
         Me.tbTelefono.Size = New System.Drawing.Size(91, 23)
-        Me.tbTelefono.TabIndex = 14
+        Me.tbTelefono.TabIndex = 6
         '
         'tbEdad
         '
@@ -1099,7 +1189,7 @@ Partial Class frmCentral
         Me.tbEdad.Name = "tbEdad"
         Me.tbEdad.ReadOnly = True
         Me.tbEdad.Size = New System.Drawing.Size(91, 23)
-        Me.tbEdad.TabIndex = 12
+        Me.tbEdad.TabIndex = 20
         '
         'tbDireccion
         '
@@ -1107,7 +1197,7 @@ Partial Class frmCentral
         Me.tbDireccion.Location = New System.Drawing.Point(123, 114)
         Me.tbDireccion.Name = "tbDireccion"
         Me.tbDireccion.Size = New System.Drawing.Size(216, 23)
-        Me.tbDireccion.TabIndex = 11
+        Me.tbDireccion.TabIndex = 3
         '
         'tbApellidos
         '
@@ -1116,7 +1206,7 @@ Partial Class frmCentral
         Me.tbApellidos.MaxLength = 50
         Me.tbApellidos.Name = "tbApellidos"
         Me.tbApellidos.Size = New System.Drawing.Size(216, 23)
-        Me.tbApellidos.TabIndex = 9
+        Me.tbApellidos.TabIndex = 1
         '
         'tbNombres
         '
@@ -1125,7 +1215,7 @@ Partial Class frmCentral
         Me.tbNombres.MaxLength = 50
         Me.tbNombres.Name = "tbNombres"
         Me.tbNombres.Size = New System.Drawing.Size(216, 23)
-        Me.tbNombres.TabIndex = 8
+        Me.tbNombres.TabIndex = 0
         '
         'lbCelular
         '
@@ -1225,76 +1315,6 @@ Partial Class frmCentral
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
         Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
         '
-        'id_entidad
-        '
-        Me.id_entidad.HeaderText = "id_entidad"
-        Me.id_entidad.Name = "id_entidad"
-        Me.id_entidad.ReadOnly = True
-        Me.id_entidad.Visible = False
-        '
-        'id_estudio
-        '
-        Me.id_estudio.HeaderText = "id_estudio"
-        Me.id_estudio.Name = "id_estudio"
-        Me.id_estudio.ReadOnly = True
-        Me.id_estudio.Visible = False
-        '
-        'id_pecio
-        '
-        Me.id_pecio.HeaderText = "id_pecio"
-        Me.id_pecio.Name = "id_pecio"
-        Me.id_pecio.ReadOnly = True
-        Me.id_pecio.Visible = False
-        '
-        'entidad
-        '
-        Me.entidad.HeaderText = "ENTIDAD"
-        Me.entidad.Name = "entidad"
-        Me.entidad.ReadOnly = True
-        '
-        'codigo_categoria
-        '
-        Me.codigo_categoria.HeaderText = "CODIGO CATEGORIA"
-        Me.codigo_categoria.Name = "codigo_categoria"
-        Me.codigo_categoria.ReadOnly = True
-        '
-        'nombre_categoria
-        '
-        Me.nombre_categoria.HeaderText = "NOMBRE CATEGORIA"
-        Me.nombre_categoria.Name = "nombre_categoria"
-        Me.nombre_categoria.ReadOnly = True
-        '
-        'codigo_estudio
-        '
-        Me.codigo_estudio.HeaderText = "CODIGO ESTUDIO"
-        Me.codigo_estudio.Name = "codigo_estudio"
-        Me.codigo_estudio.ReadOnly = True
-        '
-        'estudio
-        '
-        Me.estudio.HeaderText = "ESTUDIO"
-        Me.estudio.Name = "estudio"
-        Me.estudio.ReadOnly = True
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "PRECIO"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.print
-        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnImprimir.FlatAppearance.BorderSize = 0
-        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimir.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Location = New System.Drawing.Point(327, 544)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(60, 60)
-        Me.btnImprimir.TabIndex = 60
-        Me.btnImprimir.UseVisualStyleBackColor = True
-        '
         'frmCentral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1309,8 +1329,8 @@ Partial Class frmCentral
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.pnListaEstudios.ResumeLayout(False)
+        Me.pnListaEstudios.PerformLayout()
         Me.grbDatosCategoria.ResumeLayout(False)
         Me.grbDatosCategoria.PerformLayout()
         Me.gbEstudio.ResumeLayout(False)
@@ -1355,7 +1375,7 @@ Partial Class frmCentral
     Friend WithEvents errorIcono As ErrorProvider
     Friend WithEvents Label31 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents pnListaEstudios As Panel
     Friend WithEvents grbxSeleccionEstudio As GroupBox
     Friend WithEvents btnInsertarEstudios As Button
     Friend WithEvents tbIDEstudio2 As TextBox
@@ -1419,7 +1439,6 @@ Partial Class frmCentral
     Friend WithEvents tbIDEstudio As TextBox
     Friend WithEvents tbPrecioParcial As TextBox
     Friend WithEvents Label36 As Label
-    Friend WithEvents btnEliminarEstudios As Button
     Friend WithEvents Label39 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Label37 As Label
@@ -1440,4 +1459,5 @@ Partial Class frmCentral
     Friend WithEvents estudio As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents btnDatosAtencion As Button
 End Class

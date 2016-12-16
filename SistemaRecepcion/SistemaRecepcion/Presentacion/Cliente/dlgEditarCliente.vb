@@ -33,7 +33,7 @@ Public Class dlgEditarCliente
                     dts.gfecha_nacimiento = dtpFechaNacimiento.Value
                     dts.gdireccion = tbDireccion.Text
                     dts.gcodigo_asegurado = tbCodigoAsegurado.Text
-                    dts.gid_institucion = tbInstitucion.Text
+                    dts.ginstitucion = tbInstitucion.Text
                     dts.grazon_social = tbRazonSocial.Text
                     dts.gnit = tbNIT.Text
                     dts.gtelefono = tbTelefono.Text

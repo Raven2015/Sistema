@@ -2,6 +2,7 @@
 Public Class fEstudio
 
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
+    Dim bd As New SqlConnection(My.Settings.Conexion)
 
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
 
@@ -39,11 +40,11 @@ Public Class fEstudio
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
-            cmd.Parameters.AddWithValue("@nombre_estudio", dts.gnombre_estudio)
+            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_estudio)
+            cmd.Parameters.AddWithValue("@estudio", dts.gnombre_estudio)
             cmd.Parameters.AddWithValue("@id_categoria", dts.gid_categoria)
-            cmd.Parameters.AddWithValue("@precio", dts.gprecio)
             cmd.Parameters.AddWithValue("@codigo_estudio", dts.gcodigo_estudio)
-            cmd.Parameters.AddWithValue("@descuento", dts.gdescuento)
+
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -66,11 +67,9 @@ Public Class fEstudio
             cmd.Connection = cnn
 
             cmd.Parameters.AddWithValue("@id_estudio", dts.gid_estudio)
-            cmd.Parameters.AddWithValue("@nombre_estudio", dts.gnombre_estudio)
+            cmd.Parameters.AddWithValue("@estudio", dts.gnombre_estudio)
             cmd.Parameters.AddWithValue("@id_categoria", dts.gid_categoria)
-            cmd.Parameters.AddWithValue("@precio", dts.gprecio)
             cmd.Parameters.AddWithValue("@codigo_estudio", dts.gcodigo_estudio)
-            cmd.Parameters.AddWithValue("@descuento", dts.gdescuento)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -100,6 +99,25 @@ Public Class fEstudio
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
+        End Try
+    End Function
+
+    Public Function generar_estudio() As Integer
+        Try
+            bd.Open()
+            cmd = New SqlCommand("generar_estudio", bd)
+            Dim param As New SqlParameter("@id_estudio", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                bd.Close()
+                Return .Parameters("@id_estudio").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo crear el estudio: RAZON>> " + ex.Message)
+            Return 0
         End Try
     End Function
 End Class

@@ -86,6 +86,7 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        cbCampo.SelectedIndex = 0
         buscar()
     End Sub
 

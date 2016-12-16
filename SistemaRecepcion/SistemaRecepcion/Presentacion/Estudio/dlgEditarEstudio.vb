@@ -14,7 +14,7 @@ Public Class dlgEditarEstudio
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If Me.ValidateChildren = True And tbIDCategoria.Text <> "" And tbNombres.Text <> "" And tbCodigoEstudio.Text <> "" And tbPrecio.Text <> "" Then
+        If Me.ValidateChildren = True And tbIDCategoria.Text <> "" And tbNombres.Text <> "" And tbCodigoEstudio.Text <> "" Then
             Try
                 Dim dts As New vEstudio
                 Dim func As New fEstudio
@@ -23,8 +23,6 @@ Public Class dlgEditarEstudio
                 dts.gid_categoria = tbIDCategoria.Text
                 dts.gcodigo_estudio = tbCodigoEstudio.Text
                 dts.gnombre_estudio = tbNombres.Text
-                dts.gprecio = tbPrecio.Text
-                dts.gdescuento = tbDescuento.Text
 
                 If func.editar(dts) Then
                     MessageBox.Show("Estudio modificado correctamente", "Modificando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -95,7 +93,7 @@ Public Class dlgEditarEstudio
             Me.errorIcono.SetError(sender, "Ingrese un nombre de estudio por favor, Este dato es obligatorio")
         End If
     End Sub
-    Private Sub tbPrecio_Validating(sender As Object, e As CancelEventArgs) Handles tbPrecio.Validating
+    Private Sub tbPrecio_Validating(sender As Object, e As CancelEventArgs) 
         'Permite validar que se seleccione por lo menos uno de los valores del checkBox Sexo para evitar datos nulos.
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.errorIcono.SetError(sender, "")
@@ -104,7 +102,7 @@ Public Class dlgEditarEstudio
         End If
     End Sub
 
-    Private Sub tbDescuento_Validating(sender As Object, e As CancelEventArgs) Handles tbDescuento.Validating
+    Private Sub tbDescuento_Validating(sender As Object, e As CancelEventArgs) 
         'Permite validar que el campo CI no este vacio
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.errorIcono.SetError(sender, "")
@@ -123,8 +121,6 @@ Public Class dlgEditarEstudio
         tbCategoria.Text = ""
         tbCodigoEstudio.Text = ""
         tbNombres.Text = ""
-        tbPrecio.Text = "0"
-        tbDescuento.Text = "0"
     End Sub
 
     Private Sub btnSeleccionarCategoria_Click(sender As Object, e As EventArgs) Handles btnSeleccionarCategoria.Click

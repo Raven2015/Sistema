@@ -2,12 +2,17 @@
 
 Public Class frmCentral
     Dim precio_reporte As Integer = 0
+    Dim idAtencionActual As Integer = 0
+    Dim idClienteActual As Integer = 0
+    Dim indicadorAtencion As Integer = 0
+    Dim idDetalleActual As Integer = 0
 
     Private Sub frmCentral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpiar()
         generar_cliente()
         generar_atencion()
         generar_detalle()
+
         mostrar()
     End Sub
 
@@ -25,6 +30,7 @@ Public Class frmCentral
             Dim dts As New vCliente
             Dim func As New fcliente
             tbIDCliente.Text = Format(func.generar_cliente, "")
+            Debug.Write("Cliente Generado OK :)")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -35,6 +41,7 @@ Public Class frmCentral
             Dim dts As New vAtencion
             Dim funcA As New fAtencion
             tbIDAtencion.Text = Format(funcA.generar_atencion, "")
+            Debug.Write("Atencion Generada OK :)")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -45,6 +52,7 @@ Public Class frmCentral
             Dim dts As New vDetalleAtencion
             Dim funcD As New fDetalle
             tbIDDetalle.Text = Format(funcD.generar_detalle, "")
+            Debug.Write("Detalle Generado OK :)")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -71,13 +79,14 @@ Public Class frmCentral
                 Dim dts As New vCliente
                 Dim func As New fcliente
 
-                dts.gid_cliente = Integer.Parse(tbIDCliente.Text)
+                'dts.gid_cliente = Integer.Parse(tbIDCliente.Text)
+                dts.gid_cliente = idClienteActual
                 dts.gnombres = tbNombres.Text
                 dts.gapellidos = tbApellidos.Text
                 dts.gfecha_nacimiento = dtpFechaNacimiento.Value
                 dts.gdireccion = tbDireccion.Text
                 dts.gcodigo_asegurado = tbCodigoAsegurado.Text
-                dts.gid_institucion = Integer.Parse(tbInstitucion.Text)
+                dts.ginstitucion = tbInstitucion.Text
                 dts.grazon_social = tbRazonSocial.Text
                 dts.gnit = tbNIT.Text
                 dts.gtelefono = tbTelefono.Text
@@ -86,8 +95,9 @@ Public Class frmCentral
                 dts.gci = tbci.Text
 
                 If func.insertar(dts) Then
-                    MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.Close()
+                    'MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Debug.Write("Registro de paciente OK :)")
+
                 Else
                     MessageBox.Show("El paciente no pudo ser registrado. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -115,6 +125,7 @@ Public Class frmCentral
         tbNIT.Text = ""
         cbSexo.Text = ""
         dtpFechaNacimiento.Text = DateTime.Today
+        Debug.Write("Limpieza OK :)")
     End Sub
 
     Public Function fecha_nacimiento(ByVal fecha As Date) As Integer
@@ -327,6 +338,9 @@ Public Class frmCentral
         Next
 
         tbPrecioParcial.Text = precio_parcial()
+
+        insertar_detalle()
+        editar_Atencion()
     End Sub
 
 
@@ -357,15 +371,40 @@ Public Class frmCentral
             Dim func As New fAtencion
 
             dts.gid_atencion = Integer.Parse(tbIDAtencion.Text)
+            dts.gid_cliente = idClienteActual
             dts.gdoctor_remitente = tbMedicoRemitente.Text
             dts.gfecha = dtpFechaAtencion.Text
+            dts.gprecio_parcial = tbPrecioParcial.Text
 
-            If func.insertar(dts) Then
-                MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Close()
+
+            'If func.insertar(dts) Then
+            '    MessageBox.Show("Atencion registrada correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '    Me.Close()
+            'Else
+            '    MessageBox.Show("la Atencion no pudo ser registrada. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'End If
+
+            func.insertar(dts)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub editar_Atencion()
+        Try
+            Dim dts As New vAtencion
+            Dim func As New fAtencion
+
+            dts.gid_atencion = idAtencionActual
+            dts.gprecio_parcial = tbPrecioParcial.Text
+
+            If func.editar(dts) Then
+                'MessageBox.Show("Atencion editada correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Debug.Write("Atencion actualizada :)")
             Else
-                MessageBox.Show("El paciente no pudo ser registrado. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("la Atencion no pudo ser editada. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -396,14 +435,48 @@ Public Class frmCentral
 
     End Sub
 
+    Public Sub insertar_detalle()
+        Try
+            Dim dts As New vDetalleAtencion
+            Dim func As New fDetalle
+
+            'idDetalleActual = tbIDDetalle.Text
+            dts.gid_detalle = tbIDDetalle.Text
+
+            dts.gid_atencion = tbIDAtencion.Text
+            dts.gid_entidad = tbIDEntidad.Text
+
+
+            If func.insertar(dts) Then
+                'MessageBox.Show("Estudio añadido correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Debug.Write("Estudio adherido correctamente :)")
+            Else
+                MessageBox.Show("El estudio no pudo ser añadido. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        generar_detalle()
+    End Sub
+
+
+
 
     '$$$$$$$$$$$$$$$$$$$$$$$    BOTON INSERTAR ESTUDIOS    $$$$$$$$$$$$$$$$$$$$$$$
     Private Sub btnInsertarEstudios_Click(sender As Object, e As EventArgs) Handles btnInsertarEstudios.Click
-        insertarCliente()
-        insertarAtencion()
-        limpiar()
-        limpiarEstudios()
-        limpiar_atencion()
+        'insertarCliente()
+        Try
+            insertarAtencion() 'Cuando se presiona el boton INSERTAR ESTUDIOS, se envian los datos del estudio y el precio que se encuentra en el tb precio = 0
+            idAtencionActual = Integer.Parse(tbIDAtencion.Text)
+            Debug.Write("Valor de IDAtencion >> " & idAtencionActual)
+        Catch ex As Exception
+            MsgBox("Ups. Algo anda mal :/")
+        End Try
+        pnListaEstudios.Visible = True
+        'insertar_detalle()
+        'limpiar()
+        'limpiarEstudios()
+        'limpiar_atencion()
     End Sub
 
     '$$$$$$$$$$$$$$$$$$$$$$$    CAMBIOS AUTOMATICOS EN LA INTERFAZ    $$$$$$$$$$$$$$$$$$$$$$$
@@ -435,7 +508,6 @@ Public Class frmCentral
         tbCelularVP.Text = tbCelular.Text
     End Sub
 
-
     Private Sub tbMedicoRemitente_TextChanged(sender As Object, e As EventArgs) Handles tbMedicoRemitente.TextChanged
         tbMedicoRemitenteVP.Text = tbMedicoRemitente.Text
     End Sub
@@ -448,6 +520,36 @@ Public Class frmCentral
         tbFechaEstudioVP.Text = dtpFechaAtencion.Text
     End Sub
 
+
+    '-------------------Boton IMPRIMIR-----------------------
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        'editar_Atencion() 'Cuando el usuario presione el boton imprimir se guardan los datos de la atencion.
+        Debug.Write("Valor de IDAtencion>> " & idAtencionActual)
+        Prueba.tbIDAtencion.Text = idAtencionActual
+        'POSTERIORMENTE SE LLAMA A LA CLASE frmREPORTE PARA IMPRIMIR EL REPORTE DE ATENCION
+        Prueba.ShowDialog()
+    End Sub
+
+    'Cuando el tbMedico Remitente entra en foco, se envian automaticamente los datos del cliente.
+    'Si falta algun dato obligatorio, se lanza un mensaje de alerta para que rellene todos los campos.
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
+        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And tbDireccion.Text <> "" And cbSexo.Text <> "" Then
+            Try
+                idClienteActual = Integer.Parse(tbIDCliente.Text)
+                insertarCliente()
+            Catch ex As Exception
+                MsgBox("Por favor llene los campos marcados como obligatorios.")
+            End Try
+        End If
+        generar_cliente()
+        btnDatosAtencion.Visible = False
+    End Sub
 
 End Class
 

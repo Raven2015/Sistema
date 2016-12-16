@@ -37,16 +37,16 @@ Public Class fDetalle
     Public Function insertar(ByVal dts As vDetalleAtencion) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("insertar_detalle_atencion")
+            cmd = New SqlCommand("insertar_detalle")
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
             cmd.Parameters.AddWithValue("@id_detalle", dts.gid_detalle)
             cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
-            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_entidad)
+            cmd.Parameters.AddWithValue("@id_entidad", dts.gid_entidad)
             'cmd.Parameters.AddWithValue("@id_convenio", dts.gid_convenio)
             'cmd.Parameters.AddWithValue("@gid_campania", dts.gid_campania)
-            cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
+            'cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)   '----MODIFICADO - CAMPO MOVIDO A LA CLASE ATENCION----
             'cmd.Parameters.AddWithValue("@precio_total", dts.gprecio_total) ELIMINADO
 
             If cmd.ExecuteNonQuery Then
@@ -74,7 +74,7 @@ Public Class fDetalle
             cmd.Parameters.AddWithValue("@id_estudio", dts.gid_entidad)
             'cmd.Parameters.AddWithValue("@id_convenio", dts.gid_convenio)
             'cmd.Parameters.AddWithValue("@gid_campania", dts.gid_campania)
-            cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
+            'cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
             'cmd.Parameters.AddWithValue("@precio_total", dts.gprecio_total)  ELIMINADO
 
             If cmd.ExecuteNonQuery Then
@@ -110,7 +110,6 @@ Public Class fDetalle
 
 
     Public Function generar_detalle() As Integer
-
         Try
             bd.Open()
             cmd = New SqlCommand("generar_detalle", bd)

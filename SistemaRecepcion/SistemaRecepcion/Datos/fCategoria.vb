@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class fCategoria
+
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
+    Dim bd As New SqlConnection(My.Settings.Conexion)
 
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
 
@@ -65,7 +67,8 @@ Public Class fCategoria
             cmd = New SqlCommand("insertar_categoria")
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
-            
+
+            cmd.Parameters.AddWithValue("@id_categoria", dts.gid_categoria)
             cmd.Parameters.AddWithValue("@nombre_categoria", dts.gnombre_categoria)
             cmd.Parameters.AddWithValue("@codigo_categoria", dts.gcodigo_categoria)
 
@@ -123,4 +126,24 @@ Public Class fCategoria
             Return False
         End Try
     End Function
+
+    Public Function generar_categoria() As Integer
+        Try
+            bd.Open()
+            cmd = New SqlCommand("generar_categoria", bd)
+            Dim param As New SqlParameter("@id_categoria", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                bd.Close()
+                Return .Parameters("@id_categoria").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo crear la categoria: RAZON>> " + ex.Message)
+            Return 0
+        End Try
+    End Function
+
 End Class

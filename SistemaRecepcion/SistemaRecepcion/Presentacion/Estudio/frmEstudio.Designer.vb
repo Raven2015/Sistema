@@ -34,10 +34,6 @@ Partial Class frmEstudio
         Me.gbEstudio = New System.Windows.Forms.GroupBox()
         Me.tbCodigoEstudio = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.tbDescuento = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.tbPrecio = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNombres = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -80,7 +76,7 @@ Partial Class frmEstudio
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(343, 182)
+        Me.dgvListado.Size = New System.Drawing.Size(408, 182)
         Me.dgvListado.TabIndex = 0
         '
         'Eliminar
@@ -101,13 +97,13 @@ Partial Class frmEstudio
         '
         'cbCampo
         '
+        Me.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCampo.FormattingEnabled = True
-        Me.cbCampo.Items.AddRange(New Object() {"codigo_categoria", "nombre_categoria", "nombre_estudio", "codigo_estudio"})
+        Me.cbCampo.Items.AddRange(New Object() {"codigo_categoria", "nombre_categoria", "estudio", "codigo_estudio"})
         Me.cbCampo.Location = New System.Drawing.Point(54, 39)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(142, 21)
         Me.cbCampo.TabIndex = 21
-        Me.cbCampo.Text = "nombre_estudio"
         '
         'Label2
         '
@@ -122,7 +118,7 @@ Partial Class frmEstudio
         '
         Me.tbBuscar.Location = New System.Drawing.Point(202, 39)
         Me.tbBuscar.Name = "tbBuscar"
-        Me.tbBuscar.Size = New System.Drawing.Size(160, 20)
+        Me.tbBuscar.Size = New System.Drawing.Size(219, 20)
         Me.tbBuscar.TabIndex = 19
         '
         'Label1
@@ -139,24 +135,20 @@ Partial Class frmEstudio
         Me.gbListadoPaciente.Controls.Add(Me.dgvListado)
         Me.gbListadoPaciente.Location = New System.Drawing.Point(7, 92)
         Me.gbListadoPaciente.Name = "gbListadoPaciente"
-        Me.gbListadoPaciente.Size = New System.Drawing.Size(355, 207)
+        Me.gbListadoPaciente.Size = New System.Drawing.Size(420, 207)
         Me.gbListadoPaciente.TabIndex = 16
         Me.gbListadoPaciente.TabStop = False
-        Me.gbListadoPaciente.Text = "Listado de Pacientes"
+        Me.gbListadoPaciente.Text = "Listado de Estudios"
         '
         'gbEstudio
         '
         Me.gbEstudio.Controls.Add(Me.tbCodigoEstudio)
         Me.gbEstudio.Controls.Add(Me.Label5)
-        Me.gbEstudio.Controls.Add(Me.Label15)
-        Me.gbEstudio.Controls.Add(Me.tbDescuento)
-        Me.gbEstudio.Controls.Add(Me.Label10)
-        Me.gbEstudio.Controls.Add(Me.tbPrecio)
         Me.gbEstudio.Controls.Add(Me.Label3)
         Me.gbEstudio.Controls.Add(Me.tbNombres)
-        Me.gbEstudio.Location = New System.Drawing.Point(368, 138)
+        Me.gbEstudio.Location = New System.Drawing.Point(433, 138)
         Me.gbEstudio.Name = "gbEstudio"
-        Me.gbEstudio.Size = New System.Drawing.Size(389, 135)
+        Me.gbEstudio.Size = New System.Drawing.Size(324, 135)
         Me.gbEstudio.TabIndex = 26
         Me.gbEstudio.TabStop = False
         Me.gbEstudio.Text = "Datos de Estudio"
@@ -166,7 +158,7 @@ Partial Class frmEstudio
         Me.tbCodigoEstudio.Location = New System.Drawing.Point(112, 27)
         Me.tbCodigoEstudio.Name = "tbCodigoEstudio"
         Me.tbCodigoEstudio.ReadOnly = True
-        Me.tbCodigoEstudio.Size = New System.Drawing.Size(268, 20)
+        Me.tbCodigoEstudio.Size = New System.Drawing.Size(206, 20)
         Me.tbCodigoEstudio.TabIndex = 22
         '
         'Label5
@@ -177,42 +169,6 @@ Partial Class frmEstudio
         Me.Label5.Size = New System.Drawing.Size(78, 13)
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "Código Estudio"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(18, 109)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(59, 13)
-        Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Descuento"
-        '
-        'tbDescuento
-        '
-        Me.tbDescuento.Location = New System.Drawing.Point(112, 106)
-        Me.tbDescuento.Name = "tbDescuento"
-        Me.tbDescuento.ReadOnly = True
-        Me.tbDescuento.Size = New System.Drawing.Size(268, 20)
-        Me.tbDescuento.TabIndex = 18
-        Me.tbDescuento.Text = "0"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 83)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 13)
-        Me.Label10.TabIndex = 17
-        Me.Label10.Text = "Precio"
-        '
-        'tbPrecio
-        '
-        Me.tbPrecio.Location = New System.Drawing.Point(112, 80)
-        Me.tbPrecio.Name = "tbPrecio"
-        Me.tbPrecio.ReadOnly = True
-        Me.tbPrecio.Size = New System.Drawing.Size(268, 20)
-        Me.tbPrecio.TabIndex = 16
-        Me.tbPrecio.Text = "0"
         '
         'Label3
         '
@@ -226,9 +182,10 @@ Partial Class frmEstudio
         'tbNombres
         '
         Me.tbNombres.Location = New System.Drawing.Point(112, 53)
+        Me.tbNombres.Multiline = True
         Me.tbNombres.Name = "tbNombres"
         Me.tbNombres.ReadOnly = True
-        Me.tbNombres.Size = New System.Drawing.Size(268, 20)
+        Me.tbNombres.Size = New System.Drawing.Size(206, 76)
         Me.tbNombres.TabIndex = 0
         '
         'MenuStrip1
@@ -283,9 +240,9 @@ Partial Class frmEstudio
         Me.grbDatosCategoria.Controls.Add(Me.Label9)
         Me.grbDatosCategoria.Controls.Add(Me.tbCodigoCategoria)
         Me.grbDatosCategoria.Controls.Add(Me.Label4)
-        Me.grbDatosCategoria.Location = New System.Drawing.Point(369, 39)
+        Me.grbDatosCategoria.Location = New System.Drawing.Point(434, 39)
         Me.grbDatosCategoria.Name = "grbDatosCategoria"
-        Me.grbDatosCategoria.Size = New System.Drawing.Size(388, 88)
+        Me.grbDatosCategoria.Size = New System.Drawing.Size(323, 88)
         Me.grbDatosCategoria.TabIndex = 28
         Me.grbDatosCategoria.TabStop = False
         Me.grbDatosCategoria.Text = "Datos de Categoría"
@@ -295,7 +252,7 @@ Partial Class frmEstudio
         Me.tbCategoria.Location = New System.Drawing.Point(111, 57)
         Me.tbCategoria.Name = "tbCategoria"
         Me.tbCategoria.ReadOnly = True
-        Me.tbCategoria.Size = New System.Drawing.Size(268, 20)
+        Me.tbCategoria.Size = New System.Drawing.Size(206, 20)
         Me.tbCategoria.TabIndex = 29
         '
         'Label9
@@ -312,7 +269,7 @@ Partial Class frmEstudio
         Me.tbCodigoCategoria.Location = New System.Drawing.Point(111, 29)
         Me.tbCodigoCategoria.Name = "tbCodigoCategoria"
         Me.tbCodigoCategoria.ReadOnly = True
-        Me.tbCodigoCategoria.Size = New System.Drawing.Size(268, 20)
+        Me.tbCodigoCategoria.Size = New System.Drawing.Size(206, 20)
         Me.tbCodigoCategoria.TabIndex = 26
         '
         'Label4
@@ -326,7 +283,7 @@ Partial Class frmEstudio
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(287, 63)
+        Me.btnActualizar.Location = New System.Drawing.Point(346, 63)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 29
@@ -336,7 +293,7 @@ Partial Class frmEstudio
         'tbIDCategoria
         '
         Me.tbIDCategoria.Enabled = False
-        Me.tbIDCategoria.Location = New System.Drawing.Point(369, 279)
+        Me.tbIDCategoria.Location = New System.Drawing.Point(433, 279)
         Me.tbIDCategoria.Name = "tbIDCategoria"
         Me.tbIDCategoria.Size = New System.Drawing.Size(100, 20)
         Me.tbIDCategoria.TabIndex = 30
@@ -385,10 +342,6 @@ Partial Class frmEstudio
     Friend WithEvents Label1 As Label
     Friend WithEvents gbListadoPaciente As GroupBox
     Friend WithEvents gbEstudio As GroupBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents tbDescuento As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents tbPrecio As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbNombres As TextBox
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem

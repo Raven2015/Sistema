@@ -20,8 +20,6 @@ Public Class frmEstudio
         dlgEditarEstudio.tbCategoria.Text = tbCategoria.Text
         dlgEditarEstudio.tbCodigoEstudio.Text = tbCodigoEstudio.Text
         dlgEditarEstudio.tbNombres.Text = tbNombres.Text
-        dlgEditarEstudio.tbPrecio.Text = tbPrecio.Text
-        dlgEditarEstudio.tbDescuento.Text = tbDescuento.Text
         dlgEditarEstudio.tbIDEstudio.Text = tbIDEstudio.Text
         dlgEditarEstudio.tbIDCategoria.Text = tbIDCategoria.Text
 
@@ -97,6 +95,7 @@ Public Class frmEstudio
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        cbCampo.SelectedIndex = 2 'SELECCIONA EL ITEM 3 DEL COMBO BOX
         buscar()
     End Sub
 
@@ -135,8 +134,6 @@ Public Class frmEstudio
         tbCategoria.Text = ""
         tbCodigoEstudio.Text = ""
         tbNombres.Text = ""
-        tbPrecio.Text = "0"
-        tbDescuento.Text = "0"
     End Sub
 
     '------------------ Funciones del Data Grid View ------------------
@@ -157,14 +154,12 @@ Public Class frmEstudio
         'En Read Only: True
         'Para corregir el problema de click en la última fila:
         Try
-            tbIDEstudio.Text = dgvListado.SelectedCells.Item(1).Value
+            tbIDCategoria.Text = dgvListado.SelectedCells.Item(1).Value
+            tbIDEstudio.Text = dgvListado.SelectedCells.Item(2).Value
             tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(3).Value
             tbCategoria.Text = dgvListado.SelectedCells.Item(4).Value
-            tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(6).Value
-            tbNombres.Text = dgvListado.SelectedCells.Item(5).Value
-            tbPrecio.Text = dgvListado.SelectedCells.Item(7).Value
-            tbDescuento.Text = dgvListado.SelectedCells.Item(8).Value
-            tbIDCategoria.Text = dgvListado.SelectedCells.Item(2).Value
+            tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(5).Value
+            tbNombres.Text = dgvListado.SelectedCells.Item(6).Value
 
         Catch ex As Exception
             MsgBox("Seleccione una fila con contenido por favor.")

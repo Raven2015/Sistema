@@ -51,6 +51,7 @@ Partial Class dlgNuevaAtencion
         Me.AñadirEstudiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarPacienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tbIDAtencion = New System.Windows.Forms.TextBox()
+        Me.tbPrecio = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gbPaciente.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -315,11 +316,19 @@ Partial Class dlgNuevaAtencion
         Me.tbIDAtencion.Size = New System.Drawing.Size(65, 20)
         Me.tbIDAtencion.TabIndex = 41
         '
+        'tbPrecio
+        '
+        Me.tbPrecio.Location = New System.Drawing.Point(235, 362)
+        Me.tbPrecio.Name = "tbPrecio"
+        Me.tbPrecio.Size = New System.Drawing.Size(115, 20)
+        Me.tbPrecio.TabIndex = 41
+        '
         'dlgNuevaAtencion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(350, 382)
+        Me.Controls.Add(Me.tbPrecio)
         Me.Controls.Add(Me.tbIDAtencion)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbPaciente)
@@ -367,4 +376,5 @@ Partial Class dlgNuevaAtencion
     Friend WithEvents cbSexo As ComboBox
     Friend WithEvents dtpFechaNacimiento As DateTimePicker
     Friend WithEvents tbIDAtencion As TextBox
+    Friend WithEvents tbPrecio As TextBox
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class vEstudio
     Dim id_estudio, id_categoria As Integer
     Dim nombre_estudio, codigo_estudio As String
-    Dim precio, descuento As Decimal
+    'Dim precio, descuento As Decimal
 
     Public Property gid_estudio
         Get
@@ -39,24 +39,6 @@
         End Set
     End Property
 
-    Public Property gprecio
-        Get
-            Return precio
-        End Get
-        Set(value)
-            precio = value
-        End Set
-    End Property
-
-    Public Property gdescuento
-        Get
-            Return descuento
-        End Get
-        Set(value)
-            descuento = value
-        End Set
-    End Property
-
     Public Sub New()
 
     End Sub
@@ -66,7 +48,5 @@
         gid_categoria = id_categoria
         gnombre_estudio = nombre_estudio
         gcodigo_estudio = codigo_estudio
-        gprecio = precio
-        gdescuento = descuento
     End Sub
 End Class

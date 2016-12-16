@@ -64,6 +64,15 @@ Namespace My
                 Return CType(Me("Conexion"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 114, 204")>  _
+        Public ReadOnly Property AzulElegante() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("AzulElegante"),Global.System.Drawing.Color)
+            End Get
+        End Property
     End Class
 End Namespace
 

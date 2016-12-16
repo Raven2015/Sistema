@@ -13,6 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -97,12 +97,24 @@
     <Compile Include="Datos\fDetalle.vb" />
     <Compile Include="Datos\fEntidad.vb" />
     <Compile Include="Datos\fEstudio.vb" />
+    <Compile Include="Datos\fPrecio.vb" />
+    <Compile Include="dbBIOMEDICADataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbBIOMEDICADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInicial.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInicial.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logica\vAtencion.vb" />
     <Compile Include="Logica\vCategoria.vb" />
     <Compile Include="Logica\vCliente.vb" />
     <Compile Include="Logica\vDetalleAtencion.vb" />
     <Compile Include="Logica\vEntidad.vb" />
     <Compile Include="Logica\vEstudio.vb" />
+    <Compile Include="Logica\vPrecio.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -190,6 +202,12 @@
     <Compile Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Entidad\frmEntidad.Designer.vb">
+      <DependentUpon>frmEntidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Entidad\frmEntidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Estudio\dlgEditarEstudio.Designer.vb">
       <DependentUpon>dlgEditarEstudio.vb</DependentUpon>
     </Compile>
@@ -232,6 +250,25 @@
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmComprobante.Designer.vb">
+      <DependentUpon>frmComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteAtencion.Designer.vb">
+      <DependentUpon>frmReporteAtencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteAtencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Prueba.Designer.vb">
+      <DependentUpon>Prueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -273,6 +310,9 @@
     <EmbeddedResource Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.resx">
       <DependentUpon>frmDetalleAtencion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Entidad\frmEntidad.resx">
+      <DependentUpon>frmEntidad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Estudio\dlgEditarEstudio.resx">
       <DependentUpon>dlgEditarEstudio.vb</DependentUpon>
     </EmbeddedResource>
@@ -294,8 +334,43 @@
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmComprobante.resx">
+      <DependentUpon>frmComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteAtencion.resx">
+      <DependentUpon>frmReporteAtencion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Prueba.resx">
+      <DependentUpon>Prueba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\rptPrueba.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCompAtencion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteAtencion.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="dbBIOMEDICADataSet.xsc">
+      <DependentUpon>dbBIOMEDICADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbBIOMEDICADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbBIOMEDICADataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbBIOMEDICADataSet.xss">
+      <DependentUpon>dbBIOMEDICADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dsInicial.xsc">
+      <DependentUpon>dsInicial.xsd</DependentUpon>
+    </None>
+    <None Include="dsInicial.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInicial.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsInicial.xss">
+      <DependentUpon>dsInicial.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -310,7 +385,6 @@
   <ItemGroup>
     <Folder Include="Presentacion\Campania\" />
     <Folder Include="Presentacion\Convenio\" />
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
@@ -389,6 +463,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,6 +31,7 @@ Partial Class dlgNuevaCategoria
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.tbIDCategoria = New System.Windows.Forms.TextBox()
         Me.gbEstudio.SuspendLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -102,22 +103,31 @@ Partial Class dlgNuevaCategoria
         '
         Me.errorIcono.ContainerControl = Me
         '
+        'tbIDCategoria
+        '
+        Me.tbIDCategoria.Location = New System.Drawing.Point(7, 104)
+        Me.tbIDCategoria.Name = "tbIDCategoria"
+        Me.tbIDCategoria.Size = New System.Drawing.Size(58, 20)
+        Me.tbIDCategoria.TabIndex = 4
+        '
         'dlgNuevaCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(404, 131)
+        Me.Controls.Add(Me.tbIDCategoria)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbEstudio)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "dlgNuevaCategoria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "dlgNuevaCategoria"
+        Me.Text = "Nueva Categoria"
         Me.gbEstudio.ResumeLayout(False)
         Me.gbEstudio.PerformLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -129,4 +139,5 @@ Partial Class dlgNuevaCategoria
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents errorIcono As ErrorProvider
+    Friend WithEvents tbIDCategoria As TextBox
 End Class

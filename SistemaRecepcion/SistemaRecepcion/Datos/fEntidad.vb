@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class fEntidad
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
+
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
+    Dim bd As New SqlConnection(My.Settings.Conexion)
 
 
     Public Function mostrar() As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
@@ -29,5 +31,88 @@ Public Class fEntidad
             desconectado() 'Cierra la conexion a la BD
         End Try
     End Function
+
+
+    Public Sub insertar(ByVal dts As vEntidad)
+        bd.Open()
+        cmd = New SqlCommand("insertar_entidad", bd)
+        cmd.CommandType = CommandType.StoredProcedure
+        With cmd.Parameters
+            .AddWithValue("@id_entidad", dts.gid_entidad)
+            .AddWithValue("@entidad", dts.gentidad)
+            .AddWithValue("@id_precio", dts.gid_precio)
+            .AddWithValue("@id_estudio", dts.gid_estudio)
+        End With
+        cmd.ExecuteNonQuery()
+        bd.Close()
+    End Sub
+
+
+    Public Function editar(ByVal dts As vEntidad) As Boolean
+        Try
+            conectado()
+            cmd = New SqlCommand("editar_entidad")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = cnn
+
+            cmd.Parameters.AddWithValue("@id_entidad", dts.gid_entidad)
+            cmd.Parameters.AddWithValue("@entidad", dts.gentidad)
+            cmd.Parameters.AddWithValue("@id_precio", dts.gid_precio)
+            cmd.Parameters.AddWithValue("@id_estudio", dts.gid_estudio)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
+    End Function
+
+
+
+    '--------------ENTIDAD------------
+    Public Function generar_entidad() As Integer
+        Try
+            bd.Open()
+            cmd = New SqlCommand("generar_entidad", bd)
+            Dim param As New SqlParameter("@id_entidad", SqlDbType.Int)
+            param.Direction = ParameterDirection.Output
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(param)
+                .ExecuteNonQuery()
+                bd.Close()
+                Return .Parameters("@id_entidad").Value
+            End With
+        Catch ex As Exception
+            MsgBox("No se pudo generar la Entidad: RAZON>> " + ex.Message)
+            Return 0
+        End Try
+    End Function
+
+    Public Function eliminar(ByVal dts As vEntidad)
+        Try
+            conectado()
+            cmd = New SqlCommand("eliminar_entidad")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = cnn
+            cmd.Parameters.Add("@id_entidad", SqlDbType.NVarChar, 50).Value = dts.gid_entidad
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+
 
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class vAtencion
     Dim id_atencion, id_cliente As Integer
     Dim fecha As Date
+    Dim precio_parcial As Double
     Dim doctor_remitente, tipo_documento, num_documento, descripcion As String
     Public Property gid_atencion
         Get
@@ -65,27 +66,51 @@
         End Set
     End Property
 
+    Public Property gprecio_parcial
+        Get
+            Return precio_parcial
+        End Get
+        Set(value)
+            precio_parcial = value
+        End Set
+    End Property
+
 
     '------------------ CONSTRUCTORES DE LA CLASE
     Public Sub New()
 
     End Sub
 
+    'Public Sub New(
+    '              ByVal id_atencion As Integer,
+    '              ByVal id_cliente As Integer,
+    '              ByVal fecha As Date,
+    '              ByVal doctor_remitente As String,
+    '              ByVal tipo_documento As String,
+    '              ByVal numero_documento As String,
+    '              ByVal descripcion As String)
+    '    gid_atencion = id_atencion
+    '    gid_cliente = id_cliente
+    '    gfecha = fecha
+    '    gdoctor_remitente = doctor_remitente
+    '    gtipo_documento = tipo_documento
+    '    gnumero_documento = numero_documento
+    '    gdescripcion = descripcion
+    'End Sub
+
     Public Sub New(
                   ByVal id_atencion As Integer,
                   ByVal id_cliente As Integer,
                   ByVal fecha As Date,
                   ByVal doctor_remitente As String,
-                  ByVal tipo_documento As String,
-                  ByVal numero_documento As String,
-                  ByVal descripcion As String)
+                  ByVal precio_parcial As String
+                  )
         gid_atencion = id_atencion
         gid_cliente = id_cliente
         gfecha = fecha
         gdoctor_remitente = doctor_remitente
-        gtipo_documento = tipo_documento
-        gnumero_documento = numero_documento
-        gdescripcion = descripcion
+        gprecio_parcial = precio_parcial
     End Sub
+
 
 End Class

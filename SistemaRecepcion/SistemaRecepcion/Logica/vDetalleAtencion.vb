@@ -1,6 +1,6 @@
 ﻿Public Class vDetalleAtencion
     Dim id_detalle, id_atencion, id_entidad As Integer
-    Dim precio_parcial As Double
+    'Dim precio_parcial As Double   '----MODIFICADO - CAMPO MOVIDO A LA CLASE ATENCION----
 
     Public Property gid_detalle
         Get
@@ -29,14 +29,14 @@
         End Set
     End Property
 
-    Public Property gprecio_parcial
-        Get
-            Return precio_parcial
-        End Get
-        Set(value)
-            precio_parcial = value
-        End Set
-    End Property
+    'Public Property gprecio_parcial
+    '    Get
+    '        Return precio_parcial
+    '    End Get
+    '    Set(value)
+    '        precio_parcial = value
+    '    End Set
+    'End Property
 
     'Public Property gprecio_total
     '    Get
@@ -57,12 +57,11 @@
 
     Public Sub New(ByVal id_detalle As Integer,
                    ByVal id_atencion As Integer,
-                   ByVal id_entidad As Integer,
-                   ByVal precio_parcial As Double)
+                   ByVal id_entidad As Integer)
         gid_detalle = id_detalle
         gid_atencion = id_atencion
         gid_entidad = id_entidad
-        gprecio_parcial = precio_parcial
+        'gprecio_parcial = precio_parcial
         'gprecio_total = precio_total -----COLUMNA ELIMINADA-----
     End Sub
 End Class
