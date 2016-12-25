@@ -6,8 +6,14 @@ Partial Class frmCentral
     <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
+            If disposing Then
+                If components IsNot Nothing Then
+                    components.Dispose()
+                End If
+                If dt IsNot Nothing Then
+                    dt.Dispose()
+                    dt = Nothing
+                End If
             End If
         Finally
             MyBase.Dispose(disposing)
@@ -23,7 +29,7 @@ Partial Class frmCentral
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbFechaEstudioVP = New System.Windows.Forms.TextBox()
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
@@ -32,12 +38,12 @@ Partial Class frmCentral
         Me.id_entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_pecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_detalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_atencion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -97,18 +103,22 @@ Partial Class frmCentral
         Me.tbIDEstudio = New System.Windows.Forms.TextBox()
         Me.grbxSeleccionEstudio = New System.Windows.Forms.GroupBox()
         Me.btnInsertarEstudios = New System.Windows.Forms.Button()
-        Me.tbIDEstudio2 = New System.Windows.Forms.TextBox()
+        Me.tbInstitucion = New System.Windows.Forms.TextBox()
         Me.lbEstudio = New System.Windows.Forms.Label()
         Me.grbxDatosAtencion = New System.Windows.Forms.GroupBox()
         Me.btnDatosAtencion = New System.Windows.Forms.Button()
+        Me.cbxMedicoDestinatario = New System.Windows.Forms.ComboBox()
+        Me.MedicoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsPreliminar = New SistemaRecepcion.dsPreliminar()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dtpFechaAtencion = New System.Windows.Forms.DateTimePicker()
         Me.lbMedicoRemit = New System.Windows.Forms.Label()
         Me.tbMedicoRemitente = New System.Windows.Forms.TextBox()
         Me.lbFechaEstudio = New System.Windows.Forms.Label()
         Me.grbxDatosFactura = New System.Windows.Forms.GroupBox()
+        Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
         Me.tbNIT = New System.Windows.Forms.TextBox()
         Me.tbRazonSocial = New System.Windows.Forms.TextBox()
-        Me.tbInstitucion = New System.Windows.Forms.TextBox()
         Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
         Me.lbNit = New System.Windows.Forms.Label()
         Me.lbRazonSocial = New System.Windows.Forms.Label()
@@ -135,6 +145,7 @@ Partial Class frmCentral
         Me.lbNombreCliente = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MedicoTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.medicoTableAdapter()
         Me.grbxVIstaPrevia.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -146,6 +157,8 @@ Partial Class frmCentral
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbxSeleccionEstudio.SuspendLayout()
         Me.grbxDatosAtencion.SuspendLayout()
+        CType(Me.MedicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsPreliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbxDatosFactura.SuspendLayout()
         Me.grbxDatosPersonales.SuspendLayout()
         Me.SuspendLayout()
@@ -230,19 +243,20 @@ Partial Class frmCentral
         '
         'dgvListadoAtenciones
         '
+        Me.dgvListadoAtenciones.AllowUserToAddRows = False
         Me.dgvListadoAtenciones.BackgroundColor = System.Drawing.Color.White
         Me.dgvListadoAtenciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListadoAtenciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entidad, Me.id_estudio, Me.id_pecio, Me.entidad, Me.codigo_categoria, Me.nombre_categoria, Me.codigo_estudio, Me.estudio, Me.precio})
+        Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entidad, Me.id_estudio, Me.id_pecio, Me.estudio, Me.precio, Me.entidad, Me.codigo_categoria, Me.id_detalle, Me.id_atencion})
         Me.dgvListadoAtenciones.Location = New System.Drawing.Point(9, 241)
         Me.dgvListadoAtenciones.Name = "dgvListadoAtenciones"
         Me.dgvListadoAtenciones.ReadOnly = True
@@ -271,6 +285,18 @@ Partial Class frmCentral
         Me.id_pecio.ReadOnly = True
         Me.id_pecio.Visible = False
         '
+        'estudio
+        '
+        Me.estudio.HeaderText = "ESTUDIO"
+        Me.estudio.Name = "estudio"
+        Me.estudio.ReadOnly = True
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "PRECIO"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
         'entidad
         '
         Me.entidad.HeaderText = "ENTIDAD"
@@ -283,29 +309,18 @@ Partial Class frmCentral
         Me.codigo_categoria.Name = "codigo_categoria"
         Me.codigo_categoria.ReadOnly = True
         '
-        'nombre_categoria
+        'id_detalle
         '
-        Me.nombre_categoria.HeaderText = "NOMBRE CATEGORIA"
-        Me.nombre_categoria.Name = "nombre_categoria"
-        Me.nombre_categoria.ReadOnly = True
+        Me.id_detalle.HeaderText = "id_detalle"
+        Me.id_detalle.Name = "id_detalle"
+        Me.id_detalle.ReadOnly = True
         '
-        'codigo_estudio
+        'id_atencion
         '
-        Me.codigo_estudio.HeaderText = "CODIGO ESTUDIO"
-        Me.codigo_estudio.Name = "codigo_estudio"
-        Me.codigo_estudio.ReadOnly = True
-        '
-        'estudio
-        '
-        Me.estudio.HeaderText = "ESTUDIO"
-        Me.estudio.Name = "estudio"
-        Me.estudio.ReadOnly = True
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "PRECIO"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
+        Me.id_atencion.HeaderText = "id_atencion"
+        Me.id_atencion.Name = "id_atencion"
+        Me.id_atencion.ReadOnly = True
+        Me.id_atencion.Visible = False
         '
         'Label39
         '
@@ -800,7 +815,7 @@ Partial Class frmCentral
         '
         Me.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCampo.FormattingEnabled = True
-        Me.cbCampo.Items.AddRange(New Object() {"entidad", "codigo_categoria", "codigo_estudio", "nombre_categoria", "estudio"})
+        Me.cbCampo.Items.AddRange(New Object() {"estudio", "codigo_categoria", "codigo_estudio", "nombre_categoria"})
         Me.cbCampo.Location = New System.Drawing.Point(57, 97)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(123, 21)
@@ -866,6 +881,7 @@ Partial Class frmCentral
         '
         'dgvListado
         '
+        Me.dgvListado.AllowUserToAddRows = False
         Me.dgvListado.BackgroundColor = System.Drawing.Color.White
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado.Location = New System.Drawing.Point(3, 19)
@@ -888,13 +904,13 @@ Partial Class frmCentral
         'grbxSeleccionEstudio
         '
         Me.grbxSeleccionEstudio.Controls.Add(Me.btnInsertarEstudios)
-        Me.grbxSeleccionEstudio.Controls.Add(Me.tbIDEstudio2)
+        Me.grbxSeleccionEstudio.Controls.Add(Me.tbInstitucion)
         Me.grbxSeleccionEstudio.Controls.Add(Me.lbEstudio)
         Me.grbxSeleccionEstudio.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxSeleccionEstudio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.grbxSeleccionEstudio.Location = New System.Drawing.Point(8, 257)
         Me.grbxSeleccionEstudio.Name = "grbxSeleccionEstudio"
-        Me.grbxSeleccionEstudio.Size = New System.Drawing.Size(681, 51)
+        Me.grbxSeleccionEstudio.Size = New System.Drawing.Size(355, 51)
         Me.grbxSeleccionEstudio.TabIndex = 33
         Me.grbxSeleccionEstudio.TabStop = False
         Me.grbxSeleccionEstudio.Text = "SELECCIONAR ESTUDIOS"
@@ -902,21 +918,22 @@ Partial Class frmCentral
         'btnInsertarEstudios
         '
         Me.btnInsertarEstudios.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInsertarEstudios.Location = New System.Drawing.Point(586, 10)
+        Me.btnInsertarEstudios.Location = New System.Drawing.Point(269, 10)
         Me.btnInsertarEstudios.Name = "btnInsertarEstudios"
         Me.btnInsertarEstudios.Size = New System.Drawing.Size(80, 38)
         Me.btnInsertarEstudios.TabIndex = 0
         Me.btnInsertarEstudios.Text = "Insertar Estudios"
         Me.btnInsertarEstudios.UseVisualStyleBackColor = True
         '
-        'tbIDEstudio2
+        'tbInstitucion
         '
-        Me.tbIDEstudio2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbIDEstudio2.Location = New System.Drawing.Point(74, 20)
-        Me.tbIDEstudio2.MaxLength = 50
-        Me.tbIDEstudio2.Name = "tbIDEstudio2"
-        Me.tbIDEstudio2.Size = New System.Drawing.Size(64, 23)
-        Me.tbIDEstudio2.TabIndex = 53
+        Me.tbInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbInstitucion.Location = New System.Drawing.Point(88, 19)
+        Me.tbInstitucion.MaxLength = 50
+        Me.tbInstitucion.Name = "tbInstitucion"
+        Me.tbInstitucion.ReadOnly = True
+        Me.tbInstitucion.Size = New System.Drawing.Size(154, 23)
+        Me.tbInstitucion.TabIndex = 53
         '
         'lbEstudio
         '
@@ -925,13 +942,15 @@ Partial Class frmCentral
         Me.lbEstudio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lbEstudio.Location = New System.Drawing.Point(6, 24)
         Me.lbEstudio.Name = "lbEstudio"
-        Me.lbEstudio.Size = New System.Drawing.Size(47, 15)
+        Me.lbEstudio.Size = New System.Drawing.Size(80, 15)
         Me.lbEstudio.TabIndex = 52
-        Me.lbEstudio.Text = "Estudio"
+        Me.lbEstudio.Text = "INSTITUCION:"
         '
         'grbxDatosAtencion
         '
         Me.grbxDatosAtencion.Controls.Add(Me.btnDatosAtencion)
+        Me.grbxDatosAtencion.Controls.Add(Me.cbxMedicoDestinatario)
+        Me.grbxDatosAtencion.Controls.Add(Me.Label1)
         Me.grbxDatosAtencion.Controls.Add(Me.dtpFechaAtencion)
         Me.grbxDatosAtencion.Controls.Add(Me.lbMedicoRemit)
         Me.grbxDatosAtencion.Controls.Add(Me.tbMedicoRemitente)
@@ -940,7 +959,7 @@ Partial Class frmCentral
         Me.grbxDatosAtencion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.grbxDatosAtencion.Location = New System.Drawing.Point(369, 163)
         Me.grbxDatosAtencion.Name = "grbxDatosAtencion"
-        Me.grbxDatosAtencion.Size = New System.Drawing.Size(320, 83)
+        Me.grbxDatosAtencion.Size = New System.Drawing.Size(320, 117)
         Me.grbxDatosAtencion.TabIndex = 32
         Me.grbxDatosAtencion.TabStop = False
         Me.grbxDatosAtencion.Text = "DATOS DE ATENCION"
@@ -950,10 +969,44 @@ Partial Class frmCentral
         Me.btnDatosAtencion.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDatosAtencion.Location = New System.Drawing.Point(0, 0)
         Me.btnDatosAtencion.Name = "btnDatosAtencion"
-        Me.btnDatosAtencion.Size = New System.Drawing.Size(320, 83)
-        Me.btnDatosAtencion.TabIndex = 0
+        Me.btnDatosAtencion.Size = New System.Drawing.Size(320, 117)
+        Me.btnDatosAtencion.TabIndex = 44
         Me.btnDatosAtencion.Text = "DATOS DE ATENCIÓN"
         Me.btnDatosAtencion.UseVisualStyleBackColor = True
+        '
+        'cbxMedicoDestinatario
+        '
+        Me.cbxMedicoDestinatario.AutoCompleteCustomSource.AddRange(New String() {"Femenino", "Masculino"})
+        Me.cbxMedicoDestinatario.DataSource = Me.MedicoBindingSource
+        Me.cbxMedicoDestinatario.DisplayMember = "apellidos"
+        Me.cbxMedicoDestinatario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxMedicoDestinatario.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxMedicoDestinatario.FormattingEnabled = True
+        Me.cbxMedicoDestinatario.Location = New System.Drawing.Point(128, 78)
+        Me.cbxMedicoDestinatario.Name = "cbxMedicoDestinatario"
+        Me.cbxMedicoDestinatario.Size = New System.Drawing.Size(177, 23)
+        Me.cbxMedicoDestinatario.TabIndex = 21
+        '
+        'MedicoBindingSource
+        '
+        Me.MedicoBindingSource.DataMember = "medico"
+        Me.MedicoBindingSource.DataSource = Me.DsPreliminar
+        '
+        'DsPreliminar
+        '
+        Me.DsPreliminar.DataSetName = "dsPreliminar"
+        Me.DsPreliminar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(6, 86)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(117, 15)
+        Me.Label1.TabIndex = 43
+        Me.Label1.Text = "Medico Destinatario"
         '
         'dtpFechaAtencion
         '
@@ -997,9 +1050,9 @@ Partial Class frmCentral
         '
         'grbxDatosFactura
         '
+        Me.grbxDatosFactura.Controls.Add(Me.cbxInstitucion)
         Me.grbxDatosFactura.Controls.Add(Me.tbNIT)
         Me.grbxDatosFactura.Controls.Add(Me.tbRazonSocial)
-        Me.grbxDatosFactura.Controls.Add(Me.tbInstitucion)
         Me.grbxDatosFactura.Controls.Add(Me.tbCodigoAsegurado)
         Me.grbxDatosFactura.Controls.Add(Me.lbNit)
         Me.grbxDatosFactura.Controls.Add(Me.lbRazonSocial)
@@ -1013,6 +1066,17 @@ Partial Class frmCentral
         Me.grbxDatosFactura.TabIndex = 31
         Me.grbxDatosFactura.TabStop = False
         Me.grbxDatosFactura.Text = "DATOS PARA FACTURA"
+        '
+        'cbxInstitucion
+        '
+        Me.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.cbxInstitucion.FormattingEnabled = True
+        Me.cbxInstitucion.Items.AddRange(New Object() {"Particular", "COTEL", "RED SALUD"})
+        Me.cbxInstitucion.Location = New System.Drawing.Point(128, 53)
+        Me.cbxInstitucion.Name = "cbxInstitucion"
+        Me.cbxInstitucion.Size = New System.Drawing.Size(177, 23)
+        Me.cbxInstitucion.TabIndex = 4
         '
         'tbNIT
         '
@@ -1031,15 +1095,6 @@ Partial Class frmCentral
         Me.tbRazonSocial.Name = "tbRazonSocial"
         Me.tbRazonSocial.Size = New System.Drawing.Size(177, 23)
         Me.tbRazonSocial.TabIndex = 2
-        '
-        'tbInstitucion
-        '
-        Me.tbInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.tbInstitucion.Location = New System.Drawing.Point(128, 53)
-        Me.tbInstitucion.MaxLength = 50
-        Me.tbInstitucion.Name = "tbInstitucion"
-        Me.tbInstitucion.Size = New System.Drawing.Size(177, 23)
-        Me.tbInstitucion.TabIndex = 1
         '
         'tbCodigoAsegurado
         '
@@ -1315,6 +1370,10 @@ Partial Class frmCentral
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
         Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
         '
+        'MedicoTableAdapter
+        '
+        Me.MedicoTableAdapter.ClearBeforeFill = True
+        '
         'frmCentral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1342,6 +1401,8 @@ Partial Class frmCentral
         Me.grbxSeleccionEstudio.PerformLayout()
         Me.grbxDatosAtencion.ResumeLayout(False)
         Me.grbxDatosAtencion.PerformLayout()
+        CType(Me.MedicoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsPreliminar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbxDatosFactura.ResumeLayout(False)
         Me.grbxDatosFactura.PerformLayout()
         Me.grbxDatosPersonales.ResumeLayout(False)
@@ -1378,7 +1439,7 @@ Partial Class frmCentral
     Friend WithEvents pnListaEstudios As Panel
     Friend WithEvents grbxSeleccionEstudio As GroupBox
     Friend WithEvents btnInsertarEstudios As Button
-    Friend WithEvents tbIDEstudio2 As TextBox
+    Friend WithEvents tbInstitucion As TextBox
     Friend WithEvents lbEstudio As Label
     Friend WithEvents grbxDatosAtencion As GroupBox
     Friend WithEvents dtpFechaAtencion As DateTimePicker
@@ -1388,7 +1449,6 @@ Partial Class frmCentral
     Friend WithEvents grbxDatosFactura As GroupBox
     Friend WithEvents tbNIT As TextBox
     Friend WithEvents tbRazonSocial As TextBox
-    Friend WithEvents tbInstitucion As TextBox
     Friend WithEvents tbCodigoAsegurado As TextBox
     Friend WithEvents lbNit As Label
     Friend WithEvents lbRazonSocial As Label
@@ -1449,15 +1509,21 @@ Partial Class frmCentral
     Friend WithEvents dgvListadoAtenciones As DataGridView
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents btnImprimir As Button
+    Friend WithEvents cbxInstitucion As ComboBox
     Friend WithEvents id_entidad As DataGridViewTextBoxColumn
     Friend WithEvents id_estudio As DataGridViewTextBoxColumn
     Friend WithEvents id_pecio As DataGridViewTextBoxColumn
-    Friend WithEvents entidad As DataGridViewTextBoxColumn
-    Friend WithEvents codigo_categoria As DataGridViewTextBoxColumn
-    Friend WithEvents nombre_categoria As DataGridViewTextBoxColumn
-    Friend WithEvents codigo_estudio As DataGridViewTextBoxColumn
     Friend WithEvents estudio As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents btnImprimir As Button
+    Friend WithEvents entidad As DataGridViewTextBoxColumn
+    Friend WithEvents codigo_categoria As DataGridViewTextBoxColumn
+    Friend WithEvents id_detalle As DataGridViewTextBoxColumn
+    Friend WithEvents id_atencion As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbxMedicoDestinatario As ComboBox
+    Friend WithEvents DsPreliminar As dsPreliminar
+    Friend WithEvents MedicoBindingSource As BindingSource
+    Friend WithEvents MedicoTableAdapter As dsPreliminarTableAdapters.medicoTableAdapter
     Friend WithEvents btnDatosAtencion As Button
 End Class

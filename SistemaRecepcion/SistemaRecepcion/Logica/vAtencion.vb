@@ -1,8 +1,9 @@
 ﻿Public Class vAtencion
-    Dim id_atencion, id_cliente As Integer
+    Dim id_atencion, id_cliente, id_medico As Integer
     Dim fecha As Date
     Dim precio_parcial As Double
     Dim doctor_remitente, tipo_documento, num_documento, descripcion As String
+
     Public Property gid_atencion
         Get
             Return id_atencion
@@ -75,6 +76,14 @@
         End Set
     End Property
 
+    Public Property gid_medico
+        Get
+            Return id_medico
+        End Get
+        Set(value)
+            id_medico = value
+        End Set
+    End Property
 
     '------------------ CONSTRUCTORES DE LA CLASE
     Public Sub New()
@@ -103,13 +112,15 @@
                   ByVal id_cliente As Integer,
                   ByVal fecha As Date,
                   ByVal doctor_remitente As String,
-                  ByVal precio_parcial As String
+                  ByVal precio_parcial As String,
+                  ByVal id_medico As Integer
                   )
         gid_atencion = id_atencion
         gid_cliente = id_cliente
         gfecha = fecha
         gdoctor_remitente = doctor_remitente
         gprecio_parcial = precio_parcial
+        gid_medico = id_medico
     End Sub
 
 

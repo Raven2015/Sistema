@@ -43,6 +43,7 @@ Public Class fAtencion
             cmd.Parameters.AddWithValue("@fecha_atencion", dts.gfecha)
             cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
             cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
+            cmd.Parameters.AddWithValue("@id_medico", dts.gid_medico)
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -67,6 +68,7 @@ Public Class fAtencion
             .AddWithValue("@fecha_atencion", dts.gfecha)
             .AddWithValue("@id_cliente", dts.gid_cliente)
             .AddWithValue("@precio_parcial", dts.gprecio_parcial)
+            .AddWithValue("@id_medico", dts.gid_medico)
         End With
         cmd.ExecuteNonQuery()
         bd.Close()
@@ -84,7 +86,7 @@ Public Class fAtencion
             cmd.Parameters.AddWithValue("@fecha_atencion", dts.gfecha)
             cmd.Parameters.AddWithValue("@id_cliente", dts.gid_cliente)
             cmd.Parameters.AddWithValue("@precio_parcial", dts.gprecio_parcial)
-
+            cmd.Parameters.AddWithValue("@id_medico", dts.gid_medico)
             If cmd.ExecuteNonQuery Then
                 Return True
             Else

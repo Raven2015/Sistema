@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica241216\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,12 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.1.2.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -118,7 +117,9 @@
     <Compile Include="Datos\fDetalle.vb" />
     <Compile Include="Datos\fEntidad.vb" />
     <Compile Include="Datos\fEstudio.vb" />
+    <Compile Include="Datos\fMedico.vb" />
     <Compile Include="Datos\fPrecio.vb" />
+    <Compile Include="Datos\fUsuario.vb" />
     <Compile Include="dbBIOMEDICADataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,13 +130,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInicial.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsPreliminar.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPreliminar.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logica\vAtencion.vb" />
     <Compile Include="Logica\vCategoria.vb" />
     <Compile Include="Logica\vCliente.vb" />
     <Compile Include="Logica\vDetalleAtencion.vb" />
     <Compile Include="Logica\vEntidad.vb" />
     <Compile Include="Logica\vEstudio.vb" />
+    <Compile Include="Logica\vMedico.vb" />
     <Compile Include="Logica\vPrecio.vb" />
+    <Compile Include="Logica\vUsuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -260,10 +268,28 @@
     <Compile Include="Presentacion\Formulario Central\frmCentral.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmInicio.Designer.vb">
+    <Compile Include="Presentacion\Inicio\frmInicio.Designer.vb">
       <DependentUpon>frmInicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmInicio.vb">
+    <Compile Include="Presentacion\Inicio\frmInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\Ingreso.Designer.vb">
+      <DependentUpon>Ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\Ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\Iniciodvp.Designer.vb">
+      <DependentUpon>Iniciodvp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\Iniciodvp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\InicioRecepcion.Designer.vb">
+      <DependentUpon>InicioRecepcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\InicioRecepcion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Lista\frmListaPrecios.Designer.vb">
@@ -272,22 +298,16 @@
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\frmComprobante.Designer.vb">
-      <DependentUpon>frmComprobante.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\frmComprobante.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\frmReporteAtencion.Designer.vb">
-      <DependentUpon>frmReporteAtencion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\frmReporteAtencion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Reportes\Prueba.Designer.vb">
       <DependentUpon>Prueba.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFinal.Designer.vb">
+      <DependentUpon>ReporteFinal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFinal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.vb" />
@@ -353,22 +373,29 @@
     <EmbeddedResource Include="Presentacion\Formulario Central\frmCentral.resx">
       <DependentUpon>frmCentral.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmInicio.resx">
+    <EmbeddedResource Include="Presentacion\Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\Ingreso.resx">
+      <DependentUpon>Ingreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\Iniciodvp.resx">
+      <DependentUpon>Iniciodvp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\InicioRecepcion.resx">
+      <DependentUpon>InicioRecepcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frmComprobante.resx">
-      <DependentUpon>frmComprobante.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frmReporteAtencion.resx">
-      <DependentUpon>frmReporteAtencion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteFinal.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteFinal.resx">
+      <DependentUpon>ReporteFinal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptPrueba.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCompAtencion.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteAtencion.rdlc" />
@@ -395,6 +422,17 @@
     </None>
     <None Include="dsInicial.xss">
       <DependentUpon>dsInicial.xsd</DependentUpon>
+    </None>
+    <None Include="dsPreliminar.xsc">
+      <DependentUpon>dsPreliminar.xsd</DependentUpon>
+    </None>
+    <None Include="dsPreliminar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPreliminar.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPreliminar.xss">
+      <DependentUpon>dsPreliminar.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -479,11 +517,6 @@
     <None Include="Resources\view-2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
@@ -494,11 +527,6 @@
       <ProductName>Microsoft Report Viewer 2014 Runtime</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 4.5</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\house.png" />
@@ -506,44 +534,56 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

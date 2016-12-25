@@ -3,6 +3,7 @@
     Private dt As New DataTable
 
     Private Sub frmEntidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        limpiar()
         limpiar_estudios()
         mostrar()
         generar_precio()
@@ -36,6 +37,8 @@
         End Try
         cbCampo.SelectedIndex = 2 'SELECCIONA EL ITEM 3 DEL COMBO BOX
         buscar()
+        dgvListaEstPrec.Columns(1).Width = 200
+        dgvListaEstPrec.Columns(1).Width = 70
     End Sub
 
     Private Sub buscar()
@@ -129,9 +132,9 @@
         Dim Contenido(4) As String
         'Rellenar el contenido con el valor de las celdas de la fila
 
-        Contenido(0) = fila.Cells(1).Value
-        Contenido(1) = fila.Cells(4).Value
-        Contenido(2) = fila.Cells(5).Value
+        Contenido(0) = fila.Cells(1).Value  'Columna id-estudio
+        Contenido(1) = fila.Cells(4).Value  'Columna codigo_estudio
+        Contenido(2) = fila.Cells(5).Value  'Columna Estudio
         Contenido(3) = tbPrecio.Text
         Contenido(4) = tbIDPrecio.Text
 
@@ -143,8 +146,10 @@
         limpiar_estudios()
     End Sub
 
+
+    '----------DOBLE CLICK PARA ELIMINAR UN ESTUDIO AÑADIDO
     Private Sub dgvListaEstPrec_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListaEstPrec.CellMouseDoubleClick
-        For Each seleccion As DataGridViewRow In dgvListado.SelectedRows
+        For Each seleccion As DataGridViewRow In dgvListaEstPrec.SelectedRows
             eliminar_precio()
             Me.dgvListaEstPrec.Rows.RemoveAt(dgvListaEstPrec.CurrentRow.Index)
         Next
@@ -178,6 +183,7 @@
         End Try
     End Sub
 
+    '-----------BOTON PARA GUARDAR TODOS LOS ESTUDIOS ASIGNADOS A UNA ENTIDAD
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim resultado As New DialogResult
         resultado = MsgBox("Son todos los datos correctos? ")
@@ -195,7 +201,7 @@
         Dim id As String = "0"
         For Each seleccion As DataGridViewRow In dgvListaEstPrec.Rows
             Try
-                id = seleccion.Cells(0).Value
+                id = seleccion.Cells(0).Value 'Obtiene el valor actual del ID de Estudio
                 Debug.Write("Valor de IDEstudio = " & id)
                 insertar_entidad(seleccion, id_entidad)
                 id_entidad = id_entidad + 1
@@ -266,4 +272,24 @@
         'generar_precio()
     End Sub
 
+    '-----------Metodo para limpiar el datagridview de listados
+    Public Sub limpiardgvListEstPrecios()
+        Try
+            If dgvListaEstPrec.RowCount >= 1 Then
+                For i As Integer = 1 To dgvListaEstPrec.RowCount
+                    dgvListaEstPrec.Rows.Remove(dgvListaEstPrec.CurrentRow)
+                    Debug.Write("Fila Eliminada>>> " & i)
+                Next
+            End If
+        Catch ex As InvalidOperationException ' Esta excepcion es por si ocurriera
+            MsgBox("Esta fila no se puede eliminar", MsgBoxStyle.Critical, "Operación inválida : : : . . ." & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub limpiar()
+        Debug.Write("Limpiando Lista de Estudios :)")
+        limpiardgvListEstPrecios()
+        Debug.Write("Limpieza OK:)")
+        tbEntidad.Text = ""
+    End Sub
 End Class

@@ -7,7 +7,7 @@
         frmEstudio.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCategorias.Click
         frmCategoria.ShowDialog()
     End Sub
 
@@ -26,5 +26,14 @@
 
     Private Sub btnEntidad_Click(sender As Object, e As EventArgs) Handles btnEntidad.Click
         frmEntidad.ShowDialog()
+    End Sub
+
+    Private Sub frmInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Ingreso.Hide()
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Ingreso.Visible() = True
+        Me.Close()
     End Sub
 End Class

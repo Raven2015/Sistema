@@ -3,8 +3,8 @@ Public Class fcliente
 
     Inherits conexion 'Hereda todos los ,metodos de la Clase Conexion
 
-    'Dim BD As New SqlConnection(My.Settings.Conexion)
-    Dim BD As New SqlConnection(CadenaConexion.crear_cadena("192.168.1.105"))
+    Dim BD As New SqlConnection(My.Settings.Conexion)
+    'Dim BD As New SqlConnection(CadenaConexion.crear_cadena("192.168.1.105"))
 
     Dim cmd As New SqlCommand 'Variable que permite enviar peticiones a la BD
 

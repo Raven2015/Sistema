@@ -8,7 +8,8 @@ Public Class conexion
     Protected Function conectado()
         Try
             'Se crea la conexion a la base de datos dando una direccion inicial y los parametros.
-            cnn = New SqlConnection("data source=192.168.1.105; initial catalog=dbBIOMEDICA;integrated security=true")
+            'cnn = New SqlConnection("data source=192.168.1.105; initial catalog=dbBIOMEDICA;integrated security=true")
+            cnn = New SqlConnection("data source=192.168.1.105; Database=dbBIOMEDICA;user id=Raven; password=1234")
             'cnn = New SqlConnection(My.Settings.Conexion)
             'Se abre la conexion
             cnn.Open()

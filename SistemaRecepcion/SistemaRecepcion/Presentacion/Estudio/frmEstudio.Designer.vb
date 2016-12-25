@@ -99,7 +99,7 @@ Partial Class frmEstudio
         '
         Me.cbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCampo.FormattingEnabled = True
-        Me.cbCampo.Items.AddRange(New Object() {"codigo_categoria", "nombre_categoria", "estudio", "codigo_estudio"})
+        Me.cbCampo.Items.AddRange(New Object() {"COD_CATEGORIA", "CATEGORIA", "ESTUDIO", "COD_ESTUDIO"})
         Me.cbCampo.Location = New System.Drawing.Point(54, 39)
         Me.cbCampo.Name = "cbCampo"
         Me.cbCampo.Size = New System.Drawing.Size(142, 21)

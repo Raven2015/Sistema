@@ -8,11 +8,12 @@ Public Class frmCentral
     Dim idDetalleActual As Integer = 0
 
     Private Sub frmCentral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DsPreliminar.medico' table. You can move, or remove it, as needed.
+        Me.MedicoTableAdapter.Fill(Me.DsPreliminar.medico)
         limpiar()
         generar_cliente()
         generar_atencion()
         generar_detalle()
-
         mostrar()
     End Sub
 
@@ -86,7 +87,7 @@ Public Class frmCentral
                 dts.gfecha_nacimiento = dtpFechaNacimiento.Value
                 dts.gdireccion = tbDireccion.Text
                 dts.gcodigo_asegurado = tbCodigoAsegurado.Text
-                dts.ginstitucion = tbInstitucion.Text
+                dts.ginstitucion = cbxInstitucion.Text
                 dts.grazon_social = tbRazonSocial.Text
                 dts.gnit = tbNIT.Text
                 dts.gtelefono = tbTelefono.Text
@@ -110,7 +111,7 @@ Public Class frmCentral
     End Sub
 
 
-    Public Sub limpiar()
+    Protected Friend Sub limpiar()
         'Limpia lo svalores de las cajas de texto.
         tbNombres.Text = ""
         tbApellidos.Text = ""
@@ -120,11 +121,16 @@ Public Class frmCentral
         tbCelular.Text = ""
         tbCodigoAsegurado.Text = ""
         tbRazonSocial.Text = ""
-        tbInstitucion.Text = ""
+        cbxInstitucion.SelectedIndex = 0
+        cbSexo.SelectedIndex = 0
         tbci.Text = ""
         tbNIT.Text = ""
         cbSexo.Text = ""
         dtpFechaNacimiento.Text = DateTime.Today
+        btnDatosAtencion.Visible = True
+        limpiardgvListadoAtenciones()
+        pnListaEstudios.Visible = False
+        tbMedicoRemitente.Text = ""
         Debug.Write("Limpieza OK :)")
     End Sub
 
@@ -222,6 +228,8 @@ Public Class frmCentral
     End Sub
 
 
+
+
     '$$$$$$$$$$$$$$$$$$$$$$$    LISTA DE ESTUDIOS    $$$$$$$$$$$$$$$$$$$$$$$
 
     '------------------ Funciones Básicas ------------------
@@ -262,8 +270,8 @@ Public Class frmCentral
             ds.Tables.Add(dt.Copy)
             Dim dv As New DataView(ds.Tables(0))
 
-
-            dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
+            dv.RowFilter = "entidad" & " like '" & tbInstitucion.Text & "%' and " & cbCampo.Text & " like '" & tbBuscar.Text & "%'"
+            'dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
 
             If dv.Count <> 0 Then
                 lknInexistente.Visible = False
@@ -326,6 +334,7 @@ Public Class frmCentral
 
     End Sub
 
+    '---------DOBLE CLICK PARA AGREGAR UN ESTUDIO
     Private Sub dgvListado_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListado.CellMouseDoubleClick
         Dim valores As New DataGridViewRow
 
@@ -334,7 +343,8 @@ Public Class frmCentral
         'Rellenar el contenido con el valor de las celdas de la fila
 
         For Each seleccion As DataGridViewRow In dgvListado.SelectedRows
-            Me.dgvListadoAtenciones.Rows.Add(obtener_valores(seleccion))
+            Me.dgvListadoAtenciones.Rows.Add(obtener_valoresBETA(seleccion))
+            Debug.Write("Detalle de estudio Añadido correctamente  :)")
         Next
 
         tbPrecioParcial.Text = precio_parcial()
@@ -342,7 +352,6 @@ Public Class frmCentral
         insertar_detalle()
         editar_Atencion()
     End Sub
-
 
     Private Function obtener_valores(ByVal fila As DataGridViewRow) As String()
         Dim ncolumnas As Integer = dgvListado.ColumnCount
@@ -356,6 +365,25 @@ Public Class frmCentral
         Return Contenido
     End Function
 
+
+    Protected Function obtener_valoresBETA(ByVal fila As DataGridViewRow) As String()
+        Dim ncolumnas As Integer = dgvListado.ColumnCount
+        'Dimensionar el array al tamaño de columnas del DGV
+        Dim Contenido(8) As String
+        'Rellenar el contenido con el valor de las celdas de la fila
+
+        Contenido(0) = fila.Cells(0).Value  'Columna id_entidad
+        Contenido(1) = fila.Cells(1).Value  'Columna id_estudio
+        Contenido(2) = fila.Cells(2).Value  'Columna id_pecio
+        Contenido(3) = fila.Cells(3).Value  'Columna ESTUDIO
+        Contenido(4) = fila.Cells(4).Value  'Columna PRECIO
+        Contenido(5) = fila.Cells(5).Value  'Columna ENTIDAD
+        Contenido(6) = fila.Cells(8).Value  'Columna CODIGO ESTUDIO
+        Contenido(7) = tbIDDetalle.Text()   'Columna id_detalle
+        Contenido(8) = tbIDAtencion.Text()  'Columna id_atencion
+
+        Return Contenido
+    End Function
 
     '$$$$$$$$$$$$$$$$$$$$$$$    ATENCION    $$$$$$$$$$$$$$$$$$$$$$$
 
@@ -375,6 +403,7 @@ Public Class frmCentral
             dts.gdoctor_remitente = tbMedicoRemitente.Text
             dts.gfecha = dtpFechaAtencion.Text
             dts.gprecio_parcial = tbPrecioParcial.Text
+            dts.gid_medico = cbxMedicoDestinatario.SelectedIndex
 
 
             'If func.insertar(dts) Then
@@ -419,7 +448,7 @@ Public Class frmCentral
         'Dim precio As String = "0"
         If dgvListadoAtenciones.RowCount <> 0 Then
             'Sumar una Columna
-            Dim Col As Integer = 8
+            Dim Col As Integer = 4
             For Each row As DataGridViewRow In Me.dgvListadoAtenciones.Rows
                 Total += Val(row.Cells(Col).Value)
             Next
@@ -461,7 +490,6 @@ Public Class frmCentral
 
 
 
-
     '$$$$$$$$$$$$$$$$$$$$$$$    BOTON INSERTAR ESTUDIOS    $$$$$$$$$$$$$$$$$$$$$$$
     Private Sub btnInsertarEstudios_Click(sender As Object, e As EventArgs) Handles btnInsertarEstudios.Click
         'insertarCliente()
@@ -472,11 +500,41 @@ Public Class frmCentral
         Catch ex As Exception
             MsgBox("Ups. Algo anda mal :/")
         End Try
+        tbInstitucion.Text = cbxInstitucion.Text
+        buscar()
         pnListaEstudios.Visible = True
+
         'insertar_detalle()
         'limpiar()
         'limpiarEstudios()
         'limpiar_atencion()
+    End Sub
+
+    '----------DOBLE CLICK PARA ELIMINAR UN ESTUDIO AÑADIDO
+    Private Sub dgvListadoAtenciones_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvListadoAtenciones.CellMouseDoubleClick
+        For Each seleccion As DataGridViewRow In dgvListadoAtenciones.SelectedRows
+            eliminar_detalle()
+            Me.dgvListadoAtenciones.Rows.RemoveAt(dgvListadoAtenciones.CurrentRow.Index)
+            tbPrecioParcial.Text = precio_parcial()
+        Next
+        editar_Atencion()
+    End Sub
+
+
+    '----------------ELIMINAR DETALLE  (BETA)
+    Public Sub eliminar_detalle()
+        Try
+            Dim dts As New vDetalleAtencion
+            Dim func As New fDetalle
+
+            'idDetalleActual = tbIDDetalle.Text
+            dts.gid_detalle = dgvListadoAtenciones.SelectedCells.Item(7).Value
+
+            func.eliminar(dts)
+            Debug.Write("Detalle de Estudio eliminado correctamente :)")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     '$$$$$$$$$$$$$$$$$$$$$$$    CAMBIOS AUTOMATICOS EN LA INTERFAZ    $$$$$$$$$$$$$$$$$$$$$$$
@@ -525,19 +583,13 @@ Public Class frmCentral
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         'editar_Atencion() 'Cuando el usuario presione el boton imprimir se guardan los datos de la atencion.
         Debug.Write("Valor de IDAtencion>> " & idAtencionActual)
-        Prueba.tbIDAtencion.Text = idAtencionActual
+        ReporteFinal.tbIDAtencion.Text = idAtencionActual
         'POSTERIORMENTE SE LLAMA A LA CLASE frmREPORTE PARA IMPRIMIR EL REPORTE DE ATENCION
-        Prueba.ShowDialog()
+        ReporteFinal.ShowDialog()
     End Sub
 
-    'Cuando el tbMedico Remitente entra en foco, se envian automaticamente los datos del cliente.
-    'Si falta algun dato obligatorio, se lanza un mensaje de alerta para que rellene todos los campos.
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
+    '-------------BOTON  DATOS DE ATENCION----------
     Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
         If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And tbDireccion.Text <> "" And cbSexo.Text <> "" Then
             Try
@@ -550,6 +602,20 @@ Public Class frmCentral
         generar_cliente()
         btnDatosAtencion.Visible = False
     End Sub
+
+    '-----------Metodo para limpiar el datagridview de listados
+    Public Sub limpiardgvListadoAtenciones()
+        Try
+            If dgvListadoAtenciones.RowCount >= 1 Then
+                For i As Integer = 1 To dgvListadoAtenciones.RowCount
+                    dgvListadoAtenciones.Rows.Remove(dgvListadoAtenciones.CurrentRow)
+                Next
+            End If
+        Catch ex As InvalidOperationException ' Esta excepcion es por si ocurriera
+            MsgBox("Esta fila no se puede eliminar", MsgBoxStyle.Critical, "Operación inválida : : : . . .")
+        End Try
+    End Sub
+
 
 End Class
 
