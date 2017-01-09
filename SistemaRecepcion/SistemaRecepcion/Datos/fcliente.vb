@@ -54,6 +54,7 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@celular", dts.gcelular)
             cmd.Parameters.AddWithValue("@sexo", dts.gsexo)
             cmd.Parameters.AddWithValue("@ci", dts.gci)
+            cmd.Parameters.AddWithValue("@edad", dts.gedad)
 
             If cmd.ExecuteNonQuery Then
                 Return True

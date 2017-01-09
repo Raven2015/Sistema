@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica241216\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica070117\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.1.2.2</ApplicationVersion>
+    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -75,13 +75,22 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconBegin-02-02-02.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -89,6 +98,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -114,7 +125,10 @@
     <Compile Include="Datos\fAtencion.vb" />
     <Compile Include="Datos\fCategoria.vb" />
     <Compile Include="Datos\fcliente.vb" />
+    <Compile Include="Datos\fComprobante.vb" />
+    <Compile Include="Datos\fCotizacion.vb" />
     <Compile Include="Datos\fDetalle.vb" />
+    <Compile Include="Datos\fEgreso.vb" />
     <Compile Include="Datos\fEntidad.vb" />
     <Compile Include="Datos\fEstudio.vb" />
     <Compile Include="Datos\fMedico.vb" />
@@ -130,6 +144,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInicial.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsListaEntidades.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsListaEntidades.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsPreliminar.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,7 +157,11 @@
     <Compile Include="Logica\vAtencion.vb" />
     <Compile Include="Logica\vCategoria.vb" />
     <Compile Include="Logica\vCliente.vb" />
+    <Compile Include="Logica\vComprobante.vb" />
+    <Compile Include="Logica\vCotizacion.vb" />
     <Compile Include="Logica\vDetalleAtencion.vb" />
+    <Compile Include="Logica\vDetalleEgreso.vb" />
+    <Compile Include="Logica\vEgreso.vb" />
     <Compile Include="Logica\vEntidad.vb" />
     <Compile Include="Logica\vEstudio.vb" />
     <Compile Include="Logica\vMedico.vb" />
@@ -225,7 +248,19 @@
     <Compile Include="Presentacion\Cliente\frmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\ComprobantesCaja\frmComprobantesCaja.Designer.vb">
+      <DependentUpon>frmComprobantesCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ComprobantesCaja\frmComprobantesCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Conexion\CadenaConexion.vb" />
+    <Compile Include="Presentacion\Cotizacion\frmCotizacion.Designer.vb">
+      <DependentUpon>frmCotizacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Cotizacion\frmCotizacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.Designer.vb">
       <DependentUpon>frmDetalleAtencion.vb</DependentUpon>
     </Compile>
@@ -280,10 +315,10 @@
     <Compile Include="Presentacion\Inicio\Ingreso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Inicio\Iniciodvp.Designer.vb">
-      <DependentUpon>Iniciodvp.vb</DependentUpon>
+    <Compile Include="Presentacion\Inicio\InicioPruebas.Designer.vb">
+      <DependentUpon>InicioPruebas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Inicio\Iniciodvp.vb">
+    <Compile Include="Presentacion\Inicio\InicioPruebas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Inicio\InicioRecepcion.Designer.vb">
@@ -302,6 +337,18 @@
       <DependentUpon>Prueba.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteCajaFinal.Designer.vb">
+      <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteCajaFinal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCaja.Designer.vb">
+      <DependentUpon>rptReporteCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCaja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteFinal.Designer.vb">
@@ -352,6 +399,12 @@
     <EmbeddedResource Include="Presentacion\Cliente\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ComprobantesCaja\frmComprobantesCaja.resx">
+      <DependentUpon>frmComprobantesCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Cotizacion\frmCotizacion.resx">
+      <DependentUpon>frmCotizacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.resx">
       <DependentUpon>frmDetalleAtencion.vb</DependentUpon>
     </EmbeddedResource>
@@ -379,8 +432,8 @@
     <EmbeddedResource Include="Presentacion\Inicio\Ingreso.resx">
       <DependentUpon>Ingreso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Inicio\Iniciodvp.resx">
-      <DependentUpon>Iniciodvp.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Inicio\InicioPruebas.resx">
+      <DependentUpon>InicioPruebas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio\InicioRecepcion.resx">
       <DependentUpon>InicioRecepcion.vb</DependentUpon>
@@ -391,14 +444,18 @@
     <EmbeddedResource Include="Reportes\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCajaFinal.resx">
+      <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCaja.resx">
+      <DependentUpon>rptReporteCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ComprobanteCaja.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteFinal.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteFinal.resx">
       <DependentUpon>ReporteFinal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptPrueba.rdlc" />
-    <EmbeddedResource Include="Reportes\ReporteCompAtencion.rdlc" />
-    <EmbeddedResource Include="Reportes\ReporteAtencion.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbBIOMEDICADataSet.xsc">
@@ -422,6 +479,17 @@
     </None>
     <None Include="dsInicial.xss">
       <DependentUpon>dsInicial.xsd</DependentUpon>
+    </None>
+    <None Include="dsListaEntidades.xsc">
+      <DependentUpon>dsListaEntidades.xsd</DependentUpon>
+    </None>
+    <None Include="dsListaEntidades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsListaEntidades.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsListaEntidades.xss">
+      <DependentUpon>dsListaEntidades.xsd</DependentUpon>
     </None>
     <None Include="dsPreliminar.xsc">
       <DependentUpon>dsPreliminar.xsd</DependentUpon>
@@ -447,6 +515,7 @@
     <None Include="SistemaRecepcion_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presentacion\Arqueos\" />
     <Folder Include="Presentacion\Campania\" />
     <Folder Include="Presentacion\Convenio\" />
   </ItemGroup>
@@ -534,42 +603,42 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
@@ -584,6 +653,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconBegin-02-02-02.ico" />
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

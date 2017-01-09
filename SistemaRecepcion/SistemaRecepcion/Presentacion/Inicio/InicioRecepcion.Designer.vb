@@ -26,6 +26,10 @@ Partial Class InicioRecepcion
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnCentral = New System.Windows.Forms.Button()
         Me.btnLista = New System.Windows.Forms.Button()
@@ -50,7 +54,7 @@ Partial Class InicioRecepcion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(314, 142)
+        Me.Label6.Location = New System.Drawing.Point(463, 142)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 33
@@ -59,7 +63,7 @@ Partial Class InicioRecepcion
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(175, 142)
+        Me.Label4.Location = New System.Drawing.Point(129, 142)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(62, 13)
         Me.Label4.TabIndex = 30
@@ -68,11 +72,54 @@ Partial Class InicioRecepcion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(51, 142)
+        Me.Label3.Location = New System.Drawing.Point(25, 142)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 26)
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "LISTA DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " PRECIOS"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(327, 142)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(93, 26)
+        Me.Label1.TabIndex = 40
+        Me.Label1.Text = "COMPROBANTE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DE CAJA"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(224, 142)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 39
+        Me.Label2.Text = "COTIZACION"
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(338, 69)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(70, 70)
+        Me.Button1.TabIndex = 38
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.info
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(226, 69)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(70, 70)
+        Me.Button2.TabIndex = 37
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
@@ -80,7 +127,7 @@ Partial Class InicioRecepcion
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(298, 69)
+        Me.btnSalir.Location = New System.Drawing.Point(447, 69)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(70, 70)
         Me.btnSalir.TabIndex = 32
@@ -92,7 +139,7 @@ Partial Class InicioRecepcion
         Me.btnCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCentral.FlatAppearance.BorderSize = 0
         Me.btnCentral.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCentral.Location = New System.Drawing.Point(171, 69)
+        Me.btnCentral.Location = New System.Drawing.Point(125, 69)
         Me.btnCentral.Name = "btnCentral"
         Me.btnCentral.Size = New System.Drawing.Size(70, 70)
         Me.btnCentral.TabIndex = 24
@@ -104,7 +151,7 @@ Partial Class InicioRecepcion
         Me.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLista.FlatAppearance.BorderSize = 0
         Me.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLista.Location = New System.Drawing.Point(46, 69)
+        Me.btnLista.Location = New System.Drawing.Point(20, 69)
         Me.btnLista.Name = "btnLista"
         Me.btnLista.Size = New System.Drawing.Size(70, 70)
         Me.btnLista.TabIndex = 23
@@ -114,7 +161,7 @@ Partial Class InicioRecepcion
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(280, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(429, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 128)
         Me.PictureBox2.TabIndex = 35
@@ -126,7 +173,7 @@ Partial Class InicioRecepcion
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(380, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(529, 52)
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
         '
@@ -135,7 +182,11 @@ Partial Class InicioRecepcion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(380, 180)
+        Me.ClientSize = New System.Drawing.Size(529, 180)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnSalir)
@@ -164,4 +215,8 @@ Partial Class InicioRecepcion
     Friend WithEvents btnLista As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

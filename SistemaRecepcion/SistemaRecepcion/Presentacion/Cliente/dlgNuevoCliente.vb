@@ -40,6 +40,7 @@ Public Class dlgNuevoCliente
                 dts.gcelular = tbCelular.Text
                 dts.gsexo = cbSexo.Text
                 dts.gci = tbCI.Text
+                dts.gedad = tbEdad.Text
 
                 If func.insertar(dts) Then
                     MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)

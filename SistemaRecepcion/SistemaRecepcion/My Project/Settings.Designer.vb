@@ -57,7 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("data source=192.168.1.105; Database=dbBIOMEDICA;user id=Raven; password=1234")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.2;Initial Catalog=dbBIOMEDICA;User ID=Adalid;Password=Biome"& _ 
+            "dica2016")>  _
         Public ReadOnly Property Conexion() As String
             Get
                 Return CType(Me("Conexion"),String)

@@ -30,6 +30,10 @@ Partial Class frmInicio
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnComprobante = New System.Windows.Forms.Button()
+        Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEntidad = New System.Windows.Forms.Button()
         Me.btnCentral = New System.Windows.Forms.Button()
@@ -100,7 +104,7 @@ Partial Class frmInicio
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(570, 146)
+        Me.Label6.Location = New System.Drawing.Point(755, 145)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 16
@@ -118,13 +122,56 @@ Partial Class frmInicio
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "SISTEMA DE RECEPCION Y REGISTRO"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(620, 146)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(93, 26)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "COMPROBANTE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DE CAJA"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(540, 146)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(72, 13)
+        Me.Label9.TabIndex = 43
+        Me.Label9.Text = "COTIZACION"
+        '
+        'btnComprobante
+        '
+        Me.btnComprobante.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
+        Me.btnComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnComprobante.FlatAppearance.BorderSize = 0
+        Me.btnComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnComprobante.Location = New System.Drawing.Point(631, 73)
+        Me.btnComprobante.Name = "btnComprobante"
+        Me.btnComprobante.Size = New System.Drawing.Size(70, 70)
+        Me.btnComprobante.TabIndex = 42
+        Me.btnComprobante.UseVisualStyleBackColor = True
+        '
+        'btnCotizacion
+        '
+        Me.btnCotizacion.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.info
+        Me.btnCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCotizacion.FlatAppearance.BorderSize = 0
+        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCotizacion.Location = New System.Drawing.Point(542, 73)
+        Me.btnCotizacion.Name = "btnCotizacion"
+        Me.btnCotizacion.Size = New System.Drawing.Size(70, 70)
+        Me.btnCotizacion.TabIndex = 41
+        Me.btnCotizacion.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
         Me.btnSalir.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.logout
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(554, 73)
+        Me.btnSalir.Location = New System.Drawing.Point(739, 72)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(70, 70)
         Me.btnSalir.TabIndex = 15
@@ -210,7 +257,7 @@ Partial Class frmInicio
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(536, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(721, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 128)
         Me.PictureBox2.TabIndex = 18
@@ -222,7 +269,7 @@ Partial Class frmInicio
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(636, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(821, 52)
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
@@ -231,7 +278,11 @@ Partial Class frmInicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(636, 180)
+        Me.ClientSize = New System.Drawing.Size(821, 180)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btnComprobante)
+        Me.Controls.Add(Me.btnCotizacion)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnSalir)
@@ -277,4 +328,8 @@ Partial Class frmInicio
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents btnComprobante As Button
+    Friend WithEvents btnCotizacion As Button
 End Class

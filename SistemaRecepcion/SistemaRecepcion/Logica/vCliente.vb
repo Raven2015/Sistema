@@ -13,6 +13,7 @@
     Dim celular As String
     Dim sexo As String
     Dim ci As String
+    Dim edad As Integer
 
     'Se crean los metodos Set y Get
 
@@ -133,6 +134,15 @@
         End Set
     End Property
 
+    Public Property gedad
+        Get
+            Return edad
+        End Get
+        Set(value)
+            edad = value
+        End Set
+    End Property
+
     'Creacion de los constructores
 
     Public Sub New()
@@ -153,5 +163,22 @@
         gcelular = celular
         gsexo = sexo
         gci = ci
+    End Sub
+
+    Public Sub New(ByVal id_cliente As Integer, ByVal nombres As String, ByVal apellidos As String, ByVal fecha_nacimento As Date, ByVal direccion As String, ByVal codigo_asegurado As String, ByVal institucion As String, ByVal razon_social As String, ByVal nit As String, ByVal telefono As String, ByVal celular As String, ByVal sexo As String, ByVal ci As String, ByVal edad As Integer)
+        gid_cliente = id_cliente
+        gnombres = nombres
+        gapellidos = apellidos
+        gfecha_nacimiento = fecha_nacimento
+        gdireccion = direccion
+        gcodigo_asegurado = codigo_asegurado
+        ginstitucion = institucion
+        grazon_social = razon_social
+        gnit = nit
+        gtelefono = telefono
+        gcelular = celular
+        gsexo = sexo
+        gci = ci
+        gedad = edad
     End Sub
 End Class

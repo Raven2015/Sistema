@@ -8,6 +8,8 @@ Public Class frmCentral
     Dim idDetalleActual As Integer = 0
 
     Private Sub frmCentral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DsListaEntidades.listaEntidad' table. You can move, or remove it, as needed.
+        Me.ListaEntidadTableAdapter.Fill(Me.DsListaEntidades.listaEntidad)
         'TODO: This line of code loads data into the 'DsPreliminar.medico' table. You can move, or remove it, as needed.
         Me.MedicoTableAdapter.Fill(Me.DsPreliminar.medico)
         limpiar()
@@ -75,7 +77,7 @@ Public Class frmCentral
     '-Limpiar
 
     Public Sub insertarCliente()
-        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And tbDireccion.Text <> "" And cbSexo.Text <> "" Then
+        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And cbSexo.Text <> "" Then
             Try
                 Dim dts As New vCliente
                 Dim func As New fcliente
@@ -94,6 +96,7 @@ Public Class frmCentral
                 dts.gcelular = tbCelular.Text
                 dts.gsexo = cbSexo.Text
                 dts.gci = tbci.Text
+                dts.gedad = tbEdad.Text
 
                 If func.insertar(dts) Then
                     'MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -115,7 +118,7 @@ Public Class frmCentral
         'Limpia lo svalores de las cajas de texto.
         tbNombres.Text = ""
         tbApellidos.Text = ""
-        tbEdad.Text = ""
+        tbEdad.Text = "0"
         tbDireccion.Text = ""
         tbTelefono.Text = ""
         tbCelular.Text = ""
@@ -170,14 +173,14 @@ Public Class frmCentral
     End Sub
 
 
-    Private Sub tbDireccion_Validating(sender As Object, e As CancelEventArgs) Handles tbDireccion.Validating
-        'Permite validar que el campo direccion no este vacio
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese la dirección del cliente por favor, Este dato es obligatorio")
-        End If
-    End Sub
+    'Private Sub tbDireccion_Validating(sender As Object, e As CancelEventArgs) Handles tbDireccion.Validating
+    '    'Permite validar que el campo direccion no este vacio
+    '    If DirectCast(sender, TextBox).Text.Length > 0 Then
+    '        Me.errorIcono.SetError(sender, "")
+    '    Else
+    '        Me.errorIcono.SetError(sender, "Ingrese la dirección del cliente por favor, Este dato es obligatorio")
+    '    End If
+    'End Sub
 
     Private Sub tbCelular_Validating(sender As Object, e As CancelEventArgs) Handles tbCelular.Validating
         'Permite validar que el campo celular no este vacio
@@ -227,6 +230,16 @@ Public Class frmCentral
         End If
     End Sub
 
+    'Private Sub tbCodigoAsegurado_Validating(sender As Object, e As CancelEventArgs) Handles tbCodigoAsegurado.Validating
+    '    'Permite validar que el campo Codigo de Asegurado no este vacio
+    '    If DirectCast(sender, TextBox).Text.Length > 0 And tbInstitucion.Text = "PARTICULAR" Then
+    '        Me.errorIcono.SetError(sender, "")
+    '    Else
+    '        Me.errorIcono.SetError(sender, "Ingrese el Código de Asegurado por favor, Este dato es obligatorio para la atencion por convenio")
+    '    End If
+    'End Sub
+
+
 
 
 
@@ -264,19 +277,25 @@ Public Class frmCentral
         buscar()
     End Sub
 
+    Public Sub AnchoColumnas()
+        dgvListado.Columns(3).Width = 550
+        dgvListado.Columns(4).Width = 50
+    End Sub
+
     Private Sub buscar()
         Try
             Dim ds As New DataSet
             ds.Tables.Add(dt.Copy)
             Dim dv As New DataView(ds.Tables(0))
 
-            dv.RowFilter = "entidad" & " like '" & tbInstitucion.Text & "%' and " & cbCampo.Text & " like '" & tbBuscar.Text & "%'"
+            dv.RowFilter = "entidad" & " like '" & tbInstitucion.Text & "%' and " & cbCampo.Text & " like '%" & tbBuscar.Text & "%'"
             'dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
 
             If dv.Count <> 0 Then
                 lknInexistente.Visible = False
                 dgvListado.DataSource = dv
                 ocultar_columnas()
+                AnchoColumnas()
             Else
                 lknInexistente.Visible = True
                 dgvListado.DataSource = Nothing
@@ -290,6 +309,10 @@ Public Class frmCentral
         dgvListado.Columns(0).Visible = False
         dgvListado.Columns(1).Visible = False
         dgvListado.Columns(2).Visible = False
+        dgvListado.Columns(5).Visible = False
+        dgvListado.Columns(6).Visible = False
+        dgvListado.Columns(7).Visible = False
+        dgvListado.Columns(8).Visible = False
     End Sub
 
     Private Sub limpiarEstudios()
@@ -401,7 +424,7 @@ Public Class frmCentral
             dts.gid_atencion = Integer.Parse(tbIDAtencion.Text)
             dts.gid_cliente = idClienteActual
             dts.gdoctor_remitente = tbMedicoRemitente.Text
-            dts.gfecha = dtpFechaAtencion.Text
+            dts.gfecha = Date.Now
             dts.gprecio_parcial = tbPrecioParcial.Text
             dts.gid_medico = cbxMedicoDestinatario.SelectedIndex
 
@@ -493,21 +516,24 @@ Public Class frmCentral
     '$$$$$$$$$$$$$$$$$$$$$$$    BOTON INSERTAR ESTUDIOS    $$$$$$$$$$$$$$$$$$$$$$$
     Private Sub btnInsertarEstudios_Click(sender As Object, e As EventArgs) Handles btnInsertarEstudios.Click
         'insertarCliente()
-        Try
-            insertarAtencion() 'Cuando se presiona el boton INSERTAR ESTUDIOS, se envian los datos del estudio y el precio que se encuentra en el tb precio = 0
-            idAtencionActual = Integer.Parse(tbIDAtencion.Text)
-            Debug.Write("Valor de IDAtencion >> " & idAtencionActual)
-        Catch ex As Exception
-            MsgBox("Ups. Algo anda mal :/")
-        End Try
-        tbInstitucion.Text = cbxInstitucion.Text
-        buscar()
-        pnListaEstudios.Visible = True
-
-        'insertar_detalle()
-        'limpiar()
-        'limpiarEstudios()
-        'limpiar_atencion()
+        If btnDatosAtencion.Visible = True Then
+            MsgBox("Debe llenar los datos de Atencion Primero")
+        Else
+            Try
+                insertarAtencion() 'Cuando se presiona el boton INSERTAR ESTUDIOS, se envian los datos del estudio y el precio que se encuentra en el tb precio = 0
+                idAtencionActual = Integer.Parse(tbIDAtencion.Text)
+                Debug.Write("Valor de IDAtencion >> " & idAtencionActual)
+            Catch ex As Exception
+                MsgBox("Ups. Algo anda mal :/")
+            End Try
+            tbInstitucion.Text = cbxInstitucion.Text
+            buscar()
+            pnListaEstudios.Visible = True
+            'insertar_detalle()
+            'limpiar()
+            'limpiarEstudios()
+            'limpiar_atencion()
+        End If
     End Sub
 
     '----------DOBLE CLICK PARA ELIMINAR UN ESTUDIO AÑADIDO
@@ -591,16 +617,45 @@ Public Class frmCentral
 
     '-------------BOTON  DATOS DE ATENCION----------
     Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
-        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And tbDireccion.Text <> "" And cbSexo.Text <> "" Then
-            Try
-                idClienteActual = Integer.Parse(tbIDCliente.Text)
-                insertarCliente()
-            Catch ex As Exception
-                MsgBox("Por favor llene los campos marcados como obligatorios.")
-            End Try
+        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And cbSexo.Text <> "" Then
+            If cbxInstitucion.Text = "PARTICULAR" Then
+                crearCliente()
+            Else
+                If tbCodigoAsegurado.Text <> "" Then
+                    crearCliente()
+                Else
+                    MsgBox("EL CODIGO DE ASEGURADO NO PUEDE ESTAR EN BLANCO. INSERTE TODOS LOS DATOS Y VUELVA A INTENTAR POR FAVOR")
+                End If
+            End If
+        Else
+            MsgBox("ALGUNOS CAMPOS ESTAN EN BLANCO. INSERTE TODOS LOS DATOS Y VUELVA A INTENTAR POR FAVOR")
         End If
-        generar_cliente()
-        btnDatosAtencion.Visible = False
+    End Sub
+
+    Public Sub crearCliente()
+        Try
+            idClienteActual = Integer.Parse(tbIDCliente.Text)
+            insertarCliente()
+            generar_cliente()
+            btnDatosAtencion.Visible = False
+        Catch ex As Exception
+            MsgBox("Error al registrar el cliente.")
+        End Try
+    End Sub
+
+
+    '----Metodo para habilitar o desabilitar el cuadro de texto codigo de asegurado.
+    Public Sub textoCodigoAsegurado()
+        If cbxInstitucion.Text = "PARTICULAR" Then
+            tbCodigoAsegurado.Text = ""
+            tbCodigoAsegurado.Enabled = False
+        Else
+            tbCodigoAsegurado.Enabled = True
+            tbCodigoAsegurado.Text = ""
+        End If
+    End Sub
+    Private Sub cbxInstitucion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxInstitucion.SelectedIndexChanged
+        textoCodigoAsegurado()
     End Sub
 
     '-----------Metodo para limpiar el datagridview de listados

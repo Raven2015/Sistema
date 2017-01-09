@@ -29,7 +29,7 @@ Partial Class frmCentral
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tbFechaEstudioVP = New System.Windows.Forms.TextBox()
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
@@ -117,21 +117,24 @@ Partial Class frmCentral
         Me.lbFechaEstudio = New System.Windows.Forms.Label()
         Me.grbxDatosFactura = New System.Windows.Forms.GroupBox()
         Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
+        Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
         Me.tbNIT = New System.Windows.Forms.TextBox()
         Me.tbRazonSocial = New System.Windows.Forms.TextBox()
-        Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
         Me.lbNit = New System.Windows.Forms.Label()
         Me.lbRazonSocial = New System.Windows.Forms.Label()
         Me.lbInstitucion = New System.Windows.Forms.Label()
-        Me.lbCodigoAsegurado = New System.Windows.Forms.Label()
         Me.grbxDatosPersonales = New System.Windows.Forms.GroupBox()
         Me.lbci = New System.Windows.Forms.Label()
         Me.tbci = New System.Windows.Forms.TextBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
         Me.cbSexo = New System.Windows.Forms.ComboBox()
         Me.tbCelular = New System.Windows.Forms.TextBox()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.tbEdad = New System.Windows.Forms.TextBox()
+        Me.lbCodigoAsegurado = New System.Windows.Forms.Label()
         Me.tbDireccion = New System.Windows.Forms.TextBox()
         Me.tbApellidos = New System.Windows.Forms.TextBox()
         Me.tbNombres = New System.Windows.Forms.TextBox()
@@ -146,6 +149,7 @@ Partial Class frmCentral
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MedicoTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.medicoTableAdapter()
+        Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.grbxVIstaPrevia.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -160,6 +164,9 @@ Partial Class frmCentral
         CType(Me.MedicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsPreliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbxDatosFactura.SuspendLayout()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbxDatosPersonales.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -247,14 +254,14 @@ Partial Class frmCentral
         Me.dgvListadoAtenciones.BackgroundColor = System.Drawing.Color.White
         Me.dgvListadoAtenciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListadoAtenciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entidad, Me.id_estudio, Me.id_pecio, Me.estudio, Me.precio, Me.entidad, Me.codigo_categoria, Me.id_detalle, Me.id_atencion})
         Me.dgvListadoAtenciones.Location = New System.Drawing.Point(9, 241)
@@ -290,12 +297,14 @@ Partial Class frmCentral
         Me.estudio.HeaderText = "ESTUDIO"
         Me.estudio.Name = "estudio"
         Me.estudio.ReadOnly = True
+        Me.estudio.Width = 290
         '
         'precio
         '
         Me.precio.HeaderText = "PRECIO"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
+        Me.precio.Width = 50
         '
         'entidad
         '
@@ -910,7 +919,7 @@ Partial Class frmCentral
         Me.grbxSeleccionEstudio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.grbxSeleccionEstudio.Location = New System.Drawing.Point(8, 257)
         Me.grbxSeleccionEstudio.Name = "grbxSeleccionEstudio"
-        Me.grbxSeleccionEstudio.Size = New System.Drawing.Size(355, 51)
+        Me.grbxSeleccionEstudio.Size = New System.Drawing.Size(681, 51)
         Me.grbxSeleccionEstudio.TabIndex = 33
         Me.grbxSeleccionEstudio.TabStop = False
         Me.grbxSeleccionEstudio.Text = "SELECCIONAR ESTUDIOS"
@@ -918,7 +927,7 @@ Partial Class frmCentral
         'btnInsertarEstudios
         '
         Me.btnInsertarEstudios.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInsertarEstudios.Location = New System.Drawing.Point(269, 10)
+        Me.btnInsertarEstudios.Location = New System.Drawing.Point(489, 10)
         Me.btnInsertarEstudios.Name = "btnInsertarEstudios"
         Me.btnInsertarEstudios.Size = New System.Drawing.Size(80, 38)
         Me.btnInsertarEstudios.TabIndex = 0
@@ -957,7 +966,7 @@ Partial Class frmCentral
         Me.grbxDatosAtencion.Controls.Add(Me.lbFechaEstudio)
         Me.grbxDatosAtencion.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxDatosAtencion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.grbxDatosAtencion.Location = New System.Drawing.Point(369, 163)
+        Me.grbxDatosAtencion.Location = New System.Drawing.Point(369, 141)
         Me.grbxDatosAtencion.Name = "grbxDatosAtencion"
         Me.grbxDatosAtencion.Size = New System.Drawing.Size(320, 117)
         Me.grbxDatosAtencion.TabIndex = 32
@@ -1053,35 +1062,49 @@ Partial Class frmCentral
         Me.grbxDatosFactura.Controls.Add(Me.cbxInstitucion)
         Me.grbxDatosFactura.Controls.Add(Me.tbNIT)
         Me.grbxDatosFactura.Controls.Add(Me.tbRazonSocial)
-        Me.grbxDatosFactura.Controls.Add(Me.tbCodigoAsegurado)
         Me.grbxDatosFactura.Controls.Add(Me.lbNit)
         Me.grbxDatosFactura.Controls.Add(Me.lbRazonSocial)
         Me.grbxDatosFactura.Controls.Add(Me.lbInstitucion)
-        Me.grbxDatosFactura.Controls.Add(Me.lbCodigoAsegurado)
         Me.grbxDatosFactura.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxDatosFactura.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.grbxDatosFactura.Location = New System.Drawing.Point(369, 12)
         Me.grbxDatosFactura.Name = "grbxDatosFactura"
-        Me.grbxDatosFactura.Size = New System.Drawing.Size(320, 145)
+        Me.grbxDatosFactura.Size = New System.Drawing.Size(320, 123)
         Me.grbxDatosFactura.TabIndex = 31
         Me.grbxDatosFactura.TabStop = False
         Me.grbxDatosFactura.Text = "DATOS PARA FACTURA"
         '
         'cbxInstitucion
         '
+        Me.cbxInstitucion.DataSource = Me.ListaEntidadBindingSource
+        Me.cbxInstitucion.DisplayMember = "nombre_entidad"
         Me.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
         Me.cbxInstitucion.FormattingEnabled = True
-        Me.cbxInstitucion.Items.AddRange(New Object() {"Particular", "COTEL", "RED SALUD"})
-        Me.cbxInstitucion.Location = New System.Drawing.Point(128, 53)
+        Me.cbxInstitucion.Location = New System.Drawing.Point(135, 29)
         Me.cbxInstitucion.Name = "cbxInstitucion"
         Me.cbxInstitucion.Size = New System.Drawing.Size(177, 23)
         Me.cbxInstitucion.TabIndex = 4
         '
+        'ListaEntidadBindingSource
+        '
+        Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
+        Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidadesBindingSource
+        '
+        'DsListaEntidadesBindingSource
+        '
+        Me.DsListaEntidadesBindingSource.DataSource = Me.DsListaEntidades
+        Me.DsListaEntidadesBindingSource.Position = 0
+        '
+        'DsListaEntidades
+        '
+        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
+        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'tbNIT
         '
         Me.tbNIT.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.tbNIT.Location = New System.Drawing.Point(128, 111)
+        Me.tbNIT.Location = New System.Drawing.Point(135, 87)
         Me.tbNIT.MaxLength = 20
         Me.tbNIT.Name = "tbNIT"
         Me.tbNIT.Size = New System.Drawing.Size(177, 23)
@@ -1090,27 +1113,18 @@ Partial Class frmCentral
         'tbRazonSocial
         '
         Me.tbRazonSocial.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.tbRazonSocial.Location = New System.Drawing.Point(128, 82)
+        Me.tbRazonSocial.Location = New System.Drawing.Point(135, 58)
         Me.tbRazonSocial.MaxLength = 100
         Me.tbRazonSocial.Name = "tbRazonSocial"
         Me.tbRazonSocial.Size = New System.Drawing.Size(177, 23)
         Me.tbRazonSocial.TabIndex = 2
-        '
-        'tbCodigoAsegurado
-        '
-        Me.tbCodigoAsegurado.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.tbCodigoAsegurado.Location = New System.Drawing.Point(128, 24)
-        Me.tbCodigoAsegurado.MaxLength = 50
-        Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
-        Me.tbCodigoAsegurado.Size = New System.Drawing.Size(177, 23)
-        Me.tbCodigoAsegurado.TabIndex = 0
         '
         'lbNit
         '
         Me.lbNit.AutoSize = True
         Me.lbNit.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbNit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lbNit.Location = New System.Drawing.Point(6, 114)
+        Me.lbNit.Location = New System.Drawing.Point(13, 90)
         Me.lbNit.Name = "lbNit"
         Me.lbNit.Size = New System.Drawing.Size(25, 15)
         Me.lbNit.TabIndex = 3
@@ -1121,7 +1135,7 @@ Partial Class frmCentral
         Me.lbRazonSocial.AutoSize = True
         Me.lbRazonSocial.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbRazonSocial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lbRazonSocial.Location = New System.Drawing.Point(7, 85)
+        Me.lbRazonSocial.Location = New System.Drawing.Point(14, 61)
         Me.lbRazonSocial.Name = "lbRazonSocial"
         Me.lbRazonSocial.Size = New System.Drawing.Size(72, 15)
         Me.lbRazonSocial.TabIndex = 2
@@ -1132,32 +1146,23 @@ Partial Class frmCentral
         Me.lbInstitucion.AutoSize = True
         Me.lbInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbInstitucion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lbInstitucion.Location = New System.Drawing.Point(7, 56)
+        Me.lbInstitucion.Location = New System.Drawing.Point(14, 32)
         Me.lbInstitucion.Name = "lbInstitucion"
         Me.lbInstitucion.Size = New System.Drawing.Size(64, 15)
         Me.lbInstitucion.TabIndex = 1
         Me.lbInstitucion.Text = "Institución"
-        '
-        'lbCodigoAsegurado
-        '
-        Me.lbCodigoAsegurado.AutoSize = True
-        Me.lbCodigoAsegurado.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCodigoAsegurado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lbCodigoAsegurado.Location = New System.Drawing.Point(6, 27)
-        Me.lbCodigoAsegurado.Name = "lbCodigoAsegurado"
-        Me.lbCodigoAsegurado.Size = New System.Drawing.Size(122, 15)
-        Me.lbCodigoAsegurado.TabIndex = 0
-        Me.lbCodigoAsegurado.Text = "Codigo de Asegurado"
         '
         'grbxDatosPersonales
         '
         Me.grbxDatosPersonales.Controls.Add(Me.lbci)
         Me.grbxDatosPersonales.Controls.Add(Me.tbci)
         Me.grbxDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
+        Me.grbxDatosPersonales.Controls.Add(Me.tbCodigoAsegurado)
         Me.grbxDatosPersonales.Controls.Add(Me.cbSexo)
         Me.grbxDatosPersonales.Controls.Add(Me.tbCelular)
         Me.grbxDatosPersonales.Controls.Add(Me.tbTelefono)
         Me.grbxDatosPersonales.Controls.Add(Me.tbEdad)
+        Me.grbxDatosPersonales.Controls.Add(Me.lbCodigoAsegurado)
         Me.grbxDatosPersonales.Controls.Add(Me.tbDireccion)
         Me.grbxDatosPersonales.Controls.Add(Me.tbApellidos)
         Me.grbxDatosPersonales.Controls.Add(Me.tbNombres)
@@ -1206,6 +1211,16 @@ Partial Class frmCentral
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(200, 23)
         Me.dtpFechaNacimiento.TabIndex = 2
         '
+        'tbCodigoAsegurado
+        '
+        Me.tbCodigoAsegurado.Enabled = False
+        Me.tbCodigoAsegurado.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.tbCodigoAsegurado.Location = New System.Drawing.Point(139, 114)
+        Me.tbCodigoAsegurado.MaxLength = 50
+        Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
+        Me.tbCodigoAsegurado.Size = New System.Drawing.Size(200, 23)
+        Me.tbCodigoAsegurado.TabIndex = 0
+        '
         'cbSexo
         '
         Me.cbSexo.AutoCompleteCustomSource.AddRange(New String() {"Femenino", "Masculino"})
@@ -1246,6 +1261,17 @@ Partial Class frmCentral
         Me.tbEdad.Size = New System.Drawing.Size(91, 23)
         Me.tbEdad.TabIndex = 20
         '
+        'lbCodigoAsegurado
+        '
+        Me.lbCodigoAsegurado.AutoSize = True
+        Me.lbCodigoAsegurado.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodigoAsegurado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lbCodigoAsegurado.Location = New System.Drawing.Point(11, 119)
+        Me.lbCodigoAsegurado.Name = "lbCodigoAsegurado"
+        Me.lbCodigoAsegurado.Size = New System.Drawing.Size(122, 15)
+        Me.lbCodigoAsegurado.TabIndex = 0
+        Me.lbCodigoAsegurado.Text = "Codigo de Asegurado"
+        '
         'tbDireccion
         '
         Me.tbDireccion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1253,6 +1279,7 @@ Partial Class frmCentral
         Me.tbDireccion.Name = "tbDireccion"
         Me.tbDireccion.Size = New System.Drawing.Size(216, 23)
         Me.tbDireccion.TabIndex = 3
+        Me.tbDireccion.Visible = False
         '
         'tbApellidos
         '
@@ -1326,6 +1353,7 @@ Partial Class frmCentral
         Me.lbDireccion.Size = New System.Drawing.Size(57, 15)
         Me.lbDireccion.TabIndex = 3
         Me.lbDireccion.Text = "Dirección"
+        Me.lbDireccion.Visible = False
         '
         'lbFechaNacimiento
         '
@@ -1374,6 +1402,10 @@ Partial Class frmCentral
         '
         Me.MedicoTableAdapter.ClearBeforeFill = True
         '
+        'ListaEntidadTableAdapter
+        '
+        Me.ListaEntidadTableAdapter.ClearBeforeFill = True
+        '
         'frmCentral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1382,6 +1414,7 @@ Partial Class frmCentral
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.grbxVIstaPrevia)
         Me.Name = "frmCentral"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ATENCIÓN DE PACIENTES"
         Me.grbxVIstaPrevia.ResumeLayout(False)
         Me.grbxVIstaPrevia.PerformLayout()
@@ -1405,6 +1438,9 @@ Partial Class frmCentral
         CType(Me.DsPreliminar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbxDatosFactura.ResumeLayout(False)
         Me.grbxDatosFactura.PerformLayout()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbxDatosPersonales.ResumeLayout(False)
         Me.grbxDatosPersonales.PerformLayout()
         Me.ResumeLayout(False)
@@ -1511,6 +1547,12 @@ Partial Class frmCentral
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents btnImprimir As Button
     Friend WithEvents cbxInstitucion As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbxMedicoDestinatario As ComboBox
+    Friend WithEvents DsPreliminar As dsPreliminar
+    Friend WithEvents MedicoBindingSource As BindingSource
+    Friend WithEvents MedicoTableAdapter As dsPreliminarTableAdapters.medicoTableAdapter
+    Friend WithEvents btnDatosAtencion As Button
     Friend WithEvents id_entidad As DataGridViewTextBoxColumn
     Friend WithEvents id_estudio As DataGridViewTextBoxColumn
     Friend WithEvents id_pecio As DataGridViewTextBoxColumn
@@ -1520,10 +1562,8 @@ Partial Class frmCentral
     Friend WithEvents codigo_categoria As DataGridViewTextBoxColumn
     Friend WithEvents id_detalle As DataGridViewTextBoxColumn
     Friend WithEvents id_atencion As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbxMedicoDestinatario As ComboBox
-    Friend WithEvents DsPreliminar As dsPreliminar
-    Friend WithEvents MedicoBindingSource As BindingSource
-    Friend WithEvents MedicoTableAdapter As dsPreliminarTableAdapters.medicoTableAdapter
-    Friend WithEvents btnDatosAtencion As Button
+    Friend WithEvents DsListaEntidadesBindingSource As BindingSource
+    Friend WithEvents DsListaEntidades As dsListaEntidades
+    Friend WithEvents ListaEntidadBindingSource As BindingSource
+    Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
 End Class

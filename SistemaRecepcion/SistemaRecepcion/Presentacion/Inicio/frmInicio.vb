@@ -36,4 +36,12 @@
         Ingreso.Visible() = True
         Me.Close()
     End Sub
+
+    Private Sub btnComprobante_Click(sender As Object, e As EventArgs) Handles btnComprobante.Click
+        frmComprobantesCaja.ShowDialog()
+    End Sub
+
+    Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
+        frmCotizacion.ShowDialog()
+    End Sub
 End Class
