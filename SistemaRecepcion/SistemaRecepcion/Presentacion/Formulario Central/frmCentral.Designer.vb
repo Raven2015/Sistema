@@ -126,6 +126,7 @@ Partial Class frmCentral
         Me.lbRazonSocial = New System.Windows.Forms.Label()
         Me.lbInstitucion = New System.Windows.Forms.Label()
         Me.grbxDatosPersonales = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarClientes = New System.Windows.Forms.Button()
         Me.lbci = New System.Windows.Forms.Label()
         Me.tbci = New System.Windows.Forms.TextBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -1154,6 +1155,7 @@ Partial Class frmCentral
         '
         'grbxDatosPersonales
         '
+        Me.grbxDatosPersonales.Controls.Add(Me.btnBuscarClientes)
         Me.grbxDatosPersonales.Controls.Add(Me.lbci)
         Me.grbxDatosPersonales.Controls.Add(Me.tbci)
         Me.grbxDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
@@ -1183,6 +1185,16 @@ Partial Class frmCentral
         Me.grbxDatosPersonales.TabStop = False
         Me.grbxDatosPersonales.Text = "DATOS PERSONALES"
         '
+        'btnBuscarClientes
+        '
+        Me.btnBuscarClientes.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.search
+        Me.btnBuscarClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarClientes.Location = New System.Drawing.Point(316, 143)
+        Me.btnBuscarClientes.Name = "btnBuscarClientes"
+        Me.btnBuscarClientes.Size = New System.Drawing.Size(23, 23)
+        Me.btnBuscarClientes.TabIndex = 54
+        Me.btnBuscarClientes.UseVisualStyleBackColor = True
+        '
         'lbci
         '
         Me.lbci.AutoSize = True
@@ -1199,7 +1211,7 @@ Partial Class frmCentral
         Me.tbci.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbci.Location = New System.Drawing.Point(123, 143)
         Me.tbci.Name = "tbci"
-        Me.tbci.Size = New System.Drawing.Size(216, 23)
+        Me.tbci.Size = New System.Drawing.Size(180, 23)
         Me.tbci.TabIndex = 4
         '
         'dtpFechaNacimiento
@@ -1413,6 +1425,7 @@ Partial Class frmCentral
         Me.ClientSize = New System.Drawing.Size(1104, 661)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.grbxVIstaPrevia)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmCentral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ATENCIÓN DE PACIENTES"
@@ -1566,4 +1579,5 @@ Partial Class frmCentral
     Friend WithEvents DsListaEntidades As dsListaEntidades
     Friend WithEvents ListaEntidadBindingSource As BindingSource
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
+    Friend WithEvents btnBuscarClientes As Button
 End Class

@@ -35,6 +35,11 @@ Partial Class frmEntidad
         Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.tbEntidad = New System.Windows.Forms.TextBox()
         Me.dgvListaEstPrec = New System.Windows.Forms.DataGridView()
+        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.grbxDatosEstudio = New System.Windows.Forms.GroupBox()
         Me.tbIDPrecio = New System.Windows.Forms.TextBox()
@@ -57,11 +62,6 @@ Partial Class frmEntidad
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
-        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvListaEstPrec, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,20 +124,21 @@ Partial Class frmEntidad
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(301, 77)
+        Me.btnGuardar.Location = New System.Drawing.Point(290, 20)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(70, 24)
+        Me.btnGuardar.Size = New System.Drawing.Size(70, 20)
         Me.btnGuardar.TabIndex = 42
         Me.btnGuardar.Text = "GUARDAR"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'tbIDEntidad
         '
-        Me.tbIDEntidad.Location = New System.Drawing.Point(6, 81)
+        Me.tbIDEntidad.Location = New System.Drawing.Point(15, 39)
         Me.tbIDEntidad.Name = "tbIDEntidad"
         Me.tbIDEntidad.ReadOnly = True
         Me.tbIDEntidad.Size = New System.Drawing.Size(34, 20)
         Me.tbIDEntidad.TabIndex = 48
+        Me.tbIDEntidad.Visible = False
         '
         'tbEntidad
         '
@@ -160,7 +161,7 @@ Partial Class frmEntidad
         Me.dgvListaEstPrec.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListaEstPrec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaEstPrec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_estudio, Me.codigo_estudio, Me.estudio, Me.precio, Me.id_precio})
-        Me.dgvListaEstPrec.Location = New System.Drawing.Point(6, 107)
+        Me.dgvListaEstPrec.Location = New System.Drawing.Point(6, 65)
         Me.dgvListaEstPrec.Name = "dgvListaEstPrec"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -171,8 +172,40 @@ Partial Class frmEntidad
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvListaEstPrec.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvListaEstPrec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListaEstPrec.Size = New System.Drawing.Size(365, 313)
+        Me.dgvListaEstPrec.Size = New System.Drawing.Size(365, 355)
         Me.dgvListaEstPrec.TabIndex = 0
+        '
+        'id_estudio
+        '
+        Me.id_estudio.HeaderText = "id_estudio"
+        Me.id_estudio.Name = "id_estudio"
+        Me.id_estudio.ReadOnly = True
+        Me.id_estudio.Visible = False
+        '
+        'codigo_estudio
+        '
+        Me.codigo_estudio.HeaderText = "Código Estudio"
+        Me.codigo_estudio.Name = "codigo_estudio"
+        Me.codigo_estudio.ReadOnly = True
+        Me.codigo_estudio.Width = 70
+        '
+        'estudio
+        '
+        Me.estudio.HeaderText = "Estudio"
+        Me.estudio.Name = "estudio"
+        Me.estudio.ReadOnly = True
+        Me.estudio.Width = 200
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.Width = 70
+        '
+        'id_precio
+        '
+        Me.id_precio.HeaderText = "id_precio"
+        Me.id_precio.Name = "id_precio"
         '
         'Label6
         '
@@ -398,38 +431,6 @@ Partial Class frmEntidad
         Me.dgvListado.Size = New System.Drawing.Size(477, 210)
         Me.dgvListado.TabIndex = 0
         '
-        'id_estudio
-        '
-        Me.id_estudio.HeaderText = "id_estudio"
-        Me.id_estudio.Name = "id_estudio"
-        Me.id_estudio.ReadOnly = True
-        Me.id_estudio.Visible = False
-        '
-        'codigo_estudio
-        '
-        Me.codigo_estudio.HeaderText = "Código Estudio"
-        Me.codigo_estudio.Name = "codigo_estudio"
-        Me.codigo_estudio.ReadOnly = True
-        Me.codigo_estudio.Width = 70
-        '
-        'estudio
-        '
-        Me.estudio.HeaderText = "Estudio"
-        Me.estudio.Name = "estudio"
-        Me.estudio.ReadOnly = True
-        Me.estudio.Width = 200
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.Width = 70
-        '
-        'id_precio
-        '
-        Me.id_precio.HeaderText = "id_precio"
-        Me.id_precio.Name = "id_precio"
-        '
         'frmEntidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -438,6 +439,7 @@ Partial Class frmEntidad
         Me.Controls.Add(Me.grbxDatosEstudio)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmEntidad"
         Me.Text = "Entidad"
         Me.MenuStrip1.ResumeLayout(False)
@@ -457,7 +459,6 @@ Partial Class frmEntidad
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
@@ -492,4 +493,5 @@ Partial Class frmEntidad
     Friend WithEvents estudio As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents id_precio As DataGridViewTextBoxColumn
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
 End Class

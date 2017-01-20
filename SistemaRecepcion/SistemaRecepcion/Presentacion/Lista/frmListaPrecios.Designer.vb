@@ -50,7 +50,7 @@ Partial Class frmListaPrecios
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbListadoEstudios = New System.Windows.Forms.GroupBox()
-        Me.tbIDLista = New System.Windows.Forms.TextBox()
+        Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -120,9 +120,9 @@ Partial Class frmListaPrecios
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(18, 109)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(39, 13)
+        Me.Label15.Size = New System.Drawing.Size(55, 13)
         Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Cliente"
+        Me.Label15.Text = "ENTIDAD"
         '
         'tbCliente
         '
@@ -304,11 +304,11 @@ Partial Class frmListaPrecios
         '
         'gbListadoEstudios
         '
-        Me.gbListadoEstudios.Controls.Add(Me.tbIDLista)
+        Me.gbListadoEstudios.Controls.Add(Me.tbIDEstudio)
+        Me.gbListadoEstudios.Controls.Add(Me.tbIDEntidad)
         Me.gbListadoEstudios.Controls.Add(Me.lknInexistente)
         Me.gbListadoEstudios.Controls.Add(Me.tbIDPrecio)
         Me.gbListadoEstudios.Controls.Add(Me.dgvListado)
-        Me.gbListadoEstudios.Controls.Add(Me.tbIDEstudio)
         Me.gbListadoEstudios.Location = New System.Drawing.Point(8, 172)
         Me.gbListadoEstudios.Name = "gbListadoEstudios"
         Me.gbListadoEstudios.Size = New System.Drawing.Size(788, 313)
@@ -316,14 +316,14 @@ Partial Class frmListaPrecios
         Me.gbListadoEstudios.TabStop = False
         Me.gbListadoEstudios.Text = "Listado de Estudios"
         '
-        'tbIDLista
+        'tbIDEntidad
         '
-        Me.tbIDLista.Enabled = False
-        Me.tbIDLista.Location = New System.Drawing.Point(344, 293)
-        Me.tbIDLista.Name = "tbIDLista"
-        Me.tbIDLista.Size = New System.Drawing.Size(100, 20)
-        Me.tbIDLista.TabIndex = 43
-        Me.tbIDLista.Visible = False
+        Me.tbIDEntidad.Enabled = False
+        Me.tbIDEntidad.Location = New System.Drawing.Point(344, 293)
+        Me.tbIDEntidad.Name = "tbIDEntidad"
+        Me.tbIDEntidad.Size = New System.Drawing.Size(100, 20)
+        Me.tbIDEntidad.TabIndex = 43
+        Me.tbIDEntidad.Visible = False
         '
         'lknInexistente
         '
@@ -416,5 +416,5 @@ Partial Class frmListaPrecios
     Friend WithEvents lknInexistente As LinkLabel
     Friend WithEvents dgvListado As DataGridView
     Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
-    Friend WithEvents tbIDLista As TextBox
+    Friend WithEvents tbIDEntidad As TextBox
 End Class

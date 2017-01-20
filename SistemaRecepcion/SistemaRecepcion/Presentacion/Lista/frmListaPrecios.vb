@@ -44,7 +44,7 @@
             Dim dv As New DataView(ds.Tables(0))
 
 
-            dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
+            dv.RowFilter = cbCampo.Text & " like '%" & tbBuscar.Text & "%'"
 
             If dv.Count <> 0 Then
                 lknInexistente.Visible = False
@@ -98,15 +98,15 @@
         'Para corregir el problema de click en la última fila:
         limpiar()
         Try
-            tbIDLista.Text = dgvListado.SelectedCells.Item(1).Value
-            tbIDEstudio.Text = dgvListado.SelectedCells.Item(2).Value
-            tbIDPrecio.Text = dgvListado.SelectedCells.Item(3).Value
-            tbCliente.Text = dgvListado.SelectedCells.Item(4).Value
-            tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(5).Value
-            tbCategoria.Text = dgvListado.SelectedCells.Item(6).Value
-            tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(7).Value
-            tbNombres.Text = dgvListado.SelectedCells.Item(8).Value
-            tbPrecio.Text = dgvListado.SelectedCells.Item(9).Value
+            tbIDEntidad.Text = dgvListado.SelectedCells.Item(1).Value 'ID de Entidad
+            tbIDEstudio.Text = dgvListado.SelectedCells.Item(2).Value 'ID de Estudio
+            tbIDPrecio.Text = dgvListado.SelectedCells.Item(3).Value 'ID de Precio
+            tbCliente.Text = dgvListado.SelectedCells.Item(6).Value 'Entidad
+            tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(7).Value 'CODIGO de categoria
+            tbCategoria.Text = dgvListado.SelectedCells.Item(8).Value 'Categoria
+            tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(9).Value 'Cod. de Estudio
+            tbNombres.Text = dgvListado.SelectedCells.Item(4).Value ' Estudio
+            tbPrecio.Text = dgvListado.SelectedCells.Item(5).Value 'Precio
         Catch ex As Exception
             MsgBox("Seleccione una fila con contenido por favor.")
         End Try
@@ -134,4 +134,16 @@
         End If
     End Sub
 
+    Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
+        frmEditarEntidad.tbIDEntidad.Text = dgvListado.SelectedCells.Item(1).Value 'ID de Entidad
+        frmEditarEntidad.tbIDEstudio.Text = dgvListado.SelectedCells.Item(2).Value 'ID de Estudio
+        frmEditarEntidad.tbIDPrecio.Text = dgvListado.SelectedCells.Item(3).Value 'ID de Precio
+        frmEditarEntidad.tbEntidad.Text = dgvListado.SelectedCells.Item(6).Value 'Entidad
+        frmEditarEntidad.tbCodigoCategoria.Text = dgvListado.SelectedCells.Item(7).Value 'CODIGO de categoria
+        frmEditarEntidad.tbCategoria.Text = dgvListado.SelectedCells.Item(8).Value 'Categoria
+        frmEditarEntidad.tbCodigoEstudio.Text = dgvListado.SelectedCells.Item(9).Value 'Cod. de Estudio
+        frmEditarEntidad.tbNombres.Text = dgvListado.SelectedCells.Item(4).Value ' Estudio
+        frmEditarEntidad.tbPrecio.Text = dgvListado.SelectedCells.Item(5).Value 'Precio
+        frmEditarEntidad.ShowDialog()
+    End Sub
 End Class
