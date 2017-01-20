@@ -135,6 +135,7 @@ Public Class frmCentral
         pnListaEstudios.Visible = False
         tbMedicoRemitente.Text = ""
         Debug.Write("Limpieza OK :)")
+        tbFechaEstudioVP.Text = Date.Now
     End Sub
 
     Public Function fecha_nacimiento(ByVal fecha As Date) As Integer
@@ -278,8 +279,9 @@ Public Class frmCentral
     End Sub
 
     Public Sub AnchoColumnas()
-        dgvListado.Columns(3).Width = 550
+        dgvListado.Columns(3).Width = 350
         dgvListado.Columns(4).Width = 50
+        dgvListado.Columns(7).Width = 200
     End Sub
 
     Private Sub buscar()
@@ -311,7 +313,7 @@ Public Class frmCentral
         dgvListado.Columns(2).Visible = False
         dgvListado.Columns(5).Visible = False
         dgvListado.Columns(6).Visible = False
-        dgvListado.Columns(7).Visible = False
+        'dgvListado.Columns(7).Visible = False
         dgvListado.Columns(8).Visible = False
     End Sub
 
@@ -614,6 +616,11 @@ Public Class frmCentral
         ReporteFinal.ShowDialog()
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        frmListaFlotante.tbCI.Text = tbci.Text
+        limpiar()
+        frmListaFlotante.ShowDialog()
+    End Sub
 
     '-------------BOTON  DATOS DE ATENCION----------
     Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
@@ -670,7 +677,5 @@ Public Class frmCentral
             MsgBox("Esta fila no se puede eliminar", MsgBoxStyle.Critical, "Operación inválida : : : . . .")
         End Try
     End Sub
-
-
 End Class
 

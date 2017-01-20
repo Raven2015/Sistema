@@ -47,7 +47,7 @@
             ds.Tables.Add(dt.Copy)
             Dim dv As New DataView(ds.Tables(0))
 
-            dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
+            dv.RowFilter = cbCampo.Text & " like '%" & tbBuscar.Text & "%'"
 
             If dv.Count <> 0 Then
                 lknInexistente.Visible = False

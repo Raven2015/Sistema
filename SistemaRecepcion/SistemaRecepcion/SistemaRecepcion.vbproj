@@ -139,6 +139,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBIOMEDICADataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dbBIOMEDICADataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbBIOMEDICADataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsInicial.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +272,12 @@
     <Compile Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Entidad\frmEditarEntidad.Designer.vb">
+      <DependentUpon>frmEditarEntidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Entidad\frmEditarEntidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Entidad\frmEntidad.Designer.vb">
       <DependentUpon>frmEntidad.vb</DependentUpon>
     </Compile>
@@ -301,6 +312,12 @@
       <DependentUpon>frmCentral.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Formulario Central\frmCentral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Formulario Central\frmListaFlotante.Designer.vb">
+      <DependentUpon>frmListaFlotante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Formulario Central\frmListaFlotante.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Inicio\frmInicio.Designer.vb">
@@ -408,6 +425,9 @@
     <EmbeddedResource Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.resx">
       <DependentUpon>frmDetalleAtencion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Entidad\frmEditarEntidad.resx">
+      <DependentUpon>frmEditarEntidad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Entidad\frmEntidad.resx">
       <DependentUpon>frmEntidad.vb</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Formulario Central\frmCentral.resx">
       <DependentUpon>frmCentral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Formulario Central\frmListaFlotante.resx">
+      <DependentUpon>frmListaFlotante.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
@@ -468,6 +491,17 @@
     </None>
     <None Include="dbBIOMEDICADataSet.xss">
       <DependentUpon>dbBIOMEDICADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbBIOMEDICADataSet1.xsc">
+      <DependentUpon>dbBIOMEDICADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbBIOMEDICADataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbBIOMEDICADataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbBIOMEDICADataSet1.xss">
+      <DependentUpon>dbBIOMEDICADataSet1.xsd</DependentUpon>
     </None>
     <None Include="dsInicial.xsc">
       <DependentUpon>dsInicial.xsd</DependentUpon>

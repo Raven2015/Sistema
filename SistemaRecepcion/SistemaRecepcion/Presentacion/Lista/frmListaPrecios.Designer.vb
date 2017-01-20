@@ -54,6 +54,7 @@ Partial Class frmListaPrecios
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.grbDatosCategoria.SuspendLayout()
         Me.gbEstudio.SuspendLayout()
@@ -304,11 +305,12 @@ Partial Class frmListaPrecios
         '
         'gbListadoEstudios
         '
+        Me.gbListadoEstudios.Controls.Add(Me.tbIDEntidad)
+        Me.gbListadoEstudios.Controls.Add(Me.tbIDEstudio)
         Me.gbListadoEstudios.Controls.Add(Me.tbIDLista)
         Me.gbListadoEstudios.Controls.Add(Me.lknInexistente)
         Me.gbListadoEstudios.Controls.Add(Me.tbIDPrecio)
         Me.gbListadoEstudios.Controls.Add(Me.dgvListado)
-        Me.gbListadoEstudios.Controls.Add(Me.tbIDEstudio)
         Me.gbListadoEstudios.Location = New System.Drawing.Point(8, 172)
         Me.gbListadoEstudios.Name = "gbListadoEstudios"
         Me.gbListadoEstudios.Size = New System.Drawing.Size(788, 313)
@@ -353,6 +355,15 @@ Partial Class frmListaPrecios
         Me.Eliminar.HeaderText = "Eliminar"
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.ReadOnly = True
+        '
+        'tbIDEntidad
+        '
+        Me.tbIDEntidad.Enabled = False
+        Me.tbIDEntidad.Location = New System.Drawing.Point(213, 293)
+        Me.tbIDEntidad.Name = "tbIDEntidad"
+        Me.tbIDEntidad.Size = New System.Drawing.Size(100, 20)
+        Me.tbIDEntidad.TabIndex = 44
+        Me.tbIDEntidad.Visible = False
         '
         'frmListaPrecios
         '
@@ -417,4 +428,5 @@ Partial Class frmListaPrecios
     Friend WithEvents dgvListado As DataGridView
     Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents tbIDLista As TextBox
+    Friend WithEvents tbIDEntidad As TextBox
 End Class

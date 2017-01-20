@@ -35,6 +35,11 @@ Partial Class frmEntidad
         Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.tbEntidad = New System.Windows.Forms.TextBox()
         Me.dgvListaEstPrec = New System.Windows.Forms.DataGridView()
+        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.grbxDatosEstudio = New System.Windows.Forms.GroupBox()
         Me.tbIDPrecio = New System.Windows.Forms.TextBox()
@@ -50,18 +55,12 @@ Partial Class frmEntidad
         Me.tbCodigoCategoria = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.gbListadoEstudios = New System.Windows.Forms.GroupBox()
-        Me.btnAdicionar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.cbCampo = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
-        Me.id_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estudio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvListaEstPrec, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,7 +123,7 @@ Partial Class frmEntidad
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(301, 77)
+        Me.btnGuardar.Location = New System.Drawing.Point(292, 17)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(70, 24)
         Me.btnGuardar.TabIndex = 42
@@ -133,7 +132,7 @@ Partial Class frmEntidad
         '
         'tbIDEntidad
         '
-        Me.tbIDEntidad.Location = New System.Drawing.Point(6, 81)
+        Me.tbIDEntidad.Location = New System.Drawing.Point(225, 19)
         Me.tbIDEntidad.Name = "tbIDEntidad"
         Me.tbIDEntidad.ReadOnly = True
         Me.tbIDEntidad.Size = New System.Drawing.Size(34, 20)
@@ -160,7 +159,7 @@ Partial Class frmEntidad
         Me.dgvListaEstPrec.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListaEstPrec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaEstPrec.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_estudio, Me.codigo_estudio, Me.estudio, Me.precio, Me.id_precio})
-        Me.dgvListaEstPrec.Location = New System.Drawing.Point(6, 107)
+        Me.dgvListaEstPrec.Location = New System.Drawing.Point(6, 54)
         Me.dgvListaEstPrec.Name = "dgvListaEstPrec"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -171,8 +170,40 @@ Partial Class frmEntidad
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvListaEstPrec.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvListaEstPrec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListaEstPrec.Size = New System.Drawing.Size(365, 313)
+        Me.dgvListaEstPrec.Size = New System.Drawing.Size(365, 366)
         Me.dgvListaEstPrec.TabIndex = 0
+        '
+        'id_estudio
+        '
+        Me.id_estudio.HeaderText = "id_estudio"
+        Me.id_estudio.Name = "id_estudio"
+        Me.id_estudio.ReadOnly = True
+        Me.id_estudio.Visible = False
+        '
+        'codigo_estudio
+        '
+        Me.codigo_estudio.HeaderText = "Código Estudio"
+        Me.codigo_estudio.Name = "codigo_estudio"
+        Me.codigo_estudio.ReadOnly = True
+        Me.codigo_estudio.Width = 70
+        '
+        'estudio
+        '
+        Me.estudio.HeaderText = "Estudio"
+        Me.estudio.Name = "estudio"
+        Me.estudio.ReadOnly = True
+        Me.estudio.Width = 200
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.Width = 70
+        '
+        'id_precio
+        '
+        Me.id_precio.HeaderText = "id_precio"
+        Me.id_precio.Name = "id_precio"
         '
         'Label6
         '
@@ -213,6 +244,7 @@ Partial Class frmEntidad
         Me.tbIDPrecio.ReadOnly = True
         Me.tbIDPrecio.Size = New System.Drawing.Size(34, 20)
         Me.tbIDPrecio.TabIndex = 48
+        Me.tbIDPrecio.Visible = False
         '
         'tbIDEstudio
         '
@@ -221,6 +253,7 @@ Partial Class frmEntidad
         Me.tbIDEstudio.ReadOnly = True
         Me.tbIDEstudio.Size = New System.Drawing.Size(34, 20)
         Me.tbIDEstudio.TabIndex = 47
+        Me.tbIDEstudio.Visible = False
         '
         'tbPrecio
         '
@@ -310,7 +343,6 @@ Partial Class frmEntidad
         '
         'gbListadoEstudios
         '
-        Me.gbListadoEstudios.Controls.Add(Me.btnAdicionar)
         Me.gbListadoEstudios.Controls.Add(Me.btnActualizar)
         Me.gbListadoEstudios.Controls.Add(Me.cbCampo)
         Me.gbListadoEstudios.Controls.Add(Me.Label2)
@@ -324,20 +356,11 @@ Partial Class frmEntidad
         Me.gbListadoEstudios.TabStop = False
         Me.gbListadoEstudios.Text = "Listado de Estudios"
         '
-        'btnAdicionar
-        '
-        Me.btnAdicionar.Location = New System.Drawing.Point(415, 21)
-        Me.btnAdicionar.Name = "btnAdicionar"
-        Me.btnAdicionar.Size = New System.Drawing.Size(62, 49)
-        Me.btnAdicionar.TabIndex = 41
-        Me.btnAdicionar.Text = "Adicionar"
-        Me.btnAdicionar.UseVisualStyleBackColor = True
-        '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(250, 21)
+        Me.btnActualizar.Location = New System.Drawing.Point(415, 23)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(62, 49)
+        Me.btnActualizar.Size = New System.Drawing.Size(68, 21)
         Me.btnActualizar.TabIndex = 40
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
@@ -349,7 +372,7 @@ Partial Class frmEntidad
         Me.cbCampo.Items.AddRange(New Object() {"codigo_categoria", "nombre_categoria", "estudio", "codigo_estudio"})
         Me.cbCampo.Location = New System.Drawing.Point(71, 23)
         Me.cbCampo.Name = "cbCampo"
-        Me.cbCampo.Size = New System.Drawing.Size(173, 21)
+        Me.cbCampo.Size = New System.Drawing.Size(160, 21)
         Me.cbCampo.TabIndex = 39
         '
         'Label2
@@ -363,7 +386,7 @@ Partial Class frmEntidad
         '
         'tbBuscar
         '
-        Me.tbBuscar.Location = New System.Drawing.Point(71, 50)
+        Me.tbBuscar.Location = New System.Drawing.Point(237, 23)
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(174, 20)
         Me.tbBuscar.TabIndex = 37
@@ -390,45 +413,13 @@ Partial Class frmEntidad
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Location = New System.Drawing.Point(6, 82)
+        Me.dgvListado.Location = New System.Drawing.Point(6, 50)
         Me.dgvListado.MultiSelect = False
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(477, 210)
+        Me.dgvListado.Size = New System.Drawing.Size(477, 242)
         Me.dgvListado.TabIndex = 0
-        '
-        'id_estudio
-        '
-        Me.id_estudio.HeaderText = "id_estudio"
-        Me.id_estudio.Name = "id_estudio"
-        Me.id_estudio.ReadOnly = True
-        Me.id_estudio.Visible = False
-        '
-        'codigo_estudio
-        '
-        Me.codigo_estudio.HeaderText = "Código Estudio"
-        Me.codigo_estudio.Name = "codigo_estudio"
-        Me.codigo_estudio.ReadOnly = True
-        Me.codigo_estudio.Width = 70
-        '
-        'estudio
-        '
-        Me.estudio.HeaderText = "Estudio"
-        Me.estudio.Name = "estudio"
-        Me.estudio.ReadOnly = True
-        Me.estudio.Width = 200
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.Width = 70
-        '
-        'id_precio
-        '
-        Me.id_precio.HeaderText = "id_precio"
-        Me.id_precio.Name = "id_precio"
         '
         'frmEntidad
         '
@@ -476,7 +467,6 @@ Partial Class frmEntidad
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents tbNombres As TextBox
-    Friend WithEvents btnAdicionar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents cbCampo As ComboBox
     Friend WithEvents Label2 As Label

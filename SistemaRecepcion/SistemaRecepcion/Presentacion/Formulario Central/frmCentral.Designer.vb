@@ -150,6 +150,7 @@ Partial Class frmCentral
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MedicoTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.medicoTableAdapter()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.grbxVIstaPrevia.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1154,6 +1155,7 @@ Partial Class frmCentral
         '
         'grbxDatosPersonales
         '
+        Me.grbxDatosPersonales.Controls.Add(Me.btnBuscar)
         Me.grbxDatosPersonales.Controls.Add(Me.lbci)
         Me.grbxDatosPersonales.Controls.Add(Me.tbci)
         Me.grbxDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
@@ -1199,7 +1201,7 @@ Partial Class frmCentral
         Me.tbci.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbci.Location = New System.Drawing.Point(123, 143)
         Me.tbci.Name = "tbci"
-        Me.tbci.Size = New System.Drawing.Size(216, 23)
+        Me.tbci.Size = New System.Drawing.Size(188, 23)
         Me.tbci.TabIndex = 4
         '
         'dtpFechaNacimiento
@@ -1406,6 +1408,16 @@ Partial Class frmCentral
         '
         Me.ListaEntidadTableAdapter.ClearBeforeFill = True
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.search
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscar.Location = New System.Drawing.Point(317, 143)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(23, 23)
+        Me.btnBuscar.TabIndex = 21
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
         'frmCentral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1566,4 +1578,5 @@ Partial Class frmCentral
     Friend WithEvents DsListaEntidades As dsListaEntidades
     Friend WithEvents ListaEntidadBindingSource As BindingSource
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
+    Friend WithEvents btnBuscar As Button
 End Class

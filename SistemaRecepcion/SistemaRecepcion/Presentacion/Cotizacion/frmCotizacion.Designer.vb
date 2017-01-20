@@ -22,8 +22,13 @@ Partial Class frmCotizacion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
+        Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
         Me.tbEstudio = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,14 +43,21 @@ Partial Class frmCotizacion
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
-        Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
+        Me.ListaentidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Lista_entidadesTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.lista_entidadesTableAdapter()
+        Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListaentidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -59,6 +71,33 @@ Partial Class frmCotizacion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(728, 47)
         Me.Panel1.TabIndex = 0
+        '
+        'cbxInstitucion
+        '
+        Me.cbxInstitucion.DataSource = Me.ListaEntidadBindingSource
+        Me.cbxInstitucion.DisplayMember = "nombre_entidad"
+        Me.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.cbxInstitucion.FormattingEnabled = True
+        Me.cbxInstitucion.Location = New System.Drawing.Point(99, 11)
+        Me.cbxInstitucion.Name = "cbxInstitucion"
+        Me.cbxInstitucion.Size = New System.Drawing.Size(177, 23)
+        Me.cbxInstitucion.TabIndex = 5
+        '
+        'ListaEntidadBindingSource
+        '
+        Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
+        Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidadesBindingSource
+        '
+        'DsListaEntidadesBindingSource
+        '
+        Me.DsListaEntidadesBindingSource.DataSource = Me.DsListaEntidades
+        Me.DsListaEntidadesBindingSource.Position = 0
+        '
+        'DsListaEntidades
+        '
+        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
+        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tbEstudio
         '
@@ -87,17 +126,18 @@ Partial Class frmCotizacion
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.tbPrecio)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 394)
+        Me.Panel2.Location = New System.Drawing.Point(0, 431)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(728, 51)
+        Me.Panel2.Size = New System.Drawing.Size(728, 35)
         Me.Panel2.TabIndex = 1
         '
         'tbPrecio
         '
-        Me.tbPrecio.Location = New System.Drawing.Point(547, 15)
+        Me.tbPrecio.Location = New System.Drawing.Point(519, 8)
         Me.tbPrecio.Name = "tbPrecio"
         Me.tbPrecio.Size = New System.Drawing.Size(152, 20)
         Me.tbPrecio.TabIndex = 7
@@ -106,7 +146,7 @@ Partial Class frmCotizacion
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(408, 16)
+        Me.Label3.Location = New System.Drawing.Point(380, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 16)
         Me.Label3.TabIndex = 6
@@ -119,16 +159,16 @@ Partial Class frmCotizacion
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 47)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(728, 347)
+        Me.Panel3.Size = New System.Drawing.Size(728, 384)
         Me.Panel3.TabIndex = 2
         '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.dgvListadoAtenciones)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 154)
+        Me.Panel5.Location = New System.Drawing.Point(0, 269)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(728, 193)
+        Me.Panel5.Size = New System.Drawing.Size(728, 115)
         Me.Panel5.TabIndex = 1
         '
         'dgvListadoAtenciones
@@ -152,7 +192,7 @@ Partial Class frmCotizacion
         Me.dgvListadoAtenciones.Name = "dgvListadoAtenciones"
         Me.dgvListadoAtenciones.ReadOnly = True
         Me.dgvListadoAtenciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(728, 193)
+        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(728, 115)
         Me.dgvListadoAtenciones.TabIndex = 60
         '
         'estudio
@@ -175,13 +215,13 @@ Partial Class frmCotizacion
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(728, 148)
+        Me.Panel4.Size = New System.Drawing.Size(728, 263)
         Me.Panel4.TabIndex = 0
         '
         'lknInexistente
         '
         Me.lknInexistente.AutoSize = True
-        Me.lknInexistente.Location = New System.Drawing.Point(293, 67)
+        Me.lknInexistente.Location = New System.Drawing.Point(294, 130)
         Me.lknInexistente.Name = "lknInexistente"
         Me.lknInexistente.Size = New System.Drawing.Size(125, 13)
         Me.lknInexistente.TabIndex = 2
@@ -198,33 +238,47 @@ Partial Class frmCotizacion
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(728, 148)
+        Me.dgvListado.Size = New System.Drawing.Size(728, 263)
         Me.dgvListado.TabIndex = 3
         '
-        'cbxInstitucion
+        'ListaentidadesBindingSource
         '
-        Me.cbxInstitucion.DisplayMember = "nombre_entidad"
-        Me.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxInstitucion.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.cbxInstitucion.FormattingEnabled = True
-        Me.cbxInstitucion.Items.AddRange(New Object() {"PARTICULAR", "COTEL", "RED SALUD", "POLICIA"})
-        Me.cbxInstitucion.Location = New System.Drawing.Point(99, 11)
-        Me.cbxInstitucion.Name = "cbxInstitucion"
-        Me.cbxInstitucion.Size = New System.Drawing.Size(177, 23)
-        Me.cbxInstitucion.TabIndex = 5
+        Me.ListaentidadesBindingSource.DataMember = "lista_entidades"
+        Me.ListaentidadesBindingSource.DataSource = Me.DsListaEntidadesBindingSource
+        '
+        'Lista_entidadesTableAdapter
+        '
+        Me.Lista_entidadesTableAdapter.ClearBeforeFill = True
+        '
+        'ListaEntidadTableAdapter
+        '
+        Me.ListaEntidadTableAdapter.ClearBeforeFill = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(686, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(30, 16)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Bs."
         '
         'frmCotizacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(728, 445)
+        Me.ClientSize = New System.Drawing.Size(728, 466)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCotizacion"
-        Me.Text = "Cotizacion"
+        Me.Text = "COTIZACIÓN"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -233,6 +287,7 @@ Partial Class frmCotizacion
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ListaentidadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -253,4 +308,11 @@ Partial Class frmCotizacion
     Friend WithEvents lknInexistente As LinkLabel
     Friend WithEvents dgvListado As DataGridView
     Friend WithEvents cbxInstitucion As ComboBox
+    Friend WithEvents DsListaEntidadesBindingSource As BindingSource
+    Friend WithEvents DsListaEntidades As dsListaEntidades
+    Friend WithEvents ListaentidadesBindingSource As BindingSource
+    Friend WithEvents Lista_entidadesTableAdapter As dsListaEntidadesTableAdapters.lista_entidadesTableAdapter
+    Friend WithEvents ListaEntidadBindingSource As BindingSource
+    Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
+    Friend WithEvents Label4 As Label
 End Class
