@@ -135,7 +135,6 @@ Public Class frmCentral
         pnListaEstudios.Visible = False
         tbMedicoRemitente.Text = ""
         Debug.Write("Limpieza OK :)")
-        tbFechaEstudioVP.Text = Date.Now
     End Sub
 
     Public Function fecha_nacimiento(ByVal fecha As Date) As Integer
@@ -279,9 +278,8 @@ Public Class frmCentral
     End Sub
 
     Public Sub AnchoColumnas()
-        dgvListado.Columns(3).Width = 350
+        dgvListado.Columns(3).Width = 550
         dgvListado.Columns(4).Width = 50
-        dgvListado.Columns(7).Width = 200
     End Sub
 
     Private Sub buscar()
@@ -313,7 +311,7 @@ Public Class frmCentral
         dgvListado.Columns(2).Visible = False
         dgvListado.Columns(5).Visible = False
         dgvListado.Columns(6).Visible = False
-        'dgvListado.Columns(7).Visible = True
+        dgvListado.Columns(7).Visible = False
         dgvListado.Columns(8).Visible = False
     End Sub
 
@@ -580,7 +578,6 @@ Public Class frmCentral
 
     Private Sub tbci_TextChanged(sender As Object, e As EventArgs) Handles tbci.TextChanged
         tbCiVP.Text = tbci.Text
-        'frmListaFlotante.ShowDialog()
     End Sub
 
     Private Sub cbSexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSexo.SelectedIndexChanged
@@ -615,13 +612,6 @@ Public Class frmCentral
         ReporteFinal.tbIDAtencion.Text = idAtencionActual
         'POSTERIORMENTE SE LLAMA A LA CLASE frmREPORTE PARA IMPRIMIR EL REPORTE DE ATENCION
         ReporteFinal.ShowDialog()
-    End Sub
-
-    '-------------BOTON  BUSCAR CLIENTES REGISTRADOS ----------
-    Private Sub btnBuscarClientes_Click(sender As Object, e As EventArgs) Handles btnBuscarClientes.Click
-        frmListaFlotante.tbCI.Text = tbci.Text
-        limpiar()
-        frmListaFlotante.ShowDialog()
     End Sub
 
 

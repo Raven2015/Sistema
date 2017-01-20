@@ -1,8 +1,6 @@
 ﻿Public Class frmCotizacion
     Private dt As New DataTable
     Private Sub Cotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DsListaEntidades.listaEntidad' table. You can move, or remove it, as needed.
-        Me.ListaEntidadTableAdapter.Fill(Me.DsListaEntidades.listaEntidad)
         limpiar()
         mostrar()
     End Sub
@@ -61,15 +59,14 @@
         dgvListado.Columns(1).Visible = False
         dgvListado.Columns(2).Visible = False
         dgvListado.Columns(6).Visible = False
-        dgvListado.Columns(7).Visible = True
+        dgvListado.Columns(7).Visible = False
         dgvListado.Columns(8).Visible = False
     End Sub
 
     Public Sub AnchoColumnas()
-        dgvListado.Columns(3).Width = 350
+        dgvListado.Columns(3).Width = 535
         dgvListado.Columns(4).Width = 50
         dgvListado.Columns(5).Width = 100
-        dgvListado.Columns(7).Width = 190
     End Sub
 
     Public Sub limpiar()
@@ -123,20 +120,17 @@
         Return Contenido
     End Function
 
-    Private Function precio_parcial() As Double
+    Private Function precio_parcial() As Integer
 
-        Dim Total As Double
+        Dim Total As Single
         'Dim precio As String = "0"
         If dgvListadoAtenciones.RowCount <> 0 Then
             'Sumar una Columna
             Dim Col As Integer = 1
             For Each row As DataGridViewRow In Me.dgvListadoAtenciones.Rows
-                'Total += Val(row.Cells(Col).Value)
-                Total += Convert.ToDouble(row.Cells(Col).Value)
-                Debug.Write("Ela valor actual de TOTAL es>>> " & Convert.ToDouble(row.Cells(Col).Value))
+                Total += Val(row.Cells(Col).Value)
             Next
         End If
         Return Total
     End Function
-
 End Class
