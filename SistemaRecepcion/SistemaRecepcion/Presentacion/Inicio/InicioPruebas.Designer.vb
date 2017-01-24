@@ -24,6 +24,7 @@ Partial Class InicioPruebas
     Private Sub InitializeComponent()
         Me.btnReporteCaja = New System.Windows.Forms.Button()
         Me.btnReporteAtencion = New System.Windows.Forms.Button()
+        Me.btnArqueos = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -44,11 +45,21 @@ Partial Class InicioPruebas
         Me.btnReporteAtencion.Text = "Reporte atencion"
         Me.btnReporteAtencion.UseVisualStyleBackColor = True
         '
+        'btnArqueos
+        '
+        Me.btnArqueos.Location = New System.Drawing.Point(12, 70)
+        Me.btnArqueos.Name = "btnArqueos"
+        Me.btnArqueos.Size = New System.Drawing.Size(110, 23)
+        Me.btnArqueos.TabIndex = 2
+        Me.btnArqueos.Text = "Arqueos"
+        Me.btnArqueos.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnArqueos)
         Me.Controls.Add(Me.btnReporteAtencion)
         Me.Controls.Add(Me.btnReporteCaja)
         Me.Name = "InicioPruebas"
@@ -59,4 +70,5 @@ Partial Class InicioPruebas
 
     Friend WithEvents btnReporteCaja As Button
     Friend WithEvents btnReporteAtencion As Button
+    Friend WithEvents btnArqueos As Button
 End Class
