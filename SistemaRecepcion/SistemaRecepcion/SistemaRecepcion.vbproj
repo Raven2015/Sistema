@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica070117\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica270117\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,13 +81,16 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
@@ -268,6 +271,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Conexion\CadenaConexion.vb" />
+    <Compile Include="Presentacion\Configuracion\frmConfiguracion.Designer.vb">
+      <DependentUpon>frmConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Configuracion\frmConfiguracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Cotizacion\frmCotizacion.Designer.vb">
       <DependentUpon>frmCotizacion.vb</DependentUpon>
     </Compile>
@@ -358,10 +367,22 @@
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\ARQUEOS\ReporteArqueo.Designer.vb">
+      <DependentUpon>ReporteArqueo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ARQUEOS\ReporteArqueo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\Prueba.Designer.vb">
       <DependentUpon>Prueba.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.Designer.vb">
+      <DependentUpon>frmReporteAtencionesLapsoTiempo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteCajaFinal.Designer.vb">
@@ -430,6 +451,9 @@
     <EmbeddedResource Include="Presentacion\ComprobantesCaja\frmComprobantesCaja.resx">
       <DependentUpon>frmComprobantesCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Configuracion\frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Cotizacion\frmCotizacion.resx">
       <DependentUpon>frmCotizacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -475,8 +499,15 @@
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ARQUEOS\ReporteArqueo.resx">
+      <DependentUpon>ReporteArqueo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ARQUEOS\rptArqueo.rdlc" />
     <EmbeddedResource Include="Reportes\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.resx">
+      <DependentUpon>frmReporteAtencionesLapsoTiempo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteCajaFinal.resx">
       <DependentUpon>ReporteCajaFinal.vb</DependentUpon>

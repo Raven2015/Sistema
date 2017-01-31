@@ -33,6 +33,28 @@ Partial Class frmCentral
         Me.tbFechaEstudioVP = New System.Windows.Forms.TextBox()
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.tbEntidadSet = New System.Windows.Forms.TextBox()
+        Me.tbNombresVP = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.tbTelefonoVP = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.tbCiVP = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.tbApellidoVP = New System.Windows.Forms.TextBox()
+        Me.tbSexoVP = New System.Windows.Forms.TextBox()
+        Me.tbEdadVP = New System.Windows.Forms.TextBox()
+        Me.tbMedicoRemitenteVP = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.tbCelularVP = New System.Windows.Forms.TextBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.dgvListadoAtenciones = New System.Windows.Forms.DataGridView()
         Me.id_entidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,27 +76,6 @@ Partial Class frmCentral
         Me.tbIDDetalle = New System.Windows.Forms.TextBox()
         Me.tbPrecioParcial = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.tbSexoVP = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.tbMedicoRemitenteVP = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.tbCiVP = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.tbCelularVP = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.tbTelefonoVP = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.tbEdadVP = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.tbDireccionVP = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.tbApellidoVP = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.tbNombresVP = New System.Windows.Forms.TextBox()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnListaEstudios = New System.Windows.Forms.Panel()
@@ -126,6 +127,7 @@ Partial Class frmCentral
         Me.lbRazonSocial = New System.Windows.Forms.Label()
         Me.lbInstitucion = New System.Windows.Forms.Label()
         Me.grbxDatosPersonales = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.lbci = New System.Windows.Forms.Label()
         Me.tbci = New System.Windows.Forms.TextBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -146,12 +148,18 @@ Partial Class frmCentral
         Me.lbFechaNacimiento = New System.Windows.Forms.Label()
         Me.lblbApellidoCliente = New System.Windows.Forms.Label()
         Me.lbNombreCliente = New System.Windows.Forms.Label()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MedicoTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.medicoTableAdapter()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
-        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.mnstMenu = New System.Windows.Forms.MenuStrip()
+        Me.NUEVOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EDITARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ELIMINARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbNITVP = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbCodAsegVP = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.grbxVIstaPrevia.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -169,12 +177,14 @@ Partial Class frmCentral
         CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbxDatosPersonales.SuspendLayout()
+        Me.mnstMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbFechaEstudioVP
         '
+        Me.tbFechaEstudioVP.BackColor = System.Drawing.Color.White
         Me.tbFechaEstudioVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbFechaEstudioVP.Location = New System.Drawing.Point(141, 213)
+        Me.tbFechaEstudioVP.Location = New System.Drawing.Point(127, 203)
         Me.tbFechaEstudioVP.MaxLength = 8
         Me.tbFechaEstudioVP.Name = "tbFechaEstudioVP"
         Me.tbFechaEstudioVP.ReadOnly = True
@@ -183,8 +193,9 @@ Partial Class frmCentral
         '
         'tbFechaNacimientoVP
         '
+        Me.tbFechaNacimientoVP.BackColor = System.Drawing.Color.White
         Me.tbFechaNacimientoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbFechaNacimientoVP.Location = New System.Drawing.Point(127, 128)
+        Me.tbFechaNacimientoVP.Location = New System.Drawing.Point(127, 116)
         Me.tbFechaNacimientoVP.MaxLength = 8
         Me.tbFechaNacimientoVP.Name = "tbFechaNacimientoVP"
         Me.tbFechaNacimientoVP.ReadOnly = True
@@ -193,6 +204,7 @@ Partial Class frmCentral
         '
         'grbxVIstaPrevia
         '
+        Me.grbxVIstaPrevia.Controls.Add(Me.Panel2)
         Me.grbxVIstaPrevia.Controls.Add(Me.btnImprimir)
         Me.grbxVIstaPrevia.Controls.Add(Me.dgvListadoAtenciones)
         Me.grbxVIstaPrevia.Controls.Add(Me.Label39)
@@ -205,36 +217,286 @@ Partial Class frmCentral
         Me.grbxVIstaPrevia.Controls.Add(Me.tbIDDetalle)
         Me.grbxVIstaPrevia.Controls.Add(Me.tbPrecioParcial)
         Me.grbxVIstaPrevia.Controls.Add(Me.Label36)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label31)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbFechaEstudioVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbFechaNacimientoVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbSexoVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label13)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label26)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbMedicoRemitenteVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label27)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbCiVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label25)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label24)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label23)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbCelularVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label22)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbTelefonoVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label21)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbEdadVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label20)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbDireccionVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label19)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbApellidoVP)
-        Me.grbxVIstaPrevia.Controls.Add(Me.Label18)
-        Me.grbxVIstaPrevia.Controls.Add(Me.tbNombresVP)
         Me.grbxVIstaPrevia.Dock = System.Windows.Forms.DockStyle.Right
-        Me.grbxVIstaPrevia.Location = New System.Drawing.Point(705, 0)
+        Me.grbxVIstaPrevia.Location = New System.Drawing.Point(705, 24)
         Me.grbxVIstaPrevia.Name = "grbxVIstaPrevia"
-        Me.grbxVIstaPrevia.Size = New System.Drawing.Size(399, 661)
+        Me.grbxVIstaPrevia.Size = New System.Drawing.Size(421, 662)
         Me.grbxVIstaPrevia.TabIndex = 3
         Me.grbxVIstaPrevia.TabStop = False
         Me.grbxVIstaPrevia.Text = "*"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.tbCodAsegVP)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.tbNITVP)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label31)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.Label25)
+        Me.Panel2.Controls.Add(Me.tbEntidadSet)
+        Me.Panel2.Controls.Add(Me.tbNombresVP)
+        Me.Panel2.Controls.Add(Me.Label20)
+        Me.Panel2.Controls.Add(Me.tbTelefonoVP)
+        Me.Panel2.Controls.Add(Me.Label23)
+        Me.Panel2.Controls.Add(Me.tbCiVP)
+        Me.Panel2.Controls.Add(Me.Label27)
+        Me.Panel2.Controls.Add(Me.Label26)
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Controls.Add(Me.tbFechaEstudioVP)
+        Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Controls.Add(Me.Label24)
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.tbFechaNacimientoVP)
+        Me.Panel2.Controls.Add(Me.tbApellidoVP)
+        Me.Panel2.Controls.Add(Me.tbSexoVP)
+        Me.Panel2.Controls.Add(Me.tbEdadVP)
+        Me.Panel2.Controls.Add(Me.tbMedicoRemitenteVP)
+        Me.Panel2.Controls.Add(Me.Label21)
+        Me.Panel2.Controls.Add(Me.tbCelularVP)
+        Me.Panel2.Location = New System.Drawing.Point(9, 12)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(406, 239)
+        Me.Panel2.TabIndex = 63
+        '
+        'Label31
+        '
+        Me.Label31.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label31.AutoSize = True
+        Me.Label31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label31.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.Location = New System.Drawing.Point(153, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(100, 19)
+        Me.Label31.TabIndex = 50
+        Me.Label31.Text = "VISTA PREVIA"
+        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(8, 149)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(48, 15)
+        Me.Label2.TabIndex = 62
+        Me.Label2.Text = "Entidad"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label25.Location = New System.Drawing.Point(8, 33)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(58, 15)
+        Me.Label25.TabIndex = 22
+        Me.Label25.Text = "Nombres"
+        '
+        'tbEntidadSet
+        '
+        Me.tbEntidadSet.BackColor = System.Drawing.Color.White
+        Me.tbEntidadSet.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbEntidadSet.Location = New System.Drawing.Point(127, 145)
+        Me.tbEntidadSet.MaxLength = 2
+        Me.tbEntidadSet.Name = "tbEntidadSet"
+        Me.tbEntidadSet.ReadOnly = True
+        Me.tbEntidadSet.Size = New System.Drawing.Size(131, 23)
+        Me.tbEntidadSet.TabIndex = 61
+        '
+        'tbNombresVP
+        '
+        Me.tbNombresVP.BackColor = System.Drawing.Color.White
+        Me.tbNombresVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbNombresVP.Location = New System.Drawing.Point(67, 29)
+        Me.tbNombresVP.MaxLength = 50
+        Me.tbNombresVP.Name = "tbNombresVP"
+        Me.tbNombresVP.ReadOnly = True
+        Me.tbNombresVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbNombresVP.TabIndex = 30
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label20.Location = New System.Drawing.Point(8, 91)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(54, 15)
+        Me.Label20.TabIndex = 27
+        Me.Label20.Text = "Teléfono"
+        '
+        'tbTelefonoVP
+        '
+        Me.tbTelefonoVP.BackColor = System.Drawing.Color.White
+        Me.tbTelefonoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbTelefonoVP.Location = New System.Drawing.Point(67, 87)
+        Me.tbTelefonoVP.MaxLength = 9
+        Me.tbTelefonoVP.Name = "tbTelefonoVP"
+        Me.tbTelefonoVP.ReadOnly = True
+        Me.tbTelefonoVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbTelefonoVP.TabIndex = 34
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label23.Location = New System.Drawing.Point(8, 120)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(111, 15)
+        Me.Label23.TabIndex = 24
+        Me.Label23.Text = "Fec. de Nacimiento"
+        '
+        'tbCiVP
+        '
+        Me.tbCiVP.BackColor = System.Drawing.Color.White
+        Me.tbCiVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCiVP.Location = New System.Drawing.Point(67, 58)
+        Me.tbCiVP.Name = "tbCiVP"
+        Me.tbCiVP.ReadOnly = True
+        Me.tbCiVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbCiVP.TabIndex = 38
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label27.Location = New System.Drawing.Point(8, 207)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(81, 15)
+        Me.Label27.TabIndex = 42
+        Me.Label27.Text = "Fecha Estudio"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label26.Location = New System.Drawing.Point(8, 178)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(109, 15)
+        Me.Label26.TabIndex = 44
+        Me.Label26.Text = "Medico Remitente"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label19.Location = New System.Drawing.Point(205, 59)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(33, 15)
+        Me.Label19.TabIndex = 28
+        Me.Label19.Text = "Sexo"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(8, 62)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(17, 15)
+        Me.Label13.TabIndex = 39
+        Me.Label13.Text = "CI"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label24.Location = New System.Drawing.Point(205, 29)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(57, 15)
+        Me.Label24.TabIndex = 23
+        Me.Label24.Text = "Apellidos"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label18.Location = New System.Drawing.Point(205, 89)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(45, 15)
+        Me.Label18.TabIndex = 29
+        Me.Label18.Text = "Celular"
+        '
+        'tbApellidoVP
+        '
+        Me.tbApellidoVP.BackColor = System.Drawing.Color.White
+        Me.tbApellidoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbApellidoVP.ForeColor = System.Drawing.Color.Black
+        Me.tbApellidoVP.Location = New System.Drawing.Point(263, 27)
+        Me.tbApellidoVP.MaxLength = 50
+        Me.tbApellidoVP.Name = "tbApellidoVP"
+        Me.tbApellidoVP.ReadOnly = True
+        Me.tbApellidoVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbApellidoVP.TabIndex = 31
+        '
+        'tbSexoVP
+        '
+        Me.tbSexoVP.BackColor = System.Drawing.Color.White
+        Me.tbSexoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbSexoVP.ForeColor = System.Drawing.Color.Black
+        Me.tbSexoVP.Location = New System.Drawing.Point(263, 56)
+        Me.tbSexoVP.MaxLength = 8
+        Me.tbSexoVP.Name = "tbSexoVP"
+        Me.tbSexoVP.ReadOnly = True
+        Me.tbSexoVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbSexoVP.TabIndex = 47
+        '
+        'tbEdadVP
+        '
+        Me.tbEdadVP.BackColor = System.Drawing.Color.White
+        Me.tbEdadVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbEdadVP.ForeColor = System.Drawing.Color.Black
+        Me.tbEdadVP.Location = New System.Drawing.Point(311, 174)
+        Me.tbEdadVP.MaxLength = 2
+        Me.tbEdadVP.Name = "tbEdadVP"
+        Me.tbEdadVP.ReadOnly = True
+        Me.tbEdadVP.Size = New System.Drawing.Size(83, 23)
+        Me.tbEdadVP.TabIndex = 33
+        '
+        'tbMedicoRemitenteVP
+        '
+        Me.tbMedicoRemitenteVP.BackColor = System.Drawing.Color.White
+        Me.tbMedicoRemitenteVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbMedicoRemitenteVP.Location = New System.Drawing.Point(127, 174)
+        Me.tbMedicoRemitenteVP.MaxLength = 50
+        Me.tbMedicoRemitenteVP.Name = "tbMedicoRemitenteVP"
+        Me.tbMedicoRemitenteVP.ReadOnly = True
+        Me.tbMedicoRemitenteVP.Size = New System.Drawing.Size(130, 23)
+        Me.tbMedicoRemitenteVP.TabIndex = 43
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label21.Location = New System.Drawing.Point(268, 179)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(33, 15)
+        Me.Label21.TabIndex = 26
+        Me.Label21.Text = "Edad"
+        '
+        'tbCelularVP
+        '
+        Me.tbCelularVP.BackColor = System.Drawing.Color.White
+        Me.tbCelularVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCelularVP.ForeColor = System.Drawing.Color.Black
+        Me.tbCelularVP.Location = New System.Drawing.Point(263, 85)
+        Me.tbCelularVP.MaxLength = 8
+        Me.tbCelularVP.Name = "tbCelularVP"
+        Me.tbCelularVP.ReadOnly = True
+        Me.tbCelularVP.Size = New System.Drawing.Size(131, 23)
+        Me.tbCelularVP.TabIndex = 35
         '
         'btnImprimir
         '
@@ -243,7 +505,7 @@ Partial Class frmCentral
         Me.btnImprimir.FlatAppearance.BorderSize = 0
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimir.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Location = New System.Drawing.Point(327, 544)
+        Me.btnImprimir.Location = New System.Drawing.Point(327, 575)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(60, 60)
         Me.btnImprimir.TabIndex = 60
@@ -265,11 +527,11 @@ Partial Class frmCentral
         Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entidad, Me.id_estudio, Me.id_pecio, Me.estudio, Me.precio, Me.entidad, Me.codigo_categoria, Me.id_detalle, Me.id_atencion})
-        Me.dgvListadoAtenciones.Location = New System.Drawing.Point(9, 241)
+        Me.dgvListadoAtenciones.Location = New System.Drawing.Point(13, 257)
         Me.dgvListadoAtenciones.Name = "dgvListadoAtenciones"
         Me.dgvListadoAtenciones.ReadOnly = True
         Me.dgvListadoAtenciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(384, 296)
+        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(396, 295)
         Me.dgvListadoAtenciones.TabIndex = 59
         '
         'id_entidad
@@ -412,8 +674,9 @@ Partial Class frmCentral
         '
         'tbPrecioParcial
         '
+        Me.tbPrecioParcial.BackColor = System.Drawing.Color.White
         Me.tbPrecioParcial.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbPrecioParcial.Location = New System.Drawing.Point(87, 544)
+        Me.tbPrecioParcial.Location = New System.Drawing.Point(89, 572)
         Me.tbPrecioParcial.MaxLength = 8
         Me.tbPrecioParcial.Name = "tbPrecioParcial"
         Me.tbPrecioParcial.ReadOnly = True
@@ -426,235 +689,11 @@ Partial Class frmCentral
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label36.Location = New System.Drawing.Point(6, 547)
+        Me.Label36.Location = New System.Drawing.Point(8, 575)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(75, 15)
         Me.Label36.TabIndex = 51
         Me.Label36.Text = "Total a Pagar"
-        '
-        'Label31
-        '
-        Me.Label31.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label31.AutoSize = True
-        Me.Label31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label31.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.White
-        Me.Label31.Location = New System.Drawing.Point(170, 12)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(100, 19)
-        Me.Label31.TabIndex = 50
-        Me.Label31.Text = "VISTA PREVIA"
-        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'tbSexoVP
-        '
-        Me.tbSexoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbSexoVP.Location = New System.Drawing.Point(264, 70)
-        Me.tbSexoVP.MaxLength = 8
-        Me.tbSexoVP.Name = "tbSexoVP"
-        Me.tbSexoVP.ReadOnly = True
-        Me.tbSexoVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbSexoVP.TabIndex = 47
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(8, 73)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(17, 15)
-        Me.Label13.TabIndex = 39
-        Me.Label13.Text = "CI"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label26.Location = New System.Drawing.Point(8, 187)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(109, 15)
-        Me.Label26.TabIndex = 44
-        Me.Label26.Text = "Medico Remitente"
-        '
-        'tbMedicoRemitenteVP
-        '
-        Me.tbMedicoRemitenteVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbMedicoRemitenteVP.Location = New System.Drawing.Point(141, 184)
-        Me.tbMedicoRemitenteVP.MaxLength = 50
-        Me.tbMedicoRemitenteVP.Name = "tbMedicoRemitenteVP"
-        Me.tbMedicoRemitenteVP.ReadOnly = True
-        Me.tbMedicoRemitenteVP.Size = New System.Drawing.Size(254, 23)
-        Me.tbMedicoRemitenteVP.TabIndex = 43
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(8, 219)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(81, 15)
-        Me.Label27.TabIndex = 42
-        Me.Label27.Text = "Fecha Estudio"
-        '
-        'tbCiVP
-        '
-        Me.tbCiVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbCiVP.Location = New System.Drawing.Point(70, 70)
-        Me.tbCiVP.Name = "tbCiVP"
-        Me.tbCiVP.ReadOnly = True
-        Me.tbCiVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbCiVP.TabIndex = 38
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(6, 44)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(58, 15)
-        Me.Label25.TabIndex = 22
-        Me.Label25.Text = "Nombres"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label24.Location = New System.Drawing.Point(201, 44)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(57, 15)
-        Me.Label24.TabIndex = 23
-        Me.Label24.Text = "Apellidos"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(6, 134)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(121, 15)
-        Me.Label23.TabIndex = 24
-        Me.Label23.Text = "Fecha de Nacimiento"
-        '
-        'tbCelularVP
-        '
-        Me.tbCelularVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbCelularVP.Location = New System.Drawing.Point(264, 99)
-        Me.tbCelularVP.MaxLength = 8
-        Me.tbCelularVP.Name = "tbCelularVP"
-        Me.tbCelularVP.ReadOnly = True
-        Me.tbCelularVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbCelularVP.TabIndex = 35
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(8, 160)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(57, 15)
-        Me.Label22.TabIndex = 25
-        Me.Label22.Text = "Dirección"
-        '
-        'tbTelefonoVP
-        '
-        Me.tbTelefonoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbTelefonoVP.Location = New System.Drawing.Point(70, 99)
-        Me.tbTelefonoVP.MaxLength = 9
-        Me.tbTelefonoVP.Name = "tbTelefonoVP"
-        Me.tbTelefonoVP.ReadOnly = True
-        Me.tbTelefonoVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbTelefonoVP.TabIndex = 34
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(264, 131)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(33, 15)
-        Me.Label21.TabIndex = 26
-        Me.Label21.Text = "Edad"
-        '
-        'tbEdadVP
-        '
-        Me.tbEdadVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbEdadVP.Location = New System.Drawing.Point(312, 128)
-        Me.tbEdadVP.MaxLength = 2
-        Me.tbEdadVP.Name = "tbEdadVP"
-        Me.tbEdadVP.ReadOnly = True
-        Me.tbEdadVP.Size = New System.Drawing.Size(83, 23)
-        Me.tbEdadVP.TabIndex = 33
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(8, 102)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(54, 15)
-        Me.Label20.TabIndex = 27
-        Me.Label20.Text = "Teléfono"
-        '
-        'tbDireccionVP
-        '
-        Me.tbDireccionVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbDireccionVP.Location = New System.Drawing.Point(71, 157)
-        Me.tbDireccionVP.Name = "tbDireccionVP"
-        Me.tbDireccionVP.ReadOnly = True
-        Me.tbDireccionVP.Size = New System.Drawing.Size(324, 23)
-        Me.tbDireccionVP.TabIndex = 32
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(201, 73)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(33, 15)
-        Me.Label19.TabIndex = 28
-        Me.Label19.Text = "Sexo"
-        '
-        'tbApellidoVP
-        '
-        Me.tbApellidoVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbApellidoVP.Location = New System.Drawing.Point(264, 41)
-        Me.tbApellidoVP.MaxLength = 50
-        Me.tbApellidoVP.Name = "tbApellidoVP"
-        Me.tbApellidoVP.ReadOnly = True
-        Me.tbApellidoVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbApellidoVP.TabIndex = 31
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label18.Location = New System.Drawing.Point(201, 102)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 15)
-        Me.Label18.TabIndex = 29
-        Me.Label18.Text = "Celular"
-        '
-        'tbNombresVP
-        '
-        Me.tbNombresVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbNombresVP.Location = New System.Drawing.Point(70, 41)
-        Me.tbNombresVP.MaxLength = 50
-        Me.tbNombresVP.Name = "tbNombresVP"
-        Me.tbNombresVP.ReadOnly = True
-        Me.tbNombresVP.Size = New System.Drawing.Size(131, 23)
-        Me.tbNombresVP.TabIndex = 30
         '
         'errorIcono
         '
@@ -668,9 +707,9 @@ Partial Class frmCentral
         Me.Panel1.Controls.Add(Me.grbxDatosFactura)
         Me.Panel1.Controls.Add(Me.grbxDatosPersonales)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(699, 661)
+        Me.Panel1.Size = New System.Drawing.Size(699, 662)
         Me.Panel1.TabIndex = 4
         '
         'pnListaEstudios
@@ -682,9 +721,10 @@ Partial Class frmCentral
         Me.pnListaEstudios.Controls.Add(Me.Label35)
         Me.pnListaEstudios.Controls.Add(Me.tbBuscar)
         Me.pnListaEstudios.Controls.Add(Me.gbListadoEstudios)
-        Me.pnListaEstudios.Location = New System.Drawing.Point(8, 314)
+        Me.pnListaEstudios.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnListaEstudios.Location = New System.Drawing.Point(0, 318)
         Me.pnListaEstudios.Name = "pnListaEstudios"
-        Me.pnListaEstudios.Size = New System.Drawing.Size(681, 344)
+        Me.pnListaEstudios.Size = New System.Drawing.Size(699, 344)
         Me.pnListaEstudios.TabIndex = 34
         Me.pnListaEstudios.Visible = False
         '
@@ -918,7 +958,7 @@ Partial Class frmCentral
         Me.grbxSeleccionEstudio.Controls.Add(Me.lbEstudio)
         Me.grbxSeleccionEstudio.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxSeleccionEstudio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.grbxSeleccionEstudio.Location = New System.Drawing.Point(8, 257)
+        Me.grbxSeleccionEstudio.Location = New System.Drawing.Point(10, 255)
         Me.grbxSeleccionEstudio.Name = "grbxSeleccionEstudio"
         Me.grbxSeleccionEstudio.Size = New System.Drawing.Size(681, 51)
         Me.grbxSeleccionEstudio.TabIndex = 33
@@ -967,7 +1007,7 @@ Partial Class frmCentral
         Me.grbxDatosAtencion.Controls.Add(Me.lbFechaEstudio)
         Me.grbxDatosAtencion.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxDatosAtencion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.grbxDatosAtencion.Location = New System.Drawing.Point(369, 141)
+        Me.grbxDatosAtencion.Location = New System.Drawing.Point(368, 138)
         Me.grbxDatosAtencion.Name = "grbxDatosAtencion"
         Me.grbxDatosAtencion.Size = New System.Drawing.Size(320, 117)
         Me.grbxDatosAtencion.TabIndex = 32
@@ -1068,9 +1108,9 @@ Partial Class frmCentral
         Me.grbxDatosFactura.Controls.Add(Me.lbInstitucion)
         Me.grbxDatosFactura.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxDatosFactura.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.grbxDatosFactura.Location = New System.Drawing.Point(369, 12)
+        Me.grbxDatosFactura.Location = New System.Drawing.Point(368, 9)
         Me.grbxDatosFactura.Name = "grbxDatosFactura"
-        Me.grbxDatosFactura.Size = New System.Drawing.Size(320, 123)
+        Me.grbxDatosFactura.Size = New System.Drawing.Size(328, 123)
         Me.grbxDatosFactura.TabIndex = 31
         Me.grbxDatosFactura.TabStop = False
         Me.grbxDatosFactura.Text = "DATOS PARA FACTURA"
@@ -1178,12 +1218,22 @@ Partial Class frmCentral
         Me.grbxDatosPersonales.Controls.Add(Me.lbNombreCliente)
         Me.grbxDatosPersonales.Font = New System.Drawing.Font("Calibri", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbxDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.grbxDatosPersonales.Location = New System.Drawing.Point(8, 12)
+        Me.grbxDatosPersonales.Location = New System.Drawing.Point(7, 9)
         Me.grbxDatosPersonales.Name = "grbxDatosPersonales"
         Me.grbxDatosPersonales.Size = New System.Drawing.Size(355, 234)
         Me.grbxDatosPersonales.TabIndex = 30
         Me.grbxDatosPersonales.TabStop = False
         Me.grbxDatosPersonales.Text = "DATOS PERSONALES"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.search
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscar.Location = New System.Drawing.Point(317, 143)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(23, 23)
+        Me.btnBuscar.TabIndex = 21
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'lbci
         '
@@ -1215,7 +1265,6 @@ Partial Class frmCentral
         '
         'tbCodigoAsegurado
         '
-        Me.tbCodigoAsegurado.Enabled = False
         Me.tbCodigoAsegurado.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
         Me.tbCodigoAsegurado.Location = New System.Drawing.Point(139, 114)
         Me.tbCodigoAsegurado.MaxLength = 50
@@ -1390,16 +1439,6 @@ Partial Class frmCentral
         Me.lbNombreCliente.TabIndex = 0
         Me.lbNombreCliente.Text = "Nombres"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(61, 4)
-        '
         'MedicoTableAdapter
         '
         Me.MedicoTableAdapter.ClearBeforeFill = True
@@ -1408,28 +1447,97 @@ Partial Class frmCentral
         '
         Me.ListaEntidadTableAdapter.ClearBeforeFill = True
         '
-        'btnBuscar
+        'mnstMenu
         '
-        Me.btnBuscar.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.search
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscar.Location = New System.Drawing.Point(317, 143)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(23, 23)
-        Me.btnBuscar.TabIndex = 21
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.mnstMenu.BackColor = System.Drawing.Color.White
+        Me.mnstMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NUEVOToolStripMenuItem, Me.EDITARToolStripMenuItem, Me.ELIMINARToolStripMenuItem})
+        Me.mnstMenu.Location = New System.Drawing.Point(0, 0)
+        Me.mnstMenu.Name = "mnstMenu"
+        Me.mnstMenu.Size = New System.Drawing.Size(1126, 24)
+        Me.mnstMenu.TabIndex = 5
+        Me.mnstMenu.Text = "MenuStrip1"
+        '
+        'NUEVOToolStripMenuItem
+        '
+        Me.NUEVOToolStripMenuItem.Name = "NUEVOToolStripMenuItem"
+        Me.NUEVOToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.NUEVOToolStripMenuItem.Text = "NUEVO"
+        '
+        'EDITARToolStripMenuItem
+        '
+        Me.EDITARToolStripMenuItem.Name = "EDITARToolStripMenuItem"
+        Me.EDITARToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.EDITARToolStripMenuItem.Text = "EDITAR"
+        '
+        'ELIMINARToolStripMenuItem
+        '
+        Me.ELIMINARToolStripMenuItem.Name = "ELIMINARToolStripMenuItem"
+        Me.ELIMINARToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.ELIMINARToolStripMenuItem.Text = "ELIMINAR"
+        '
+        'tbNITVP
+        '
+        Me.tbNITVP.BackColor = System.Drawing.Color.White
+        Me.tbNITVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbNITVP.ForeColor = System.Drawing.Color.Black
+        Me.tbNITVP.Location = New System.Drawing.Point(311, 203)
+        Me.tbNITVP.MaxLength = 2
+        Me.tbNITVP.Name = "tbNITVP"
+        Me.tbNITVP.ReadOnly = True
+        Me.tbNITVP.Size = New System.Drawing.Size(83, 23)
+        Me.tbNITVP.TabIndex = 64
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(268, 208)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(25, 15)
+        Me.Label3.TabIndex = 63
+        Me.Label3.Text = "NIT"
+        '
+        'tbCodAsegVP
+        '
+        Me.tbCodAsegVP.BackColor = System.Drawing.Color.White
+        Me.tbCodAsegVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCodAsegVP.ForeColor = System.Drawing.Color.Black
+        Me.tbCodAsegVP.Location = New System.Drawing.Point(310, 145)
+        Me.tbCodAsegVP.MaxLength = 2
+        Me.tbCodAsegVP.Name = "tbCodAsegVP"
+        Me.tbCodAsegVP.ReadOnly = True
+        Me.tbCodAsegVP.Size = New System.Drawing.Size(83, 23)
+        Me.tbCodAsegVP.TabIndex = 66
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(306, 125)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 15)
+        Me.Label4.TabIndex = 65
+        Me.Label4.Text = "Cod. Asegurado"
         '
         'frmCentral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1104, 661)
+        Me.ClientSize = New System.Drawing.Size(1126, 686)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.grbxVIstaPrevia)
+        Me.Controls.Add(Me.mnstMenu)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MainMenuStrip = Me.mnstMenu
         Me.Name = "frmCentral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ATENCIÓN DE PACIENTES"
         Me.grbxVIstaPrevia.ResumeLayout(False)
         Me.grbxVIstaPrevia.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -1455,7 +1563,10 @@ Partial Class frmCentral
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbxDatosPersonales.ResumeLayout(False)
         Me.grbxDatosPersonales.PerformLayout()
+        Me.mnstMenu.ResumeLayout(False)
+        Me.mnstMenu.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents tbFechaEstudioVP As TextBox
@@ -1471,12 +1582,10 @@ Partial Class frmCentral
     Friend WithEvents Label24 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents tbCelularVP As TextBox
-    Friend WithEvents Label22 As Label
     Friend WithEvents tbTelefonoVP As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents tbEdadVP As TextBox
     Friend WithEvents Label20 As Label
-    Friend WithEvents tbDireccionVP As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents tbApellidoVP As TextBox
     Friend WithEvents Label18 As Label
@@ -1555,8 +1664,6 @@ Partial Class frmCentral
     Friend WithEvents tbIDAtencion As TextBox
     Friend WithEvents tbIDDetalle As TextBox
     Friend WithEvents dgvListadoAtenciones As DataGridView
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents btnImprimir As Button
     Friend WithEvents cbxInstitucion As ComboBox
     Friend WithEvents Label1 As Label
@@ -1579,4 +1686,15 @@ Partial Class frmCentral
     Friend WithEvents ListaEntidadBindingSource As BindingSource
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents tbEntidadSet As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents mnstMenu As MenuStrip
+    Friend WithEvents NUEVOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EDITARToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ELIMINARToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tbNITVP As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tbCodAsegVP As TextBox
+    Friend WithEvents Label4 As Label
 End Class

@@ -13,5 +13,8 @@
     <Setting Name="AzulElegante" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">0, 114, 204</Value>
     </Setting>
+    <Setting Name="NombreSucursal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SUCURSAL</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

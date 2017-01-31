@@ -65,6 +65,7 @@
     Public Sub calcularValores()
         Dim ingresos As Double
         ingresos = precio_parcial()
+        tbIngresos.Text = ingresos
     End Sub
     Protected Function obtener_valoresBETA(ByVal fila As DataGridViewRow) As String()
         Dim ncolumnas As Integer = dgvListado.ColumnCount
@@ -96,5 +97,9 @@
         Return Total
     End Function
 
-
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        ReporteArqueo.tbEntidad.Text = cbxEntidad.Text
+        ReporteArqueo.tbFecha.Text = dtpFechaAtencion.Text
+        ReporteArqueo.ShowDialog()
+    End Sub
 End Class

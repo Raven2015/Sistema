@@ -73,6 +73,18 @@ Namespace My
                 Return CType(Me("AzulElegante"),Global.System.Drawing.Color)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("SUCURSAL")>  _
+        Public Property NombreSucursal() As String
+            Get
+                Return CType(Me("NombreSucursal"),String)
+            End Get
+            Set
+                Me("NombreSucursal") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

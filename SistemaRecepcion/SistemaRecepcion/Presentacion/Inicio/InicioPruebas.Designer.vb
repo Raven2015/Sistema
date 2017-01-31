@@ -25,6 +25,8 @@ Partial Class InicioPruebas
         Me.btnReporteCaja = New System.Windows.Forms.Button()
         Me.btnReporteAtencion = New System.Windows.Forms.Button()
         Me.btnArqueos = New System.Windows.Forms.Button()
+        Me.btnReporteArqueo = New System.Windows.Forms.Button()
+        Me.btnInicio = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -54,11 +56,31 @@ Partial Class InicioPruebas
         Me.btnArqueos.Text = "Arqueos"
         Me.btnArqueos.UseVisualStyleBackColor = True
         '
+        'btnReporteArqueo
+        '
+        Me.btnReporteArqueo.Location = New System.Drawing.Point(12, 99)
+        Me.btnReporteArqueo.Name = "btnReporteArqueo"
+        Me.btnReporteArqueo.Size = New System.Drawing.Size(110, 23)
+        Me.btnReporteArqueo.TabIndex = 3
+        Me.btnReporteArqueo.Text = "REPORTE"
+        Me.btnReporteArqueo.UseVisualStyleBackColor = True
+        '
+        'btnInicio
+        '
+        Me.btnInicio.Location = New System.Drawing.Point(12, 128)
+        Me.btnInicio.Name = "btnInicio"
+        Me.btnInicio.Size = New System.Drawing.Size(110, 23)
+        Me.btnInicio.TabIndex = 4
+        Me.btnInicio.Text = "INICIO NORMAL"
+        Me.btnInicio.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnInicio)
+        Me.Controls.Add(Me.btnReporteArqueo)
         Me.Controls.Add(Me.btnArqueos)
         Me.Controls.Add(Me.btnReporteAtencion)
         Me.Controls.Add(Me.btnReporteCaja)
@@ -71,4 +93,6 @@ Partial Class InicioPruebas
     Friend WithEvents btnReporteCaja As Button
     Friend WithEvents btnReporteAtencion As Button
     Friend WithEvents btnArqueos As Button
+    Friend WithEvents btnReporteArqueo As Button
+    Friend WithEvents btnInicio As Button
 End Class

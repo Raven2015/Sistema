@@ -136,6 +136,7 @@ Public Class frmCentral
         tbMedicoRemitente.Text = ""
         Debug.Write("Limpieza OK :)")
         tbFechaEstudioVP.Text = Date.Now
+        'tbInstitucion.Enabled = False
     End Sub
 
     Public Function fecha_nacimiento(ByVal fecha As Date) As Integer
@@ -144,6 +145,31 @@ Public Class frmCentral
         fecha_nac = DateTime.Now.Date.Year - fecha.Year
         Return fecha_nac
     End Function
+
+    Function TuEdad(ByVal dInicio As Date, ByVal dFin As Date) As Integer
+        Dim Dias As Integer, Meses As Integer, Años As Integer
+        Dim Edad As Integer
+        Dim DiasMes As Integer
+
+        Dias = DateAndTime.Day(dFin) - Microsoft.VisualBasic.DateAndTime.Day(dInicio)
+        Meses = DatePart("m", dFin) - DatePart("m", dInicio)
+        Años = DateDiff("yyyy", dInicio, dFin)
+        If Dias < 0 Then
+            DiasMes = DateAndTime.Day(DateSerial(Year(dInicio), Month(dInicio) + 1, 0))
+            Dias = (DiasMes - DateAndTime.Day(dInicio)) + DateAndTime.Day(dFin)
+            Meses = Meses - 1
+        End If
+        If Meses < 0 Then
+            Meses = 12 + Meses
+            Años = Años - 1
+        End If
+
+        'TuEdad = MsgBox("Tenes " & Format(Años, "00" & " Años") & Format(Meses, "00" & " Meses ") & Format(Dias, "00" & " Dias"))
+        Edad = Años
+        Return Edad
+    End Function
+
+
 
     '-------------- Metodos de Validacion --------------
     '-Nombres
@@ -192,6 +218,24 @@ Public Class frmCentral
         End If
     End Sub
 
+    Private Sub tbCodigoAsegurado_Validating(sender As Object, e As CancelEventArgs) Handles tbCodigoAsegurado.Validating
+        'Permite validar que el campo celular no este vacio
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorIcono.SetError(sender, "")
+        Else
+            Me.errorIcono.SetError(sender, "Ingrese un numero de asegurado por favor, Este dato es obligatorio")
+        End If
+    End Sub
+
+    Private Sub tbNIT_Validating(sender As Object, e As CancelEventArgs) Handles tbNIT.Validating
+        'Permite validar que el campo celular no este vacio
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorIcono.SetError(sender, "")
+        Else
+            Me.errorIcono.SetError(sender, "Ingrese un numero de NIT por favor, Este dato es obligatorio")
+        End If
+    End Sub
+
     Private Sub cbSexo_Validating(sender As Object, e As CancelEventArgs) Handles cbSexo.Validating
         'Permite validar que se seleccione por lo menos uno de los valores del checkBox Sexo para evitar datos nulos.
         If cbSexo.Text <> "" Then
@@ -209,9 +253,11 @@ Public Class frmCentral
         If dtpFechaNacimiento.Value.Date <> DateTime.Now.Date Then
             Me.errorIcono.SetError(sender, "")
             'En caso de que sea diferente se asigna la diferencia entre la fecha actual y la fecha seleccionada a la variable nacimiento
-            nacimiento = fecha_nacimiento(dtpFechaNacimiento.Value)
+            'nacimiento = fecha_nacimiento(dtpFechaNacimiento.Value)
+            nacimiento = TuEdad(dtpFechaNacimiento.Value, Date.Now)
             'Se coloca el valor de nacimiento en el campo EDAD
             tbEdad.Text = nacimiento
+            tbEdadVP.Text = nacimiento
         Else
             'En caso de que sea igual se muestra el icono de error
             Me.errorIcono.SetError(sender, "Debe seleccionar una fecha distinta a la actual por favor")
@@ -575,7 +621,7 @@ Public Class frmCentral
     End Sub
 
     Private Sub tbDireccion_TextChanged(sender As Object, e As EventArgs) Handles tbDireccion.TextChanged
-        tbDireccionVP.Text = tbDireccion.Text
+        'tbDireccionVP.Text = tbDireccion.Text
     End Sub
 
     Private Sub tbci_TextChanged(sender As Object, e As EventArgs) Handles tbci.TextChanged
@@ -606,6 +652,14 @@ Public Class frmCentral
         tbFechaEstudioVP.Text = dtpFechaAtencion.Text
     End Sub
 
+    Private Sub tbNIT_TextChanged(sender As Object, e As EventArgs) Handles tbNIT.TextChanged
+        tbNITVP.Text = tbNIT.Text
+    End Sub
+
+    Private Sub tbCodigoAsegurado_TextChanged(sender As Object, e As EventArgs) Handles tbCodigoAsegurado.TextChanged
+        tbCodAsegVP.Text = tbCodigoAsegurado.Text
+    End Sub
+
 
     '-------------------Boton IMPRIMIR-----------------------
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
@@ -624,16 +678,8 @@ Public Class frmCentral
 
     '-------------BOTON  DATOS DE ATENCION----------
     Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
-        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And cbSexo.Text <> "" Then
-            If cbxInstitucion.Text = "PARTICULAR" Then
-                crearCliente()
-            Else
-                If tbCodigoAsegurado.Text <> "" Then
-                    crearCliente()
-                Else
-                    MsgBox("EL CODIGO DE ASEGURADO NO PUEDE ESTAR EN BLANCO. INSERTE TODOS LOS DATOS Y VUELVA A INTENTAR POR FAVOR")
-                End If
-            End If
+        If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And cbSexo.Text <> "" And tbCodigoAsegurado.Text <> "" And tbNIT.Text <> "" Then
+            crearCliente()
         Else
             MsgBox("ALGUNOS CAMPOS ESTAN EN BLANCO. INSERTE TODOS LOS DATOS Y VUELVA A INTENTAR POR FAVOR")
         End If
@@ -662,8 +708,10 @@ Public Class frmCentral
         End If
     End Sub
     Private Sub cbxInstitucion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxInstitucion.SelectedIndexChanged
-        textoCodigoAsegurado()
+        'textoCodigoAsegurado()
+        tbEntidadSet.Text = cbxInstitucion.Text
     End Sub
+
 
     '-----------Metodo para limpiar el datagridview de listados
     Public Sub limpiardgvListadoAtenciones()
@@ -677,5 +725,7 @@ Public Class frmCentral
             MsgBox("Esta fila no se puede eliminar", MsgBoxStyle.Critical, "Operación inválida : : : . . .")
         End Try
     End Sub
+
+
 End Class
 

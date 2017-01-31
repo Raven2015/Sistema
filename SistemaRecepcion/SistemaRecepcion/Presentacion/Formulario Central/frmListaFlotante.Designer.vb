@@ -25,12 +25,11 @@ Partial Class frmListaFlotante
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
+        Me.tbCI = New System.Windows.Forms.TextBox()
         Me.DataSetOperacionesAuxiliares = New SistemaRecepcion.DataSetOperacionesAuxiliares()
         Me.MostrarclientesregistradosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mostrar_clientes_registradosTableAdapter = New SistemaRecepcion.DataSetOperacionesAuxiliaresTableAdapters.mostrar_clientes_registradosTableAdapter()
-        Me.tbCI = New System.Windows.Forms.TextBox()
-        Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +55,17 @@ Partial Class frmListaFlotante
         Me.Panel1.Size = New System.Drawing.Size(484, 317)
         Me.Panel1.TabIndex = 2
         '
+        'lknInexistente
+        '
+        Me.lknInexistente.AutoSize = True
+        Me.lknInexistente.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lknInexistente.Location = New System.Drawing.Point(121, 146)
+        Me.lknInexistente.Name = "lknInexistente"
+        Me.lknInexistente.Size = New System.Drawing.Size(263, 23)
+        Me.lknInexistente.TabIndex = 1
+        Me.lknInexistente.TabStop = True
+        Me.lknInexistente.Text = "NO HAY DATOS PARA MOSTRAR"
+        '
         'dgvListado
         '
         Me.dgvListado.AllowUserToAddRows = False
@@ -70,6 +80,13 @@ Partial Class frmListaFlotante
         Me.dgvListado.Size = New System.Drawing.Size(484, 317)
         Me.dgvListado.TabIndex = 0
         '
+        'tbCI
+        '
+        Me.tbCI.Location = New System.Drawing.Point(235, 10)
+        Me.tbCI.Name = "tbCI"
+        Me.tbCI.Size = New System.Drawing.Size(181, 20)
+        Me.tbCI.TabIndex = 3
+        '
         'DataSetOperacionesAuxiliares
         '
         Me.DataSetOperacionesAuxiliares.DataSetName = "DataSetOperacionesAuxiliares"
@@ -79,28 +96,6 @@ Partial Class frmListaFlotante
         '
         Me.MostrarclientesregistradosBindingSource.DataMember = "mostrar_clientes_registrados"
         Me.MostrarclientesregistradosBindingSource.DataSource = Me.DataSetOperacionesAuxiliares
-        '
-        'Mostrar_clientes_registradosTableAdapter
-        '
-        Me.Mostrar_clientes_registradosTableAdapter.ClearBeforeFill = True
-        '
-        'tbCI
-        '
-        Me.tbCI.Location = New System.Drawing.Point(235, 10)
-        Me.tbCI.Name = "tbCI"
-        Me.tbCI.Size = New System.Drawing.Size(181, 20)
-        Me.tbCI.TabIndex = 3
-        '
-        'lknInexistente
-        '
-        Me.lknInexistente.AutoSize = True
-        Me.lknInexistente.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lknInexistente.Location = New System.Drawing.Point(121, 146)
-        Me.lknInexistente.Name = "lknInexistente"
-        Me.lknInexistente.Size = New System.Drawing.Size(263, 23)
-        Me.lknInexistente.TabIndex = 1
-        Me.lknInexistente.TabStop = True
-        Me.lknInexistente.Text = "NO HAY DATOS PARA MOSTRAR"
         '
         'frmListaFlotante
         '
@@ -129,7 +124,6 @@ Partial Class frmListaFlotante
     Friend WithEvents dgvListado As DataGridView
     Friend WithEvents DataSetOperacionesAuxiliares As DataSetOperacionesAuxiliares
     Friend WithEvents MostrarclientesregistradosBindingSource As BindingSource
-    Friend WithEvents Mostrar_clientes_registradosTableAdapter As DataSetOperacionesAuxiliaresTableAdapters.mostrar_clientes_registradosTableAdapter
     Friend WithEvents tbCI As TextBox
     Friend WithEvents lknInexistente As LinkLabel
 End Class
