@@ -34,6 +34,10 @@ Partial Class frmCentral
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.tbCodAsegVP = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tbNITVP = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -151,13 +155,11 @@ Partial Class frmCentral
         Me.MedicoTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.medicoTableAdapter()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.mnstMenu = New System.Windows.Forms.MenuStrip()
-        Me.NUEVOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EDITARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CLIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DATOSDEATENCIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ESTUDIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ELIMINARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tbNITVP = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbCodAsegVP = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.grbxVIstaPrevia.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -259,6 +261,52 @@ Partial Class frmCentral
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(406, 239)
         Me.Panel2.TabIndex = 63
+        '
+        'tbCodAsegVP
+        '
+        Me.tbCodAsegVP.BackColor = System.Drawing.Color.White
+        Me.tbCodAsegVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCodAsegVP.ForeColor = System.Drawing.Color.Black
+        Me.tbCodAsegVP.Location = New System.Drawing.Point(310, 145)
+        Me.tbCodAsegVP.MaxLength = 2
+        Me.tbCodAsegVP.Name = "tbCodAsegVP"
+        Me.tbCodAsegVP.ReadOnly = True
+        Me.tbCodAsegVP.Size = New System.Drawing.Size(83, 23)
+        Me.tbCodAsegVP.TabIndex = 66
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(306, 125)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 15)
+        Me.Label4.TabIndex = 65
+        Me.Label4.Text = "Cod. Asegurado"
+        '
+        'tbNITVP
+        '
+        Me.tbNITVP.BackColor = System.Drawing.Color.White
+        Me.tbNITVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbNITVP.ForeColor = System.Drawing.Color.Black
+        Me.tbNITVP.Location = New System.Drawing.Point(311, 203)
+        Me.tbNITVP.MaxLength = 2
+        Me.tbNITVP.Name = "tbNITVP"
+        Me.tbNITVP.ReadOnly = True
+        Me.tbNITVP.Size = New System.Drawing.Size(83, 23)
+        Me.tbNITVP.TabIndex = 64
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(268, 208)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(25, 15)
+        Me.Label3.TabIndex = 63
+        Me.Label3.Text = "NIT"
         '
         'Label31
         '
@@ -1450,76 +1498,43 @@ Partial Class frmCentral
         'mnstMenu
         '
         Me.mnstMenu.BackColor = System.Drawing.Color.White
-        Me.mnstMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NUEVOToolStripMenuItem, Me.EDITARToolStripMenuItem, Me.ELIMINARToolStripMenuItem})
+        Me.mnstMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDITARToolStripMenuItem, Me.ELIMINARToolStripMenuItem})
         Me.mnstMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnstMenu.Name = "mnstMenu"
         Me.mnstMenu.Size = New System.Drawing.Size(1126, 24)
         Me.mnstMenu.TabIndex = 5
         Me.mnstMenu.Text = "MenuStrip1"
         '
-        'NUEVOToolStripMenuItem
-        '
-        Me.NUEVOToolStripMenuItem.Name = "NUEVOToolStripMenuItem"
-        Me.NUEVOToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.NUEVOToolStripMenuItem.Text = "NUEVO"
-        '
         'EDITARToolStripMenuItem
         '
+        Me.EDITARToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLIENTEToolStripMenuItem, Me.DATOSDEATENCIONToolStripMenuItem, Me.ESTUDIOSToolStripMenuItem})
         Me.EDITARToolStripMenuItem.Name = "EDITARToolStripMenuItem"
         Me.EDITARToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.EDITARToolStripMenuItem.Text = "EDITAR"
+        '
+        'CLIENTEToolStripMenuItem
+        '
+        Me.CLIENTEToolStripMenuItem.Name = "CLIENTEToolStripMenuItem"
+        Me.CLIENTEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.CLIENTEToolStripMenuItem.Text = "DATOS DEL CLIENTE"
+        '
+        'DATOSDEATENCIONToolStripMenuItem
+        '
+        Me.DATOSDEATENCIONToolStripMenuItem.Name = "DATOSDEATENCIONToolStripMenuItem"
+        Me.DATOSDEATENCIONToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.DATOSDEATENCIONToolStripMenuItem.Text = "DATOS DE ATENCION"
+        '
+        'ESTUDIOSToolStripMenuItem
+        '
+        Me.ESTUDIOSToolStripMenuItem.Name = "ESTUDIOSToolStripMenuItem"
+        Me.ESTUDIOSToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ESTUDIOSToolStripMenuItem.Text = "ESTUDIOS"
         '
         'ELIMINARToolStripMenuItem
         '
         Me.ELIMINARToolStripMenuItem.Name = "ELIMINARToolStripMenuItem"
         Me.ELIMINARToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.ELIMINARToolStripMenuItem.Text = "ELIMINAR"
-        '
-        'tbNITVP
-        '
-        Me.tbNITVP.BackColor = System.Drawing.Color.White
-        Me.tbNITVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbNITVP.ForeColor = System.Drawing.Color.Black
-        Me.tbNITVP.Location = New System.Drawing.Point(311, 203)
-        Me.tbNITVP.MaxLength = 2
-        Me.tbNITVP.Name = "tbNITVP"
-        Me.tbNITVP.ReadOnly = True
-        Me.tbNITVP.Size = New System.Drawing.Size(83, 23)
-        Me.tbNITVP.TabIndex = 64
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(268, 208)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(25, 15)
-        Me.Label3.TabIndex = 63
-        Me.Label3.Text = "NIT"
-        '
-        'tbCodAsegVP
-        '
-        Me.tbCodAsegVP.BackColor = System.Drawing.Color.White
-        Me.tbCodAsegVP.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbCodAsegVP.ForeColor = System.Drawing.Color.Black
-        Me.tbCodAsegVP.Location = New System.Drawing.Point(310, 145)
-        Me.tbCodAsegVP.MaxLength = 2
-        Me.tbCodAsegVP.Name = "tbCodAsegVP"
-        Me.tbCodAsegVP.ReadOnly = True
-        Me.tbCodAsegVP.Size = New System.Drawing.Size(83, 23)
-        Me.tbCodAsegVP.TabIndex = 66
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(114, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(306, 125)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 15)
-        Me.Label4.TabIndex = 65
-        Me.Label4.Text = "Cod. Asegurado"
         '
         'frmCentral
         '
@@ -1690,11 +1705,13 @@ Partial Class frmCentral
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents mnstMenu As MenuStrip
-    Friend WithEvents NUEVOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EDITARToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ELIMINARToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tbNITVP As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbCodAsegVP As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents CLIENTEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DATOSDEATENCIONToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ESTUDIOSToolStripMenuItem As ToolStripMenuItem
 End Class

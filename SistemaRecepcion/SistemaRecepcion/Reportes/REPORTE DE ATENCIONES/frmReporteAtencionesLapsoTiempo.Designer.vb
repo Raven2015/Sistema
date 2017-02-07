@@ -29,17 +29,18 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnImprimirReporte = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbxEntidad = New System.Windows.Forms.ComboBox()
-        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
         Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnImprimirReporte = New System.Windows.Forms.Button()
+        Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,6 +105,20 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.Panel1.Size = New System.Drawing.Size(784, 55)
         Me.Panel1.TabIndex = 18
         '
+        'btnImprimirReporte
+        '
+        Me.btnImprimirReporte.BackColor = System.Drawing.Color.White
+        Me.btnImprimirReporte.FlatAppearance.BorderSize = 0
+        Me.btnImprimirReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirReporte.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimirReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImprimirReporte.Location = New System.Drawing.Point(690, 7)
+        Me.btnImprimirReporte.Name = "btnImprimirReporte"
+        Me.btnImprimirReporte.Size = New System.Drawing.Size(82, 40)
+        Me.btnImprimirReporte.TabIndex = 0
+        Me.btnImprimirReporte.Text = "Imprimir Reporte"
+        Me.btnImprimirReporte.UseVisualStyleBackColor = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -125,15 +140,15 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.cbxEntidad.Size = New System.Drawing.Size(121, 21)
         Me.cbxEntidad.TabIndex = 20
         '
-        'DsListaEntidades
-        '
-        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
-        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ListaEntidadBindingSource
         '
         Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
         Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidades
+        '
+        'DsListaEntidades
+        '
+        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
+        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ListaEntidadTableAdapter
         '
@@ -141,6 +156,7 @@ Partial Class frmReporteAtencionesLapsoTiempo
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.lknInexistente)
         Me.Panel2.Controls.Add(Me.cbxEntidad)
         Me.Panel2.Controls.Add(Me.dgvListadoAtenciones)
         Me.Panel2.Controls.Add(Me.Label2)
@@ -154,19 +170,16 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.Panel2.Size = New System.Drawing.Size(784, 546)
         Me.Panel2.TabIndex = 19
         '
-        'btnImprimirReporte
+        'lknInexistente
         '
-        Me.btnImprimirReporte.BackColor = System.Drawing.Color.White
-        Me.btnImprimirReporte.FlatAppearance.BorderSize = 0
-        Me.btnImprimirReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimirReporte.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimirReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimirReporte.Location = New System.Drawing.Point(690, 7)
-        Me.btnImprimirReporte.Name = "btnImprimirReporte"
-        Me.btnImprimirReporte.Size = New System.Drawing.Size(82, 40)
-        Me.btnImprimirReporte.TabIndex = 0
-        Me.btnImprimirReporte.Text = "Imprimir Reporte"
-        Me.btnImprimirReporte.UseVisualStyleBackColor = False
+        Me.lknInexistente.AutoSize = True
+        Me.lknInexistente.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lknInexistente.Location = New System.Drawing.Point(288, 264)
+        Me.lknInexistente.Name = "lknInexistente"
+        Me.lknInexistente.Size = New System.Drawing.Size(226, 19)
+        Me.lknInexistente.TabIndex = 21
+        Me.lknInexistente.TabStop = True
+        Me.lknInexistente.Text = "NO HAY DATOS PARA MOSTRAR"
         '
         'frmReporteAtencionesLapsoTiempo
         '
@@ -180,8 +193,8 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.Text = "REPORTE DE ATENCIONES"
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
@@ -200,4 +213,5 @@ Partial Class frmReporteAtencionesLapsoTiempo
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
     Friend WithEvents btnImprimirReporte As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents lknInexistente As LinkLabel
 End Class

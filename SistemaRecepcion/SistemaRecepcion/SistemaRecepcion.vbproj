@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica270117\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica310117 Argentina\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,11 +79,23 @@
     <ApplicationIcon>IconBegin-02-02-02.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
@@ -137,6 +149,7 @@
     <Compile Include="Datos\fEstudio.vb" />
     <Compile Include="Datos\fMedico.vb" />
     <Compile Include="Datos\fPrecio.vb" />
+    <Compile Include="Datos\fReporteAtencion.vb" />
     <Compile Include="Datos\fUsuario.vb" />
     <Compile Include="dbBIOMEDICADataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -176,7 +189,9 @@
     <Compile Include="Logica\vEstudio.vb" />
     <Compile Include="Logica\vMedico.vb" />
     <Compile Include="Logica\vPrecio.vb" />
+    <Compile Include="Logica\vReporteAtencion.vb" />
     <Compile Include="Logica\vUsuario.vb" />
+    <Compile Include="MODULOS GLOBALES\modOperacionesAuxiliares.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -283,6 +298,7 @@
     <Compile Include="Presentacion\Cotizacion\frmCotizacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Cotizacion\modReinicio.vb" />
     <Compile Include="Presentacion\Detalle de Atencion\frmDetalleAtencion.Designer.vb">
       <DependentUpon>frmDetalleAtencion.vb</DependentUpon>
     </Compile>
@@ -385,6 +401,18 @@
     <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.Designer.vb">
+      <DependentUpon>frmReporteAtencionTimepoEntidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\reportePrueba.Designer.vb">
+      <DependentUpon>reportePrueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REPORTE DE ATENCIONES\reportePrueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\ReporteCajaFinal.Designer.vb">
       <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
     </Compile>
@@ -409,6 +437,7 @@
     <EmbeddedResource Include="Configuracion\CONFIGURACION.resx">
       <DependentUpon>CONFIGURACION.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -417,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Arqueos\frmArqueos.resx">
       <DependentUpon>frmArqueos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Atencion\dlgEditarAtencion.resx">
+      <DependentUpon>dlgEditarAtencion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Atencion\dlgNuevaAtencion.resx">
       <DependentUpon>dlgNuevaAtencion.vb</DependentUpon>
@@ -509,6 +541,15 @@
     <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.resx">
       <DependentUpon>frmReporteAtencionesLapsoTiempo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.resx">
+      <DependentUpon>frmReporteAtencionTimepoEntidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\prueba.rdlc" />
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\reportePrueba.resx">
+      <DependentUpon>reportePrueba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\rptReporteAtencionesTiempoEntidad.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCajaFinal.resx">
       <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
     </EmbeddedResource>

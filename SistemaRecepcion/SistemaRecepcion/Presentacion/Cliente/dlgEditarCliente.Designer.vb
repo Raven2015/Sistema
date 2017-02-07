@@ -29,8 +29,6 @@ Partial Class dlgEditarCliente
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.tbCodigoAsegurado = New System.Windows.Forms.TextBox()
-        Me.tbDireccion = New System.Windows.Forms.TextBox()
-        Me.tbInstitucion = New System.Windows.Forms.TextBox()
         Me.tbRazonSocial = New System.Windows.Forms.TextBox()
         Me.tbCelular = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -45,7 +43,6 @@ Partial Class dlgEditarCliente
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.tbTelefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -55,9 +52,17 @@ Partial Class dlgEditarCliente
         Me.cbSexo = New System.Windows.Forms.ComboBox()
         Me.tbIDCliente = New System.Windows.Forms.TextBox()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.tbDireccion = New System.Windows.Forms.TextBox()
+        Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
+        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
+        Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.GroupBox1.SuspendLayout()
         Me.gbPaciente.SuspendLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbApellidos
@@ -80,7 +85,7 @@ Partial Class dlgEditarCliente
         '
         Me.tbNIT.Location = New System.Drawing.Point(140, 49)
         Me.tbNIT.Name = "tbNIT"
-        Me.tbNIT.Size = New System.Drawing.Size(346, 20)
+        Me.tbNIT.Size = New System.Drawing.Size(207, 20)
         Me.tbNIT.TabIndex = 8
         '
         'Label12
@@ -105,28 +110,14 @@ Partial Class dlgEditarCliente
         '
         Me.tbCodigoAsegurado.Location = New System.Drawing.Point(140, 101)
         Me.tbCodigoAsegurado.Name = "tbCodigoAsegurado"
-        Me.tbCodigoAsegurado.Size = New System.Drawing.Size(346, 20)
+        Me.tbCodigoAsegurado.Size = New System.Drawing.Size(207, 20)
         Me.tbCodigoAsegurado.TabIndex = 6
-        '
-        'tbDireccion
-        '
-        Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
-        Me.tbDireccion.Name = "tbDireccion"
-        Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
-        Me.tbDireccion.TabIndex = 12
-        '
-        'tbInstitucion
-        '
-        Me.tbInstitucion.Location = New System.Drawing.Point(140, 23)
-        Me.tbInstitucion.Name = "tbInstitucion"
-        Me.tbInstitucion.Size = New System.Drawing.Size(346, 20)
-        Me.tbInstitucion.TabIndex = 0
         '
         'tbRazonSocial
         '
         Me.tbRazonSocial.Location = New System.Drawing.Point(140, 75)
         Me.tbRazonSocial.Name = "tbRazonSocial"
-        Me.tbRazonSocial.Size = New System.Drawing.Size(346, 20)
+        Me.tbRazonSocial.Size = New System.Drawing.Size(207, 20)
         Me.tbRazonSocial.TabIndex = 1
         '
         'tbCelular
@@ -199,12 +190,12 @@ Partial Class dlgEditarCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbxInstitucion)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.tbNIT)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.tbCodigoAsegurado)
-        Me.GroupBox1.Controls.Add(Me.tbInstitucion)
         Me.GroupBox1.Controls.Add(Me.tbRazonSocial)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 184)
@@ -249,15 +240,6 @@ Partial Class dlgEditarCliente
         Me.btnGuardar.TabIndex = 20
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 108)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 13)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Dirección"
         '
         'tbTelefono
         '
@@ -348,6 +330,49 @@ Partial Class dlgEditarCliente
         '
         Me.errorIcono.ContainerControl = Me
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(16, 108)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 13)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Dirección"
+        Me.Label8.Visible = False
+        '
+        'tbDireccion
+        '
+        Me.tbDireccion.Location = New System.Drawing.Point(73, 105)
+        Me.tbDireccion.Name = "tbDireccion"
+        Me.tbDireccion.Size = New System.Drawing.Size(170, 20)
+        Me.tbDireccion.TabIndex = 12
+        Me.tbDireccion.Visible = False
+        '
+        'cbxInstitucion
+        '
+        Me.cbxInstitucion.DataSource = Me.ListaEntidadBindingSource
+        Me.cbxInstitucion.DisplayMember = "nombre_entidad"
+        Me.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxInstitucion.FormattingEnabled = True
+        Me.cbxInstitucion.Location = New System.Drawing.Point(140, 22)
+        Me.cbxInstitucion.Name = "cbxInstitucion"
+        Me.cbxInstitucion.Size = New System.Drawing.Size(207, 21)
+        Me.cbxInstitucion.TabIndex = 10
+        '
+        'DsListaEntidades
+        '
+        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
+        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ListaEntidadBindingSource
+        '
+        Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
+        Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidades
+        '
+        'ListaEntidadTableAdapter
+        '
+        Me.ListaEntidadTableAdapter.ClearBeforeFill = True
+        '
         'dlgEditarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -366,6 +391,8 @@ Partial Class dlgEditarCliente
         Me.gbPaciente.ResumeLayout(False)
         Me.gbPaciente.PerformLayout()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -376,8 +403,6 @@ Partial Class dlgEditarCliente
     Friend WithEvents Label12 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents tbCodigoAsegurado As TextBox
-    Friend WithEvents tbDireccion As TextBox
-    Friend WithEvents tbInstitucion As TextBox
     Friend WithEvents tbRazonSocial As TextBox
     Friend WithEvents tbCelular As TextBox
     Friend WithEvents Label9 As Label
@@ -392,7 +417,6 @@ Partial Class dlgEditarCliente
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents Label8 As Label
     Friend WithEvents tbTelefono As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
@@ -402,4 +426,10 @@ Partial Class dlgEditarCliente
     Friend WithEvents tbIDCliente As TextBox
     Friend WithEvents cbSexo As ComboBox
     Friend WithEvents errorIcono As ErrorProvider
+    Friend WithEvents tbDireccion As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbxInstitucion As ComboBox
+    Friend WithEvents DsListaEntidades As dsListaEntidades
+    Friend WithEvents ListaEntidadBindingSource As BindingSource
+    Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
 End Class

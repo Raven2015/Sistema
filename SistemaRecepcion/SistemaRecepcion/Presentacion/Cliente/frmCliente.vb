@@ -21,7 +21,7 @@
         dlgEditarCliente.dtpFechaNacimiento.Text = dtpFechaNacimiento.Value
         dlgEditarCliente.tbDireccion.Text = tbDireccion.Text
         dlgEditarCliente.tbCodigoAsegurado.Text = tbCodigoAsegurado.Text
-        dlgEditarCliente.tbInstitucion.Text = tbInstitucion.Text
+        dlgEditarCliente.cbxInstitucion.Text = tbInstitucion.Text
         dlgEditarCliente.tbRazonSocial.Text = tbRazonSocial.Text
         dlgEditarCliente.tbNIT.Text = tbNIT.Text
         dlgEditarCliente.tbTelefono.Text = tbTelefono.Text

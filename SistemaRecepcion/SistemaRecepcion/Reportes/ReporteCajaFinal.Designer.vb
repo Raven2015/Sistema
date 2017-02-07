@@ -23,38 +23,38 @@ Partial Class ReporteCajaFinal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.dsPreliminar = New SistemaRecepcion.dsPreliminar()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.mostrar_reporte_finalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dsPreliminar = New SistemaRecepcion.dsPreliminar()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.mostrar_reporte_finalTableAdapter = New SistemaRecepcion.dsPreliminarTableAdapters.mostrar_reporte_finalTableAdapter()
         Me.btnRecargar = New System.Windows.Forms.Button()
         Me.tbIDAtencion = New System.Windows.Forms.TextBox()
-        CType(Me.dsPreliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mostrar_reporte_finalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dsPreliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'mostrar_reporte_finalBindingSource
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.mostrar_reporte_finalBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SistemaRecepcion.ComprobanteCaja.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(679, 511)
-        Me.ReportViewer1.TabIndex = 0
+        Me.mostrar_reporte_finalBindingSource.DataMember = "mostrar_reporte_final"
+        Me.mostrar_reporte_finalBindingSource.DataSource = Me.dsPreliminar
         '
         'dsPreliminar
         '
         Me.dsPreliminar.DataSetName = "dsPreliminar"
         Me.dsPreliminar.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'mostrar_reporte_finalBindingSource
+        'ReportViewer1
         '
-        Me.mostrar_reporte_finalBindingSource.DataMember = "mostrar_reporte_final"
-        Me.mostrar_reporte_finalBindingSource.DataSource = Me.dsPreliminar
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.mostrar_reporte_finalBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SistemaRecepcion.ComprobanteCaja.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(679, 511)
+        Me.ReportViewer1.TabIndex = 0
         '
         'mostrar_reporte_finalTableAdapter
         '
@@ -86,9 +86,9 @@ Partial Class ReporteCajaFinal
         Me.Controls.Add(Me.tbIDAtencion)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "ReporteCajaFinal"
-        Me.Text = "ReporteCajaFinal"
-        CType(Me.dsPreliminar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "REPORTE DE CAJA"
         CType(Me.mostrar_reporte_finalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dsPreliminar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

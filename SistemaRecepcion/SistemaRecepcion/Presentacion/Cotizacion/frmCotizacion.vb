@@ -138,4 +138,8 @@
         End If
         Return Total
     End Function
+
+    Private Sub NUEVOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NUEVOToolStripMenuItem.Click
+        'modReinicio.reiniciar()
+    End Sub
 End Class

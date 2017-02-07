@@ -42,7 +42,7 @@
     End Sub
 
     Public Sub limpiar()
-        cbxTurno.SelectedIndex = 0
+        cbxTurno.SelectedIndex = 0 'Selecciona automaticamente el elemento Mañana de la lista
         tbTotalIngresado.Text = "0"
         tbTotalDescuentos.Text = "0"
         tbTotalCaja.Text = "0"

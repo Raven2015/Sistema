@@ -18,4 +18,12 @@
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         frmInicio.ShowDialog()
     End Sub
+
+    Private Sub btnReporteAtencionesTiempoEntidad_Click(sender As Object, e As EventArgs) Handles btnReporteAtencionesTiempoEntidad.Click
+        frmReporteAtencionesLapsoTiempo.ShowDialog()
+    End Sub
+
+    Private Sub btnReporteTiempoEntidad_Click(sender As Object, e As EventArgs) Handles btnReporteTiempoEntidad.Click
+        reportePrueba.ShowDialog()
+    End Sub
 End Class

@@ -29,6 +29,10 @@ Partial Public Class DataSetOperacionesAuxiliares
     
     Private tableingresos_diarios_por_categoria As ingresos_diarios_por_categoriaDataTable
     
+    Private tablemostrar_atenciones_lapso_tiempo_entidad As mostrar_atenciones_lapso_tiempo_entidadDataTable
+    
+    Private tablereporte_etenciones_tiempo As reporte_etenciones_tiempoDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -64,6 +68,12 @@ Partial Public Class DataSetOperacionesAuxiliares
             If (Not (ds.Tables("ingresos_diarios_por_categoria")) Is Nothing) Then
                 MyBase.Tables.Add(New ingresos_diarios_por_categoriaDataTable(ds.Tables("ingresos_diarios_por_categoria")))
             End If
+            If (Not (ds.Tables("mostrar_atenciones_lapso_tiempo_entidad")) Is Nothing) Then
+                MyBase.Tables.Add(New mostrar_atenciones_lapso_tiempo_entidadDataTable(ds.Tables("mostrar_atenciones_lapso_tiempo_entidad")))
+            End If
+            If (Not (ds.Tables("reporte_etenciones_tiempo")) Is Nothing) Then
+                MyBase.Tables.Add(New reporte_etenciones_tiempoDataTable(ds.Tables("reporte_etenciones_tiempo")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -98,6 +108,26 @@ Partial Public Class DataSetOperacionesAuxiliares
     Public ReadOnly Property ingresos_diarios_por_categoria() As ingresos_diarios_por_categoriaDataTable
         Get
             Return Me.tableingresos_diarios_por_categoria
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property mostrar_atenciones_lapso_tiempo_entidad() As mostrar_atenciones_lapso_tiempo_entidadDataTable
+        Get
+            Return Me.tablemostrar_atenciones_lapso_tiempo_entidad
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property reporte_etenciones_tiempo() As reporte_etenciones_tiempoDataTable
+        Get
+            Return Me.tablereporte_etenciones_tiempo
         End Get
     End Property
     
@@ -174,6 +204,12 @@ Partial Public Class DataSetOperacionesAuxiliares
             If (Not (ds.Tables("ingresos_diarios_por_categoria")) Is Nothing) Then
                 MyBase.Tables.Add(New ingresos_diarios_por_categoriaDataTable(ds.Tables("ingresos_diarios_por_categoria")))
             End If
+            If (Not (ds.Tables("mostrar_atenciones_lapso_tiempo_entidad")) Is Nothing) Then
+                MyBase.Tables.Add(New mostrar_atenciones_lapso_tiempo_entidadDataTable(ds.Tables("mostrar_atenciones_lapso_tiempo_entidad")))
+            End If
+            If (Not (ds.Tables("reporte_etenciones_tiempo")) Is Nothing) Then
+                MyBase.Tables.Add(New reporte_etenciones_tiempoDataTable(ds.Tables("reporte_etenciones_tiempo")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -218,6 +254,18 @@ Partial Public Class DataSetOperacionesAuxiliares
                 Me.tableingresos_diarios_por_categoria.InitVars
             End If
         End If
+        Me.tablemostrar_atenciones_lapso_tiempo_entidad = CType(MyBase.Tables("mostrar_atenciones_lapso_tiempo_entidad"),mostrar_atenciones_lapso_tiempo_entidadDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablemostrar_atenciones_lapso_tiempo_entidad) Is Nothing) Then
+                Me.tablemostrar_atenciones_lapso_tiempo_entidad.InitVars
+            End If
+        End If
+        Me.tablereporte_etenciones_tiempo = CType(MyBase.Tables("reporte_etenciones_tiempo"),reporte_etenciones_tiempoDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablereporte_etenciones_tiempo) Is Nothing) Then
+                Me.tablereporte_etenciones_tiempo.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -232,6 +280,10 @@ Partial Public Class DataSetOperacionesAuxiliares
         MyBase.Tables.Add(Me.tablemostrar_clientes_registrados)
         Me.tableingresos_diarios_por_categoria = New ingresos_diarios_por_categoriaDataTable()
         MyBase.Tables.Add(Me.tableingresos_diarios_por_categoria)
+        Me.tablemostrar_atenciones_lapso_tiempo_entidad = New mostrar_atenciones_lapso_tiempo_entidadDataTable()
+        MyBase.Tables.Add(Me.tablemostrar_atenciones_lapso_tiempo_entidad)
+        Me.tablereporte_etenciones_tiempo = New reporte_etenciones_tiempoDataTable()
+        MyBase.Tables.Add(Me.tablereporte_etenciones_tiempo)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -243,6 +295,18 @@ Partial Public Class DataSetOperacionesAuxiliares
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeingresos_diarios_por_categoria() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializemostrar_atenciones_lapso_tiempo_entidad() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializereporte_etenciones_tiempo() As Boolean
         Return false
     End Function
     
@@ -309,6 +373,12 @@ Partial Public Class DataSetOperacionesAuxiliares
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub ingresos_diarios_por_categoriaRowChangeEventHandler(ByVal sender As Object, ByVal e As ingresos_diarios_por_categoriaRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub mostrar_atenciones_lapso_tiempo_entidadRowChangeEventHandler(ByVal sender As Object, ByVal e As mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub reporte_etenciones_tiempoRowChangeEventHandler(ByVal sender As Object, ByVal e As reporte_etenciones_tiempoRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1025,6 +1095,888 @@ Partial Public Class DataSetOperacionesAuxiliares
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class mostrar_atenciones_lapso_tiempo_entidadDataTable
+        Inherits Global.System.Data.TypedTableBase(Of mostrar_atenciones_lapso_tiempo_entidadRow)
+        
+        Private columnFECHA As Global.System.Data.DataColumn
+        
+        Private columnNOMBRES As Global.System.Data.DataColumn
+        
+        Private columnAPELLIDOS As Global.System.Data.DataColumn
+        
+        Private columnMEDICO_REMITENTE As Global.System.Data.DataColumn
+        
+        Private columnMEDICO_DESTINATARIO As Global.System.Data.DataColumn
+        
+        Private columnCODIGO_ASEGURADO As Global.System.Data.DataColumn
+        
+        Private columnEDAD As Global.System.Data.DataColumn
+        
+        Private columnCI As Global.System.Data.DataColumn
+        
+        Private columnNIT As Global.System.Data.DataColumn
+        
+        Private columnENTIDAD As Global.System.Data.DataColumn
+        
+        Private columnCATEGORIA As Global.System.Data.DataColumn
+        
+        Private columnESTUDIO As Global.System.Data.DataColumn
+        
+        Private columnPRECIO As Global.System.Data.DataColumn
+        
+        Private columnid_atencion As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "mostrar_atenciones_lapso_tiempo_entidad"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FECHAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFECHA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NOMBRESColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOMBRES
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property APELLIDOSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAPELLIDOS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MEDICO_REMITENTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMEDICO_REMITENTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MEDICO_DESTINATARIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMEDICO_DESTINATARIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CODIGO_ASEGURADOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCODIGO_ASEGURADO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EDADColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEDAD
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CIColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCI
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NITColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNIT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ENTIDADColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnENTIDAD
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CATEGORIAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCATEGORIA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ESTUDIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnESTUDIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PRECIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPRECIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property id_atencionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_atencion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As mostrar_atenciones_lapso_tiempo_entidadRow
+            Get
+                Return CType(Me.Rows(index),mostrar_atenciones_lapso_tiempo_entidadRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event mostrar_atenciones_lapso_tiempo_entidadRowChanging As mostrar_atenciones_lapso_tiempo_entidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event mostrar_atenciones_lapso_tiempo_entidadRowChanged As mostrar_atenciones_lapso_tiempo_entidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event mostrar_atenciones_lapso_tiempo_entidadRowDeleting As mostrar_atenciones_lapso_tiempo_entidadRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event mostrar_atenciones_lapso_tiempo_entidadRowDeleted As mostrar_atenciones_lapso_tiempo_entidadRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub Addmostrar_atenciones_lapso_tiempo_entidadRow(ByVal row As mostrar_atenciones_lapso_tiempo_entidadRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function Addmostrar_atenciones_lapso_tiempo_entidadRow(ByVal FECHA As Date, ByVal NOMBRES As String, ByVal APELLIDOS As String, ByVal MEDICO_REMITENTE As String, ByVal MEDICO_DESTINATARIO As String, ByVal CODIGO_ASEGURADO As String, ByVal EDAD As Integer, ByVal CI As String, ByVal NIT As String, ByVal ENTIDAD As String, ByVal CATEGORIA As String, ByVal ESTUDIO As String, ByVal PRECIO As Decimal, ByVal id_atencion As Integer) As mostrar_atenciones_lapso_tiempo_entidadRow
+            Dim rowmostrar_atenciones_lapso_tiempo_entidadRow As mostrar_atenciones_lapso_tiempo_entidadRow = CType(Me.NewRow,mostrar_atenciones_lapso_tiempo_entidadRow)
+            Dim columnValuesArray() As Object = New Object() {FECHA, NOMBRES, APELLIDOS, MEDICO_REMITENTE, MEDICO_DESTINATARIO, CODIGO_ASEGURADO, EDAD, CI, NIT, ENTIDAD, CATEGORIA, ESTUDIO, PRECIO, id_atencion}
+            rowmostrar_atenciones_lapso_tiempo_entidadRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowmostrar_atenciones_lapso_tiempo_entidadRow)
+            Return rowmostrar_atenciones_lapso_tiempo_entidadRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByid_atencion(ByVal id_atencion As Integer) As mostrar_atenciones_lapso_tiempo_entidadRow
+            Return CType(Me.Rows.Find(New Object() {id_atencion}),mostrar_atenciones_lapso_tiempo_entidadRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As mostrar_atenciones_lapso_tiempo_entidadDataTable = CType(MyBase.Clone,mostrar_atenciones_lapso_tiempo_entidadDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New mostrar_atenciones_lapso_tiempo_entidadDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnFECHA = MyBase.Columns("FECHA")
+            Me.columnNOMBRES = MyBase.Columns("NOMBRES")
+            Me.columnAPELLIDOS = MyBase.Columns("APELLIDOS")
+            Me.columnMEDICO_REMITENTE = MyBase.Columns("MEDICO_REMITENTE")
+            Me.columnMEDICO_DESTINATARIO = MyBase.Columns("MEDICO_DESTINATARIO")
+            Me.columnCODIGO_ASEGURADO = MyBase.Columns("CODIGO_ASEGURADO")
+            Me.columnEDAD = MyBase.Columns("EDAD")
+            Me.columnCI = MyBase.Columns("CI")
+            Me.columnNIT = MyBase.Columns("NIT")
+            Me.columnENTIDAD = MyBase.Columns("ENTIDAD")
+            Me.columnCATEGORIA = MyBase.Columns("CATEGORIA")
+            Me.columnESTUDIO = MyBase.Columns("ESTUDIO")
+            Me.columnPRECIO = MyBase.Columns("PRECIO")
+            Me.columnid_atencion = MyBase.Columns("id_atencion")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnFECHA = New Global.System.Data.DataColumn("FECHA", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFECHA)
+            Me.columnNOMBRES = New Global.System.Data.DataColumn("NOMBRES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOMBRES)
+            Me.columnAPELLIDOS = New Global.System.Data.DataColumn("APELLIDOS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAPELLIDOS)
+            Me.columnMEDICO_REMITENTE = New Global.System.Data.DataColumn("MEDICO_REMITENTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMEDICO_REMITENTE)
+            Me.columnMEDICO_DESTINATARIO = New Global.System.Data.DataColumn("MEDICO_DESTINATARIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMEDICO_DESTINATARIO)
+            Me.columnCODIGO_ASEGURADO = New Global.System.Data.DataColumn("CODIGO_ASEGURADO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCODIGO_ASEGURADO)
+            Me.columnEDAD = New Global.System.Data.DataColumn("EDAD", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEDAD)
+            Me.columnCI = New Global.System.Data.DataColumn("CI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCI)
+            Me.columnNIT = New Global.System.Data.DataColumn("NIT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNIT)
+            Me.columnENTIDAD = New Global.System.Data.DataColumn("ENTIDAD", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnENTIDAD)
+            Me.columnCATEGORIA = New Global.System.Data.DataColumn("CATEGORIA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCATEGORIA)
+            Me.columnESTUDIO = New Global.System.Data.DataColumn("ESTUDIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnESTUDIO)
+            Me.columnPRECIO = New Global.System.Data.DataColumn("PRECIO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPRECIO)
+            Me.columnid_atencion = New Global.System.Data.DataColumn("id_atencion", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_atencion)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_atencion}, true))
+            Me.columnNOMBRES.MaxLength = 50
+            Me.columnAPELLIDOS.MaxLength = 50
+            Me.columnMEDICO_REMITENTE.MaxLength = 50
+            Me.columnMEDICO_DESTINATARIO.MaxLength = 50
+            Me.columnCODIGO_ASEGURADO.MaxLength = 20
+            Me.columnCI.MaxLength = 10
+            Me.columnNIT.MaxLength = 15
+            Me.columnENTIDAD.MaxLength = 50
+            Me.columnCATEGORIA.MaxLength = 50
+            Me.columnESTUDIO.MaxLength = 200
+            Me.columnPRECIO.AllowDBNull = false
+            Me.columnid_atencion.AllowDBNull = false
+            Me.columnid_atencion.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Newmostrar_atenciones_lapso_tiempo_entidadRow() As mostrar_atenciones_lapso_tiempo_entidadRow
+            Return CType(Me.NewRow,mostrar_atenciones_lapso_tiempo_entidadRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New mostrar_atenciones_lapso_tiempo_entidadRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(mostrar_atenciones_lapso_tiempo_entidadRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.mostrar_atenciones_lapso_tiempo_entidadRowChangedEvent) Is Nothing) Then
+                RaiseEvent mostrar_atenciones_lapso_tiempo_entidadRowChanged(Me, New mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent(CType(e.Row,mostrar_atenciones_lapso_tiempo_entidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.mostrar_atenciones_lapso_tiempo_entidadRowChangingEvent) Is Nothing) Then
+                RaiseEvent mostrar_atenciones_lapso_tiempo_entidadRowChanging(Me, New mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent(CType(e.Row,mostrar_atenciones_lapso_tiempo_entidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.mostrar_atenciones_lapso_tiempo_entidadRowDeletedEvent) Is Nothing) Then
+                RaiseEvent mostrar_atenciones_lapso_tiempo_entidadRowDeleted(Me, New mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent(CType(e.Row,mostrar_atenciones_lapso_tiempo_entidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.mostrar_atenciones_lapso_tiempo_entidadRowDeletingEvent) Is Nothing) Then
+                RaiseEvent mostrar_atenciones_lapso_tiempo_entidadRowDeleting(Me, New mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent(CType(e.Row,mostrar_atenciones_lapso_tiempo_entidadRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Removemostrar_atenciones_lapso_tiempo_entidadRow(ByVal row As mostrar_atenciones_lapso_tiempo_entidadRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetOperacionesAuxiliares = New DataSetOperacionesAuxiliares()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "mostrar_atenciones_lapso_tiempo_entidadDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class reporte_etenciones_tiempoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of reporte_etenciones_tiempoRow)
+        
+        Private columnFECHA As Global.System.Data.DataColumn
+        
+        Private columnNOMBRES As Global.System.Data.DataColumn
+        
+        Private columnAPELLIDOS As Global.System.Data.DataColumn
+        
+        Private columnMEDICO_REMITENTE As Global.System.Data.DataColumn
+        
+        Private columnMEDICO_DESTINATARIO As Global.System.Data.DataColumn
+        
+        Private columnCODIGO_ASEGURADO As Global.System.Data.DataColumn
+        
+        Private columnEDAD As Global.System.Data.DataColumn
+        
+        Private columnCI As Global.System.Data.DataColumn
+        
+        Private columnNIT As Global.System.Data.DataColumn
+        
+        Private columnENTIDAD As Global.System.Data.DataColumn
+        
+        Private columnCATEGORIA As Global.System.Data.DataColumn
+        
+        Private columnESTUDIO As Global.System.Data.DataColumn
+        
+        Private columnPRECIO As Global.System.Data.DataColumn
+        
+        Private columnid_atencion As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "reporte_etenciones_tiempo"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FECHAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFECHA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NOMBRESColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOMBRES
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property APELLIDOSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAPELLIDOS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MEDICO_REMITENTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMEDICO_REMITENTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MEDICO_DESTINATARIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMEDICO_DESTINATARIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CODIGO_ASEGURADOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCODIGO_ASEGURADO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EDADColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEDAD
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CIColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCI
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NITColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNIT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ENTIDADColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnENTIDAD
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CATEGORIAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCATEGORIA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ESTUDIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnESTUDIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PRECIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPRECIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property id_atencionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_atencion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As reporte_etenciones_tiempoRow
+            Get
+                Return CType(Me.Rows(index),reporte_etenciones_tiempoRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event reporte_etenciones_tiempoRowChanging As reporte_etenciones_tiempoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event reporte_etenciones_tiempoRowChanged As reporte_etenciones_tiempoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event reporte_etenciones_tiempoRowDeleting As reporte_etenciones_tiempoRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event reporte_etenciones_tiempoRowDeleted As reporte_etenciones_tiempoRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub Addreporte_etenciones_tiempoRow(ByVal row As reporte_etenciones_tiempoRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function Addreporte_etenciones_tiempoRow(ByVal FECHA As Date, ByVal NOMBRES As String, ByVal APELLIDOS As String, ByVal MEDICO_REMITENTE As String, ByVal MEDICO_DESTINATARIO As String, ByVal CODIGO_ASEGURADO As String, ByVal EDAD As Integer, ByVal CI As String, ByVal NIT As String, ByVal ENTIDAD As String, ByVal CATEGORIA As String, ByVal ESTUDIO As String, ByVal PRECIO As Decimal, ByVal id_atencion As Integer) As reporte_etenciones_tiempoRow
+            Dim rowreporte_etenciones_tiempoRow As reporte_etenciones_tiempoRow = CType(Me.NewRow,reporte_etenciones_tiempoRow)
+            Dim columnValuesArray() As Object = New Object() {FECHA, NOMBRES, APELLIDOS, MEDICO_REMITENTE, MEDICO_DESTINATARIO, CODIGO_ASEGURADO, EDAD, CI, NIT, ENTIDAD, CATEGORIA, ESTUDIO, PRECIO, id_atencion}
+            rowreporte_etenciones_tiempoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowreporte_etenciones_tiempoRow)
+            Return rowreporte_etenciones_tiempoRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByid_atencion(ByVal id_atencion As Integer) As reporte_etenciones_tiempoRow
+            Return CType(Me.Rows.Find(New Object() {id_atencion}),reporte_etenciones_tiempoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As reporte_etenciones_tiempoDataTable = CType(MyBase.Clone,reporte_etenciones_tiempoDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New reporte_etenciones_tiempoDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnFECHA = MyBase.Columns("FECHA")
+            Me.columnNOMBRES = MyBase.Columns("NOMBRES")
+            Me.columnAPELLIDOS = MyBase.Columns("APELLIDOS")
+            Me.columnMEDICO_REMITENTE = MyBase.Columns("MEDICO_REMITENTE")
+            Me.columnMEDICO_DESTINATARIO = MyBase.Columns("MEDICO_DESTINATARIO")
+            Me.columnCODIGO_ASEGURADO = MyBase.Columns("CODIGO_ASEGURADO")
+            Me.columnEDAD = MyBase.Columns("EDAD")
+            Me.columnCI = MyBase.Columns("CI")
+            Me.columnNIT = MyBase.Columns("NIT")
+            Me.columnENTIDAD = MyBase.Columns("ENTIDAD")
+            Me.columnCATEGORIA = MyBase.Columns("CATEGORIA")
+            Me.columnESTUDIO = MyBase.Columns("ESTUDIO")
+            Me.columnPRECIO = MyBase.Columns("PRECIO")
+            Me.columnid_atencion = MyBase.Columns("id_atencion")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnFECHA = New Global.System.Data.DataColumn("FECHA", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFECHA)
+            Me.columnNOMBRES = New Global.System.Data.DataColumn("NOMBRES", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOMBRES)
+            Me.columnAPELLIDOS = New Global.System.Data.DataColumn("APELLIDOS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAPELLIDOS)
+            Me.columnMEDICO_REMITENTE = New Global.System.Data.DataColumn("MEDICO_REMITENTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMEDICO_REMITENTE)
+            Me.columnMEDICO_DESTINATARIO = New Global.System.Data.DataColumn("MEDICO_DESTINATARIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMEDICO_DESTINATARIO)
+            Me.columnCODIGO_ASEGURADO = New Global.System.Data.DataColumn("CODIGO_ASEGURADO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCODIGO_ASEGURADO)
+            Me.columnEDAD = New Global.System.Data.DataColumn("EDAD", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEDAD)
+            Me.columnCI = New Global.System.Data.DataColumn("CI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCI)
+            Me.columnNIT = New Global.System.Data.DataColumn("NIT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNIT)
+            Me.columnENTIDAD = New Global.System.Data.DataColumn("ENTIDAD", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnENTIDAD)
+            Me.columnCATEGORIA = New Global.System.Data.DataColumn("CATEGORIA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCATEGORIA)
+            Me.columnESTUDIO = New Global.System.Data.DataColumn("ESTUDIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnESTUDIO)
+            Me.columnPRECIO = New Global.System.Data.DataColumn("PRECIO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPRECIO)
+            Me.columnid_atencion = New Global.System.Data.DataColumn("id_atencion", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_atencion)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_atencion}, true))
+            Me.columnNOMBRES.MaxLength = 50
+            Me.columnAPELLIDOS.MaxLength = 50
+            Me.columnMEDICO_REMITENTE.MaxLength = 50
+            Me.columnMEDICO_DESTINATARIO.MaxLength = 50
+            Me.columnCODIGO_ASEGURADO.MaxLength = 20
+            Me.columnCI.MaxLength = 10
+            Me.columnNIT.MaxLength = 15
+            Me.columnENTIDAD.MaxLength = 50
+            Me.columnCATEGORIA.MaxLength = 50
+            Me.columnESTUDIO.MaxLength = 200
+            Me.columnPRECIO.AllowDBNull = false
+            Me.columnid_atencion.AllowDBNull = false
+            Me.columnid_atencion.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Newreporte_etenciones_tiempoRow() As reporte_etenciones_tiempoRow
+            Return CType(Me.NewRow,reporte_etenciones_tiempoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New reporte_etenciones_tiempoRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(reporte_etenciones_tiempoRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.reporte_etenciones_tiempoRowChangedEvent) Is Nothing) Then
+                RaiseEvent reporte_etenciones_tiempoRowChanged(Me, New reporte_etenciones_tiempoRowChangeEvent(CType(e.Row,reporte_etenciones_tiempoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.reporte_etenciones_tiempoRowChangingEvent) Is Nothing) Then
+                RaiseEvent reporte_etenciones_tiempoRowChanging(Me, New reporte_etenciones_tiempoRowChangeEvent(CType(e.Row,reporte_etenciones_tiempoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.reporte_etenciones_tiempoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent reporte_etenciones_tiempoRowDeleted(Me, New reporte_etenciones_tiempoRowChangeEvent(CType(e.Row,reporte_etenciones_tiempoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.reporte_etenciones_tiempoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent reporte_etenciones_tiempoRowDeleting(Me, New reporte_etenciones_tiempoRowChangeEvent(CType(e.Row,reporte_etenciones_tiempoRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Removereporte_etenciones_tiempoRow(ByVal row As reporte_etenciones_tiempoRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetOperacionesAuxiliares = New DataSetOperacionesAuxiliares()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "reporte_etenciones_tiempoDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class mostrar_clientes_registradosRow
@@ -1529,6 +2481,745 @@ Partial Public Class DataSetOperacionesAuxiliares
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class mostrar_atenciones_lapso_tiempo_entidadRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablemostrar_atenciones_lapso_tiempo_entidad As mostrar_atenciones_lapso_tiempo_entidadDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablemostrar_atenciones_lapso_tiempo_entidad = CType(Me.Table,mostrar_atenciones_lapso_tiempo_entidadDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FECHA() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.FECHAColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FECHA' in table 'mostrar_atenciones_lapso_tiempo_entidad' i"& _ 
+                            "s DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.FECHAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NOMBRES() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NOMBRESColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOMBRES' in table 'mostrar_atenciones_lapso_tiempo_entidad'"& _ 
+                            " is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NOMBRESColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property APELLIDOS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.APELLIDOSColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'APELLIDOS' in table 'mostrar_atenciones_lapso_tiempo_entida"& _ 
+                            "d' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.APELLIDOSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MEDICO_REMITENTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_REMITENTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MEDICO_REMITENTE' in table 'mostrar_atenciones_lapso_tiempo"& _ 
+                            "_entidad' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_REMITENTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MEDICO_DESTINATARIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_DESTINATARIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MEDICO_DESTINATARIO' in table 'mostrar_atenciones_lapso_tie"& _ 
+                            "mpo_entidad' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_DESTINATARIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CODIGO_ASEGURADO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CODIGO_ASEGURADOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CODIGO_ASEGURADO' in table 'mostrar_atenciones_lapso_tiempo"& _ 
+                            "_entidad' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CODIGO_ASEGURADOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EDAD() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.EDADColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EDAD' in table 'mostrar_atenciones_lapso_tiempo_entidad' is"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.EDADColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CI() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CIColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CI' in table 'mostrar_atenciones_lapso_tiempo_entidad' is D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CIColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NIT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NITColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NIT' in table 'mostrar_atenciones_lapso_tiempo_entidad' is "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NITColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ENTIDAD() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ENTIDADColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ENTIDAD' in table 'mostrar_atenciones_lapso_tiempo_entidad'"& _ 
+                            " is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ENTIDADColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CATEGORIA() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CATEGORIAColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CATEGORIA' in table 'mostrar_atenciones_lapso_tiempo_entida"& _ 
+                            "d' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CATEGORIAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ESTUDIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ESTUDIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ESTUDIO' in table 'mostrar_atenciones_lapso_tiempo_entidad'"& _ 
+                            " is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ESTUDIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PRECIO() As Decimal
+            Get
+                Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.PRECIOColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.PRECIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id_atencion() As Integer
+            Get
+                Return CType(Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.id_atencionColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.id_atencionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFECHANull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.FECHAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFECHANull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.FECHAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNOMBRESNull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NOMBRESColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNOMBRESNull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NOMBRESColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAPELLIDOSNull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.APELLIDOSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAPELLIDOSNull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.APELLIDOSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMEDICO_REMITENTENull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_REMITENTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMEDICO_REMITENTENull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_REMITENTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMEDICO_DESTINATARIONull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_DESTINATARIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMEDICO_DESTINATARIONull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.MEDICO_DESTINATARIOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCODIGO_ASEGURADONull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CODIGO_ASEGURADOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCODIGO_ASEGURADONull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CODIGO_ASEGURADOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEDADNull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.EDADColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEDADNull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.EDADColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCINull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CIColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCINull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CIColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNITNull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NITColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNITNull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.NITColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsENTIDADNull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ENTIDADColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetENTIDADNull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ENTIDADColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCATEGORIANull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CATEGORIAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCATEGORIANull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.CATEGORIAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsESTUDIONull() As Boolean
+            Return Me.IsNull(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ESTUDIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetESTUDIONull()
+            Me(Me.tablemostrar_atenciones_lapso_tiempo_entidad.ESTUDIOColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class reporte_etenciones_tiempoRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablereporte_etenciones_tiempo As reporte_etenciones_tiempoDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablereporte_etenciones_tiempo = CType(Me.Table,reporte_etenciones_tiempoDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FECHA() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.FECHAColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FECHA' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.FECHAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NOMBRES() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.NOMBRESColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOMBRES' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.NOMBRESColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property APELLIDOS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.APELLIDOSColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'APELLIDOS' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.APELLIDOSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MEDICO_REMITENTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.MEDICO_REMITENTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MEDICO_REMITENTE' in table 'reporte_etenciones_tiempo' is D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.MEDICO_REMITENTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MEDICO_DESTINATARIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.MEDICO_DESTINATARIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MEDICO_DESTINATARIO' in table 'reporte_etenciones_tiempo' i"& _ 
+                            "s DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.MEDICO_DESTINATARIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CODIGO_ASEGURADO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.CODIGO_ASEGURADOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CODIGO_ASEGURADO' in table 'reporte_etenciones_tiempo' is D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.CODIGO_ASEGURADOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EDAD() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.EDADColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EDAD' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.EDADColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CI() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.CIColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CI' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.CIColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NIT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.NITColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NIT' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.NITColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ENTIDAD() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.ENTIDADColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ENTIDAD' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.ENTIDADColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CATEGORIA() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.CATEGORIAColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CATEGORIA' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.CATEGORIAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ESTUDIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereporte_etenciones_tiempo.ESTUDIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ESTUDIO' in table 'reporte_etenciones_tiempo' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.ESTUDIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PRECIO() As Decimal
+            Get
+                Return CType(Me(Me.tablereporte_etenciones_tiempo.PRECIOColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.PRECIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property id_atencion() As Integer
+            Get
+                Return CType(Me(Me.tablereporte_etenciones_tiempo.id_atencionColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablereporte_etenciones_tiempo.id_atencionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFECHANull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.FECHAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFECHANull()
+            Me(Me.tablereporte_etenciones_tiempo.FECHAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNOMBRESNull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.NOMBRESColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNOMBRESNull()
+            Me(Me.tablereporte_etenciones_tiempo.NOMBRESColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAPELLIDOSNull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.APELLIDOSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAPELLIDOSNull()
+            Me(Me.tablereporte_etenciones_tiempo.APELLIDOSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMEDICO_REMITENTENull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.MEDICO_REMITENTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMEDICO_REMITENTENull()
+            Me(Me.tablereporte_etenciones_tiempo.MEDICO_REMITENTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMEDICO_DESTINATARIONull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.MEDICO_DESTINATARIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMEDICO_DESTINATARIONull()
+            Me(Me.tablereporte_etenciones_tiempo.MEDICO_DESTINATARIOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCODIGO_ASEGURADONull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.CODIGO_ASEGURADOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCODIGO_ASEGURADONull()
+            Me(Me.tablereporte_etenciones_tiempo.CODIGO_ASEGURADOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEDADNull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.EDADColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEDADNull()
+            Me(Me.tablereporte_etenciones_tiempo.EDADColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCINull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.CIColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCINull()
+            Me(Me.tablereporte_etenciones_tiempo.CIColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNITNull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.NITColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNITNull()
+            Me(Me.tablereporte_etenciones_tiempo.NITColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsENTIDADNull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.ENTIDADColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetENTIDADNull()
+            Me(Me.tablereporte_etenciones_tiempo.ENTIDADColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCATEGORIANull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.CATEGORIAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCATEGORIANull()
+            Me(Me.tablereporte_etenciones_tiempo.CATEGORIAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsESTUDIONull() As Boolean
+            Return Me.IsNull(Me.tablereporte_etenciones_tiempo.ESTUDIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetESTUDIONull()
+            Me(Me.tablereporte_etenciones_tiempo.ESTUDIOColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1586,6 +3277,78 @@ Partial Public Class DataSetOperacionesAuxiliares
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As ingresos_diarios_por_categoriaRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class mostrar_atenciones_lapso_tiempo_entidadRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As mostrar_atenciones_lapso_tiempo_entidadRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As mostrar_atenciones_lapso_tiempo_entidadRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As mostrar_atenciones_lapso_tiempo_entidadRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class reporte_etenciones_tiempoRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As reporte_etenciones_tiempoRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As reporte_etenciones_tiempoRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As reporte_etenciones_tiempoRow
             Get
                 Return Me.eventRow
             End Get
@@ -1994,6 +3757,413 @@ Namespace DataSetOperacionesAuxiliaresTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(entidad,String)
             End If
             Dim dataTable As DataSetOperacionesAuxiliares.ingresos_diarios_por_categoriaDataTable = New DataSetOperacionesAuxiliares.ingresos_diarios_por_categoriaDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class mostrar_atenciones_lapso_tiempo_entidadTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "mostrar_atenciones_lapso_tiempo_entidad"
+            tableMapping.ColumnMappings.Add("FECHA", "FECHA")
+            tableMapping.ColumnMappings.Add("NOMBRES", "NOMBRES")
+            tableMapping.ColumnMappings.Add("APELLIDOS", "APELLIDOS")
+            tableMapping.ColumnMappings.Add("MEDICO_REMITENTE", "MEDICO_REMITENTE")
+            tableMapping.ColumnMappings.Add("MEDICO_DESTINATARIO", "MEDICO_DESTINATARIO")
+            tableMapping.ColumnMappings.Add("CODIGO_ASEGURADO", "CODIGO_ASEGURADO")
+            tableMapping.ColumnMappings.Add("EDAD", "EDAD")
+            tableMapping.ColumnMappings.Add("CI", "CI")
+            tableMapping.ColumnMappings.Add("NIT", "NIT")
+            tableMapping.ColumnMappings.Add("ENTIDAD", "ENTIDAD")
+            tableMapping.ColumnMappings.Add("CATEGORIA", "CATEGORIA")
+            tableMapping.ColumnMappings.Add("ESTUDIO", "ESTUDIO")
+            tableMapping.ColumnMappings.Add("PRECIO", "PRECIO")
+            tableMapping.ColumnMappings.Add("id_atencion", "id_atencion")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.SistemaRecepcion.My.MySettings.Default.Conexion
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.mostrar_atenciones_lapso_tiempo_entidad"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fecha_inicio", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 16, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fecha_fin", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 16, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entidad", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetOperacionesAuxiliares.mostrar_atenciones_lapso_tiempo_entidadDataTable, ByVal fecha_inicio As Global.System.Nullable(Of Date), ByVal fecha_fin As Global.System.Nullable(Of Date), ByVal entidad As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (fecha_inicio.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha_inicio.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (fecha_fin.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(fecha_fin.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (entidad Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(entidad,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal fecha_inicio As Global.System.Nullable(Of Date), ByVal fecha_fin As Global.System.Nullable(Of Date), ByVal entidad As String) As DataSetOperacionesAuxiliares.mostrar_atenciones_lapso_tiempo_entidadDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (fecha_inicio.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha_inicio.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (fecha_fin.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(fecha_fin.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (entidad Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(entidad,String)
+            End If
+            Dim dataTable As DataSetOperacionesAuxiliares.mostrar_atenciones_lapso_tiempo_entidadDataTable = New DataSetOperacionesAuxiliares.mostrar_atenciones_lapso_tiempo_entidadDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class reporte_etenciones_tiempoTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "reporte_etenciones_tiempo"
+            tableMapping.ColumnMappings.Add("FECHA", "FECHA")
+            tableMapping.ColumnMappings.Add("NOMBRES", "NOMBRES")
+            tableMapping.ColumnMappings.Add("APELLIDOS", "APELLIDOS")
+            tableMapping.ColumnMappings.Add("MEDICO_REMITENTE", "MEDICO_REMITENTE")
+            tableMapping.ColumnMappings.Add("MEDICO_DESTINATARIO", "MEDICO_DESTINATARIO")
+            tableMapping.ColumnMappings.Add("CODIGO_ASEGURADO", "CODIGO_ASEGURADO")
+            tableMapping.ColumnMappings.Add("EDAD", "EDAD")
+            tableMapping.ColumnMappings.Add("CI", "CI")
+            tableMapping.ColumnMappings.Add("NIT", "NIT")
+            tableMapping.ColumnMappings.Add("ENTIDAD", "ENTIDAD")
+            tableMapping.ColumnMappings.Add("CATEGORIA", "CATEGORIA")
+            tableMapping.ColumnMappings.Add("ESTUDIO", "ESTUDIO")
+            tableMapping.ColumnMappings.Add("PRECIO", "PRECIO")
+            tableMapping.ColumnMappings.Add("id_atencion", "id_atencion")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.SistemaRecepcion.My.MySettings.Default.Conexion
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.reporte_etenciones_tiempo"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetOperacionesAuxiliares.reporte_etenciones_tiempoDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetOperacionesAuxiliares.reporte_etenciones_tiempoDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetOperacionesAuxiliares.reporte_etenciones_tiempoDataTable = New DataSetOperacionesAuxiliares.reporte_etenciones_tiempoDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

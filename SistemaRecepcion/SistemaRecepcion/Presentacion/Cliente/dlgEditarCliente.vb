@@ -2,10 +2,12 @@
 
 Public Class dlgEditarCliente
 
-    Dim fecha_nac As Integer
+    Dim edad As Integer
 
     '-------------- Metodo principal del formulario --------------
     Private Sub dlgEditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DsListaEntidades.listaEntidad' table. You can move, or remove it, as needed.
+        Me.ListaEntidadTableAdapter.Fill(Me.DsListaEntidades.listaEntidad)
 
     End Sub
 
@@ -31,9 +33,9 @@ Public Class dlgEditarCliente
                     dts.gnombres = tbNombres.Text
                     dts.gapellidos = tbApellidos.Text
                     dts.gfecha_nacimiento = dtpFechaNacimiento.Value
-                    dts.gdireccion = tbDireccion.Text
+                    dts.gdireccion = ""
                     dts.gcodigo_asegurado = tbCodigoAsegurado.Text
-                    dts.ginstitucion = tbInstitucion.Text
+                    dts.ginstitucion = cbxInstitucion.Text
                     dts.grazon_social = tbRazonSocial.Text
                     dts.gnit = tbNIT.Text
                     dts.gtelefono = tbTelefono.Text
@@ -82,16 +84,6 @@ Public Class dlgEditarCliente
             Me.errorIcono.SetError(sender, "")
         Else
             Me.errorIcono.SetError(sender, "Ingrese el apellido del cliente por favor, Este dato es obligatorio")
-        End If
-    End Sub
-
-
-    Private Sub tbDireccion_Validating(sender As Object, e As CancelEventArgs) Handles tbDireccion.Validating
-        'Permite validar que el campo direccion no este vacio
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.errorIcono.SetError(sender, "")
-        Else
-            Me.errorIcono.SetError(sender, "Ingrese la dirección del cliente por favor, Este dato es obligatorio")
         End If
     End Sub
 
@@ -154,7 +146,7 @@ Public Class dlgEditarCliente
         tbCelular.Text = ""
         tbCodigoAsegurado.Text = ""
         tbRazonSocial.Text = ""
-        tbInstitucion.Text = ""
+        cbxInstitucion.SelectedIndex = 0
         tbCI.Text = ""
         tbNIT.Text = ""
         cbSexo.Text = ""
@@ -163,8 +155,8 @@ Public Class dlgEditarCliente
 
     Public Function fecha_nacimiento(ByVal fecha As Date) As Integer
         'Calcula la edad restando la fecha actual menos el valor pasado como parametro.
-        fecha_nac = DateTime.Now.Date.Year - fecha.Year
-        Return fecha_nac
+        edad = modOperacionesAuxiliares.TuEdad(dtpFechaNacimiento.Value, Date.Now)
+        Return edad
     End Function
 
 End Class

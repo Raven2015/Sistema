@@ -27,6 +27,8 @@ Partial Class InicioPruebas
         Me.btnArqueos = New System.Windows.Forms.Button()
         Me.btnReporteArqueo = New System.Windows.Forms.Button()
         Me.btnInicio = New System.Windows.Forms.Button()
+        Me.btnReporteAtencionesTiempoEntidad = New System.Windows.Forms.Button()
+        Me.btnReporteTiempoEntidad = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -74,11 +76,31 @@ Partial Class InicioPruebas
         Me.btnInicio.Text = "INICIO NORMAL"
         Me.btnInicio.UseVisualStyleBackColor = True
         '
+        'btnReporteAtencionesTiempoEntidad
+        '
+        Me.btnReporteAtencionesTiempoEntidad.Location = New System.Drawing.Point(12, 157)
+        Me.btnReporteAtencionesTiempoEntidad.Name = "btnReporteAtencionesTiempoEntidad"
+        Me.btnReporteAtencionesTiempoEntidad.Size = New System.Drawing.Size(110, 40)
+        Me.btnReporteAtencionesTiempoEntidad.TabIndex = 5
+        Me.btnReporteAtencionesTiempoEntidad.Text = "RPT. DE ATENC./ENT."
+        Me.btnReporteAtencionesTiempoEntidad.UseVisualStyleBackColor = True
+        '
+        'btnReporteTiempoEntidad
+        '
+        Me.btnReporteTiempoEntidad.Location = New System.Drawing.Point(128, 12)
+        Me.btnReporteTiempoEntidad.Name = "btnReporteTiempoEntidad"
+        Me.btnReporteTiempoEntidad.Size = New System.Drawing.Size(110, 23)
+        Me.btnReporteTiempoEntidad.TabIndex = 6
+        Me.btnReporteTiempoEntidad.Text = "REPORTE"
+        Me.btnReporteTiempoEntidad.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnReporteTiempoEntidad)
+        Me.Controls.Add(Me.btnReporteAtencionesTiempoEntidad)
         Me.Controls.Add(Me.btnInicio)
         Me.Controls.Add(Me.btnReporteArqueo)
         Me.Controls.Add(Me.btnArqueos)
@@ -95,4 +117,6 @@ Partial Class InicioPruebas
     Friend WithEvents btnArqueos As Button
     Friend WithEvents btnReporteArqueo As Button
     Friend WithEvents btnInicio As Button
+    Friend WithEvents btnReporteAtencionesTiempoEntidad As Button
+    Friend WithEvents btnReporteTiempoEntidad As Button
 End Class
