@@ -16,7 +16,6 @@
             Meses = 12 + Meses
             Años = Años - 1
         End If
-
         'TuEdad = MsgBox("Tenes " & Format(Años, "00" & " Años") & Format(Meses, "00" & " Meses ") & Format(Dias, "00" & " Dias"))
         Edad = Años
         Return Edad

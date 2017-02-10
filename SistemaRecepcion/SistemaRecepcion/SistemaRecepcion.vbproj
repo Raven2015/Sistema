@@ -419,6 +419,18 @@
     <Compile Include="Reportes\ReporteCajaFinal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.Designer.vb">
+      <DependentUpon>frmEstudiosPorEntidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.Designer.vb">
+      <DependentUpon>frmReportePorMedicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\rptReporteCaja.Designer.vb">
       <DependentUpon>rptReporteCaja.vb</DependentUpon>
     </Compile>
@@ -553,6 +565,14 @@
     <EmbeddedResource Include="Reportes\ReporteCajaFinal.resx">
       <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.resx">
+      <DependentUpon>frmEstudiosPorEntidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.resx">
+      <DependentUpon>frmReportePorMedicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\rptListaAtencionePorMedico.rdlc" />
+    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\rptEstudioPorEntidad.rdlc" />
     <EmbeddedResource Include="Reportes\rptReporteCaja.resx">
       <DependentUpon>rptReporteCaja.vb</DependentUpon>
     </EmbeddedResource>

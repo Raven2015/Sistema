@@ -267,7 +267,6 @@ Public Class frmCentral
     End Sub
 
 
-
     Private Sub tbci_Validating(sender As Object, e As CancelEventArgs) Handles tbci.Validating
         'Permite validar que el campo CI no este vacio
         If DirectCast(sender, TextBox).Text.Length > 0 Then
@@ -726,6 +725,8 @@ Public Class frmCentral
         End Try
     End Sub
 
-
+    Private Sub CLIENTEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLIENTEToolStripMenuItem.Click
+        dlgEditarCliente.ShowDialog()
+    End Sub
 End Class
 

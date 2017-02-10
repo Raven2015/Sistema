@@ -29,6 +29,8 @@ Partial Class InicioPruebas
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.btnReporteAtencionesTiempoEntidad = New System.Windows.Forms.Button()
         Me.btnReporteTiempoEntidad = New System.Windows.Forms.Button()
+        Me.btnEstudiosPorEntidad = New System.Windows.Forms.Button()
+        Me.btnEstudiosByMedico = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -94,11 +96,31 @@ Partial Class InicioPruebas
         Me.btnReporteTiempoEntidad.Text = "REPORTE"
         Me.btnReporteTiempoEntidad.UseVisualStyleBackColor = True
         '
+        'btnEstudiosPorEntidad
+        '
+        Me.btnEstudiosPorEntidad.Location = New System.Drawing.Point(128, 41)
+        Me.btnEstudiosPorEntidad.Name = "btnEstudiosPorEntidad"
+        Me.btnEstudiosPorEntidad.Size = New System.Drawing.Size(110, 23)
+        Me.btnEstudiosPorEntidad.TabIndex = 7
+        Me.btnEstudiosPorEntidad.Text = "ESTUDIOS"
+        Me.btnEstudiosPorEntidad.UseVisualStyleBackColor = True
+        '
+        'btnEstudiosByMedico
+        '
+        Me.btnEstudiosByMedico.Location = New System.Drawing.Point(128, 70)
+        Me.btnEstudiosByMedico.Name = "btnEstudiosByMedico"
+        Me.btnEstudiosByMedico.Size = New System.Drawing.Size(110, 36)
+        Me.btnEstudiosByMedico.TabIndex = 8
+        Me.btnEstudiosByMedico.Text = "ESTUDIOS POR MEDICO"
+        Me.btnEstudiosByMedico.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnEstudiosByMedico)
+        Me.Controls.Add(Me.btnEstudiosPorEntidad)
         Me.Controls.Add(Me.btnReporteTiempoEntidad)
         Me.Controls.Add(Me.btnReporteAtencionesTiempoEntidad)
         Me.Controls.Add(Me.btnInicio)
@@ -119,4 +141,6 @@ Partial Class InicioPruebas
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnReporteAtencionesTiempoEntidad As Button
     Friend WithEvents btnReporteTiempoEntidad As Button
+    Friend WithEvents btnEstudiosPorEntidad As Button
+    Friend WithEvents btnEstudiosByMedico As Button
 End Class

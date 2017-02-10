@@ -26,4 +26,12 @@
     Private Sub btnReporteTiempoEntidad_Click(sender As Object, e As EventArgs) Handles btnReporteTiempoEntidad.Click
         reportePrueba.ShowDialog()
     End Sub
+
+    Private Sub btnEstudiosPorEntidad_Click(sender As Object, e As EventArgs) Handles btnEstudiosPorEntidad.Click
+        frmEstudiosPorEntidad.ShowDialog()
+    End Sub
+
+    Private Sub btnEstudiosByMedico_Click(sender As Object, e As EventArgs) Handles btnEstudiosByMedico.Click
+        frmReportePorMedicos.ShowDialog()
+    End Sub
 End Class
