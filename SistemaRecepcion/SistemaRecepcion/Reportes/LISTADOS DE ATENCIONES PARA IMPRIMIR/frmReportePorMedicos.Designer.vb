@@ -35,9 +35,9 @@ Partial Class frmReportePorMedicos
         Me.MostrarmedicoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Mostrar_medicoTableAdapter = New SistemaRecepcion.DataSetOperacionesAuxiliaresTableAdapters.mostrar_medicoTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         CType(Me.lista_atenciones_por_medicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,21 +128,21 @@ Partial Class frmReportePorMedicos
         Me.GroupBox1.Controls.Add(Me.dtpFechaFin)
         Me.GroupBox1.Controls.Add(Me.btnRecargar)
         Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 30)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 29)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1069, 42)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "-"
         '
-        'Label1
+        'Label3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 15)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "MEDICO DESTINATARIO"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(440, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(46, 15)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "HASTA:"
         '
         'Label2
         '
@@ -153,14 +153,14 @@ Partial Class frmReportePorMedicos
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "DESDE:"
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(440, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 15)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "HASTA:"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(14, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(131, 15)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "MEDICO DESTINATARIO"
         '
         'dtpFechaFin
         '
@@ -177,6 +177,7 @@ Partial Class frmReportePorMedicos
         Me.ClientSize = New System.Drawing.Size(1069, 516)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmReportePorMedicos"
         Me.Text = "frmReportePorMedicos"
         CType(Me.lista_atenciones_por_medicoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

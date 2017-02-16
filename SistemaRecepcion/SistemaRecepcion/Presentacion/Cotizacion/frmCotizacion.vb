@@ -139,7 +139,7 @@
         Return Total
     End Function
 
-    Private Sub NUEVOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NUEVOToolStripMenuItem.Click
-        'modReinicio.reiniciar()
+    Private Sub LimpiarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LimpiarToolStripMenuItem.Click
+        limpiar()
     End Sub
 End Class

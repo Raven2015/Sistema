@@ -31,6 +31,7 @@ Partial Class InicioPruebas
         Me.btnReporteTiempoEntidad = New System.Windows.Forms.Button()
         Me.btnEstudiosPorEntidad = New System.Windows.Forms.Button()
         Me.btnEstudiosByMedico = New System.Windows.Forms.Button()
+        Me.btnFrmListaAtencionesporMedico = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -114,11 +115,21 @@ Partial Class InicioPruebas
         Me.btnEstudiosByMedico.Text = "ESTUDIOS POR MEDICO"
         Me.btnEstudiosByMedico.UseVisualStyleBackColor = True
         '
+        'btnFrmListaAtencionesporMedico
+        '
+        Me.btnFrmListaAtencionesporMedico.Location = New System.Drawing.Point(128, 115)
+        Me.btnFrmListaAtencionesporMedico.Name = "btnFrmListaAtencionesporMedico"
+        Me.btnFrmListaAtencionesporMedico.Size = New System.Drawing.Size(110, 51)
+        Me.btnFrmListaAtencionesporMedico.TabIndex = 9
+        Me.btnFrmListaAtencionesporMedico.Text = "LISTA DE ATENCIONES POR MEDICO"
+        Me.btnFrmListaAtencionesporMedico.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnFrmListaAtencionesporMedico)
         Me.Controls.Add(Me.btnEstudiosByMedico)
         Me.Controls.Add(Me.btnEstudiosPorEntidad)
         Me.Controls.Add(Me.btnReporteTiempoEntidad)
@@ -143,4 +154,5 @@ Partial Class InicioPruebas
     Friend WithEvents btnReporteTiempoEntidad As Button
     Friend WithEvents btnEstudiosPorEntidad As Button
     Friend WithEvents btnEstudiosByMedico As Button
+    Friend WithEvents btnFrmListaAtencionesporMedico As Button
 End Class

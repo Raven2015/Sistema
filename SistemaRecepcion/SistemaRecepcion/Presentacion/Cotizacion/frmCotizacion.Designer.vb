@@ -23,7 +23,7 @@ Partial Class frmCotizacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbxInstitucion = New System.Windows.Forms.ComboBox()
         Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -48,8 +48,7 @@ Partial Class frmCotizacion
         Me.Lista_entidadesTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.lista_entidadesTableAdapter()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.NUEVOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IMPRIMIRREPORTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LimpiarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,7 +144,7 @@ Partial Class frmCotizacion
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(686, 10)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 16)
+        Me.Label4.Size = New System.Drawing.Size(30, 16)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Bs."
         '
@@ -162,7 +161,7 @@ Partial Class frmCotizacion
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(373, 10)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(145, 16)
+        Me.Label3.Size = New System.Drawing.Size(133, 16)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "MONTO A PAGAR"
         '
@@ -191,14 +190,14 @@ Partial Class frmCotizacion
         Me.dgvListadoAtenciones.BackgroundColor = System.Drawing.Color.White
         Me.dgvListadoAtenciones.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListadoAtenciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListadoAtenciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListadoAtenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.estudio, Me.precio})
         Me.dgvListadoAtenciones.Dock = System.Windows.Forms.DockStyle.Fill
@@ -271,24 +270,18 @@ Partial Class frmCotizacion
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NUEVOToolStripMenuItem, Me.IMPRIMIRREPORTEToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LimpiarToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(728, 24)
         Me.MenuStrip1.TabIndex = 3
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'NUEVOToolStripMenuItem
+        'LimpiarToolStripMenuItem
         '
-        Me.NUEVOToolStripMenuItem.Name = "NUEVOToolStripMenuItem"
-        Me.NUEVOToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.NUEVOToolStripMenuItem.Text = "NUEVO"
-        '
-        'IMPRIMIRREPORTEToolStripMenuItem
-        '
-        Me.IMPRIMIRREPORTEToolStripMenuItem.Name = "IMPRIMIRREPORTEToolStripMenuItem"
-        Me.IMPRIMIRREPORTEToolStripMenuItem.Size = New System.Drawing.Size(145, 20)
-        Me.IMPRIMIRREPORTEToolStripMenuItem.Text = "IMPRIMIR COTIZACION"
+        Me.LimpiarToolStripMenuItem.Name = "LimpiarToolStripMenuItem"
+        Me.LimpiarToolStripMenuItem.Size = New System.Drawing.Size(105, 20)
+        Me.LimpiarToolStripMenuItem.Text = "LIMPIAR DATOS"
         '
         'frmCotizacion
         '
@@ -349,6 +342,5 @@ Partial Class frmCotizacion
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
     Friend WithEvents Label4 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents NUEVOToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IMPRIMIRREPORTEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LimpiarToolStripMenuItem As ToolStripMenuItem
 End Class

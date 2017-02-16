@@ -35,17 +35,23 @@ Public Class fReporteAtencion
         End Try
     End Function
 
-    Public Function mostrar_por_medico_destinatario(ByVal fecha_inicio As Date, ByVal fecha_fin As Date, ByVal medico_destinatario As String) As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
+    Public Function mostrar_por_medico_destinatario(
+                                                   ByVal fecha_inicio As Date,
+                                                   ByVal fecha_fin As Date,
+                                                   ByVal medico_destinatario As String,
+                                                   ByVal medico_remitente As String
+                                                   ) As DataTable 'Se usa DataTable ya que es el formato devuelto por SQL
         Try
             conectado() 'Llama a la funcion conectado de la clase Conexion
-            cmd = New SqlCommand("mostrar_atenciones_lapso_tiempo_entidad") 'Llama al procedimiento almacenado en la BD.
+            cmd = New SqlCommand("lista_atenciones_por_medico") 'Llama al procedimiento almacenado en la BD.
             cmd.CommandType = CommandType.StoredProcedure 'Selecciona el tipo de comando a enviar (Procedimiento Almacenado)
 
             cmd.Connection = cnn 'Se establece la variable cnn para la conexion de cmd
 
             cmd.Parameters.AddWithValue("@fecha_inicio", fecha_inicio)
             cmd.Parameters.AddWithValue("@fecha_fin", fecha_fin)
-            cmd.Parameters.AddWithValue("@entidad", medico_destinatario)
+            cmd.Parameters.AddWithValue("@medico_destinatario", medico_destinatario)
+            cmd.Parameters.AddWithValue("@medico_remitente", medico_remitente)
 
             If cmd.ExecuteNonQuery Then 'Verifica que la consulta se realize exitosamente
                 Dim dt As New DataTable 'Crea una variable que almacena el resultado obtenido de la consulta

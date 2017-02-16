@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica310117 Argentina\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica130217 Argentina\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,6 +96,9 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
@@ -191,6 +194,7 @@
     <Compile Include="Logica\vPrecio.vb" />
     <Compile Include="Logica\vReporteAtencion.vb" />
     <Compile Include="Logica\vUsuario.vb" />
+    <Compile Include="MODULOS GLOBALES\ExportarExcel.vb" />
     <Compile Include="MODULOS GLOBALES\modOperacionesAuxiliares.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -395,16 +399,28 @@
     <Compile Include="Reportes\Prueba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.Designer.vb">
+    <Compile Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReporteAtencionesLapsoTiempo.Designer.vb">
       <DependentUpon>frmReporteAtencionesLapsoTiempo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.vb">
+    <Compile Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReporteAtencionesLapsoTiempo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.Designer.vb">
       <DependentUpon>frmReporteAtencionTimepoEntidad.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReportedeAtencionesporMedicos.Designer.vb">
+      <DependentUpon>frmReportedeAtencionesporMedicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReportedeAtencionesporMedicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorEntidades.Designer.vb">
+      <DependentUpon>frmReportePorEntidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorEntidades.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\REPORTE DE ATENCIONES\reportePrueba.Designer.vb">
@@ -419,16 +435,16 @@
     <Compile Include="Reportes\ReporteCajaFinal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.Designer.vb">
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmEstudiosPorEntidad.Designer.vb">
       <DependentUpon>frmEstudiosPorEntidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.vb">
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmEstudiosPorEntidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.Designer.vb">
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorMedicos.Designer.vb">
       <DependentUpon>frmReportePorMedicos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.vb">
+    <Compile Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorMedicos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\rptReporteCaja.Designer.vb">
@@ -550,29 +566,33 @@
     <EmbeddedResource Include="Reportes\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionesLapsoTiempo.resx">
+    <EmbeddedResource Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReporteAtencionesLapsoTiempo.resx">
       <DependentUpon>frmReporteAtencionesLapsoTiempo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\frmReporteAtencionTimepoEntidad.resx">
       <DependentUpon>frmReporteAtencionTimepoEntidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\prueba.rdlc" />
-    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\FORMULARIOS-DATOS PARA REPORTES\frmReportedeAtencionesporMedicos.resx">
+      <DependentUpon>frmReportedeAtencionesporMedicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorEntidades.resx">
+      <DependentUpon>frmReportePorEntidades.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\reportePrueba.resx">
       <DependentUpon>reportePrueba.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTE DE ATENCIONES\rptReporteAtencionesTiempoEntidad.rdlc" />
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\rptReporteAtencionesTiempoEntidad.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCajaFinal.resx">
       <DependentUpon>ReporteCajaFinal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\frmEstudiosPorEntidad.resx">
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmEstudiosPorEntidad.resx">
       <DependentUpon>frmEstudiosPorEntidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\frmReportePorMedicos.resx">
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\frmReportePorMedicos.resx">
       <DependentUpon>frmReportePorMedicos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\rptListaAtencionePorMedico.rdlc" />
-    <EmbeddedResource Include="Reportes\REPORTES DE ESTUDIOS\rptEstudioPorEntidad.rdlc" />
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\rptListaAtencionePorMedico.rdlc" />
+    <EmbeddedResource Include="Reportes\LISTADOS DE ATENCIONES PARA IMPRIMIR\rptEstudioPorEntidad.rdlc" />
     <EmbeddedResource Include="Reportes\rptReporteCaja.resx">
       <DependentUpon>rptReporteCaja.vb</DependentUpon>
     </EmbeddedResource>
@@ -654,6 +674,7 @@
   <ItemGroup>
     <Folder Include="Presentacion\Campania\" />
     <Folder Include="Presentacion\Convenio\" />
+    <Folder Include="Reportes\REPORTES DE ESTUDIOS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
@@ -792,7 +813,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IconBegin-02-02-02.ico" />
+    <None Include="Resources\excelColor.png" />
+    <None Include="Resources\newspaper.png" />
     <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
