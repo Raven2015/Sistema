@@ -44,4 +44,13 @@
     Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
         frmCotizacion.ShowDialog()
     End Sub
+
+    Private Sub btnArqueos_Click(sender As Object, e As EventArgs) Handles btnArqueos.Click
+        frmArqueos.ShowDialog()
+    End Sub
+
+    Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
+        frmMenuReportes.ShowDialog()
+    End Sub
+
 End Class

@@ -76,6 +76,7 @@
         tbEstudio.Text = ""
         cbxInstitucion.SelectedIndex = 0
         tbPrecio.Text = ""
+        limpiardgvListadoAtenciones()
     End Sub
 
     Private Sub tbEstudio_TextChanged(sender As Object, e As EventArgs) Handles tbEstudio.TextChanged
@@ -141,5 +142,17 @@
 
     Private Sub LimpiarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LimpiarToolStripMenuItem.Click
         limpiar()
+    End Sub
+
+    Public Sub limpiardgvListadoAtenciones()
+        Try
+            If dgvListadoAtenciones.RowCount >= 1 Then
+                For i As Integer = 1 To dgvListadoAtenciones.RowCount
+                    dgvListadoAtenciones.Rows.Remove(dgvListadoAtenciones.CurrentRow)
+                Next
+            End If
+        Catch ex As InvalidOperationException ' Esta excepcion es por si ocurriera
+            MsgBox("Esta fila no se puede eliminar", MsgBoxStyle.Critical, "Operación inválida : : : . . .")
+        End Try
     End Sub
 End Class

@@ -3,6 +3,7 @@
     Dim fecha As Date
     Dim precio_parcial As Double
     Dim doctor_remitente, tipo_documento, num_documento, descripcion As String
+    Dim turno As String
 
     Public Property gid_atencion
         Get
@@ -85,6 +86,15 @@
         End Set
     End Property
 
+    Public Property gturno
+        Get
+            Return turno
+        End Get
+        Set(value)
+            turno = value
+        End Set
+    End Property
+
     '------------------ CONSTRUCTORES DE LA CLASE
     Public Sub New()
 
@@ -122,6 +132,22 @@
         gprecio_parcial = precio_parcial
         gid_medico = id_medico
     End Sub
-
+    Public Sub New(
+              ByVal id_atencion As Integer,
+              ByVal id_cliente As Integer,
+              ByVal fecha As Date,
+              ByVal doctor_remitente As String,
+              ByVal precio_parcial As String,
+              ByVal id_medico As Integer,
+              ByVal turno As String
+              )
+        gid_atencion = id_atencion
+        gid_cliente = id_cliente
+        gfecha = fecha
+        gdoctor_remitente = doctor_remitente
+        gprecio_parcial = precio_parcial
+        gid_medico = id_medico
+        gturno = turno
+    End Sub
 
 End Class

@@ -463,7 +463,19 @@ Public Class frmCentral
         dtpFechaAtencion.Text = Date.Now
     End Sub
 
+    '------------- ASIGNAR TURNO
+    Public Function asignar_turno(ByVal hora As Date) As String
+        Dim turno As String = ""
+        If (hora.Hour <= "12") Then
+            turno = "MAÑANA"
+        Else
+            turno = "TARDE"
+        End If
+        Return turno
+    End Function
+
     Public Sub insertarAtencion()
+        Dim turno As String = ""
         Try
             Dim dts As New vAtencion
             Dim func As New fAtencion
@@ -475,6 +487,9 @@ Public Class frmCentral
             dts.gprecio_parcial = tbPrecioParcial.Text
             dts.gid_medico = cbxMedicoDestinatario.SelectedIndex
 
+            turno = asignar_turno(Date.Now)
+            dts.gturno = turno
+            Debug.Write("El valor de Turno>> " + turno)
 
             'If func.insertar(dts) Then
             '    MessageBox.Show("Atencion registrada correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)

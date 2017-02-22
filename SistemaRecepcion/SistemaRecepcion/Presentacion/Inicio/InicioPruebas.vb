@@ -37,6 +37,13 @@
 
     Private Sub btnFrmListaAtencionesporMedico_Click(sender As Object, e As EventArgs) Handles btnFrmListaAtencionesporMedico.Click
         frmReportedeAtencionesporMedicos.ShowDialog()
+    End Sub
 
+    Private Sub btnCentral_Click(sender As Object, e As EventArgs) Handles btnCentral.Click
+        MDIContenedor.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmReporteAtencionesLapsoTiempo.ShowDialog()
     End Sub
 End Class

@@ -10,13 +10,46 @@
     Public Sub mostrar_ingresos()
         Dim fecha_atencion As Date
         Dim entidad As String
+        Dim turno As String
         fecha_atencion = dtpFechaAtencion.Text
         Debug.Write("Fecha enviada: " & dtpFechaAtencion.Text)
         entidad = cbxEntidad.Text
         Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
+        turno = cbxTurno.Text
+        Debug.Write("Turno Enviado: " & cbxTurno.Text)
         Try
             Dim func As New fArqueoIngreso
-            dt = func.mostrar_ingresos_fecha(fecha_atencion, entidad)
+            dt = func.mostrar_ingresos_fecha(fecha_atencion, entidad, turno)
+
+            If dt.Rows.Count <> 0 Then
+                dgvListado.DataSource = dt
+                dgvListado.ColumnHeadersVisible = True
+                AnchoColumnas()
+                lknInexistente.Visible = False
+            Else
+                dgvListado.DataSource = Nothing
+                dgvListado.ColumnHeadersVisible = False
+                lknInexistente.Visible = True
+            End If
+        Catch ex As Exception
+            MsgBox("La tabla aun esta vacia: " & ex.Message)
+        End Try
+        'calcularValores()
+    End Sub
+
+    Public Sub mostrar_ingresos_TODOS()
+        Dim fecha_atencion As Date
+        Dim entidad As String
+        Dim turno As String
+        fecha_atencion = dtpFechaAtencion.Text
+        Debug.Write("Fecha enviada: " & dtpFechaAtencion.Text)
+        entidad = "%"
+        Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
+        turno = cbxTurno.Text
+        Debug.Write("Turno Enviado: " & cbxTurno.Text)
+        Try
+            Dim func As New fArqueoIngreso
+            dt = func.mostrar_ingresos_fecha(fecha_atencion, entidad, turno)
 
             If dt.Rows.Count <> 0 Then
                 dgvListado.DataSource = dt
@@ -35,7 +68,7 @@
     End Sub
 
     Public Sub AnchoColumnas()
-        dgvListado.Columns(0).Width = 270
+        dgvListado.Columns(0).Width = 370
         dgvListado.Columns(1).Width = 110
         dgvListado.Columns(2).Width = 100
         dgvListado.Columns(3).Width = 100
@@ -97,9 +130,14 @@
         Return Total
     End Function
 
-    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+    Private Sub IMRIMIRARQUEOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IMRIMIRARQUEOToolStripMenuItem.Click
         ReporteArqueo.tbEntidad.Text = cbxEntidad.Text
         ReporteArqueo.tbFecha.Text = dtpFechaAtencion.Text
         ReporteArqueo.ShowDialog()
+    End Sub
+
+    Private Sub TODOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TODOSToolStripMenuItem.Click
+        mostrar_ingresos_TODOS()
+        calcularValores()
     End Sub
 End Class

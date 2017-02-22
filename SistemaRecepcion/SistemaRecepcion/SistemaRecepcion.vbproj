@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica130217 Argentina\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica130217 central\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,23 +79,6 @@
     <ApplicationIcon>IconBegin-02-02-02.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -178,6 +161,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPreliminar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INTERFAZ\frmContenedor.Designer.vb">
+      <DependentUpon>frmContenedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTERFAZ\frmContenedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INTERFAZ\MDIContenedor.Designer.vb">
+      <DependentUpon>MDIContenedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTERFAZ\MDIContenedor.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logica\vArqueoIngreso.vb" />
     <Compile Include="Logica\vAtencion.vb" />
@@ -387,10 +382,22 @@
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Reporte Medico\frmReporteMedico.Designer.vb">
+      <DependentUpon>frmReporteMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\frmReporteMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\ARQUEOS\ReporteArqueo.Designer.vb">
       <DependentUpon>ReporteArqueo.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ARQUEOS\ReporteArqueo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmMenuReportes.Designer.vb">
+      <DependentUpon>frmMenuReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmMenuReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Prueba.Designer.vb">
@@ -464,6 +471,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Configuracion\CONFIGURACION.resx">
       <DependentUpon>CONFIGURACION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTERFAZ\frmContenedor.resx">
+      <DependentUpon>frmContenedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTERFAZ\MDIContenedor.resx">
+      <DependentUpon>MDIContenedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -559,10 +572,16 @@
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reporte Medico\frmReporteMedico.resx">
+      <DependentUpon>frmReporteMedico.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ARQUEOS\ReporteArqueo.resx">
       <DependentUpon>ReporteArqueo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ARQUEOS\rptArqueo.rdlc" />
+    <EmbeddedResource Include="Reportes\frmMenuReportes.resx">
+      <DependentUpon>frmMenuReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
     </EmbeddedResource>
@@ -672,7 +691,6 @@
     <None Include="SistemaRecepcion_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presentacion\Campania\" />
     <Folder Include="Presentacion\Convenio\" />
     <Folder Include="Reportes\REPORTES DE ESTUDIOS\" />
   </ItemGroup>
@@ -760,42 +778,42 @@
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Auto</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
@@ -813,6 +831,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IconBegin-02-02-02.ico" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\browser-6.png" />
+    <None Include="Resources\list%283%29.png" />
+    <None Include="Resources\list1.png" />
     <None Include="Resources\excelColor.png" />
     <None Include="Resources\newspaper.png" />
     <None Include="Resources\info.png" />

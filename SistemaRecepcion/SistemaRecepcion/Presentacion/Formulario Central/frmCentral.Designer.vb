@@ -157,9 +157,6 @@ Partial Class frmCentral
         Me.mnstMenu = New System.Windows.Forms.MenuStrip()
         Me.EDITARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CLIENTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DATOSDEATENCIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ESTUDIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ELIMINARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grbxVIstaPrevia.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1498,7 +1495,7 @@ Partial Class frmCentral
         'mnstMenu
         '
         Me.mnstMenu.BackColor = System.Drawing.Color.White
-        Me.mnstMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDITARToolStripMenuItem, Me.ELIMINARToolStripMenuItem})
+        Me.mnstMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDITARToolStripMenuItem})
         Me.mnstMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnstMenu.Name = "mnstMenu"
         Me.mnstMenu.Size = New System.Drawing.Size(1126, 24)
@@ -1507,7 +1504,7 @@ Partial Class frmCentral
         '
         'EDITARToolStripMenuItem
         '
-        Me.EDITARToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLIENTEToolStripMenuItem, Me.DATOSDEATENCIONToolStripMenuItem, Me.ESTUDIOSToolStripMenuItem})
+        Me.EDITARToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLIENTEToolStripMenuItem})
         Me.EDITARToolStripMenuItem.Name = "EDITARToolStripMenuItem"
         Me.EDITARToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.EDITARToolStripMenuItem.Text = "EDITAR"
@@ -1515,26 +1512,8 @@ Partial Class frmCentral
         'CLIENTEToolStripMenuItem
         '
         Me.CLIENTEToolStripMenuItem.Name = "CLIENTEToolStripMenuItem"
-        Me.CLIENTEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.CLIENTEToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
         Me.CLIENTEToolStripMenuItem.Text = "DATOS DEL CLIENTE"
-        '
-        'DATOSDEATENCIONToolStripMenuItem
-        '
-        Me.DATOSDEATENCIONToolStripMenuItem.Name = "DATOSDEATENCIONToolStripMenuItem"
-        Me.DATOSDEATENCIONToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.DATOSDEATENCIONToolStripMenuItem.Text = "DATOS DE ATENCION"
-        '
-        'ESTUDIOSToolStripMenuItem
-        '
-        Me.ESTUDIOSToolStripMenuItem.Name = "ESTUDIOSToolStripMenuItem"
-        Me.ESTUDIOSToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.ESTUDIOSToolStripMenuItem.Text = "ESTUDIOS"
-        '
-        'ELIMINARToolStripMenuItem
-        '
-        Me.ELIMINARToolStripMenuItem.Name = "ELIMINARToolStripMenuItem"
-        Me.ELIMINARToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
-        Me.ELIMINARToolStripMenuItem.Text = "ELIMINAR"
         '
         'frmCentral
         '
@@ -1706,12 +1685,9 @@ Partial Class frmCentral
     Friend WithEvents Panel2 As Panel
     Friend WithEvents mnstMenu As MenuStrip
     Friend WithEvents EDITARToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ELIMINARToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tbNITVP As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbCodAsegVP As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents CLIENTEToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DATOSDEATENCIONToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ESTUDIOSToolStripMenuItem As ToolStripMenuItem
 End Class

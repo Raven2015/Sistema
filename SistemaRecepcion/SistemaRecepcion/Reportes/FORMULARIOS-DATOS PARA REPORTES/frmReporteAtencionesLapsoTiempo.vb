@@ -41,7 +41,7 @@
         llenar()
     End Sub
 
-    Private Sub btnImprimirReporte_Click(sender As Object, e As EventArgs) Handles btnImprimirReporte.Click
+    Private Sub btnImprimirReporte_Click(sender As Object, e As EventArgs)
         frmReporteAtencionTimepoEntidad.tbFechaInicio.Text = dtpFechaInicio.Text
         Debug.Write("El valor de fecha inicio: " & dtpFechaInicio.Text)
         frmReporteAtencionTimepoEntidad.tbFechaFin.Text = dtpFechaFin.Text
@@ -49,5 +49,28 @@
         frmReporteAtencionTimepoEntidad.tbEntidad.Text = cbxEntidad.Text
         Debug.Write("El valor de Entidad: " & cbxEntidad.Text)
         'frmReporteAtencionTimepoEntidad.ShowDialog()
+    End Sub
+
+    Private Sub IMPRIMIRREPORTEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IMPRIMIRREPORTEToolStripMenuItem.Click
+        Try
+            frmReportePorEntidades.dtpFechaInicio.Text = dtpFechaInicio.Text
+            Debug.Write("El valor de fecha inicio: " & dtpFechaInicio.Text)
+            frmReportePorEntidades.dtpFechaFin.Text = dtpFechaFin.Text
+            Debug.Write("El valor de fecha fin: " & dtpFechaFin.Text)
+            'frmReportePorMedicos.cbxMedico.SelectedIndex = cbxMedico.SelectedIndex
+            Debug.Write("El valor de Entidad: " & cbxEntidad.Text)
+            frmReportePorEntidades.ShowDialog()
+        Catch ex As Exception
+            Debug.Write("OCURRIO UN ERROR: " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub EXPORTARAEXCELToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EXPORTARAEXCELToolStripMenuItem.Click
+        Dim objexcel As New ExportarExcel
+        Try
+            objexcel.exportarInformeporEntidad(dt)
+        Catch ex As Exception
+            Debug.Write("OCURRIO UN ERROR: " + ex.Message)
+        End Try
     End Sub
 End Class

@@ -23,10 +23,10 @@ Partial Class frmReportePorEntidades
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSetOperacionesAuxiliares = New SistemaRecepcion.DataSetOperacionesAuxiliares()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetOperacionesAuxiliares = New SistemaRecepcion.DataSetOperacionesAuxiliares()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.mostrar_atenciones_lapso_tiempo_entidadTableAdapter = New SistemaRecepcion.DataSetOperacionesAuxiliaresTableAdapters.mostrar_atenciones_lapso_tiempo_entidadTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -34,40 +34,40 @@ Partial Class frmReportePorEntidades
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbxEntidad = New System.Windows.Forms.ComboBox()
+        Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
         Me.tbMedRem = New System.Windows.Forms.TextBox()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.btnRecargar = New System.Windows.Forms.Button()
-        Me.DsListaEntidades = New SistemaRecepcion.dsListaEntidades()
-        Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
-        CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'mostrar_atenciones_lapso_tiempo_entidadBindingSource
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SistemaRecepcion.rptReporteAtencionesTiempoEntidad.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(1071, 731)
-        Me.ReportViewer1.TabIndex = 0
+        Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource.DataMember = "mostrar_atenciones_lapso_tiempo_entidad"
+        Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource.DataSource = Me.DataSetOperacionesAuxiliares
         '
         'DataSetOperacionesAuxiliares
         '
         Me.DataSetOperacionesAuxiliares.DataSetName = "DataSetOperacionesAuxiliares"
         Me.DataSetOperacionesAuxiliares.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'mostrar_atenciones_lapso_tiempo_entidadBindingSource
+        'ReportViewer1
         '
-        Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource.DataMember = "mostrar_atenciones_lapso_tiempo_entidad"
-        Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource.DataSource = Me.DataSetOperacionesAuxiliares
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource2.Name = "DataSet1"
+        ReportDataSource2.Value = Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SistemaRecepcion.rptReporteAtencionesTiempoEntidad.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(1071, 731)
+        Me.ReportViewer1.TabIndex = 0
         '
         'mostrar_atenciones_lapso_tiempo_entidadTableAdapter
         '
@@ -120,11 +120,11 @@ Partial Class frmReportePorEntidades
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 16)
+        Me.Label1.Location = New System.Drawing.Point(88, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 15)
+        Me.Label1.Size = New System.Drawing.Size(55, 15)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "MEDICO DESTINATARIO"
+        Me.Label1.Text = "ENTIDAD"
         '
         'cbxEntidad
         '
@@ -136,6 +136,16 @@ Partial Class frmReportePorEntidades
         Me.cbxEntidad.Name = "cbxEntidad"
         Me.cbxEntidad.Size = New System.Drawing.Size(100, 23)
         Me.cbxEntidad.TabIndex = 8
+        '
+        'ListaEntidadBindingSource
+        '
+        Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
+        Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidades
+        '
+        'DsListaEntidades
+        '
+        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
+        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tbMedRem
         '
@@ -163,16 +173,6 @@ Partial Class frmReportePorEntidades
         Me.btnRecargar.Text = "BUSCAR"
         Me.btnRecargar.UseVisualStyleBackColor = True
         '
-        'DsListaEntidades
-        '
-        Me.DsListaEntidades.DataSetName = "dsListaEntidades"
-        Me.DsListaEntidades.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ListaEntidadBindingSource
-        '
-        Me.ListaEntidadBindingSource.DataMember = "listaEntidad"
-        Me.ListaEntidadBindingSource.DataSource = Me.DsListaEntidades
-        '
         'ListaEntidadTableAdapter
         '
         Me.ListaEntidadTableAdapter.ClearBeforeFill = True
@@ -184,14 +184,16 @@ Partial Class frmReportePorEntidades
         Me.ClientSize = New System.Drawing.Size(1071, 731)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "frmReportePorEntidades"
         Me.Text = "REPORTE POR INSTITUCIÓN"
-        CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mostrar_atenciones_lapso_tiempo_entidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

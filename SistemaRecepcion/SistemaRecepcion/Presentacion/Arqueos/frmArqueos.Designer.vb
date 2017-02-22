@@ -42,14 +42,12 @@ Partial Class frmArqueos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbIngresos = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnReporte = New System.Windows.Forms.Button()
-        Me.grbxEgresos = New System.Windows.Forms.GroupBox()
         Me.ListaentidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Lista_entidadesTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.lista_entidadesTableAdapter()
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.EGRESOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TTIPODEARQUEOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IMRIMIRARQUEOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TODOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,14 +69,14 @@ Partial Class frmArqueos
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1070, 49)
+        Me.Panel1.Size = New System.Drawing.Size(776, 43)
         Me.Panel1.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(683, 13)
+        Me.Label3.Location = New System.Drawing.Point(547, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 19)
         Me.Label3.TabIndex = 5
@@ -89,15 +87,15 @@ Partial Class frmArqueos
         Me.cbxTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxTurno.FormattingEnabled = True
         Me.cbxTurno.Items.AddRange(New Object() {"MAÑANA", "TARDE"})
-        Me.cbxTurno.Location = New System.Drawing.Point(747, 12)
+        Me.cbxTurno.Location = New System.Drawing.Point(622, 12)
         Me.cbxTurno.Name = "cbxTurno"
-        Me.cbxTurno.Size = New System.Drawing.Size(166, 21)
+        Me.cbxTurno.Size = New System.Drawing.Size(142, 21)
         Me.cbxTurno.TabIndex = 4
         '
         'dtpFechaAtencion
         '
         Me.dtpFechaAtencion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaAtencion.Location = New System.Drawing.Point(539, 12)
+        Me.dtpFechaAtencion.Location = New System.Drawing.Point(420, 12)
         Me.dtpFechaAtencion.Name = "dtpFechaAtencion"
         Me.dtpFechaAtencion.Size = New System.Drawing.Size(112, 20)
         Me.dtpFechaAtencion.TabIndex = 3
@@ -106,7 +104,7 @@ Partial Class frmArqueos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(381, 13)
+        Me.Label2.Location = New System.Drawing.Point(262, 13)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(148, 19)
         Me.Label2.TabIndex = 2
@@ -118,9 +116,9 @@ Partial Class frmArqueos
         Me.Label1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(12, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(158, 19)
+        Me.Label1.Size = New System.Drawing.Size(70, 19)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "NOMBRE DE ENTIDAD"
+        Me.Label1.Text = "ENTIDAD"
         '
         'cbxEntidad
         '
@@ -128,7 +126,7 @@ Partial Class frmArqueos
         Me.cbxEntidad.DisplayMember = "nombre_entidad"
         Me.cbxEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxEntidad.FormattingEnabled = True
-        Me.cbxEntidad.Location = New System.Drawing.Point(187, 12)
+        Me.cbxEntidad.Location = New System.Drawing.Point(88, 12)
         Me.cbxEntidad.Name = "cbxEntidad"
         Me.cbxEntidad.Size = New System.Drawing.Size(166, 21)
         Me.cbxEntidad.TabIndex = 0
@@ -150,18 +148,18 @@ Partial Class frmArqueos
         Me.grbxIngresos.Controls.Add(Me.dgvListado)
         Me.grbxIngresos.Dock = System.Windows.Forms.DockStyle.Left
         Me.grbxIngresos.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grbxIngresos.Location = New System.Drawing.Point(0, 73)
+        Me.grbxIngresos.Location = New System.Drawing.Point(0, 67)
         Me.grbxIngresos.Name = "grbxIngresos"
-        Me.grbxIngresos.Size = New System.Drawing.Size(589, 426)
+        Me.grbxIngresos.Size = New System.Drawing.Size(773, 473)
         Me.grbxIngresos.TabIndex = 1
         Me.grbxIngresos.TabStop = False
-        Me.grbxIngresos.Text = "INGRESOS FACTURADOS DEL DÍA"
+        Me.grbxIngresos.Text = "INGRESOS DEL DÍA"
         '
         'lknInexistente
         '
         Me.lknInexistente.AutoSize = True
         Me.lknInexistente.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lknInexistente.Location = New System.Drawing.Point(183, 203)
+        Me.lknInexistente.Location = New System.Drawing.Point(311, 215)
         Me.lknInexistente.Name = "lknInexistente"
         Me.lknInexistente.Size = New System.Drawing.Size(185, 19)
         Me.lknInexistente.TabIndex = 3
@@ -180,7 +178,7 @@ Partial Class frmArqueos
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListado.Size = New System.Drawing.Size(583, 400)
+        Me.dgvListado.Size = New System.Drawing.Size(767, 447)
         Me.dgvListado.TabIndex = 0
         '
         'Panel2
@@ -191,52 +189,55 @@ Partial Class frmArqueos
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.tbIngresos)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.btnReporte)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 499)
+        Me.Panel2.Location = New System.Drawing.Point(0, 540)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1070, 91)
+        Me.Panel2.Size = New System.Drawing.Size(776, 50)
         Me.Panel2.TabIndex = 2
         '
         'tbSaldo
         '
-        Me.tbSaldo.Location = New System.Drawing.Point(175, 62)
+        Me.tbSaldo.Location = New System.Drawing.Point(679, 12)
         Me.tbSaldo.Name = "tbSaldo"
         Me.tbSaldo.ReadOnly = True
-        Me.tbSaldo.Size = New System.Drawing.Size(139, 20)
+        Me.tbSaldo.Size = New System.Drawing.Size(82, 20)
         Me.tbSaldo.TabIndex = 6
+        Me.tbSaldo.Visible = False
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 63)
+        Me.Label6.Location = New System.Drawing.Point(618, 13)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 19)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "SALDO"
+        Me.Label6.Visible = False
         '
         'tbEgresos
         '
-        Me.tbEgresos.Location = New System.Drawing.Point(175, 36)
+        Me.tbEgresos.Location = New System.Drawing.Point(466, 12)
         Me.tbEgresos.Name = "tbEgresos"
         Me.tbEgresos.ReadOnly = True
         Me.tbEgresos.Size = New System.Drawing.Size(139, 20)
         Me.tbEgresos.TabIndex = 4
+        Me.tbEgresos.Visible = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(13, 37)
+        Me.Label5.Location = New System.Drawing.Point(320, 13)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(140, 19)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "TOTAL DE EGRESOS"
+        Me.Label5.Visible = False
         '
         'tbIngresos
         '
-        Me.tbIngresos.Location = New System.Drawing.Point(175, 10)
+        Me.tbIngresos.Location = New System.Drawing.Point(175, 12)
         Me.tbIngresos.Name = "tbIngresos"
         Me.tbIngresos.ReadOnly = True
         Me.tbIngresos.Size = New System.Drawing.Size(139, 20)
@@ -246,32 +247,11 @@ Partial Class frmArqueos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(13, 11)
+        Me.Label4.Location = New System.Drawing.Point(13, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(143, 19)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "TOTAL DE NGRESOS"
-        '
-        'btnReporte
-        '
-        Me.btnReporte.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReporte.Location = New System.Drawing.Point(955, 20)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(103, 48)
-        Me.btnReporte.TabIndex = 0
-        Me.btnReporte.Text = "IMPRIMIR ARQUEO"
-        Me.btnReporte.UseVisualStyleBackColor = True
-        '
-        'grbxEgresos
-        '
-        Me.grbxEgresos.Dock = System.Windows.Forms.DockStyle.Right
-        Me.grbxEgresos.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grbxEgresos.Location = New System.Drawing.Point(595, 73)
-        Me.grbxEgresos.Name = "grbxEgresos"
-        Me.grbxEgresos.Size = New System.Drawing.Size(475, 426)
-        Me.grbxEgresos.TabIndex = 3
-        Me.grbxEgresos.TabStop = False
-        Me.grbxEgresos.Text = "DEDUCCIONES AUTORIZADAS"
         '
         'ListaentidadesBindingSource
         '
@@ -289,32 +269,31 @@ Partial Class frmArqueos
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EGRESOSToolStripMenuItem, Me.TTIPODEARQUEOToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMRIMIRARQUEOToolStripMenuItem, Me.TODOSToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1070, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(776, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'EGRESOSToolStripMenuItem
+        'IMRIMIRARQUEOToolStripMenuItem
         '
-        Me.EGRESOSToolStripMenuItem.Name = "EGRESOSToolStripMenuItem"
-        Me.EGRESOSToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
-        Me.EGRESOSToolStripMenuItem.Text = "NUEVO EGRESO"
+        Me.IMRIMIRARQUEOToolStripMenuItem.Name = "IMRIMIRARQUEOToolStripMenuItem"
+        Me.IMRIMIRARQUEOToolStripMenuItem.Size = New System.Drawing.Size(121, 20)
+        Me.IMRIMIRARQUEOToolStripMenuItem.Text = "IMPRIMIR ARQUEO"
         '
-        'TTIPODEARQUEOToolStripMenuItem
+        'TODOSToolStripMenuItem
         '
-        Me.TTIPODEARQUEOToolStripMenuItem.Name = "TTIPODEARQUEOToolStripMenuItem"
-        Me.TTIPODEARQUEOToolStripMenuItem.Size = New System.Drawing.Size(112, 20)
-        Me.TTIPODEARQUEOToolStripMenuItem.Text = "TIPO DE ARQUEO"
+        Me.TODOSToolStripMenuItem.Name = "TODOSToolStripMenuItem"
+        Me.TODOSToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.TODOSToolStripMenuItem.Text = "TODOS"
         '
         'frmArqueos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1070, 590)
+        Me.ClientSize = New System.Drawing.Size(776, 590)
         Me.Controls.Add(Me.grbxIngresos)
-        Me.Controls.Add(Me.grbxEgresos)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -342,7 +321,6 @@ Partial Class frmArqueos
     Friend WithEvents Panel1 As Panel
     Friend WithEvents grbxIngresos As GroupBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents grbxEgresos As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents cbxTurno As ComboBox
     Friend WithEvents dtpFechaAtencion As DateTimePicker
@@ -356,7 +334,6 @@ Partial Class frmArqueos
     Friend WithEvents Lista_entidadesTableAdapter As dsListaEntidadesTableAdapters.lista_entidadesTableAdapter
     Friend WithEvents ListaEntidadBindingSource As BindingSource
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
-    Friend WithEvents btnReporte As Button
     Friend WithEvents tbSaldo As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents tbEgresos As TextBox
@@ -364,6 +341,6 @@ Partial Class frmArqueos
     Friend WithEvents tbIngresos As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents EGRESOSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TTIPODEARQUEOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IMRIMIRARQUEOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TODOSToolStripMenuItem As ToolStripMenuItem
 End Class

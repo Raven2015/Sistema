@@ -32,6 +32,8 @@ Partial Class InicioPruebas
         Me.btnEstudiosPorEntidad = New System.Windows.Forms.Button()
         Me.btnEstudiosByMedico = New System.Windows.Forms.Button()
         Me.btnFrmListaAtencionesporMedico = New System.Windows.Forms.Button()
+        Me.btnCentral = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -124,11 +126,31 @@ Partial Class InicioPruebas
         Me.btnFrmListaAtencionesporMedico.Text = "LISTA DE ATENCIONES POR MEDICO"
         Me.btnFrmListaAtencionesporMedico.UseVisualStyleBackColor = True
         '
+        'btnCentral
+        '
+        Me.btnCentral.Location = New System.Drawing.Point(244, 12)
+        Me.btnCentral.Name = "btnCentral"
+        Me.btnCentral.Size = New System.Drawing.Size(110, 23)
+        Me.btnCentral.TabIndex = 10
+        Me.btnCentral.Text = "CENTRAL"
+        Me.btnCentral.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(128, 172)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(110, 51)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "LISTA DE ATENCIONES POR ENTIDAD"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCentral)
         Me.Controls.Add(Me.btnFrmListaAtencionesporMedico)
         Me.Controls.Add(Me.btnEstudiosByMedico)
         Me.Controls.Add(Me.btnEstudiosPorEntidad)
@@ -155,4 +177,6 @@ Partial Class InicioPruebas
     Friend WithEvents btnEstudiosPorEntidad As Button
     Friend WithEvents btnEstudiosByMedico As Button
     Friend WithEvents btnFrmListaAtencionesporMedico As Button
+    Friend WithEvents btnCentral As Button
+    Friend WithEvents Button1 As Button
 End Class

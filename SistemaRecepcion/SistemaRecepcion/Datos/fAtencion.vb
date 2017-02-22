@@ -60,7 +60,7 @@ Public Class fAtencion
 
     Public Sub insertar(ByVal dts As vAtencion)
         bd.Open()
-        cmd = New SqlCommand("insertar_atencion", bd)
+        cmd = New SqlCommand("insertar_atencion_2", bd)
         cmd.CommandType = CommandType.StoredProcedure
         With cmd.Parameters
             .AddWithValue("@id_atencion", dts.gid_atencion)
@@ -69,6 +69,7 @@ Public Class fAtencion
             .AddWithValue("@id_cliente", dts.gid_cliente)
             .AddWithValue("@precio_parcial", dts.gprecio_parcial)
             .AddWithValue("@id_medico", dts.gid_medico)
+            .AddWithValue("@turno", dts.gturno)
         End With
         cmd.ExecuteNonQuery()
         bd.Close()

@@ -177,7 +177,8 @@ Partial Class frmReportePorMedicos
         Me.ClientSize = New System.Drawing.Size(1069, 516)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "frmReportePorMedicos"
         Me.Text = "frmReportePorMedicos"
         CType(Me.lista_atenciones_por_medicoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1324,7 +1324,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value EvaluationMode="Constant">Av. Argentina Esq.Diaz Romero</Value>
+                <Value>CENTRAL - Av. Heroes del Pacífico</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>None</TextDecoration>

@@ -11,7 +11,7 @@ Public Class ExportarExcel
             .Visible = Excel.XlSheetVisibility.xlSheetVisible
             .Activate()
             .Name = "Datos_Exportados"
-            .Range("A1").Value = "REPORTE DE ATENCIONES"
+            .Range("A1").Value = "LISTA DE ATENCIONES POR MÉDICOS"
             .Range("A1").Font.Size = 28
             .Range("A1").Font.Bold = True
             .Range("A1").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
@@ -90,7 +90,86 @@ Public Class ExportarExcel
             objHojaExcel.Range("L" & posicion).Value = fila.Item("id_atencion")
 
             posicion += 1
-            contador = posicion - 3
+            contador = contador + 1
+        Next
+        MExcel.Visible = True
+    End Sub
+
+    Public Sub exportarInformeporEntidad(ByVal tabla As DataTable)
+        Dim fila As DataRow
+        Dim posicion As Integer = 3
+        Dim MExcel As New Excel.Application
+        Dim objLibroExcel As Excel.Workbook = MExcel.Workbooks.Add
+        Dim objHojaExcel As Excel.Worksheet = objLibroExcel.Worksheets(1)
+        Dim contador As Integer = 1
+        With objHojaExcel
+            .Visible = Excel.XlSheetVisibility.xlSheetVisible
+            .Activate()
+            .Name = "Datos_Exportados"
+            .Range("A1").Value = "LISTA DE ATENCIONES POR ENTIDAD"
+            .Range("A1").Font.Size = 28
+            .Range("A1").Font.Bold = True
+            .Range("A1").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("A1").RowHeight = 30
+            .Range("A1:I1").MergeCells = True
+
+            .Range("A2").Value = "Nº"
+            .Range("A2").Font.Bold = True
+            .Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("A2").ColumnWidth = 5
+            .Range("B2").Value = "FECHA DE ATENCION"
+            .Range("B2").Font.Bold = True
+            .Range("B2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("B2").ColumnWidth = 20
+            .Range("C2").Value = "APELLIDOS"
+            .Range("C2").Font.Bold = True
+            .Range("C2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("C2").ColumnWidth = 30
+            .Range("D2").Value = "NOMBRES"
+            .Range("D2").Font.Bold = True
+            .Range("D2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("D2").ColumnWidth = 30
+            .Range("E2").Value = "EDAD"
+            .Range("E2").Font.Bold = True
+            .Range("E2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("E2").ColumnWidth = 5
+            .Range("F2").Value = "CÓDIGO DE ASEGURADO"
+            .Range("F2").Font.Bold = True
+            .Range("F2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("F2").ColumnWidth = 22
+            .Range("G2").Value = "CATEGORIA"
+            .Range("G2").Font.Bold = True
+            .Range("G2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("G2").ColumnWidth = 30
+            .Range("H2").Value = "ESTUDIO"
+            .Range("H2").Font.Bold = True
+            .Range("H2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("H2").ColumnWidth = 50
+            .Range("I2").Value = "PRECIO"
+            .Range("I2").Font.Bold = True
+            .Range("I2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("I2").ColumnWidth = 10
+        End With
+
+        For Each fila In tabla.Rows
+            objHojaExcel.Range("A" & posicion).Value = contador
+            objHojaExcel.Range("A" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("B" & posicion).Value = fila.Item("FECHA")
+            objHojaExcel.Range("B" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("C" & posicion).Value = fila.Item("APELLIDOS")
+            objHojaExcel.Range("D" & posicion).Value = fila.Item("NOMBRES")
+            objHojaExcel.Range("E" & posicion).Value = fila.Item("EDAD")
+            objHojaExcel.Range("E" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("F" & posicion).Value = fila.Item("CODIGO_ASEGURADO")
+            objHojaExcel.Range("F" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("G" & posicion).Value = fila.Item("CATEGORIA")
+            objHojaExcel.Range("B" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("H" & posicion).Value = fila.Item("ESTUDIO")
+            objHojaExcel.Range("H" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("I" & posicion).Value = fila.Item("PRECIO")
+            objHojaExcel.Range("I" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            posicion += 1
+            contador = contador + 1
         Next
         MExcel.Visible = True
     End Sub

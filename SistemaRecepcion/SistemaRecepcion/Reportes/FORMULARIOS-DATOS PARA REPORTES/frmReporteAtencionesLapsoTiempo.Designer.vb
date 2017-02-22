@@ -29,7 +29,6 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnImprimirReporte = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbxEntidad = New System.Windows.Forms.ComboBox()
         Me.ListaEntidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -37,11 +36,14 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.ListaEntidadTableAdapter = New SistemaRecepcion.dsListaEntidadesTableAdapters.listaEntidadTableAdapter()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.IMPRIMIRREPORTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EXPORTARAEXCELToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvListadoAtenciones
@@ -51,12 +53,12 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.dgvListadoAtenciones.BackgroundColor = System.Drawing.Color.White
         Me.dgvListadoAtenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListadoAtenciones.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgvListadoAtenciones.Location = New System.Drawing.Point(0, 40)
+        Me.dgvListadoAtenciones.Location = New System.Drawing.Point(0, 39)
         Me.dgvListadoAtenciones.MultiSelect = False
         Me.dgvListadoAtenciones.Name = "dgvListadoAtenciones"
         Me.dgvListadoAtenciones.ReadOnly = True
         Me.dgvListadoAtenciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(784, 506)
+        Me.dgvListadoAtenciones.Size = New System.Drawing.Size(784, 480)
         Me.dgvListadoAtenciones.TabIndex = 11
         '
         'dtpFechaInicio
@@ -98,26 +100,11 @@ Partial Class frmReporteAtencionesLapsoTiempo
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DimGray
-        Me.Panel1.Controls.Add(Me.btnImprimirReporte)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 552)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(784, 55)
         Me.Panel1.TabIndex = 18
-        '
-        'btnImprimirReporte
-        '
-        Me.btnImprimirReporte.BackColor = System.Drawing.Color.White
-        Me.btnImprimirReporte.FlatAppearance.BorderSize = 0
-        Me.btnImprimirReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimirReporte.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimirReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimirReporte.Location = New System.Drawing.Point(690, 7)
-        Me.btnImprimirReporte.Name = "btnImprimirReporte"
-        Me.btnImprimirReporte.Size = New System.Drawing.Size(82, 40)
-        Me.btnImprimirReporte.TabIndex = 0
-        Me.btnImprimirReporte.Text = "Imprimir Reporte"
-        Me.btnImprimirReporte.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -164,10 +151,9 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.Panel2.Controls.Add(Me.dtpFechaInicio)
         Me.Panel2.Controls.Add(Me.dtpFechaFin)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Location = New System.Drawing.Point(0, 27)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(784, 546)
+        Me.Panel2.Size = New System.Drawing.Size(784, 519)
         Me.Panel2.TabIndex = 19
         '
         'lknInexistente
@@ -181,23 +167,49 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.lknInexistente.TabStop = True
         Me.lknInexistente.Text = "NO HAY DATOS PARA MOSTRAR"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRREPORTEToolStripMenuItem, Me.EXPORTARAEXCELToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
+        Me.MenuStrip1.TabIndex = 24
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'IMPRIMIRREPORTEToolStripMenuItem
+        '
+        Me.IMPRIMIRREPORTEToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_11
+        Me.IMPRIMIRREPORTEToolStripMenuItem.Name = "IMPRIMIRREPORTEToolStripMenuItem"
+        Me.IMPRIMIRREPORTEToolStripMenuItem.Size = New System.Drawing.Size(139, 20)
+        Me.IMPRIMIRREPORTEToolStripMenuItem.Text = "IMPRIMIR REPORTE"
+        '
+        'EXPORTARAEXCELToolStripMenuItem
+        '
+        Me.EXPORTARAEXCELToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.excelColor
+        Me.EXPORTARAEXCELToolStripMenuItem.Name = "EXPORTARAEXCELToolStripMenuItem"
+        Me.EXPORTARAEXCELToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
+        Me.EXPORTARAEXCELToolStripMenuItem.Text = "EXPORTAR A EXCEL"
+        '
         'frmReporteAtencionesLapsoTiempo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 607)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "frmReporteAtencionesLapsoTiempo"
         Me.Text = "REPORTE DE ATENCIONES"
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dgvListadoAtenciones As DataGridView
@@ -211,7 +223,9 @@ Partial Class frmReporteAtencionesLapsoTiempo
     Friend WithEvents DsListaEntidades As dsListaEntidades
     Friend WithEvents ListaEntidadBindingSource As BindingSource
     Friend WithEvents ListaEntidadTableAdapter As dsListaEntidadesTableAdapters.listaEntidadTableAdapter
-    Friend WithEvents btnImprimirReporte As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lknInexistente As LinkLabel
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents IMPRIMIRREPORTEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EXPORTARAEXCELToolStripMenuItem As ToolStripMenuItem
 End Class

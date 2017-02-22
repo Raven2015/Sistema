@@ -32,6 +32,10 @@ Partial Class frmInicio
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnArqueos = New System.Windows.Forms.Button()
         Me.btnComprobante = New System.Windows.Forms.Button()
         Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -104,7 +108,7 @@ Partial Class frmInicio
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(755, 145)
+        Me.Label6.Location = New System.Drawing.Point(977, 145)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 16
@@ -141,6 +145,50 @@ Partial Class frmInicio
         Me.Label9.TabIndex = 43
         Me.Label9.Text = "COTIZACION"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(745, 146)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(60, 13)
+        Me.Label10.TabIndex = 46
+        Me.Label10.Text = "ARQUEOS"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(844, 146)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 48
+        Me.Label11.Text = "REPORTES"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnReportes
+        '
+        Me.btnReportes.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.copy
+        Me.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnReportes.FlatAppearance.BorderSize = 0
+        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReportes.Location = New System.Drawing.Point(842, 73)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Size = New System.Drawing.Size(70, 70)
+        Me.btnReportes.TabIndex = 47
+        Me.btnReportes.UseVisualStyleBackColor = True
+        '
+        'btnArqueos
+        '
+        Me.btnArqueos.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.browser_6
+        Me.btnArqueos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnArqueos.FlatAppearance.BorderSize = 0
+        Me.btnArqueos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArqueos.Location = New System.Drawing.Point(740, 72)
+        Me.btnArqueos.Name = "btnArqueos"
+        Me.btnArqueos.Size = New System.Drawing.Size(70, 70)
+        Me.btnArqueos.TabIndex = 45
+        Me.btnArqueos.UseVisualStyleBackColor = True
+        '
         'btnComprobante
         '
         Me.btnComprobante.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
@@ -171,7 +219,7 @@ Partial Class frmInicio
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(739, 72)
+        Me.btnSalir.Location = New System.Drawing.Point(961, 72)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(70, 70)
         Me.btnSalir.TabIndex = 15
@@ -257,7 +305,7 @@ Partial Class frmInicio
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(721, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(943, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 128)
         Me.PictureBox2.TabIndex = 18
@@ -269,7 +317,7 @@ Partial Class frmInicio
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(821, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(1043, 52)
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
@@ -278,7 +326,11 @@ Partial Class frmInicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(821, 180)
+        Me.ClientSize = New System.Drawing.Size(1043, 180)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.btnReportes)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.btnArqueos)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnComprobante)
@@ -332,4 +384,8 @@ Partial Class frmInicio
     Friend WithEvents Label9 As Label
     Friend WithEvents btnComprobante As Button
     Friend WithEvents btnCotizacion As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnArqueos As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents btnReportes As Button
 End Class
