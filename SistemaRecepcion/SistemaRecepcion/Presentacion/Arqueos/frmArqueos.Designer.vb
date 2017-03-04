@@ -48,6 +48,9 @@ Partial Class frmArqueos
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IMRIMIRARQUEOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TODOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cbxEntidadACredito = New System.Windows.Forms.ComboBox()
+        Me.rdbtnContado = New System.Windows.Forms.RadioButton()
+        Me.rdbtnCredito = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +63,7 @@ Partial Class frmArqueos
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.cbxEntidadACredito)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.cbxTurno)
         Me.Panel1.Controls.Add(Me.dtpFechaAtencion)
@@ -122,10 +126,9 @@ Partial Class frmArqueos
         '
         'cbxEntidad
         '
-        Me.cbxEntidad.DataSource = Me.ListaEntidadBindingSource
-        Me.cbxEntidad.DisplayMember = "nombre_entidad"
         Me.cbxEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxEntidad.FormattingEnabled = True
+        Me.cbxEntidad.Items.AddRange(New Object() {"PARTICULAR", "POLICIA", "Dr. OROZCO"})
         Me.cbxEntidad.Location = New System.Drawing.Point(88, 12)
         Me.cbxEntidad.Name = "cbxEntidad"
         Me.cbxEntidad.Size = New System.Drawing.Size(166, 21)
@@ -278,8 +281,9 @@ Partial Class frmArqueos
         '
         'IMRIMIRARQUEOToolStripMenuItem
         '
+        Me.IMRIMIRARQUEOToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.copy
         Me.IMRIMIRARQUEOToolStripMenuItem.Name = "IMRIMIRARQUEOToolStripMenuItem"
-        Me.IMRIMIRARQUEOToolStripMenuItem.Size = New System.Drawing.Size(121, 20)
+        Me.IMRIMIRARQUEOToolStripMenuItem.Size = New System.Drawing.Size(137, 20)
         Me.IMRIMIRARQUEOToolStripMenuItem.Text = "IMPRIMIR ARQUEO"
         '
         'TODOSToolStripMenuItem
@@ -288,11 +292,49 @@ Partial Class frmArqueos
         Me.TODOSToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.TODOSToolStripMenuItem.Text = "TODOS"
         '
+        'cbxEntidadACredito
+        '
+        Me.cbxEntidadACredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxEntidadACredito.FormattingEnabled = True
+        Me.cbxEntidadACredito.Items.AddRange(New Object() {"RED SALUD", "FERRECO", "COBERMED", "SIDEM", "CAJA NACIONAL", "H. GENERAL", "SEGURO DE VEJEZ", "H. MUNICIPAL", "CAMPAÑA CLINICA SANTA LAURA", "CLINICA SANTA LAURA"})
+        Me.cbxEntidadACredito.Location = New System.Drawing.Point(88, 12)
+        Me.cbxEntidadACredito.Name = "cbxEntidadACredito"
+        Me.cbxEntidadACredito.Size = New System.Drawing.Size(166, 21)
+        Me.cbxEntidadACredito.TabIndex = 6
+        Me.cbxEntidadACredito.ValueMember = "id_entidad"
+        Me.cbxEntidadACredito.Visible = False
+        '
+        'rdbtnContado
+        '
+        Me.rdbtnContado.AutoSize = True
+        Me.rdbtnContado.BackColor = System.Drawing.Color.Transparent
+        Me.rdbtnContado.Location = New System.Drawing.Point(315, 3)
+        Me.rdbtnContado.Name = "rdbtnContado"
+        Me.rdbtnContado.Size = New System.Drawing.Size(88, 17)
+        Me.rdbtnContado.TabIndex = 5
+        Me.rdbtnContado.TabStop = True
+        Me.rdbtnContado.Text = "A CONTADO"
+        Me.rdbtnContado.UseVisualStyleBackColor = False
+        '
+        'rdbtnCredito
+        '
+        Me.rdbtnCredito.AutoSize = True
+        Me.rdbtnCredito.BackColor = System.Drawing.Color.Transparent
+        Me.rdbtnCredito.Location = New System.Drawing.Point(411, 3)
+        Me.rdbtnCredito.Name = "rdbtnCredito"
+        Me.rdbtnCredito.Size = New System.Drawing.Size(83, 17)
+        Me.rdbtnCredito.TabIndex = 6
+        Me.rdbtnCredito.TabStop = True
+        Me.rdbtnCredito.Text = "A CRÉDITO"
+        Me.rdbtnCredito.UseVisualStyleBackColor = False
+        '
         'frmArqueos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(776, 590)
+        Me.Controls.Add(Me.rdbtnCredito)
+        Me.Controls.Add(Me.rdbtnContado)
         Me.Controls.Add(Me.grbxIngresos)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -343,4 +385,7 @@ Partial Class frmArqueos
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents IMRIMIRARQUEOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TODOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents cbxEntidadACredito As ComboBox
+    Friend WithEvents rdbtnContado As RadioButton
+    Friend WithEvents rdbtnCredito As RadioButton
 End Class

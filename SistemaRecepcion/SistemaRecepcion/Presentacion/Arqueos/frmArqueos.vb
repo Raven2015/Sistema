@@ -11,12 +11,21 @@
         Dim fecha_atencion As Date
         Dim entidad As String
         Dim turno As String
+
+        If rdbtnContado.Checked = True Then
+            entidad = cbxEntidad.Text
+            Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
+        ElseIf rdbtnCredito.Checked = True Then
+            entidad = cbxEntidadACredito.Text
+            Debug.Write("Entidad Enviada: " & cbxEntidadACredito.Text)
+        End If
+
         fecha_atencion = dtpFechaAtencion.Text
         Debug.Write("Fecha enviada: " & dtpFechaAtencion.Text)
-        entidad = cbxEntidad.Text
-        Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
+
         turno = cbxTurno.Text
         Debug.Write("Turno Enviado: " & cbxTurno.Text)
+
         Try
             Dim func As New fArqueoIngreso
             dt = func.mostrar_ingresos_fecha(fecha_atencion, entidad, turno)
@@ -41,11 +50,19 @@
         Dim fecha_atencion As Date
         Dim entidad As String
         Dim turno As String
+
+        If rdbtnContado.Checked = True Then
+            entidad = cbxEntidad.Text
+            Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
+        ElseIf rdbtnCredito.Checked = True Then
+            entidad = cbxEntidadACredito.Text
+            Debug.Write("Entidad Enviada: " & cbxEntidadACredito.Text)
+        End If
+
         fecha_atencion = dtpFechaAtencion.Text
         Debug.Write("Fecha enviada: " & dtpFechaAtencion.Text)
-        entidad = "%"
-        Debug.Write("Entidad Enviada: " & cbxEntidad.Text)
-        turno = cbxTurno.Text
+
+        turno = "%"
         Debug.Write("Turno Enviado: " & cbxTurno.Text)
         Try
             Dim func As New fArqueoIngreso
@@ -67,6 +84,8 @@
         'calcularValores()
     End Sub
 
+
+
     Public Sub AnchoColumnas()
         dgvListado.Columns(0).Width = 370
         dgvListado.Columns(1).Width = 110
@@ -75,12 +94,19 @@
     End Sub
 
     Public Sub limpiar()
+        rdbtnContado.Checked = True
         cbxEntidad.SelectedIndex = 0
+        cbxEntidadACredito.SelectedIndex = 0
         dtpFechaAtencion.Text = Date.Now
         cbxTurno.SelectedIndex = 0
     End Sub
 
     Private Sub cbxEntidad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEntidad.SelectedIndexChanged
+        mostrar_ingresos()
+        calcularValores()
+    End Sub
+
+    Private Sub cbxEntidadACredito_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEntidadACredito.SelectedIndexChanged
         mostrar_ingresos()
         calcularValores()
     End Sub
@@ -100,6 +126,7 @@
         ingresos = precio_parcial()
         tbIngresos.Text = ingresos
     End Sub
+
     Protected Function obtener_valoresBETA(ByVal fila As DataGridViewRow) As String()
         Dim ncolumnas As Integer = dgvListado.ColumnCount
         'Dimensionar el array al tamaño de columnas del DGV
@@ -115,7 +142,6 @@
     End Function
 
     Private Function precio_parcial() As Double
-
         Dim Total As Double
         'Dim precio As String = "0"
         If dgvListado.RowCount <> 0 Then
@@ -139,5 +165,15 @@
     Private Sub TODOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TODOSToolStripMenuItem.Click
         mostrar_ingresos_TODOS()
         calcularValores()
+    End Sub
+
+    Private Sub rdbtnContado_CheckedChanged(sender As Object, e As EventArgs) Handles rdbtnContado.CheckedChanged
+        cbxEntidadACredito.Visible = False
+        cbxEntidad.Visible = True
+    End Sub
+
+    Private Sub rdbtnCredito_CheckedChanged(sender As Object, e As EventArgs) Handles rdbtnCredito.CheckedChanged
+        cbxEntidad.Visible = False
+        cbxEntidadACredito.Visible = True
     End Sub
 End Class

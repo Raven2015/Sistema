@@ -33,6 +33,33 @@
         End Try
     End Sub
 
+
+    Private Sub llenarTODO()
+        Try
+            Dim funcLista As New fReporteAtencion
+            Dim fecha_inicio As Date
+            Dim fecha_fin As Date
+            Dim entidad As String
+
+            fecha_inicio = dtpFechaInicio.Text
+            fecha_fin = dtpFechaFin.Text
+            entidad = "%"
+
+            dt = funcLista.mostrar_por_entidad(fecha_inicio, fecha_fin, entidad)
+
+            If dt.Rows.Count <> 0 Then
+                dgvListadoAtenciones.DataSource = dt
+                lknInexistente.Visible = False
+
+            Else
+                dgvListadoAtenciones.DataSource = Nothing
+                lknInexistente.Visible = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Sub limpiar()
         cbxEntidad.SelectedIndex = 0 'Selecciona automaticamente el elemento PARTICULAR de la lista
     End Sub
@@ -72,5 +99,9 @@
         Catch ex As Exception
             Debug.Write("OCURRIO UN ERROR: " + ex.Message)
         End Try
+    End Sub
+
+    Private Sub VERTODOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VERTODOToolStripMenuItem.Click
+        llenarTODO()
     End Sub
 End Class

@@ -15,14 +15,16 @@ Public Class fArqueoIngreso
             cmd.Parameters.AddWithValue("@entidad", entidad)
             cmd.Parameters.AddWithValue("@turno", turno)
 
+            'If (entidad = "Particular" Or entidad = "Policia") Then
             If cmd.ExecuteNonQuery Then 'Verifica que la consulta se realize exitosamente
-                Dim dt As New DataTable 'Crea una variable que almacena el resultado obtenido de la consulta
-                Dim da As New SqlDataAdapter(cmd) 'Crea una variable que permite usar el resultado dentro de la aplicacion
-                da.Fill(dt) 'Llena la variable con los datos de la variable resultado (dt)
-                Return dt 'Devuelve el resultado de la consulta a la BD
-            Else
-                Return Nothing 'En caso de que el resultado sea nulo se devuelve NADA
-            End If
+                    Dim dt As New DataTable 'Crea una variable que almacena el resultado obtenido de la consulta
+                    Dim da As New SqlDataAdapter(cmd) 'Crea una variable que permite usar el resultado dentro de la aplicacion
+                    da.Fill(dt) 'Llena la variable con los datos de la variable resultado (dt)
+                    Return dt 'Devuelve el resultado de la consulta a la BD
+                Else
+                    Return Nothing 'En caso de que el resultado sea nulo se devuelve NADA
+                End If
+            'End If
         Catch ex As Exception
             'En caso de errror se muestra un mensaje con la informacion del error ocurrido
             MsgBox(ex.Message)

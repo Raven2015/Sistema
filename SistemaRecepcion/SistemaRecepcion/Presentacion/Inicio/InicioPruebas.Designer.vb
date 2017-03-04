@@ -34,6 +34,7 @@ Partial Class InicioPruebas
         Me.btnFrmListaAtencionesporMedico = New System.Windows.Forms.Button()
         Me.btnCentral = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnInicioPrueba = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -144,11 +145,21 @@ Partial Class InicioPruebas
         Me.Button1.Text = "LISTA DE ATENCIONES POR ENTIDAD"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnInicioPrueba
+        '
+        Me.btnInicioPrueba.Location = New System.Drawing.Point(244, 41)
+        Me.btnInicioPrueba.Name = "btnInicioPrueba"
+        Me.btnInicioPrueba.Size = New System.Drawing.Size(110, 23)
+        Me.btnInicioPrueba.TabIndex = 12
+        Me.btnInicioPrueba.Text = "INICIO PRUEBA"
+        Me.btnInicioPrueba.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnInicioPrueba)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCentral)
         Me.Controls.Add(Me.btnFrmListaAtencionesporMedico)
@@ -179,4 +190,5 @@ Partial Class InicioPruebas
     Friend WithEvents btnFrmListaAtencionesporMedico As Button
     Friend WithEvents btnCentral As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnInicioPrueba As Button
 End Class

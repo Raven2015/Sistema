@@ -46,4 +46,8 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         frmReporteAtencionesLapsoTiempo.ShowDialog()
     End Sub
+
+    Private Sub btnInicioPrueba_Click(sender As Object, e As EventArgs) Handles btnInicioPrueba.Click
+        MDIContenedor.ShowDialog()
+    End Sub
 End Class

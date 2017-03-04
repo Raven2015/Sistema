@@ -42,6 +42,8 @@ Partial Class frmReportedeAtencionesporMedicos
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IMPRIMIRREPORTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EXPORTARAEXCELToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TODOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VERTODOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2.SuspendLayout()
         CType(Me.MostrarmedicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,7 +191,7 @@ Partial Class frmReportedeAtencionesporMedicos
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRREPORTEToolStripMenuItem, Me.EXPORTARAEXCELToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRREPORTEToolStripMenuItem, Me.EXPORTARAEXCELToolStripMenuItem, Me.VERTODOToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(869, 24)
@@ -198,6 +200,7 @@ Partial Class frmReportedeAtencionesporMedicos
         '
         'IMPRIMIRREPORTEToolStripMenuItem
         '
+        Me.IMPRIMIRREPORTEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TODOSToolStripMenuItem})
         Me.IMPRIMIRREPORTEToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.bookmark_11
         Me.IMPRIMIRREPORTEToolStripMenuItem.Name = "IMPRIMIRREPORTEToolStripMenuItem"
         Me.IMPRIMIRREPORTEToolStripMenuItem.Size = New System.Drawing.Size(139, 20)
@@ -209,6 +212,18 @@ Partial Class frmReportedeAtencionesporMedicos
         Me.EXPORTARAEXCELToolStripMenuItem.Name = "EXPORTARAEXCELToolStripMenuItem"
         Me.EXPORTARAEXCELToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
         Me.EXPORTARAEXCELToolStripMenuItem.Text = "EXPORTAR A EXCEL"
+        '
+        'TODOSToolStripMenuItem
+        '
+        Me.TODOSToolStripMenuItem.Name = "TODOSToolStripMenuItem"
+        Me.TODOSToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.TODOSToolStripMenuItem.Text = "IMPRIMIR TODOS"
+        '
+        'VERTODOToolStripMenuItem
+        '
+        Me.VERTODOToolStripMenuItem.Name = "VERTODOToolStripMenuItem"
+        Me.VERTODOToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
+        Me.VERTODOToolStripMenuItem.Text = "VER TODO"
         '
         'frmReportedeAtencionesporMedicos
         '
@@ -255,4 +270,6 @@ Partial Class frmReportedeAtencionesporMedicos
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents IMPRIMIRREPORTEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EXPORTARAEXCELToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TODOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VERTODOToolStripMenuItem As ToolStripMenuItem
 End Class

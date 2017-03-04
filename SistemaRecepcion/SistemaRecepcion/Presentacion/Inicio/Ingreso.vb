@@ -47,7 +47,8 @@
                     If tipo = "recepcionista" Then
                         InicioRecepcion.ShowDialog()
                     ElseIf tipo = "administrador" Then
-                        frmInicio.ShowDialog()
+                        'frmInicio.ShowDialog()
+                        MDIContenedor.ShowDialog()
                     End If
                 Else
                     Static intento As Integer
@@ -64,5 +65,4 @@
             MsgBox("Error en la BD")
         End Try
     End Sub
-
 End Class

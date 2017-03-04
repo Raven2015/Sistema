@@ -39,6 +39,7 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IMPRIMIRREPORTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EXPORTARAEXCELToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VERTODOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvListadoAtenciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,7 +170,7 @@ Partial Class frmReporteAtencionesLapsoTiempo
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRREPORTEToolStripMenuItem, Me.EXPORTARAEXCELToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRREPORTEToolStripMenuItem, Me.EXPORTARAEXCELToolStripMenuItem, Me.VERTODOToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
@@ -189,6 +190,12 @@ Partial Class frmReporteAtencionesLapsoTiempo
         Me.EXPORTARAEXCELToolStripMenuItem.Name = "EXPORTARAEXCELToolStripMenuItem"
         Me.EXPORTARAEXCELToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
         Me.EXPORTARAEXCELToolStripMenuItem.Text = "EXPORTAR A EXCEL"
+        '
+        'VERTODOToolStripMenuItem
+        '
+        Me.VERTODOToolStripMenuItem.Name = "VERTODOToolStripMenuItem"
+        Me.VERTODOToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
+        Me.VERTODOToolStripMenuItem.Text = "VER TODO"
         '
         'frmReporteAtencionesLapsoTiempo
         '
@@ -228,4 +235,5 @@ Partial Class frmReporteAtencionesLapsoTiempo
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents IMPRIMIRREPORTEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EXPORTARAEXCELToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VERTODOToolStripMenuItem As ToolStripMenuItem
 End Class
