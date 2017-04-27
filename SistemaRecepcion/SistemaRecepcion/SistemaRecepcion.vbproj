@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica030317argentina\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica030417ARGENTINA4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,6 +79,19 @@
     <ApplicationIcon>IconBegin-02-02-02.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v16.1.Drawing, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -122,6 +135,8 @@
     <Compile Include="Configuracion\CONFIGURACION.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Datos\CLASES AUXILIARES\fEstudiosporAtencion.vb" />
+    <Compile Include="Datos\CLASES AUXILIARES\fPacientesporAtencion.vb" />
     <Compile Include="Datos\conexion.vb" />
     <Compile Include="Datos\fArqueoIngreso.vb" />
     <Compile Include="Datos\fAtencion.vb" />
@@ -133,9 +148,11 @@
     <Compile Include="Datos\fEgreso.vb" />
     <Compile Include="Datos\fEntidad.vb" />
     <Compile Include="Datos\fEstudio.vb" />
+    <Compile Include="Datos\fInformeMedico.vb" />
     <Compile Include="Datos\fMedico.vb" />
     <Compile Include="Datos\fPrecio.vb" />
     <Compile Include="Datos\fReporteAtencion.vb" />
+    <Compile Include="Datos\fReporteMedico.vb" />
     <Compile Include="Datos\fUsuario.vb" />
     <Compile Include="dbBIOMEDICADataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -174,6 +191,9 @@
     <Compile Include="INTERFAZ\MDIContenedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Logica\CLASES AUXILIARES\vEstudiosporAtencion.vb" />
+    <Compile Include="Logica\CLASES AUXILIARES\vInformeMedicoB.vb" />
+    <Compile Include="Logica\CLASES AUXILIARES\vPacientesporAtencion.vb" />
     <Compile Include="Logica\vArqueoIngreso.vb" />
     <Compile Include="Logica\vAtencion.vb" />
     <Compile Include="Logica\vCategoria.vb" />
@@ -185,11 +205,26 @@
     <Compile Include="Logica\vEgreso.vb" />
     <Compile Include="Logica\vEntidad.vb" />
     <Compile Include="Logica\vEstudio.vb" />
+    <Compile Include="Logica\vInformeMedico.vb" />
     <Compile Include="Logica\vMedico.vb" />
     <Compile Include="Logica\vPrecio.vb" />
     <Compile Include="Logica\vReporteAtencion.vb" />
+    <Compile Include="Logica\vReporteMedico.vb" />
     <Compile Include="Logica\vUsuario.vb" />
     <Compile Include="MODULOS GLOBALES\ExportarExcel.vb" />
+    <Compile Include="MODULOS GLOBALES\ExportarWord.vb" />
+    <Compile Include="MODULOS GLOBALES\MODIFICACIONES\frmModificaciones.Designer.vb">
+      <DependentUpon>frmModificaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS GLOBALES\MODIFICACIONES\frmModificaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS GLOBALES\MODIFICACIONES\Modificador.Designer.vb">
+      <DependentUpon>Modificador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS GLOBALES\MODIFICACIONES\Modificador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MODULOS GLOBALES\modOperacionesAuxiliares.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -352,10 +387,22 @@
     <Compile Include="Presentacion\Formulario Central\frmListaFlotante.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Inicio\frmInicio.Designer.vb">
-      <DependentUpon>frmInicio.vb</DependentUpon>
+    <Compile Include="Presentacion\Inicio\frmInicioAdministrador.Designer.vb">
+      <DependentUpon>frmInicioAdministrador.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Inicio\frmInicio.vb">
+    <Compile Include="Presentacion\Inicio\frmInicioAdministrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioMedico.Designer.vb">
+      <DependentUpon>frmInicioMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioRecepcion.Designer.vb">
+      <DependentUpon>frmInicioRecepcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioRecepcion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Inicio\Ingreso.Designer.vb">
@@ -370,16 +417,22 @@
     <Compile Include="Presentacion\Inicio\InicioPruebas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Inicio\InicioRecepcion.Designer.vb">
-      <DependentUpon>InicioRecepcion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Inicio\InicioRecepcion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentacion\Lista\frmListaPrecios.Designer.vb">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dlgBuscaInforme.Designer.vb">
+      <DependentUpon>dlgBuscaInforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dlgBuscaInforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dvxpReporteMedico.Designer.vb">
+      <DependentUpon>dvxpReporteMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dvxpReporteMedico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Reporte Medico\frmReporteMedico.Designer.vb">
@@ -478,6 +531,12 @@
     <EmbeddedResource Include="INTERFAZ\MDIContenedor.resx">
       <DependentUpon>MDIContenedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS GLOBALES\MODIFICACIONES\frmModificaciones.resx">
+      <DependentUpon>frmModificaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS GLOBALES\MODIFICACIONES\Modificador.resx">
+      <DependentUpon>Modificador.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -557,8 +616,14 @@
     <EmbeddedResource Include="Presentacion\Formulario Central\frmListaFlotante.resx">
       <DependentUpon>frmListaFlotante.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Inicio\frmInicio.resx">
-      <DependentUpon>frmInicio.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Inicio\frmInicioAdministrador.resx">
+      <DependentUpon>frmInicioAdministrador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\frmInicioMedico.resx">
+      <DependentUpon>frmInicioMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\frmInicioRecepcion.resx">
+      <DependentUpon>frmInicioRecepcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio\Ingreso.resx">
       <DependentUpon>Ingreso.vb</DependentUpon>
@@ -566,11 +631,14 @@
     <EmbeddedResource Include="Presentacion\Inicio\InicioPruebas.resx">
       <DependentUpon>InicioPruebas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Inicio\InicioRecepcion.resx">
-      <DependentUpon>InicioRecepcion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reporte Medico\dlgBuscaInforme.resx">
+      <DependentUpon>dlgBuscaInforme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reporte Medico\dvxpReporteMedico.resx">
+      <DependentUpon>dvxpReporteMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reporte Medico\frmReporteMedico.resx">
       <DependentUpon>frmReporteMedico.vb</DependentUpon>
@@ -831,6 +899,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IconBegin-02-02-02.ico" />
+    <None Include="Resources\underline-text-option.png" />
+    <None Include="Resources\italicize-text.png" />
+    <None Include="Resources\bold-text-option.png" />
+    <None Include="Resources\align-justify.png" />
+    <None Include="Resources\align-to-right.png" />
+    <None Include="Resources\center-text-alignment.png" />
+    <None Include="Resources\align-to-left.png" />
     <None Include="Resources\CINTA.png" />
     <None Include="Resources\logobiom.png" />
     <None Include="Resources\bg4.jpg" />

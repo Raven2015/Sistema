@@ -8,6 +8,7 @@ Public Class MDIContenedor
 
     Private Sub MDIContenedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'BackColor = Color.White
+        Ingreso.Hide()
         lbHora.Text = TimeOfDay
         tmHora.Start()
     End Sub
@@ -93,6 +94,18 @@ Public Class MDIContenedor
 
     Private Sub COMPROBANTESDECAJAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles COMPROBANTESDECAJAToolStripMenuItem.Click
         frmComprobantesCaja.ShowDialog()
+    End Sub
+
+    Private Sub INFORMEMEDICOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INFORMEMEDICOToolStripMenuItem.Click
+        dvxpReporteMedico.ShowDialog()
+    End Sub
+
+    Private Sub MODIFICACIONESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICACIONESToolStripMenuItem.Click
+        frmModificaciones.ShowDialog()
+    End Sub
+
+    Private Sub btnInformeMedico_Click(sender As Object, e As EventArgs) Handles btnInformeMedico.Click
+        dvxpReporteMedico.ShowDialog()
     End Sub
 
     Private Sub btnMover_MouseMove(sender As Object, e As MouseEventArgs) Handles btnMover.MouseMove

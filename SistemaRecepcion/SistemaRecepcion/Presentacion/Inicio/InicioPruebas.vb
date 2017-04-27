@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
-        frmInicio.ShowDialog()
+        frmInicioAdministrador.ShowDialog()
     End Sub
 
     Private Sub btnReporteAtencionesTiempoEntidad_Click(sender As Object, e As EventArgs) Handles btnReporteAtencionesTiempoEntidad.Click
@@ -49,5 +49,21 @@
 
     Private Sub btnInicioPrueba_Click(sender As Object, e As EventArgs) Handles btnInicioPrueba.Click
         MDIContenedor.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        frmReporteMedico.ShowDialog()
+    End Sub
+
+    Private Sub btnModificaciones_Click(sender As Object, e As EventArgs) Handles btnModificaciones.Click
+        frmModificaciones.ShowDialog()
+    End Sub
+
+    Private Sub btnReporteMedico_Click(sender As Object, e As EventArgs) Handles btnReporteMedico.Click
+        dvxpReporteMedico.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        dlgBuscaInforme.ShowDialog()
     End Sub
 End Class

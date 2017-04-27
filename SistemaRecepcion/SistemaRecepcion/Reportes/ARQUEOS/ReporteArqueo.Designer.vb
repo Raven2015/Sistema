@@ -23,7 +23,7 @@ Partial Class ReporteArqueo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ingresos_diarios_por_categoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSetOperacionesAuxiliares = New SistemaRecepcion.DataSetOperacionesAuxiliares()
         Me.rpvwArqueos = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -33,6 +33,8 @@ Partial Class ReporteArqueo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnRecargar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbTurno = New System.Windows.Forms.TextBox()
         CType(Me.ingresos_diarios_por_categoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetOperacionesAuxiliares, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,9 +52,9 @@ Partial Class ReporteArqueo
         'rpvwArqueos
         '
         Me.rpvwArqueos.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "dsArqueos"
-        ReportDataSource2.Value = Me.ingresos_diarios_por_categoriaBindingSource
-        Me.rpvwArqueos.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "dsArqueos"
+        ReportDataSource1.Value = Me.ingresos_diarios_por_categoriaBindingSource
+        Me.rpvwArqueos.LocalReport.DataSources.Add(ReportDataSource1)
         Me.rpvwArqueos.LocalReport.ReportEmbeddedResource = "SistemaRecepcion.rptArqueo.rdlc"
         Me.rpvwArqueos.Location = New System.Drawing.Point(0, 0)
         Me.rpvwArqueos.Name = "rpvwArqueos"
@@ -106,11 +108,30 @@ Partial Class ReporteArqueo
         Me.btnRecargar.Text = "RECARGAR"
         Me.btnRecargar.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(448, 97)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "TURNO: "
+        '
+        'tbTurno
+        '
+        Me.tbTurno.Location = New System.Drawing.Point(522, 93)
+        Me.tbTurno.Name = "tbTurno"
+        Me.tbTurno.Size = New System.Drawing.Size(100, 20)
+        Me.tbTurno.TabIndex = 6
+        Me.tbTurno.Text = "%"
+        '
         'ReporteArqueo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(650, 660)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.tbTurno)
         Me.Controls.Add(Me.btnRecargar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -137,4 +158,6 @@ Partial Class ReporteArqueo
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnRecargar As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tbTurno As TextBox
 End Class

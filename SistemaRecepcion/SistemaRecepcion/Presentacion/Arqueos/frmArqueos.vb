@@ -116,6 +116,7 @@
         calcularValores()
     End Sub
 
+
     Private Sub cbxTurno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTurno.SelectedIndexChanged
         mostrar_ingresos()
         calcularValores()
@@ -159,12 +160,15 @@
     Private Sub IMRIMIRARQUEOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IMRIMIRARQUEOToolStripMenuItem.Click
         ReporteArqueo.tbEntidad.Text = cbxEntidad.Text
         ReporteArqueo.tbFecha.Text = dtpFechaAtencion.Text
+        ReporteArqueo.tbTurno.Text = cbxTurno.Text
         ReporteArqueo.ShowDialog()
     End Sub
 
     Private Sub TODOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TODOSToolStripMenuItem.Click
-        mostrar_ingresos_TODOS()
-        calcularValores()
+        ReporteArqueo.tbEntidad.Text = cbxEntidad.Text
+        ReporteArqueo.tbFecha.Text = dtpFechaAtencion.Text
+        ReporteArqueo.tbTurno.Text = "%"
+        ReporteArqueo.ShowDialog()
     End Sub
 
     Private Sub rdbtnContado_CheckedChanged(sender As Object, e As EventArgs) Handles rdbtnContado.CheckedChanged
@@ -175,5 +179,10 @@
     Private Sub rdbtnCredito_CheckedChanged(sender As Object, e As EventArgs) Handles rdbtnCredito.CheckedChanged
         cbxEntidad.Visible = False
         cbxEntidadACredito.Visible = True
+    End Sub
+
+    Private Sub IMPRIMIRTODOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IMPRIMIRTODOSToolStripMenuItem.Click
+        mostrar_ingresos_TODOS()
+        calcularValores()
     End Sub
 End Class

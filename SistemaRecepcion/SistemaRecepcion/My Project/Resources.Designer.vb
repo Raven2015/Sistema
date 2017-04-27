@@ -103,6 +103,36 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property align_justify() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("align-justify", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property align_to_left() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("align-to-left", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property align_to_right() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("align-to-right", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property avatar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("avatar", resourceCulture)
@@ -146,6 +176,16 @@ Namespace My.Resources
         Friend ReadOnly Property bg4() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("bg4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bold_text_option() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bold-text-option", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -206,6 +246,16 @@ Namespace My.Resources
         Friend ReadOnly Property cancelar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cancelar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property center_text_alignment() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("center-text-alignment", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -316,6 +366,16 @@ Namespace My.Resources
         Friend ReadOnly Property info() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("info", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property italicize_text() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("italicize-text", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -456,6 +516,16 @@ Namespace My.Resources
         Friend ReadOnly Property search() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("search", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property underline_text_option() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("underline-text-option", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

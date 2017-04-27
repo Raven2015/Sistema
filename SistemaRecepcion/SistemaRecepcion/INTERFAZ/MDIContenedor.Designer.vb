@@ -25,7 +25,8 @@ Partial Class MDIContenedor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.mdiInicio = New System.Windows.Forms.Panel()
+        Me.btnInformeMedico = New System.Windows.Forms.Button()
         Me.btnComprobante = New System.Windows.Forms.Button()
         Me.btnReportes = New System.Windows.Forms.Button()
         Me.btnArqueos = New System.Windows.Forms.Button()
@@ -50,38 +51,60 @@ Partial Class MDIContenedor
         Me.PACIENTESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LISTADEPRECIOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COMPROBANTESDECAJAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INFORMEMEDICOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MODIFICACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tmHora = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1.SuspendLayout()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.mdiInicio.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
+        'mdiInicio
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.bg4
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.btnComprobante)
-        Me.Panel1.Controls.Add(Me.btnReportes)
-        Me.Panel1.Controls.Add(Me.btnArqueos)
-        Me.Panel1.Controls.Add(Me.btnCotizacion)
-        Me.Panel1.Controls.Add(Me.btnAtención)
-        Me.Panel1.Controls.Add(Me.lbHora)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.btnMover)
-        Me.Panel1.Controls.Add(Me.btnCerrar)
-        Me.Panel1.Controls.Add(Me.btnMinimizar)
-        Me.Panel1.Controls.Add(Me.MenuStrip)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1100, 665)
-        Me.Panel1.TabIndex = 9
+        Me.mdiInicio.BackColor = System.Drawing.Color.Transparent
+        Me.mdiInicio.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.bg4
+        Me.mdiInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.mdiInicio.Controls.Add(Me.Label4)
+        Me.mdiInicio.Controls.Add(Me.Label3)
+        Me.mdiInicio.Controls.Add(Me.btnInformeMedico)
+        Me.mdiInicio.Controls.Add(Me.btnComprobante)
+        Me.mdiInicio.Controls.Add(Me.btnReportes)
+        Me.mdiInicio.Controls.Add(Me.btnArqueos)
+        Me.mdiInicio.Controls.Add(Me.btnCotizacion)
+        Me.mdiInicio.Controls.Add(Me.btnAtención)
+        Me.mdiInicio.Controls.Add(Me.lbHora)
+        Me.mdiInicio.Controls.Add(Me.Label2)
+        Me.mdiInicio.Controls.Add(Me.PictureBox1)
+        Me.mdiInicio.Controls.Add(Me.Label1)
+        Me.mdiInicio.Controls.Add(Me.btnMover)
+        Me.mdiInicio.Controls.Add(Me.btnCerrar)
+        Me.mdiInicio.Controls.Add(Me.btnMinimizar)
+        Me.mdiInicio.Controls.Add(Me.MenuStrip)
+        Me.mdiInicio.Controls.Add(Me.PictureBox2)
+        Me.mdiInicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mdiInicio.Location = New System.Drawing.Point(0, 0)
+        Me.mdiInicio.Name = "mdiInicio"
+        Me.mdiInicio.Size = New System.Drawing.Size(1100, 665)
+        Me.mdiInicio.TabIndex = 9
+        '
+        'btnInformeMedico
+        '
+        Me.btnInformeMedico.BackColor = System.Drawing.Color.Transparent
+        Me.btnInformeMedico.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
+        Me.btnInformeMedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInformeMedico.FlatAppearance.BorderSize = 0
+        Me.btnInformeMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInformeMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInformeMedico.ForeColor = System.Drawing.Color.White
+        Me.btnInformeMedico.Location = New System.Drawing.Point(181, 441)
+        Me.btnInformeMedico.Name = "btnInformeMedico"
+        Me.btnInformeMedico.Size = New System.Drawing.Size(82, 73)
+        Me.btnInformeMedico.TabIndex = 20
+        Me.btnInformeMedico.UseVisualStyleBackColor = False
         '
         'btnComprobante
         '
@@ -248,7 +271,7 @@ Partial Class MDIContenedor
         '
         Me.INICIOToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.INICIOToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.INICIOToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REPORTESToolStripMenuItem, Me.ARQUEOSToolStripMenuItem, Me.COTIZACIONToolStripMenuItem, Me.ENTIDADESToolStripMenuItem, Me.ATENCIONToolStripMenuItem, Me.CATEGORIASToolStripMenuItem, Me.ESTUDIOSToolStripMenuItem, Me.PACIENTESToolStripMenuItem, Me.LISTADEPRECIOSToolStripMenuItem, Me.COMPROBANTESDECAJAToolStripMenuItem})
+        Me.INICIOToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REPORTESToolStripMenuItem, Me.ARQUEOSToolStripMenuItem, Me.COTIZACIONToolStripMenuItem, Me.ENTIDADESToolStripMenuItem, Me.ATENCIONToolStripMenuItem, Me.CATEGORIASToolStripMenuItem, Me.ESTUDIOSToolStripMenuItem, Me.PACIENTESToolStripMenuItem, Me.LISTADEPRECIOSToolStripMenuItem, Me.COMPROBANTESDECAJAToolStripMenuItem, Me.INFORMEMEDICOToolStripMenuItem, Me.MODIFICACIONESToolStripMenuItem})
         Me.INICIOToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.list_3_
         Me.INICIOToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.INICIOToolStripMenuItem.Name = "INICIOToolStripMenuItem"
@@ -325,6 +348,20 @@ Partial Class MDIContenedor
         Me.COMPROBANTESDECAJAToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.COMPROBANTESDECAJAToolStripMenuItem.Text = "COMPROBANTES DE CAJA"
         '
+        'INFORMEMEDICOToolStripMenuItem
+        '
+        Me.INFORMEMEDICOToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.info
+        Me.INFORMEMEDICOToolStripMenuItem.Name = "INFORMEMEDICOToolStripMenuItem"
+        Me.INFORMEMEDICOToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.INFORMEMEDICOToolStripMenuItem.Text = "INFORME MEDICO"
+        '
+        'MODIFICACIONESToolStripMenuItem
+        '
+        Me.MODIFICACIONESToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.MODIFICACIONESToolStripMenuItem.Name = "MODIFICACIONESToolStripMenuItem"
+        Me.MODIFICACIONESToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.MODIFICACIONESToolStripMenuItem.Text = "MODIFICACIONES"
+        '
         'PictureBox2
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -339,20 +376,38 @@ Partial Class MDIContenedor
         'tmHora
         '
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(153, 404)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 25)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "MÉDICOS"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(182, 517)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(80, 13)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Informe Médico"
+        '
         'MDIContenedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1100, 665)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.mdiInicio)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIContenedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.mdiInicio.ResumeLayout(False)
+        Me.mdiInicio.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
@@ -371,7 +426,7 @@ Partial Class MDIContenedor
     Friend WithEvents ESTUDIOSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PACIENTESToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenuStrip As MenuStrip
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents mdiInicio As Panel
     Friend WithEvents btnMinimizar As Button
     Friend WithEvents btnCerrar As Button
     Friend WithEvents btnMover As Button
@@ -388,4 +443,9 @@ Partial Class MDIContenedor
     Friend WithEvents btnComprobante As Button
     Friend WithEvents LISTADEPRECIOSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents COMPROBANTESDECAJAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents INFORMEMEDICOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MODIFICACIONESToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnInformeMedico As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class

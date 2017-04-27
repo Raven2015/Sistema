@@ -33,6 +33,8 @@
             Dim dts As New vUsuario
             Dim func As New fUsuario
             Dim tipo As String = ""
+            Dim nombre_usuario As String = ""
+            Dim apellido_usuario As String = ""
 
             If tbLogin.Text <> "" And tbPassword.Text <> "" Then
                 Dim dt As New DataTable
@@ -42,14 +44,30 @@
 
                 dt = func.inicio_sesion(dts)
                 If dt.Rows.Count <> 0 Then
-                    tipo = dt.Rows(0)("tipo")
+                    tipo = dt.Rows(0)("id_tipo")
+                    nombre_usuario = dt.Rows(0)("nombre")
+                    apellido_usuario = dt.Rows(0)("apellido")
                     limpiar()
-                    If tipo = "recepcionista" Then
-                        InicioRecepcion.ShowDialog()
-                    ElseIf tipo = "administrador" Then
-                        'frmInicio.ShowDialog()
-                        MDIContenedor.ShowDialog()
-                    End If
+
+                    Select Case (tipo)
+                        Case 1
+                            frmInicioAdministrador.lblUsuario.Text = nombre_usuario
+                            frmInicioAdministrador.lblApellido.Text = apellido_usuario
+                            frmInicioAdministrador.ShowDialog()
+                        Case 2
+                            frmInicioMedico.lblUsuario.Text = nombre_usuario
+                            frmInicioMedico.lblApellido.Text = apellido_usuario
+                            frmInicioMedico.ShowDialog()
+                        Case 3
+                            InicioPruebas.ShowDialog()
+                        Case 4
+                            frmInicioRecepcion.lblUsuario.Text = nombre_usuario
+                            frmInicioRecepcion.lblApellido.Text = apellido_usuario
+                            frmInicioRecepcion.ShowDialog()
+                        Case Else
+                            MsgBox("Error en la verificacion")
+                    End Select
+
                 Else
                     Static intento As Integer
                     intento = intento + 1

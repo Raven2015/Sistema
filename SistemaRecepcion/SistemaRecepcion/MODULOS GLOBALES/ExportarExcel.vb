@@ -149,6 +149,10 @@ Public Class ExportarExcel
             .Range("I2").Font.Bold = True
             .Range("I2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
             .Range("I2").ColumnWidth = 10
+            .Range("J2").Value = "ENTIDAD"
+            .Range("J2").Font.Bold = True
+            .Range("J2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            .Range("J2").ColumnWidth = 25
         End With
 
         For Each fila In tabla.Rows
@@ -168,6 +172,8 @@ Public Class ExportarExcel
             objHojaExcel.Range("H" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
             objHojaExcel.Range("I" & posicion).Value = fila.Item("PRECIO")
             objHojaExcel.Range("I" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+            objHojaExcel.Range("J" & posicion).Value = fila.Item("ENTIDAD")
+            objHojaExcel.Range("J" & posicion).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
             posicion += 1
             contador = contador + 1
         Next

@@ -24,6 +24,7 @@ Partial Class frmArqueos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cbxEntidadACredito = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbxTurno = New System.Windows.Forms.ComboBox()
         Me.dtpFechaAtencion = New System.Windows.Forms.DateTimePicker()
@@ -48,9 +49,10 @@ Partial Class frmArqueos
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IMRIMIRARQUEOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TODOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cbxEntidadACredito = New System.Windows.Forms.ComboBox()
         Me.rdbtnContado = New System.Windows.Forms.RadioButton()
         Me.rdbtnCredito = New System.Windows.Forms.RadioButton()
+        Me.IMPRIMIRTODOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IMPRIMIRPORTURNOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.ListaEntidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsListaEntidades, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +77,19 @@ Partial Class frmArqueos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(776, 43)
         Me.Panel1.TabIndex = 0
+        '
+        'cbxEntidadACredito
+        '
+        Me.cbxEntidadACredito.DisplayMember = "id_entidad"
+        Me.cbxEntidadACredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxEntidadACredito.FormattingEnabled = True
+        Me.cbxEntidadACredito.Items.AddRange(New Object() {"RED SALUD", "FERRECO", "COBERMED", "SIDEM", "CAJA NACIONAL", "H. GENERAL", "SEGURO DE VEJEZ", "H. MUNICIPAL", "CAMPAÑA CLINICA SANTA LAURA", "CLINICA SANTA LAURA"})
+        Me.cbxEntidadACredito.Location = New System.Drawing.Point(88, 12)
+        Me.cbxEntidadACredito.Name = "cbxEntidadACredito"
+        Me.cbxEntidadACredito.Size = New System.Drawing.Size(166, 21)
+        Me.cbxEntidadACredito.TabIndex = 6
+        Me.cbxEntidadACredito.ValueMember = "id_entidad"
+        Me.cbxEntidadACredito.Visible = False
         '
         'Label3
         '
@@ -126,6 +141,7 @@ Partial Class frmArqueos
         '
         'cbxEntidad
         '
+        Me.cbxEntidad.DisplayMember = "id_entidad"
         Me.cbxEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxEntidad.FormattingEnabled = True
         Me.cbxEntidad.Items.AddRange(New Object() {"PARTICULAR", "POLICIA", "Dr. OROZCO"})
@@ -281,6 +297,7 @@ Partial Class frmArqueos
         '
         'IMRIMIRARQUEOToolStripMenuItem
         '
+        Me.IMRIMIRARQUEOToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IMPRIMIRTODOSToolStripMenuItem, Me.IMPRIMIRPORTURNOToolStripMenuItem})
         Me.IMRIMIRARQUEOToolStripMenuItem.Image = Global.SistemaRecepcion.My.Resources.Resources.copy
         Me.IMRIMIRARQUEOToolStripMenuItem.Name = "IMRIMIRARQUEOToolStripMenuItem"
         Me.IMRIMIRARQUEOToolStripMenuItem.Size = New System.Drawing.Size(137, 20)
@@ -291,18 +308,6 @@ Partial Class frmArqueos
         Me.TODOSToolStripMenuItem.Name = "TODOSToolStripMenuItem"
         Me.TODOSToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.TODOSToolStripMenuItem.Text = "TODOS"
-        '
-        'cbxEntidadACredito
-        '
-        Me.cbxEntidadACredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxEntidadACredito.FormattingEnabled = True
-        Me.cbxEntidadACredito.Items.AddRange(New Object() {"RED SALUD", "FERRECO", "COBERMED", "SIDEM", "CAJA NACIONAL", "H. GENERAL", "SEGURO DE VEJEZ", "H. MUNICIPAL", "CAMPAÑA CLINICA SANTA LAURA", "CLINICA SANTA LAURA"})
-        Me.cbxEntidadACredito.Location = New System.Drawing.Point(88, 12)
-        Me.cbxEntidadACredito.Name = "cbxEntidadACredito"
-        Me.cbxEntidadACredito.Size = New System.Drawing.Size(166, 21)
-        Me.cbxEntidadACredito.TabIndex = 6
-        Me.cbxEntidadACredito.ValueMember = "id_entidad"
-        Me.cbxEntidadACredito.Visible = False
         '
         'rdbtnContado
         '
@@ -327,6 +332,18 @@ Partial Class frmArqueos
         Me.rdbtnCredito.TabStop = True
         Me.rdbtnCredito.Text = "A CRÉDITO"
         Me.rdbtnCredito.UseVisualStyleBackColor = False
+        '
+        'IMPRIMIRTODOSToolStripMenuItem
+        '
+        Me.IMPRIMIRTODOSToolStripMenuItem.Name = "IMPRIMIRTODOSToolStripMenuItem"
+        Me.IMPRIMIRTODOSToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.IMPRIMIRTODOSToolStripMenuItem.Text = "IMPRIMIR TODOS"
+        '
+        'IMPRIMIRPORTURNOToolStripMenuItem
+        '
+        Me.IMPRIMIRPORTURNOToolStripMenuItem.Name = "IMPRIMIRPORTURNOToolStripMenuItem"
+        Me.IMPRIMIRPORTURNOToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
+        Me.IMPRIMIRPORTURNOToolStripMenuItem.Text = "IMPRIMIR POR TURNO"
         '
         'frmArqueos
         '
@@ -388,4 +405,6 @@ Partial Class frmArqueos
     Friend WithEvents cbxEntidadACredito As ComboBox
     Friend WithEvents rdbtnContado As RadioButton
     Friend WithEvents rdbtnCredito As RadioButton
+    Friend WithEvents IMPRIMIRTODOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IMPRIMIRPORTURNOToolStripMenuItem As ToolStripMenuItem
 End Class

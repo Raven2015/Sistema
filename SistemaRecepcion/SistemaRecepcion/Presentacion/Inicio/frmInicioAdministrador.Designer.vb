@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmInicio
+Partial Class frmInicioAdministrador
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -47,6 +47,9 @@ Partial Class frmInicio
         Me.btnPaciente = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblApellido = New System.Windows.Forms.Label()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -120,7 +123,7 @@ Partial Class frmInicio
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label7.Font = New System.Drawing.Font("Roboto", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(152, 13)
+        Me.Label7.Location = New System.Drawing.Point(350, 13)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(370, 28)
         Me.Label7.TabIndex = 19
@@ -321,12 +324,51 @@ Partial Class frmInicio
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
-        'frmInicio
+        'lblApellido
+        '
+        Me.lblApellido.AutoSize = True
+        Me.lblApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellido.ForeColor = System.Drawing.Color.White
+        Me.lblApellido.Location = New System.Drawing.Point(964, 22)
+        Me.lblApellido.Name = "lblApellido"
+        Me.lblApellido.Size = New System.Drawing.Size(28, 17)
+        Me.lblApellido.TabIndex = 58
+        Me.lblApellido.Text = "----"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblUsuario.Location = New System.Drawing.Point(908, 22)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(28, 17)
+        Me.lblUsuario.TabIndex = 57
+        Me.lblUsuario.Text = "----"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(839, 22)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(61, 17)
+        Me.Label12.TabIndex = 56
+        Me.Label12.Text = "Usuario:"
+        '
+        'frmInicioAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1043, 180)
+        Me.Controls.Add(Me.lblApellido)
+        Me.Controls.Add(Me.lblUsuario)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnReportes)
         Me.Controls.Add(Me.Label10)
@@ -353,7 +395,7 @@ Partial Class frmInicio
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmInicio"
+        Me.Name = "frmInicioAdministrador"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "INICIO"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -388,4 +430,7 @@ Partial Class frmInicio
     Friend WithEvents btnArqueos As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents btnReportes As Button
+    Friend WithEvents lblApellido As Label
+    Friend WithEvents lblUsuario As Label
+    Friend WithEvents Label12 As Label
 End Class

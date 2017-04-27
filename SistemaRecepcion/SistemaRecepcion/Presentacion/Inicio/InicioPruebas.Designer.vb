@@ -35,6 +35,10 @@ Partial Class InicioPruebas
         Me.btnCentral = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnInicioPrueba = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnModificaciones = New System.Windows.Forms.Button()
+        Me.btnReporteMedico = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -154,11 +158,51 @@ Partial Class InicioPruebas
         Me.btnInicioPrueba.Text = "INICIO PRUEBA"
         Me.btnInicioPrueba.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(244, 70)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 36)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "REPORTE MEDICO"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'btnModificaciones
+        '
+        Me.btnModificaciones.Location = New System.Drawing.Point(244, 112)
+        Me.btnModificaciones.Name = "btnModificaciones"
+        Me.btnModificaciones.Size = New System.Drawing.Size(110, 23)
+        Me.btnModificaciones.TabIndex = 14
+        Me.btnModificaciones.Text = "MODIFICACIONES"
+        Me.btnModificaciones.UseVisualStyleBackColor = True
+        '
+        'btnReporteMedico
+        '
+        Me.btnReporteMedico.Location = New System.Drawing.Point(244, 141)
+        Me.btnReporteMedico.Name = "btnReporteMedico"
+        Me.btnReporteMedico.Size = New System.Drawing.Size(110, 36)
+        Me.btnReporteMedico.TabIndex = 15
+        Me.btnReporteMedico.Text = "REPORTE MEDICO"
+        Me.btnReporteMedico.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(244, 183)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(110, 36)
+        Me.Button3.TabIndex = 16
+        Me.Button3.Text = "BUSCAR INFORME"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnReporteMedico)
+        Me.Controls.Add(Me.btnModificaciones)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnInicioPrueba)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCentral)
@@ -191,4 +235,8 @@ Partial Class InicioPruebas
     Friend WithEvents btnCentral As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents btnInicioPrueba As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnModificaciones As Button
+    Friend WithEvents btnReporteMedico As Button
+    Friend WithEvents Button3 As Button
 End Class
