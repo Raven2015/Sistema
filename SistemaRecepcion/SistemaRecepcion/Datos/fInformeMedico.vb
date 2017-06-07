@@ -167,4 +167,31 @@ Public Class fInformeMedico
             desconectado()
         End Try
     End Function
+
+    Public Function verificacion_informe(
+                                        ByVal login As String,
+                                        ByVal id_atencion As String) As Integer
+
+        Try
+            BD.Open()
+            cmd = New SqlCommand("verifInforme", BD)
+
+            cmd.Parameters.AddWithValue("@login", login)
+            cmd.Parameters.AddWithValue("@idAtencion", id_atencion)
+            Dim respuesta As New SqlParameter("@respuesta", SqlDbType.Int)
+            respuesta.Direction = ParameterDirection.Output
+
+            With cmd
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.Add(respuesta)
+                .ExecuteNonQuery()
+                BD.Close()
+                Return .Parameters("@respuesta").Value
+
+            End With
+        Catch ex As Exception
+            MsgBox("Error an la BD: RAZON>> " + ex.Message)
+            Return 0
+        End Try
+    End Function
 End Class

@@ -39,6 +39,8 @@ Partial Class InicioPruebas
         Me.btnModificaciones = New System.Windows.Forms.Button()
         Me.btnReporteMedico = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnRptModificado = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -194,11 +196,31 @@ Partial Class InicioPruebas
         Me.Button3.Text = "BUSCAR INFORME"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(360, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(93, 23)
+        Me.Button4.TabIndex = 17
+        Me.Button4.Text = "VERIFICACION"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'btnRptModificado
+        '
+        Me.btnRptModificado.Location = New System.Drawing.Point(360, 41)
+        Me.btnRptModificado.Name = "btnRptModificado"
+        Me.btnRptModificado.Size = New System.Drawing.Size(93, 23)
+        Me.btnRptModificado.TabIndex = 18
+        Me.btnRptModificado.Text = "INFORME M"
+        Me.btnRptModificado.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.Controls.Add(Me.btnRptModificado)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnReporteMedico)
         Me.Controls.Add(Me.btnModificaciones)
@@ -239,4 +261,6 @@ Partial Class InicioPruebas
     Friend WithEvents btnModificaciones As Button
     Friend WithEvents btnReporteMedico As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents btnRptModificado As Button
 End Class

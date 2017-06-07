@@ -1188,8 +1188,8 @@
       </Textbox>
       <Rectangle Name="Rectangle4">
         <KeepTogether>true</KeepTogether>
-        <Top>17.098cm</Top>
-        <Left>4.80221cm</Left>
+        <Top>16.89991cm</Top>
+        <Left>8.58684cm</Left>
         <Height>2.26187cm</Height>
         <Width>6.8575cm</Width>
         <ZIndex>14</ZIndex>
@@ -1226,8 +1226,41 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Firma y Sello Médico que Atiende</Value>
+                <Value>Firma </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>y </Value>
                 <Style />
+              </TextRun>
+              <TextRun>
+                <Value>Sello </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Médico/Técnico </Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>que </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>Atiende</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -1236,10 +1269,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>19.50098cm</Top>
-        <Left>5.40669cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.64854cm</Width>
+        <Top>19.30289cm</Top>
+        <Left>8.89879cm</Left>
+        <Height>1.04979cm</Height>
+        <Width>6.03151cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -1358,7 +1391,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=TODAY()+"-"+TimeOfDay()</Value>
-                <Style />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -1368,7 +1403,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox35</rd:DefaultName>
         <Top>16.12352cm</Top>
-        <Left>12.32403cm</Left>
+        <Left>11.99299cm</Left>
         <Height>0.6cm</Height>
         <Width>3.85128cm</Width>
         <ZIndex>19</ZIndex>
@@ -1457,16 +1492,17 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Fields!ci.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>14pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ci</rd:DefaultName>
-            <Top>0.17639cm</Top>
             <Left>11.84154cm</Left>
-            <Height>0.6cm</Height>
+            <Height>0.84695cm</Height>
             <Width>3.20216cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -1623,7 +1659,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox75</rd:DefaultName>
@@ -1656,7 +1694,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox75</rd:DefaultName>
@@ -1734,6 +1774,102 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Firma </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Médico </Value>
+                <Style>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>que emite </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>Criterio</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rx - Mamografía</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>19.30289cm</Top>
+        <Left>1.87521cm</Left>
+        <Height>1.04979cm</Height>
+        <Width>5.64854cm</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Rectangle Name="Rectangle6">
+        <KeepTogether>true</KeepTogether>
+        <Top>16.89991cm</Top>
+        <Left>1.27073cm</Left>
+        <Height>2.26187cm</Height>
+        <Width>6.8575cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
+        </Style>
+      </Rectangle>
     </ReportItems>
     <Height>226mm</Height>
     <Style />

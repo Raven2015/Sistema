@@ -124,9 +124,11 @@ Public Class dvxpReporteMedico
         Dim nombre As String = ""
         Dim edad As String = ""
         Dim medico As String = ""
+        Dim fechaDirecto As String = ""
 
         'fecha = "La Paz " & Date.Now.Day & " de " & Date.Now.Month & " de " & Date.Now.Year
-        fecha = Date.Now.ToLongDateString()
+        fechaDirecto = Date.Now.ToLongDateString()
+        fecha = modOperacionesAuxiliares.cambiar(fechaDirecto)
         salto = vbCrLf
         nombre = vbTab & vbTab & "PACIENTE: " & vbTab & vbTab & tbApellidos.Text & " " & tbNombres.Text
         edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & tbedad.Text
@@ -192,6 +194,7 @@ Public Class dvxpReporteMedico
         Dim estudio As String = generar_texto(dgvEstudiosARealizar)
 
         Dim fecha As String = ""
+        Dim fechaDirecto As String = ""
         Dim salto As String = ""
         Dim Contenido As String = ""
         Dim nombre As String = ""
@@ -199,13 +202,15 @@ Public Class dvxpReporteMedico
         Dim medico As String = ""
 
         'fecha = "La Paz " & Date.Now.Day & " de " & Date.Now.Month & " de " & Date.Now.Year
-        fecha = Date.Now.ToLongDateString()
+        fechaDirecto = Date.Now.ToLongDateString()
+        'fecha = modOperacionesAuxiliares.cambiar(fechaDirecto)
+
         salto = vbCrLf
         nombre = vbTab & vbTab & "PACIENTE: " & vbTab & vbTab & tbApellidos.Text & " " & tbNombres.Text
-        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & tbedad.Text
+        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & vbTab & tbedad.Text
         medico = vbTab & vbTab & "MEDICO: " & vbTab & vbTab & tbMedicoRemitente.Text
 
-        rhedctContenidoReporte.Text = salto & salto & fecha & salto & salto & salto & nombre & salto & edad & salto & medico
+        rhedctContenidoReporte.Text = salto & salto & "La Paz, " & fechaDirecto & salto & salto & salto & nombre & salto & edad & salto & medico
 
         rhedctContenidoReporte.Document.BeginUpdate()
         rhedctContenidoReporte.Document.AppendText(vbCrLf & estudio & ControlChars.Lf & "Atentamente:  " & ControlChars.Lf & "NOMBRE DEL MEDICO")
@@ -225,6 +230,7 @@ Public Class dvxpReporteMedico
 
             Case "ESTUDIOS CONTRASTADOS"
                 resultado = "ESTUDIOS CONTRASTADOS"
+
             Case "ESTUDIO ANATOMÍA PATOLÓGICA"
                 resultado = "ESTUDIO ANATOMÍA PATOLÓGICA"
             Case Else
@@ -232,4 +238,9 @@ Public Class dvxpReporteMedico
         End Select
         Return resultado
     End Function
+
+    Private Sub brbtnBuscaInforme_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles brbtnBuscaInforme.ItemClick
+        dlgBuscadorInforme.ShowDialog()
+    End Sub
+
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class frmInicioRecepcion
     Private Sub btnLista_Click(sender As Object, e As EventArgs)
         frmListaPrecios.ShowDialog()
+        frmListaPrecios.TopMost = True
     End Sub
 
     Private Sub btnCentral_Click(sender As Object, e As EventArgs) Handles btnCentral.Click
@@ -27,13 +28,19 @@
         frmArqueos.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnComprobante_Click(sender As Object, e As EventArgs) Handles btnComprobante.Click
         Me.WindowState = FormWindowState.Minimized
         frmComprobantesCaja.ShowDialog()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
         Me.WindowState = FormWindowState.Minimized
         frmCotizacion.ShowDialog()
+        frmCotizacion.TopMost = True
+    End Sub
+
+    Private Sub btnModif_Click(sender As Object, e As EventArgs) Handles btnModif.Click
+        Me.WindowState = FormWindowState.Minimized
+        frmModificaciones.ShowDialog()
     End Sub
 End Class

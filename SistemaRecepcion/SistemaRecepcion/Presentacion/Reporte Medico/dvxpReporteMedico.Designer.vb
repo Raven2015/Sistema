@@ -123,6 +123,7 @@ Partial Class dvxpReporteMedico
         Me.ChangeParagraphBackColorItem1 = New DevExpress.XtraRichEdit.UI.ChangeParagraphBackColorItem()
         Me.FindItem1 = New DevExpress.XtraRichEdit.UI.FindItem()
         Me.ReplaceItem1 = New DevExpress.XtraRichEdit.UI.ReplaceItem()
+        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonMiniToolbar1 = New DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -233,9 +234,9 @@ Partial Class dvxpReporteMedico
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.UndoItem1, Me.RedoItem1, Me.FileNewItem1, Me.FileOpenItem1, Me.FileSaveItem1, Me.FileSaveAsItem1, Me.QuickPrintItem1, Me.PrintItem1, Me.PrintPreviewItem1, Me.ShowDocumentPropertiesFormItem1, Me.SwitchToSimpleViewItem1, Me.SwitchToDraftViewItem1, Me.SwitchToPrintLayoutViewItem1, Me.ToggleShowHorizontalRulerItem1, Me.ToggleShowVerticalRulerItem1, Me.ZoomOutItem1, Me.ZoomInItem1, Me.InsertPageBreakItem21, Me.InsertTableItem1, Me.InsertPictureItem1, Me.InsertFloatingPictureItem1, Me.InsertBookmarkItem1, Me.InsertHyperlinkItem1, Me.EditPageHeaderItem1, Me.EditPageFooterItem1, Me.InsertPageNumberItem1, Me.InsertPageCountItem1, Me.InsertTextBoxItem1, Me.InsertSymbolItem1, Me.brbtnDatosPaciente, Me.BarButtonItem1, Me.brbtnGuardarInforme, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.brbtnGuardaInforme, Me.brbtnBuscaInforme, Me.BarButtonItem5, Me.PasteItem1, Me.CutItem1, Me.CopyItem1, Me.PasteSpecialItem1, Me.BarButtonGroup1, Me.ChangeFontNameItem1, Me.ChangeFontSizeItem1, Me.FontSizeIncreaseItem1, Me.FontSizeDecreaseItem1, Me.BarButtonGroup2, Me.ToggleFontBoldItem1, Me.ToggleFontItalicItem1, Me.ToggleFontUnderlineItem1, Me.ToggleFontDoubleUnderlineItem1, Me.ToggleFontStrikeoutItem1, Me.ToggleFontDoubleStrikeoutItem1, Me.ToggleFontSuperscriptItem1, Me.ToggleFontSubscriptItem1, Me.BarButtonGroup3, Me.ChangeFontColorItem1, Me.ChangeFontHighlightColorItem1, Me.ChangeTextCaseItem1, Me.MakeTextUpperCaseItem1, Me.MakeTextLowerCaseItem1, Me.CapitalizeEachWordCaseItem1, Me.ToggleTextCaseItem1, Me.ClearFormattingItem1, Me.BarButtonGroup4, Me.ToggleBulletedListItem1, Me.ToggleNumberingListItem1, Me.ToggleMultiLevelListItem1, Me.BarButtonGroup5, Me.DecreaseIndentItem1, Me.IncreaseIndentItem1, Me.BarButtonGroup6, Me.ToggleParagraphAlignmentLeftItem1, Me.ToggleParagraphAlignmentCenterItem1, Me.ToggleParagraphAlignmentRightItem1, Me.ToggleParagraphAlignmentJustifyItem1, Me.ToggleShowWhitespaceItem1, Me.BarButtonGroup7, Me.ChangeParagraphLineSpacingItem1, Me.SetSingleParagraphSpacingItem1, Me.SetSesquialteralParagraphSpacingItem1, Me.SetDoubleParagraphSpacingItem1, Me.ShowLineSpacingFormItem1, Me.AddSpacingBeforeParagraphItem1, Me.RemoveSpacingBeforeParagraphItem1, Me.AddSpacingAfterParagraphItem1, Me.RemoveSpacingAfterParagraphItem1, Me.ChangeParagraphBackColorItem1, Me.GalleryChangeStyleItem1, Me.FindItem1, Me.ReplaceItem1})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.UndoItem1, Me.RedoItem1, Me.FileNewItem1, Me.FileOpenItem1, Me.FileSaveItem1, Me.FileSaveAsItem1, Me.QuickPrintItem1, Me.PrintItem1, Me.PrintPreviewItem1, Me.ShowDocumentPropertiesFormItem1, Me.SwitchToSimpleViewItem1, Me.SwitchToDraftViewItem1, Me.SwitchToPrintLayoutViewItem1, Me.ToggleShowHorizontalRulerItem1, Me.ToggleShowVerticalRulerItem1, Me.ZoomOutItem1, Me.ZoomInItem1, Me.InsertPageBreakItem21, Me.InsertTableItem1, Me.InsertPictureItem1, Me.InsertFloatingPictureItem1, Me.InsertBookmarkItem1, Me.InsertHyperlinkItem1, Me.EditPageHeaderItem1, Me.EditPageFooterItem1, Me.InsertPageNumberItem1, Me.InsertPageCountItem1, Me.InsertTextBoxItem1, Me.InsertSymbolItem1, Me.brbtnDatosPaciente, Me.BarButtonItem1, Me.brbtnGuardarInforme, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.brbtnGuardaInforme, Me.brbtnBuscaInforme, Me.BarButtonItem5, Me.PasteItem1, Me.CutItem1, Me.CopyItem1, Me.PasteSpecialItem1, Me.BarButtonGroup1, Me.ChangeFontNameItem1, Me.ChangeFontSizeItem1, Me.FontSizeIncreaseItem1, Me.FontSizeDecreaseItem1, Me.BarButtonGroup2, Me.ToggleFontBoldItem1, Me.ToggleFontItalicItem1, Me.ToggleFontUnderlineItem1, Me.ToggleFontDoubleUnderlineItem1, Me.ToggleFontStrikeoutItem1, Me.ToggleFontDoubleStrikeoutItem1, Me.ToggleFontSuperscriptItem1, Me.ToggleFontSubscriptItem1, Me.BarButtonGroup3, Me.ChangeFontColorItem1, Me.ChangeFontHighlightColorItem1, Me.ChangeTextCaseItem1, Me.MakeTextUpperCaseItem1, Me.MakeTextLowerCaseItem1, Me.CapitalizeEachWordCaseItem1, Me.ToggleTextCaseItem1, Me.ClearFormattingItem1, Me.BarButtonGroup4, Me.ToggleBulletedListItem1, Me.ToggleNumberingListItem1, Me.ToggleMultiLevelListItem1, Me.BarButtonGroup5, Me.DecreaseIndentItem1, Me.IncreaseIndentItem1, Me.BarButtonGroup6, Me.ToggleParagraphAlignmentLeftItem1, Me.ToggleParagraphAlignmentCenterItem1, Me.ToggleParagraphAlignmentRightItem1, Me.ToggleParagraphAlignmentJustifyItem1, Me.ToggleShowWhitespaceItem1, Me.BarButtonGroup7, Me.ChangeParagraphLineSpacingItem1, Me.SetSingleParagraphSpacingItem1, Me.SetSesquialteralParagraphSpacingItem1, Me.SetDoubleParagraphSpacingItem1, Me.ShowLineSpacingFormItem1, Me.AddSpacingBeforeParagraphItem1, Me.RemoveSpacingBeforeParagraphItem1, Me.AddSpacingAfterParagraphItem1, Me.RemoveSpacingAfterParagraphItem1, Me.ChangeParagraphBackColorItem1, Me.GalleryChangeStyleItem1, Me.FindItem1, Me.ReplaceItem1, Me.BarButtonItem6})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 61
+        Me.RibbonControl1.MaxItemId = 62
         Me.RibbonControl1.MiniToolbars.Add(Me.RibbonMiniToolbar1)
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.FileRibbonPage1, Me.ViewRibbonPage1, Me.InsertRibbonPage1, Me.HomeRibbonPage1})
@@ -796,6 +797,12 @@ Partial Class dvxpReporteMedico
         Me.ReplaceItem1.Id = 60
         Me.ReplaceItem1.Name = "ReplaceItem1"
         '
+        'BarButtonItem6
+        '
+        Me.BarButtonItem6.Caption = "BUSCAR"
+        Me.BarButtonItem6.Id = 61
+        Me.BarButtonItem6.Name = "BarButtonItem6"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
@@ -806,6 +813,7 @@ Partial Class dvxpReporteMedico
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.brbtnDatosPaciente)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem6)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "PACIENTE"
         '
@@ -1656,4 +1664,5 @@ Partial Class dvxpReporteMedico
     Friend WithEvents RepositoryItemAlignment3 As DevExpress.XtraRichEdit.Design.RepositoryItemAlignment
     Friend WithEvents RepositoryItemAlignment4 As DevExpress.XtraRichEdit.Design.RepositoryItemAlignment
     Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
+    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
 End Class

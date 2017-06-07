@@ -20,4 +20,10 @@
         Edad = Años
         Return Edad
     End Function
+
+    Function cambiar(ByVal texto As String) As String
+        Dim cadena As String = StrConv(texto, VbStrConv.ProperCase)
+        Return cadena
+    End Function
+
 End Module

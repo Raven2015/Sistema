@@ -50,11 +50,11 @@ Partial Class frmListaPrecios
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbListadoEstudios = New System.Windows.Forms.GroupBox()
+        Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.tbIDLista = New System.Windows.Forms.TextBox()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.tbIDEntidad = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.grbDatosCategoria.SuspendLayout()
         Me.gbEstudio.SuspendLayout()
@@ -318,6 +318,15 @@ Partial Class frmListaPrecios
         Me.gbListadoEstudios.TabStop = False
         Me.gbListadoEstudios.Text = "Listado de Estudios"
         '
+        'tbIDEntidad
+        '
+        Me.tbIDEntidad.Enabled = False
+        Me.tbIDEntidad.Location = New System.Drawing.Point(213, 293)
+        Me.tbIDEntidad.Name = "tbIDEntidad"
+        Me.tbIDEntidad.Size = New System.Drawing.Size(100, 20)
+        Me.tbIDEntidad.TabIndex = 44
+        Me.tbIDEntidad.Visible = False
+        '
         'tbIDLista
         '
         Me.tbIDLista.Enabled = False
@@ -356,15 +365,6 @@ Partial Class frmListaPrecios
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.ReadOnly = True
         '
-        'tbIDEntidad
-        '
-        Me.tbIDEntidad.Enabled = False
-        Me.tbIDEntidad.Location = New System.Drawing.Point(213, 293)
-        Me.tbIDEntidad.Name = "tbIDEntidad"
-        Me.tbIDEntidad.Size = New System.Drawing.Size(100, 20)
-        Me.tbIDEntidad.TabIndex = 44
-        Me.tbIDEntidad.Visible = False
-        '
         'frmListaPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -381,7 +381,7 @@ Partial Class frmListaPrecios
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.gbListadoEstudios)
         Me.Name = "frmListaPrecios"
-        Me.Text = "frmListaPrecios"
+        Me.Text = "Lista de Precios"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.grbDatosCategoria.ResumeLayout(False)

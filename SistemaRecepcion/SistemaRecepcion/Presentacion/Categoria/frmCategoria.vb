@@ -161,6 +161,4 @@
             chkcell.Value = Not chkcell.Value
         End If
     End Sub
-
-
 End Class

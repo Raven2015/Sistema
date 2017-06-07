@@ -27,8 +27,8 @@ Partial Class frmInicioRecepcion
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnComprobante = New System.Windows.Forms.Button()
+        Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnCentral = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -40,6 +40,8 @@ Partial Class frmInicioRecepcion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.lblApellido = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnModif = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class frmInicioRecepcion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(547, 142)
+        Me.Label6.Location = New System.Drawing.Point(648, 142)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 33
@@ -93,29 +95,29 @@ Partial Class frmInicioRecepcion
         Me.Label2.TabIndex = 39
         Me.Label2.Text = "COTIZACION"
         '
-        'Button1
+        'btnComprobante
         '
-        Me.Button1.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(227, 69)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(70, 70)
-        Me.Button1.TabIndex = 38
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnComprobante.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.list
+        Me.btnComprobante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnComprobante.FlatAppearance.BorderSize = 0
+        Me.btnComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnComprobante.Location = New System.Drawing.Point(227, 69)
+        Me.btnComprobante.Name = "btnComprobante"
+        Me.btnComprobante.Size = New System.Drawing.Size(70, 70)
+        Me.btnComprobante.TabIndex = 38
+        Me.btnComprobante.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnCotizacion
         '
-        Me.Button2.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.info
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(125, 69)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(70, 70)
-        Me.Button2.TabIndex = 37
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCotizacion.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.info
+        Me.btnCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCotizacion.FlatAppearance.BorderSize = 0
+        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCotizacion.Location = New System.Drawing.Point(125, 69)
+        Me.btnCotizacion.Name = "btnCotizacion"
+        Me.btnCotizacion.Size = New System.Drawing.Size(70, 70)
+        Me.btnCotizacion.TabIndex = 37
+        Me.btnCotizacion.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
@@ -123,7 +125,7 @@ Partial Class frmInicioRecepcion
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(531, 69)
+        Me.btnSalir.Location = New System.Drawing.Point(632, 69)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(70, 70)
         Me.btnSalir.TabIndex = 32
@@ -145,7 +147,7 @@ Partial Class frmInicioRecepcion
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(516, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(615, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 128)
         Me.PictureBox2.TabIndex = 35
@@ -157,7 +159,7 @@ Partial Class frmInicioRecepcion
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(616, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(715, 52)
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
         '
@@ -211,7 +213,7 @@ Partial Class frmInicioRecepcion
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(410, 20)
+        Me.Label5.Location = New System.Drawing.Point(493, 20)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 17)
         Me.Label5.TabIndex = 53
@@ -223,7 +225,7 @@ Partial Class frmInicioRecepcion
         Me.lblUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblUsuario.Location = New System.Drawing.Point(476, 20)
+        Me.lblUsuario.Location = New System.Drawing.Point(559, 20)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(28, 17)
         Me.lblUsuario.TabIndex = 54
@@ -235,18 +237,42 @@ Partial Class frmInicioRecepcion
         Me.lblApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApellido.ForeColor = System.Drawing.Color.White
-        Me.lblApellido.Location = New System.Drawing.Point(535, 20)
+        Me.lblApellido.Location = New System.Drawing.Point(618, 20)
         Me.lblApellido.Name = "lblApellido"
         Me.lblApellido.Size = New System.Drawing.Size(28, 17)
         Me.lblApellido.TabIndex = 55
         Me.lblApellido.Text = "----"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(514, 145)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
+        Me.Label3.TabIndex = 57
+        Me.Label3.Text = "MODIFICACIONES"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnModif
+        '
+        Me.btnModif.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.btnModif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnModif.FlatAppearance.BorderSize = 0
+        Me.btnModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModif.Location = New System.Drawing.Point(524, 68)
+        Me.btnModif.Name = "btnModif"
+        Me.btnModif.Size = New System.Drawing.Size(70, 70)
+        Me.btnModif.TabIndex = 56
+        Me.btnModif.UseVisualStyleBackColor = True
         '
         'frmInicioRecepcion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(616, 180)
+        Me.ClientSize = New System.Drawing.Size(715, 180)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btnModif)
         Me.Controls.Add(Me.lblApellido)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.Label5)
@@ -256,8 +282,8 @@ Partial Class frmInicioRecepcion
         Me.Controls.Add(Me.btnArqueos)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnComprobante)
+        Me.Controls.Add(Me.btnCotizacion)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnSalir)
@@ -284,8 +310,8 @@ Partial Class frmInicioRecepcion
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnComprobante As Button
+    Friend WithEvents btnCotizacion As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents btnReportes As Button
     Friend WithEvents Label10 As Label
@@ -293,4 +319,6 @@ Partial Class frmInicioRecepcion
     Friend WithEvents Label5 As Label
     Friend WithEvents lblUsuario As Label
     Friend WithEvents lblApellido As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnModif As Button
 End Class

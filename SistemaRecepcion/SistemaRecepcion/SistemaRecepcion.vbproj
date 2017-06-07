@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica030417ARGENTINA4\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica130517ARGENTINA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -140,6 +140,7 @@
     <Compile Include="Datos\conexion.vb" />
     <Compile Include="Datos\fArqueoIngreso.vb" />
     <Compile Include="Datos\fAtencion.vb" />
+    <Compile Include="Datos\fBusqInforme.vb" />
     <Compile Include="Datos\fCategoria.vb" />
     <Compile Include="Datos\fcliente.vb" />
     <Compile Include="Datos\fComprobante.vb" />
@@ -148,6 +149,7 @@
     <Compile Include="Datos\fEgreso.vb" />
     <Compile Include="Datos\fEntidad.vb" />
     <Compile Include="Datos\fEstudio.vb" />
+    <Compile Include="Datos\fImpresion.vb" />
     <Compile Include="Datos\fInformeMedico.vb" />
     <Compile Include="Datos\fMedico.vb" />
     <Compile Include="Datos\fPrecio.vb" />
@@ -163,6 +165,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBIOMEDICADataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbReportes.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbReportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="dsInicial.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,6 +203,7 @@
     <Compile Include="Logica\CLASES AUXILIARES\vPacientesporAtencion.vb" />
     <Compile Include="Logica\vArqueoIngreso.vb" />
     <Compile Include="Logica\vAtencion.vb" />
+    <Compile Include="Logica\vBusqInforme.vb" />
     <Compile Include="Logica\vCategoria.vb" />
     <Compile Include="Logica\vCliente.vb" />
     <Compile Include="Logica\vComprobante.vb" />
@@ -205,6 +213,7 @@
     <Compile Include="Logica\vEgreso.vb" />
     <Compile Include="Logica\vEntidad.vb" />
     <Compile Include="Logica\vEstudio.vb" />
+    <Compile Include="Logica\vImpresion.vb" />
     <Compile Include="Logica\vInformeMedico.vb" />
     <Compile Include="Logica\vMedico.vb" />
     <Compile Include="Logica\vPrecio.vb" />
@@ -423,6 +432,12 @@
     <Compile Include="Presentacion\Lista\frmListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dlgBuscadorInforme.Designer.vb">
+      <DependentUpon>dlgBuscadorInforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reporte Medico\dlgBuscadorInforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Reporte Medico\dlgBuscaInforme.Designer.vb">
       <DependentUpon>dlgBuscaInforme.vb</DependentUpon>
     </Compile>
@@ -439,6 +454,24 @@
       <DependentUpon>frmReporteMedico.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reporte Medico\frmReporteMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBAS\frmPruebas.Designer.vb">
+      <DependentUpon>frmPruebas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRUEBAS\frmPruebas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBAS\frmReporteModificado.Designer.vb">
+      <DependentUpon>frmReporteModificado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRUEBAS\frmReporteModificado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBAS\ReportePruebas.Designer.vb">
+      <DependentUpon>ReportePruebas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRUEBAS\ReportePruebas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ARQUEOS\ReporteArqueo.Designer.vb">
@@ -634,6 +667,9 @@
     <EmbeddedResource Include="Presentacion\Lista\frmListaPrecios.resx">
       <DependentUpon>frmListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reporte Medico\dlgBuscadorInforme.resx">
+      <DependentUpon>dlgBuscadorInforme.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reporte Medico\dlgBuscaInforme.resx">
       <DependentUpon>dlgBuscaInforme.vb</DependentUpon>
     </EmbeddedResource>
@@ -642,6 +678,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reporte Medico\frmReporteMedico.resx">
       <DependentUpon>frmReporteMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBAS\frmPruebas.resx">
+      <DependentUpon>frmPruebas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBAS\frmReporteModificado.resx">
+      <DependentUpon>frmReporteModificado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBAS\ReporteModificado.rdlc" />
+    <EmbeddedResource Include="PRUEBAS\ReportePruebas.resx">
+      <DependentUpon>ReportePruebas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ARQUEOS\ReporteArqueo.resx">
       <DependentUpon>ReporteArqueo.vb</DependentUpon>
@@ -712,6 +758,17 @@
     </None>
     <None Include="dbBIOMEDICADataSet1.xss">
       <DependentUpon>dbBIOMEDICADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbReportes.xsc">
+      <DependentUpon>dbReportes.xsd</DependentUpon>
+    </None>
+    <None Include="dbReportes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbReportes.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbReportes.xss">
+      <DependentUpon>dbReportes.xsd</DependentUpon>
     </None>
     <None Include="dsInicial.xsc">
       <DependentUpon>dsInicial.xsd</DependentUpon>
