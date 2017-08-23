@@ -146,14 +146,14 @@ Public Class fInformeMedico
     Public Function insertar_informe_medico(ByVal dts As vInformeMedico) As Boolean
         Try
             conectado()
-            cmd = New SqlCommand("insertar_informe")
+            cmd = New SqlCommand("insertar_informe_actualizado")
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Connection = cnn
 
             cmd.Parameters.AddWithValue("@id_atencion", dts.gid_atencion)
             cmd.Parameters.AddWithValue("@informe", dts.ginforme)
             cmd.Parameters.AddWithValue("@fecha_informe", dts.gfecha_informe)
-
+            cmd.Parameters.AddWithValue("@id_usuario", dts.gid_usuario)
 
             If cmd.ExecuteNonQuery Then
                 Return True

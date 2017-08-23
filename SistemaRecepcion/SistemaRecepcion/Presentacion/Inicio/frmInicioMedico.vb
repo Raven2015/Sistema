@@ -21,6 +21,7 @@
 
     Private Sub btnCentral_Click(sender As Object, e As EventArgs) Handles btnCentral.Click
         Me.WindowState = FormWindowState.Minimized
+        dvxpReporteMedico.lbIDUsuario.Text = lbIDUsuario.Text
         dvxpReporteMedico.ShowDialog()
         frmReporteMedico.TopMost = True
     End Sub

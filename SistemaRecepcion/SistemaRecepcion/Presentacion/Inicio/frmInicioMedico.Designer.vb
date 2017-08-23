@@ -36,6 +36,8 @@ Partial Class frmInicioMedico
         Me.lblApellido = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.lbIDUsuario = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,7 +64,7 @@ Partial Class frmInicioMedico
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(315, 145)
+        Me.Label6.Location = New System.Drawing.Point(318, 145)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
         Me.Label6.TabIndex = 16
@@ -86,7 +88,7 @@ Partial Class frmInicioMedico
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(299, 72)
+        Me.btnSalir.Location = New System.Drawing.Point(302, 72)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(70, 70)
         Me.btnSalir.TabIndex = 15
@@ -135,7 +137,7 @@ Partial Class frmInicioMedico
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox2.Location = New System.Drawing.Point(284, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(287, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 128)
         Me.PictureBox2.TabIndex = 18
@@ -147,7 +149,7 @@ Partial Class frmInicioMedico
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(384, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(387, 52)
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
@@ -166,7 +168,7 @@ Partial Class frmInicioMedico
         Me.lblApellido.BackColor = System.Drawing.Color.Teal
         Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApellido.ForeColor = System.Drawing.Color.White
-        Me.lblApellido.Location = New System.Drawing.Point(314, 20)
+        Me.lblApellido.Location = New System.Drawing.Point(317, 20)
         Me.lblApellido.Name = "lblApellido"
         Me.lblApellido.Size = New System.Drawing.Size(28, 17)
         Me.lblApellido.TabIndex = 58
@@ -196,12 +198,40 @@ Partial Class frmInicioMedico
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "Usuario:"
         '
+        'lbIDUsuario
+        '
+        Me.lbIDUsuario.AutoSize = True
+        Me.lbIDUsuario.BackColor = System.Drawing.Color.Teal
+        Me.lbIDUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbIDUsuario.ForeColor = System.Drawing.Color.White
+        Me.lbIDUsuario.Location = New System.Drawing.Point(226, 3)
+        Me.lbIDUsuario.Name = "lbIDUsuario"
+        Me.lbIDUsuario.Size = New System.Drawing.Size(28, 17)
+        Me.lbIDUsuario.TabIndex = 61
+        Me.lbIDUsuario.Text = "----"
+        Me.lbIDUsuario.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Teal
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(197, 3)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(25, 17)
+        Me.Label9.TabIndex = 60
+        Me.Label9.Text = "ID:"
+        Me.Label9.Visible = False
+        '
         'frmInicioMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(384, 180)
+        Me.ClientSize = New System.Drawing.Size(387, 180)
+        Me.Controls.Add(Me.lbIDUsuario)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lblApellido)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.Label5)
@@ -241,4 +271,6 @@ Partial Class frmInicioMedico
     Friend WithEvents lblApellido As Label
     Friend WithEvents lblUsuario As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents lbIDUsuario As Label
+    Friend WithEvents Label9 As Label
 End Class

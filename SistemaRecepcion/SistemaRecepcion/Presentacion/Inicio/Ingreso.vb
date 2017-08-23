@@ -35,6 +35,7 @@
             Dim tipo As String = ""
             Dim nombre_usuario As String = ""
             Dim apellido_usuario As String = ""
+            Dim id_usuario As Integer = 0
 
             If tbLogin.Text <> "" And tbPassword.Text <> "" Then
                 Dim dt As New DataTable
@@ -47,6 +48,7 @@
                     tipo = dt.Rows(0)("id_tipo")
                     nombre_usuario = dt.Rows(0)("nombre")
                     apellido_usuario = dt.Rows(0)("apellido")
+                    id_usuario = dt.Rows(0)("id_usuario")
                     limpiar()
 
                     Select Case (tipo)
@@ -57,12 +59,14 @@
                         Case 2
                             frmInicioMedico.lblUsuario.Text = nombre_usuario
                             frmInicioMedico.lblApellido.Text = apellido_usuario
+                            frmInicioMedico.lbIDUsuario.Text = id_usuario
                             frmInicioMedico.ShowDialog()
                         Case 3
                             InicioPruebas.ShowDialog()
                         Case 4
                             frmInicioRecepcion.lblUsuario.Text = nombre_usuario
                             frmInicioRecepcion.lblApellido.Text = apellido_usuario
+                            frmInicioRecepcion.lbIDUsuario.Text=id_usuario
                             frmInicioRecepcion.ShowDialog()
                         Case Else
                             MsgBox("Error en la verificacion")

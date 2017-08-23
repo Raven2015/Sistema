@@ -40,6 +40,7 @@ Partial Class frmPruebas
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.btnMostrarImpresion = New System.Windows.Forms.Button()
         Me.lknInexistente = New System.Windows.Forms.LinkLabel()
+        Me.btnEditar = New System.Windows.Forms.Button()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -159,7 +160,7 @@ Partial Class frmPruebas
         '
         'btnImpresion
         '
-        Me.btnImpresion.Location = New System.Drawing.Point(80, 191)
+        Me.btnImpresion.Location = New System.Drawing.Point(128, 200)
         Me.btnImpresion.Name = "btnImpresion"
         Me.btnImpresion.Size = New System.Drawing.Size(82, 22)
         Me.btnImpresion.TabIndex = 14
@@ -180,7 +181,7 @@ Partial Class frmPruebas
         '
         'btnMostrarImpresion
         '
-        Me.btnMostrarImpresion.Location = New System.Drawing.Point(80, 219)
+        Me.btnMostrarImpresion.Location = New System.Drawing.Point(40, 200)
         Me.btnMostrarImpresion.Name = "btnMostrarImpresion"
         Me.btnMostrarImpresion.Size = New System.Drawing.Size(82, 22)
         Me.btnMostrarImpresion.TabIndex = 16
@@ -197,11 +198,21 @@ Partial Class frmPruebas
         Me.lknInexistente.TabStop = True
         Me.lknInexistente.Text = "Datos Inexistentes"
         '
+        'btnEditar
+        '
+        Me.btnEditar.Location = New System.Drawing.Point(216, 200)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(82, 22)
+        Me.btnEditar.TabIndex = 18
+        Me.btnEditar.Text = "EDITAR"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
         'frmPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(703, 244)
+        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.lknInexistente)
         Me.Controls.Add(Me.btnMostrarImpresion)
         Me.Controls.Add(Me.dgvListado)
@@ -246,4 +257,5 @@ Partial Class frmPruebas
     Friend WithEvents dgvListado As DataGridView
     Friend WithEvents btnMostrarImpresion As Button
     Friend WithEvents lknInexistente As LinkLabel
+    Friend WithEvents btnEditar As Button
 End Class

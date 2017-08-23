@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class dvxpReporteMedico
     Inherits DevExpress.XtraBars.Ribbon.RibbonForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dvxpReporteMedico
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dvxpReporteMedico))
@@ -60,7 +60,6 @@ Partial Class dvxpReporteMedico
         Me.InsertTextBoxItem1 = New DevExpress.XtraRichEdit.UI.InsertTextBoxItem()
         Me.InsertSymbolItem1 = New DevExpress.XtraRichEdit.UI.InsertSymbolItem()
         Me.brbtnDatosPaciente = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.brbtnGuardarInforme = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
@@ -123,11 +122,16 @@ Partial Class dvxpReporteMedico
         Me.ChangeParagraphBackColorItem1 = New DevExpress.XtraRichEdit.UI.ChangeParagraphBackColorItem()
         Me.FindItem1 = New DevExpress.XtraRichEdit.UI.FindItem()
         Me.ReplaceItem1 = New DevExpress.XtraRichEdit.UI.ReplaceItem()
-        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonMiniToolbar1 = New DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(Me.components)
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.HomeRibbonPage1 = New DevExpress.XtraRichEdit.UI.HomeRibbonPage()
+        Me.ClipboardRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.ClipboardRibbonPageGroup()
+        Me.FontRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.FontRibbonPageGroup()
+        Me.ParagraphRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.ParagraphRibbonPageGroup()
+        Me.EditingRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.EditingRibbonPageGroup()
         Me.FileRibbonPage1 = New DevExpress.XtraRichEdit.UI.FileRibbonPage()
         Me.CommonRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.CommonRibbonPageGroup()
         Me.InfoRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.InfoRibbonPageGroup()
@@ -143,11 +147,6 @@ Partial Class dvxpReporteMedico
         Me.HeaderFooterRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.HeaderFooterRibbonPageGroup()
         Me.TextRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.TextRibbonPageGroup()
         Me.SymbolsRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.SymbolsRibbonPageGroup()
-        Me.HomeRibbonPage1 = New DevExpress.XtraRichEdit.UI.HomeRibbonPage()
-        Me.ClipboardRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.ClipboardRibbonPageGroup()
-        Me.FontRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.FontRibbonPageGroup()
-        Me.ParagraphRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.ParagraphRibbonPageGroup()
-        Me.EditingRibbonPageGroup1 = New DevExpress.XtraRichEdit.UI.EditingRibbonPageGroup()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.RepositoryItemTextEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.RepositoryItemAlignment1 = New DevExpress.XtraRichEdit.Design.RepositoryItemAlignment()
@@ -186,28 +185,29 @@ Partial Class dvxpReporteMedico
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbIdAtencion = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.ntIcon = New System.Windows.Forms.NotifyIcon(Me.components)
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemFontEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemRichEditFontSizeEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemAlignment1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemAlignment2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemAlignment3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemAlignment4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RichEditBarController1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.flpnFlotante, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.flpnFlotante.SuspendLayout()
-        CType(Me.dgvEstudiosARealizar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
-        Me.SuspendLayout()
+        Me.lbIDUsuario = New System.Windows.Forms.Label()
+        Me.lbIDAtencion = New System.Windows.Forms.Label()
+        CType(Me.RibbonControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemFontEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemRichEditFontSizeEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemAlignment1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemAlignment2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemAlignment3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemAlignment4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RichEditBarController1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.flpnFlotante,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.flpnFlotante.SuspendLayout
+        CType(Me.dgvEstudiosARealizar,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.dgvResultados,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupBox3.SuspendLayout
+        Me.SuspendLayout
         '
         'StylesRibbonPageGroup1
         '
-        Me.StylesRibbonPageGroup1.Glyph = CType(resources.GetObject("StylesRibbonPageGroup1.Glyph"), System.Drawing.Image)
+        Me.StylesRibbonPageGroup1.Glyph = CType(resources.GetObject("StylesRibbonPageGroup1.Glyph"),System.Drawing.Image)
         Me.StylesRibbonPageGroup1.ItemLinks.Add(Me.GalleryChangeStyleItem1)
         Me.StylesRibbonPageGroup1.Name = "StylesRibbonPageGroup1"
         '
@@ -234,12 +234,12 @@ Partial Class dvxpReporteMedico
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.UndoItem1, Me.RedoItem1, Me.FileNewItem1, Me.FileOpenItem1, Me.FileSaveItem1, Me.FileSaveAsItem1, Me.QuickPrintItem1, Me.PrintItem1, Me.PrintPreviewItem1, Me.ShowDocumentPropertiesFormItem1, Me.SwitchToSimpleViewItem1, Me.SwitchToDraftViewItem1, Me.SwitchToPrintLayoutViewItem1, Me.ToggleShowHorizontalRulerItem1, Me.ToggleShowVerticalRulerItem1, Me.ZoomOutItem1, Me.ZoomInItem1, Me.InsertPageBreakItem21, Me.InsertTableItem1, Me.InsertPictureItem1, Me.InsertFloatingPictureItem1, Me.InsertBookmarkItem1, Me.InsertHyperlinkItem1, Me.EditPageHeaderItem1, Me.EditPageFooterItem1, Me.InsertPageNumberItem1, Me.InsertPageCountItem1, Me.InsertTextBoxItem1, Me.InsertSymbolItem1, Me.brbtnDatosPaciente, Me.BarButtonItem1, Me.brbtnGuardarInforme, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.brbtnGuardaInforme, Me.brbtnBuscaInforme, Me.BarButtonItem5, Me.PasteItem1, Me.CutItem1, Me.CopyItem1, Me.PasteSpecialItem1, Me.BarButtonGroup1, Me.ChangeFontNameItem1, Me.ChangeFontSizeItem1, Me.FontSizeIncreaseItem1, Me.FontSizeDecreaseItem1, Me.BarButtonGroup2, Me.ToggleFontBoldItem1, Me.ToggleFontItalicItem1, Me.ToggleFontUnderlineItem1, Me.ToggleFontDoubleUnderlineItem1, Me.ToggleFontStrikeoutItem1, Me.ToggleFontDoubleStrikeoutItem1, Me.ToggleFontSuperscriptItem1, Me.ToggleFontSubscriptItem1, Me.BarButtonGroup3, Me.ChangeFontColorItem1, Me.ChangeFontHighlightColorItem1, Me.ChangeTextCaseItem1, Me.MakeTextUpperCaseItem1, Me.MakeTextLowerCaseItem1, Me.CapitalizeEachWordCaseItem1, Me.ToggleTextCaseItem1, Me.ClearFormattingItem1, Me.BarButtonGroup4, Me.ToggleBulletedListItem1, Me.ToggleNumberingListItem1, Me.ToggleMultiLevelListItem1, Me.BarButtonGroup5, Me.DecreaseIndentItem1, Me.IncreaseIndentItem1, Me.BarButtonGroup6, Me.ToggleParagraphAlignmentLeftItem1, Me.ToggleParagraphAlignmentCenterItem1, Me.ToggleParagraphAlignmentRightItem1, Me.ToggleParagraphAlignmentJustifyItem1, Me.ToggleShowWhitespaceItem1, Me.BarButtonGroup7, Me.ChangeParagraphLineSpacingItem1, Me.SetSingleParagraphSpacingItem1, Me.SetSesquialteralParagraphSpacingItem1, Me.SetDoubleParagraphSpacingItem1, Me.ShowLineSpacingFormItem1, Me.AddSpacingBeforeParagraphItem1, Me.RemoveSpacingBeforeParagraphItem1, Me.AddSpacingAfterParagraphItem1, Me.RemoveSpacingAfterParagraphItem1, Me.ChangeParagraphBackColorItem1, Me.GalleryChangeStyleItem1, Me.FindItem1, Me.ReplaceItem1, Me.BarButtonItem6})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.UndoItem1, Me.RedoItem1, Me.FileNewItem1, Me.FileOpenItem1, Me.FileSaveItem1, Me.FileSaveAsItem1, Me.QuickPrintItem1, Me.PrintItem1, Me.PrintPreviewItem1, Me.ShowDocumentPropertiesFormItem1, Me.SwitchToSimpleViewItem1, Me.SwitchToDraftViewItem1, Me.SwitchToPrintLayoutViewItem1, Me.ToggleShowHorizontalRulerItem1, Me.ToggleShowVerticalRulerItem1, Me.ZoomOutItem1, Me.ZoomInItem1, Me.InsertPageBreakItem21, Me.InsertTableItem1, Me.InsertPictureItem1, Me.InsertFloatingPictureItem1, Me.InsertBookmarkItem1, Me.InsertHyperlinkItem1, Me.EditPageHeaderItem1, Me.EditPageFooterItem1, Me.InsertPageNumberItem1, Me.InsertPageCountItem1, Me.InsertTextBoxItem1, Me.InsertSymbolItem1, Me.brbtnDatosPaciente, Me.brbtnGuardarInforme, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.brbtnGuardaInforme, Me.brbtnBuscaInforme, Me.BarButtonItem5, Me.PasteItem1, Me.CutItem1, Me.CopyItem1, Me.PasteSpecialItem1, Me.BarButtonGroup1, Me.ChangeFontNameItem1, Me.ChangeFontSizeItem1, Me.FontSizeIncreaseItem1, Me.FontSizeDecreaseItem1, Me.BarButtonGroup2, Me.ToggleFontBoldItem1, Me.ToggleFontItalicItem1, Me.ToggleFontUnderlineItem1, Me.ToggleFontDoubleUnderlineItem1, Me.ToggleFontStrikeoutItem1, Me.ToggleFontDoubleStrikeoutItem1, Me.ToggleFontSuperscriptItem1, Me.ToggleFontSubscriptItem1, Me.BarButtonGroup3, Me.ChangeFontColorItem1, Me.ChangeFontHighlightColorItem1, Me.ChangeTextCaseItem1, Me.MakeTextUpperCaseItem1, Me.MakeTextLowerCaseItem1, Me.CapitalizeEachWordCaseItem1, Me.ToggleTextCaseItem1, Me.ClearFormattingItem1, Me.BarButtonGroup4, Me.ToggleBulletedListItem1, Me.ToggleNumberingListItem1, Me.ToggleMultiLevelListItem1, Me.BarButtonGroup5, Me.DecreaseIndentItem1, Me.IncreaseIndentItem1, Me.BarButtonGroup6, Me.ToggleParagraphAlignmentLeftItem1, Me.ToggleParagraphAlignmentCenterItem1, Me.ToggleParagraphAlignmentRightItem1, Me.ToggleParagraphAlignmentJustifyItem1, Me.ToggleShowWhitespaceItem1, Me.BarButtonGroup7, Me.ChangeParagraphLineSpacingItem1, Me.SetSingleParagraphSpacingItem1, Me.SetSesquialteralParagraphSpacingItem1, Me.SetDoubleParagraphSpacingItem1, Me.ShowLineSpacingFormItem1, Me.AddSpacingBeforeParagraphItem1, Me.RemoveSpacingBeforeParagraphItem1, Me.AddSpacingAfterParagraphItem1, Me.RemoveSpacingAfterParagraphItem1, Me.ChangeParagraphBackColorItem1, Me.GalleryChangeStyleItem1, Me.FindItem1, Me.ReplaceItem1})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.MaxItemId = 62
         Me.RibbonControl1.MiniToolbars.Add(Me.RibbonMiniToolbar1)
         Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.FileRibbonPage1, Me.ViewRibbonPage1, Me.InsertRibbonPage1, Me.HomeRibbonPage1})
+        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.HomeRibbonPage1, Me.FileRibbonPage1, Me.ViewRibbonPage1, Me.InsertRibbonPage1})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemAlignment1, Me.RepositoryItemAlignment2, Me.RepositoryItemAlignment3, Me.RepositoryItemAlignment4, Me.RepositoryItemPictureEdit1, Me.RepositoryItemFontEdit1, Me.RepositoryItemRichEditFontSizeEdit1})
         Me.RibbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013
         Me.RibbonControl1.Size = New System.Drawing.Size(1031, 143)
@@ -270,7 +270,7 @@ Partial Class dvxpReporteMedico
         '
         'FileSaveItem1
         '
-        Me.FileSaveItem1.Caption = "Guardar"
+        Me.FileSaveItem1.Caption = "Guardar Archivo"
         Me.FileSaveItem1.Id = 5
         Me.FileSaveItem1.Name = "FileSaveItem1"
         '
@@ -421,31 +421,25 @@ Partial Class dvxpReporteMedico
         'brbtnDatosPaciente
         '
         Me.brbtnDatosPaciente.Caption = "DATOS DE PACIENTE"
-        Me.brbtnDatosPaciente.Glyph = CType(resources.GetObject("brbtnDatosPaciente.Glyph"), System.Drawing.Image)
+        Me.brbtnDatosPaciente.Glyph = CType(resources.GetObject("brbtnDatosPaciente.Glyph"),System.Drawing.Image)
         Me.brbtnDatosPaciente.Id = 34
-        Me.brbtnDatosPaciente.LargeGlyph = CType(resources.GetObject("brbtnDatosPaciente.LargeGlyph"), System.Drawing.Image)
+        Me.brbtnDatosPaciente.LargeGlyph = CType(resources.GetObject("brbtnDatosPaciente.LargeGlyph"),System.Drawing.Image)
         Me.brbtnDatosPaciente.Name = "brbtnDatosPaciente"
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "notificacion"
-        Me.BarButtonItem1.Id = 35
-        Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'brbtnGuardarInforme
         '
         Me.brbtnGuardarInforme.Caption = "Guardar Informe"
-        Me.brbtnGuardarInforme.Glyph = CType(resources.GetObject("brbtnGuardarInforme.Glyph"), System.Drawing.Image)
+        Me.brbtnGuardarInforme.Glyph = CType(resources.GetObject("brbtnGuardarInforme.Glyph"),System.Drawing.Image)
         Me.brbtnGuardarInforme.Id = 37
-        Me.brbtnGuardarInforme.LargeGlyph = CType(resources.GetObject("brbtnGuardarInforme.LargeGlyph"), System.Drawing.Image)
+        Me.brbtnGuardarInforme.LargeGlyph = CType(resources.GetObject("brbtnGuardarInforme.LargeGlyph"),System.Drawing.Image)
         Me.brbtnGuardarInforme.Name = "brbtnGuardarInforme"
         '
         'BarButtonItem2
         '
         Me.BarButtonItem2.Caption = "Buscar Informe"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
+        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"),System.Drawing.Image)
         Me.BarButtonItem2.Id = 38
-        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"),System.Drawing.Image)
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'BarButtonItem3
@@ -463,17 +457,17 @@ Partial Class dvxpReporteMedico
         'brbtnGuardaInforme
         '
         Me.brbtnGuardaInforme.Caption = "Guardar Informe"
-        Me.brbtnGuardaInforme.Glyph = CType(resources.GetObject("brbtnGuardaInforme.Glyph"), System.Drawing.Image)
+        Me.brbtnGuardaInforme.Glyph = CType(resources.GetObject("brbtnGuardaInforme.Glyph"),System.Drawing.Image)
         Me.brbtnGuardaInforme.Id = 41
-        Me.brbtnGuardaInforme.LargeGlyph = CType(resources.GetObject("brbtnGuardaInforme.LargeGlyph"), System.Drawing.Image)
+        Me.brbtnGuardaInforme.LargeGlyph = CType(resources.GetObject("brbtnGuardaInforme.LargeGlyph"),System.Drawing.Image)
         Me.brbtnGuardaInforme.Name = "brbtnGuardaInforme"
         '
         'brbtnBuscaInforme
         '
         Me.brbtnBuscaInforme.Caption = "Buscar informe"
-        Me.brbtnBuscaInforme.Glyph = CType(resources.GetObject("brbtnBuscaInforme.Glyph"), System.Drawing.Image)
+        Me.brbtnBuscaInforme.Glyph = CType(resources.GetObject("brbtnBuscaInforme.Glyph"),System.Drawing.Image)
         Me.brbtnBuscaInforme.Id = 42
-        Me.brbtnBuscaInforme.LargeGlyph = CType(resources.GetObject("brbtnBuscaInforme.LargeGlyph"), System.Drawing.Image)
+        Me.brbtnBuscaInforme.LargeGlyph = CType(resources.GetObject("brbtnBuscaInforme.LargeGlyph"),System.Drawing.Image)
         Me.brbtnBuscaInforme.Name = "brbtnBuscaInforme"
         '
         'BarButtonItem5
@@ -520,7 +514,7 @@ Partial Class dvxpReporteMedico
         '
         'RepositoryItemFontEdit1
         '
-        Me.RepositoryItemFontEdit1.AutoHeight = False
+        Me.RepositoryItemFontEdit1.AutoHeight = false
         Me.RepositoryItemFontEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemFontEdit1.Name = "RepositoryItemFontEdit1"
         '
@@ -532,7 +526,7 @@ Partial Class dvxpReporteMedico
         '
         'RepositoryItemRichEditFontSizeEdit1
         '
-        Me.RepositoryItemRichEditFontSizeEdit1.AutoHeight = False
+        Me.RepositoryItemRichEditFontSizeEdit1.AutoHeight = false
         Me.RepositoryItemRichEditFontSizeEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemRichEditFontSizeEdit1.Control = Me.rhedctContenidoReporte
         Me.RepositoryItemRichEditFontSizeEdit1.Name = "RepositoryItemRichEditFontSizeEdit1"
@@ -797,23 +791,15 @@ Partial Class dvxpReporteMedico
         Me.ReplaceItem1.Id = 60
         Me.ReplaceItem1.Name = "ReplaceItem1"
         '
-        'BarButtonItem6
-        '
-        Me.BarButtonItem6.Caption = "BUSCAR"
-        Me.BarButtonItem6.Id = 61
-        Me.BarButtonItem6.Name = "BarButtonItem6"
-        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "PACIENTE"
         '
         'RibbonPageGroup1
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.brbtnDatosPaciente)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem6)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "PACIENTE"
         '
@@ -823,6 +809,58 @@ Partial Class dvxpReporteMedico
         Me.RibbonPageGroup2.ItemLinks.Add(Me.brbtnBuscaInforme)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         Me.RibbonPageGroup2.Text = "INFORME"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.PrintItem1)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.PrintPreviewItem1)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.FileSaveItem1)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.FileOpenItem1)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.Text = "FUNCIONES"
+        '
+        'HomeRibbonPage1
+        '
+        Me.HomeRibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ClipboardRibbonPageGroup1, Me.FontRibbonPageGroup1, Me.ParagraphRibbonPageGroup1, Me.StylesRibbonPageGroup1, Me.EditingRibbonPageGroup1})
+        Me.HomeRibbonPage1.Name = "HomeRibbonPage1"
+        ReduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable
+        ReduceOperation1.Group = Me.StylesRibbonPageGroup1
+        ReduceOperation1.ItemLinkIndex = 0
+        ReduceOperation1.ItemLinksCount = 0
+        ReduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery
+        Me.HomeRibbonPage1.ReduceOperations.Add(ReduceOperation1)
+        Me.HomeRibbonPage1.Text = "FORMATO"
+        '
+        'ClipboardRibbonPageGroup1
+        '
+        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.PasteItem1)
+        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.CutItem1)
+        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.CopyItem1)
+        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.PasteSpecialItem1)
+        Me.ClipboardRibbonPageGroup1.Name = "ClipboardRibbonPageGroup1"
+        '
+        'FontRibbonPageGroup1
+        '
+        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup1)
+        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup2)
+        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup3)
+        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.ChangeTextCaseItem1)
+        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.ClearFormattingItem1)
+        Me.FontRibbonPageGroup1.Name = "FontRibbonPageGroup1"
+        '
+        'ParagraphRibbonPageGroup1
+        '
+        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup4)
+        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup5)
+        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup6)
+        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup7)
+        Me.ParagraphRibbonPageGroup1.Name = "ParagraphRibbonPageGroup1"
+        '
+        'EditingRibbonPageGroup1
+        '
+        Me.EditingRibbonPageGroup1.ItemLinks.Add(Me.FindItem1)
+        Me.EditingRibbonPageGroup1.ItemLinks.Add(Me.ReplaceItem1)
+        Me.EditingRibbonPageGroup1.Name = "EditingRibbonPageGroup1"
         '
         'FileRibbonPage1
         '
@@ -835,12 +873,8 @@ Partial Class dvxpReporteMedico
         Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.UndoItem1)
         Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.RedoItem1)
         Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.FileNewItem1)
-        Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.FileOpenItem1)
-        Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.FileSaveItem1)
         Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.FileSaveAsItem1)
         Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.QuickPrintItem1)
-        Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.PrintItem1)
-        Me.CommonRibbonPageGroup1.ItemLinks.Add(Me.PrintPreviewItem1)
         Me.CommonRibbonPageGroup1.Name = "CommonRibbonPageGroup1"
         '
         'InfoRibbonPageGroup1
@@ -883,13 +917,13 @@ Partial Class dvxpReporteMedico
         '
         'PagesRibbonPageGroup1
         '
-        Me.PagesRibbonPageGroup1.AllowTextClipping = False
+        Me.PagesRibbonPageGroup1.AllowTextClipping = false
         Me.PagesRibbonPageGroup1.ItemLinks.Add(Me.InsertPageBreakItem21)
         Me.PagesRibbonPageGroup1.Name = "PagesRibbonPageGroup1"
         '
         'TablesRibbonPageGroup1
         '
-        Me.TablesRibbonPageGroup1.AllowTextClipping = False
+        Me.TablesRibbonPageGroup1.AllowTextClipping = false
         Me.TablesRibbonPageGroup1.ItemLinks.Add(Me.InsertTableItem1)
         Me.TablesRibbonPageGroup1.Name = "TablesRibbonPageGroup1"
         '
@@ -915,97 +949,54 @@ Partial Class dvxpReporteMedico
         '
         'TextRibbonPageGroup1
         '
-        Me.TextRibbonPageGroup1.Glyph = CType(resources.GetObject("TextRibbonPageGroup1.Glyph"), System.Drawing.Image)
+        Me.TextRibbonPageGroup1.Glyph = CType(resources.GetObject("TextRibbonPageGroup1.Glyph"),System.Drawing.Image)
         Me.TextRibbonPageGroup1.ItemLinks.Add(Me.InsertTextBoxItem1)
         Me.TextRibbonPageGroup1.Name = "TextRibbonPageGroup1"
         '
         'SymbolsRibbonPageGroup1
         '
-        Me.SymbolsRibbonPageGroup1.AllowTextClipping = False
+        Me.SymbolsRibbonPageGroup1.AllowTextClipping = false
         Me.SymbolsRibbonPageGroup1.ItemLinks.Add(Me.InsertSymbolItem1)
         Me.SymbolsRibbonPageGroup1.Name = "SymbolsRibbonPageGroup1"
         '
-        'HomeRibbonPage1
-        '
-        Me.HomeRibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ClipboardRibbonPageGroup1, Me.FontRibbonPageGroup1, Me.ParagraphRibbonPageGroup1, Me.StylesRibbonPageGroup1, Me.EditingRibbonPageGroup1})
-        Me.HomeRibbonPage1.Name = "HomeRibbonPage1"
-        ReduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable
-        ReduceOperation1.Group = Me.StylesRibbonPageGroup1
-        ReduceOperation1.ItemLinkIndex = 0
-        ReduceOperation1.ItemLinksCount = 0
-        ReduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery
-        Me.HomeRibbonPage1.ReduceOperations.Add(ReduceOperation1)
-        Me.HomeRibbonPage1.Text = "Formato"
-        '
-        'ClipboardRibbonPageGroup1
-        '
-        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.PasteItem1)
-        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.CutItem1)
-        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.CopyItem1)
-        Me.ClipboardRibbonPageGroup1.ItemLinks.Add(Me.PasteSpecialItem1)
-        Me.ClipboardRibbonPageGroup1.Name = "ClipboardRibbonPageGroup1"
-        '
-        'FontRibbonPageGroup1
-        '
-        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup1)
-        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup2)
-        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup3)
-        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.ChangeTextCaseItem1)
-        Me.FontRibbonPageGroup1.ItemLinks.Add(Me.ClearFormattingItem1)
-        Me.FontRibbonPageGroup1.Name = "FontRibbonPageGroup1"
-        '
-        'ParagraphRibbonPageGroup1
-        '
-        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup4)
-        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup5)
-        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup6)
-        Me.ParagraphRibbonPageGroup1.ItemLinks.Add(Me.BarButtonGroup7)
-        Me.ParagraphRibbonPageGroup1.Name = "ParagraphRibbonPageGroup1"
-        '
-        'EditingRibbonPageGroup1
-        '
-        Me.EditingRibbonPageGroup1.ItemLinks.Add(Me.FindItem1)
-        Me.EditingRibbonPageGroup1.ItemLinks.Add(Me.ReplaceItem1)
-        Me.EditingRibbonPageGroup1.Name = "EditingRibbonPageGroup1"
-        '
         'RepositoryItemTextEdit1
         '
-        Me.RepositoryItemTextEdit1.AutoHeight = False
+        Me.RepositoryItemTextEdit1.AutoHeight = false
         Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
         '
         'RepositoryItemTextEdit2
         '
-        Me.RepositoryItemTextEdit2.AutoHeight = False
+        Me.RepositoryItemTextEdit2.AutoHeight = false
         Me.RepositoryItemTextEdit2.Name = "RepositoryItemTextEdit2"
         '
         'RepositoryItemAlignment1
         '
-        Me.RepositoryItemAlignment1.AutoHeight = False
+        Me.RepositoryItemAlignment1.AutoHeight = false
         Me.RepositoryItemAlignment1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemAlignment1.Name = "RepositoryItemAlignment1"
         '
         'RepositoryItemAlignment2
         '
-        Me.RepositoryItemAlignment2.AutoHeight = False
+        Me.RepositoryItemAlignment2.AutoHeight = false
         Me.RepositoryItemAlignment2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemAlignment2.Name = "RepositoryItemAlignment2"
         '
         'RepositoryItemAlignment3
         '
-        Me.RepositoryItemAlignment3.AutoHeight = False
+        Me.RepositoryItemAlignment3.AutoHeight = false
         Me.RepositoryItemAlignment3.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemAlignment3.Name = "RepositoryItemAlignment3"
         '
         'RepositoryItemAlignment4
         '
-        Me.RepositoryItemAlignment4.AutoHeight = False
+        Me.RepositoryItemAlignment4.AutoHeight = false
         Me.RepositoryItemAlignment4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemAlignment4.Name = "RepositoryItemAlignment4"
         '
         'RepositoryItemPictureEdit1
         '
         Me.RepositoryItemPictureEdit1.Name = "RepositoryItemPictureEdit1"
-        Me.RepositoryItemPictureEdit1.ZoomAccelerationFactor = 1.0R
+        Me.RepositoryItemPictureEdit1.ZoomAccelerationFactor = 1R
         '
         'RichEditBarController1
         '
@@ -1089,8 +1080,8 @@ Partial Class dvxpReporteMedico
         '
         'flpnFlotante
         '
-        Me.flpnFlotante.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.flpnFlotante.Appearance.Options.UseBackColor = True
+        Me.flpnFlotante.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.flpnFlotante.Appearance.Options.UseBackColor = true
         Me.flpnFlotante.Controls.Add(Me.lbEstudiosInexsistentes)
         Me.flpnFlotante.Controls.Add(Me.dgvEstudiosARealizar)
         Me.flpnFlotante.Controls.Add(Me.Label3)
@@ -1120,8 +1111,8 @@ Partial Class dvxpReporteMedico
         Me.flpnFlotante.Location = New System.Drawing.Point(707, 173)
         Me.flpnFlotante.Name = "flpnFlotante"
         Me.flpnFlotante.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Right
-        Me.flpnFlotante.Options.CloseOnOuterClick = True
-        Me.flpnFlotante.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.flpnFlotante.Options.CloseOnOuterClick = true
+        Me.flpnFlotante.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
         Me.flpnFlotante.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Bottom
         Me.flpnFlotante.OwnerControl = Me.rhedctContenidoReporte
         Me.flpnFlotante.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1130,37 +1121,37 @@ Partial Class dvxpReporteMedico
         '
         'lbEstudiosInexsistentes
         '
-        Me.lbEstudiosInexsistentes.AutoSize = True
-        Me.lbEstudiosInexsistentes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbEstudiosInexsistentes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbEstudiosInexsistentes.AutoSize = true
+        Me.lbEstudiosInexsistentes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.lbEstudiosInexsistentes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lbEstudiosInexsistentes.ForeColor = System.Drawing.Color.White
         Me.lbEstudiosInexsistentes.Location = New System.Drawing.Point(18, 459)
         Me.lbEstudiosInexsistentes.Name = "lbEstudiosInexsistentes"
         Me.lbEstudiosInexsistentes.Size = New System.Drawing.Size(275, 18)
         Me.lbEstudiosInexsistentes.TabIndex = 73
         Me.lbEstudiosInexsistentes.Text = "NO EXISTEN DATOS PARA MOSTRAR"
-        Me.lbEstudiosInexsistentes.Visible = False
+        Me.lbEstudiosInexsistentes.Visible = false
         '
         'dgvEstudiosARealizar
         '
-        Me.dgvEstudiosARealizar.AllowUserToAddRows = False
-        Me.dgvEstudiosARealizar.AllowUserToDeleteRows = False
+        Me.dgvEstudiosARealizar.AllowUserToAddRows = false
+        Me.dgvEstudiosARealizar.AllowUserToDeleteRows = false
         Me.dgvEstudiosARealizar.BackgroundColor = System.Drawing.Color.White
         Me.dgvEstudiosARealizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEstudiosARealizar.Location = New System.Drawing.Point(4, 423)
         Me.dgvEstudiosARealizar.Name = "dgvEstudiosARealizar"
-        Me.dgvEstudiosARealizar.ReadOnly = True
+        Me.dgvEstudiosARealizar.ReadOnly = true
         Me.dgvEstudiosARealizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvEstudiosARealizar.Size = New System.Drawing.Size(302, 84)
         Me.dgvEstudiosARealizar.TabIndex = 72
-        Me.dgvEstudiosARealizar.Visible = False
+        Me.dgvEstudiosARealizar.Visible = false
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(89, 404)
         Me.Label3.Name = "Label3"
@@ -1178,23 +1169,23 @@ Partial Class dvxpReporteMedico
         Me.btnInsertar.Size = New System.Drawing.Size(75, 23)
         Me.btnInsertar.TabIndex = 70
         Me.btnInsertar.Text = "INSERTAR"
-        Me.btnInsertar.UseVisualStyleBackColor = True
+        Me.btnInsertar.UseVisualStyleBackColor = true
         '
         'tbInstitucion
         '
         Me.tbInstitucion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbInstitucion.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbInstitucion.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbInstitucion.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbInstitucion.Location = New System.Drawing.Point(127, 377)
         Me.tbInstitucion.Name = "tbInstitucion"
-        Me.tbInstitucion.ReadOnly = True
+        Me.tbInstitucion.ReadOnly = true
         Me.tbInstitucion.Size = New System.Drawing.Size(154, 22)
         Me.tbInstitucion.TabIndex = 68
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.AutoSize = true
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(41, 382)
         Me.Label2.Name = "Label2"
@@ -1204,9 +1195,9 @@ Partial Class dvxpReporteMedico
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(73, 11)
         Me.Label1.Name = "Label1"
@@ -1218,17 +1209,17 @@ Partial Class dvxpReporteMedico
         '
         Me.tbMedicoDestinatario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbMedicoDestinatario.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbMedicoDestinatario.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbMedicoDestinatario.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbMedicoDestinatario.Location = New System.Drawing.Point(127, 350)
         Me.tbMedicoDestinatario.Name = "tbMedicoDestinatario"
-        Me.tbMedicoDestinatario.ReadOnly = True
+        Me.tbMedicoDestinatario.ReadOnly = true
         Me.tbMedicoDestinatario.Size = New System.Drawing.Size(154, 22)
         Me.tbMedicoDestinatario.TabIndex = 65
         '
         'Label15
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.AutoSize = true
+        Me.Label15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
         Me.Label15.Location = New System.Drawing.Point(14, 355)
         Me.Label15.Name = "Label15"
@@ -1238,8 +1229,8 @@ Partial Class dvxpReporteMedico
         '
         'Label16
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.AutoSize = true
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
         Me.Label16.Location = New System.Drawing.Point(36, 328)
         Me.Label16.Name = "Label16"
@@ -1251,10 +1242,10 @@ Partial Class dvxpReporteMedico
         '
         Me.tbMedicoRemitente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbMedicoRemitente.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbMedicoRemitente.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbMedicoRemitente.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbMedicoRemitente.Location = New System.Drawing.Point(127, 323)
         Me.tbMedicoRemitente.Name = "tbMedicoRemitente"
-        Me.tbMedicoRemitente.ReadOnly = True
+        Me.tbMedicoRemitente.ReadOnly = true
         Me.tbMedicoRemitente.Size = New System.Drawing.Size(154, 22)
         Me.tbMedicoRemitente.TabIndex = 63
         '
@@ -1262,17 +1253,17 @@ Partial Class dvxpReporteMedico
         '
         Me.tbSexo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbSexo.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbSexo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbSexo.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbSexo.Location = New System.Drawing.Point(127, 296)
         Me.tbSexo.Name = "tbSexo"
-        Me.tbSexo.ReadOnly = True
+        Me.tbSexo.ReadOnly = true
         Me.tbSexo.Size = New System.Drawing.Size(154, 22)
         Me.tbSexo.TabIndex = 61
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.AutoSize = true
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(86, 301)
         Me.Label12.Name = "Label12"
@@ -1282,8 +1273,8 @@ Partial Class dvxpReporteMedico
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.AutoSize = true
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(70, 274)
         Me.Label11.Name = "Label11"
@@ -1295,17 +1286,17 @@ Partial Class dvxpReporteMedico
         '
         Me.tbcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbcodigo.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbcodigo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbcodigo.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbcodigo.Location = New System.Drawing.Point(127, 269)
         Me.tbcodigo.Name = "tbcodigo"
-        Me.tbcodigo.ReadOnly = True
+        Me.tbcodigo.ReadOnly = true
         Me.tbcodigo.Size = New System.Drawing.Size(154, 22)
         Me.tbcodigo.TabIndex = 59
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.AutoSize = true
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(53, 193)
         Me.Label10.Name = "Label10"
@@ -1317,10 +1308,10 @@ Partial Class dvxpReporteMedico
         '
         Me.tbApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbApellidos.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbApellidos.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbApellidos.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbApellidos.Location = New System.Drawing.Point(127, 188)
         Me.tbApellidos.Name = "tbApellidos"
-        Me.tbApellidos.ReadOnly = True
+        Me.tbApellidos.ReadOnly = true
         Me.tbApellidos.Size = New System.Drawing.Size(154, 22)
         Me.tbApellidos.TabIndex = 55
         '
@@ -1328,17 +1319,17 @@ Partial Class dvxpReporteMedico
         '
         Me.tbCI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbCI.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbCI.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCI.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbCI.Location = New System.Drawing.Point(127, 242)
         Me.tbCI.Name = "tbCI"
-        Me.tbCI.ReadOnly = True
+        Me.tbCI.ReadOnly = true
         Me.tbCI.Size = New System.Drawing.Size(154, 22)
         Me.tbCI.TabIndex = 57
         '
         'Label13
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.AutoSize = true
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(102, 247)
         Me.Label13.Name = "Label13"
@@ -1348,8 +1339,8 @@ Partial Class dvxpReporteMedico
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.AutoSize = true
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(61, 166)
         Me.Label9.Name = "Label9"
@@ -1361,17 +1352,17 @@ Partial Class dvxpReporteMedico
         '
         Me.tbNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbNombres.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbNombres.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbNombres.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbNombres.Location = New System.Drawing.Point(127, 161)
         Me.tbNombres.Name = "tbNombres"
-        Me.tbNombres.ReadOnly = True
+        Me.tbNombres.ReadOnly = true
         Me.tbNombres.Size = New System.Drawing.Size(154, 22)
         Me.tbNombres.TabIndex = 51
         '
         'Label14
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.AutoSize = true
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
         Me.Label14.Location = New System.Drawing.Point(84, 220)
         Me.Label14.Name = "Label14"
@@ -1383,35 +1374,35 @@ Partial Class dvxpReporteMedico
         '
         Me.tbedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbedad.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbedad.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbedad.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbedad.Location = New System.Drawing.Point(127, 215)
         Me.tbedad.Name = "tbedad"
-        Me.tbedad.ReadOnly = True
+        Me.tbedad.ReadOnly = true
         Me.tbedad.Size = New System.Drawing.Size(154, 22)
         Me.tbedad.TabIndex = 53
         '
         'lbDatosInexistentes
         '
-        Me.lbDatosInexistentes.AutoSize = True
-        Me.lbDatosInexistentes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbDatosInexistentes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDatosInexistentes.AutoSize = true
+        Me.lbDatosInexistentes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
+        Me.lbDatosInexistentes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lbDatosInexistentes.ForeColor = System.Drawing.Color.White
         Me.lbDatosInexistentes.Location = New System.Drawing.Point(15, 111)
         Me.lbDatosInexistentes.Name = "lbDatosInexistentes"
         Me.lbDatosInexistentes.Size = New System.Drawing.Size(275, 18)
         Me.lbDatosInexistentes.TabIndex = 50
         Me.lbDatosInexistentes.Text = "NO EXISTEN DATOS PARA MOSTRAR"
-        Me.lbDatosInexistentes.Visible = False
+        Me.lbDatosInexistentes.Visible = false
         '
         'dgvResultados
         '
-        Me.dgvResultados.AllowUserToAddRows = False
-        Me.dgvResultados.AllowUserToDeleteRows = False
+        Me.dgvResultados.AllowUserToAddRows = false
+        Me.dgvResultados.AllowUserToDeleteRows = false
         Me.dgvResultados.BackgroundColor = System.Drawing.Color.White
         Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultados.Location = New System.Drawing.Point(3, 86)
         Me.dgvResultados.Name = "dgvResultados"
-        Me.dgvResultados.ReadOnly = True
+        Me.dgvResultados.ReadOnly = true
         Me.dgvResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvResultados.Size = New System.Drawing.Size(303, 71)
         Me.dgvResultados.TabIndex = 34
@@ -1426,12 +1417,12 @@ Partial Class dvxpReporteMedico
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(260, 45)
         Me.GroupBox3.TabIndex = 49
-        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.TabStop = false
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.AutoSize = true
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label8.Location = New System.Drawing.Point(6, 17)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(83, 16)
@@ -1442,7 +1433,7 @@ Partial Class dvxpReporteMedico
         '
         Me.tbIdAtencion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbIdAtencion.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.tbIdAtencion.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbIdAtencion.Font = New System.Drawing.Font("Tahoma", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbIdAtencion.Location = New System.Drawing.Point(95, 14)
         Me.tbIdAtencion.Name = "tbIdAtencion"
         Me.tbIdAtencion.Size = New System.Drawing.Size(127, 22)
@@ -1456,53 +1447,67 @@ Partial Class dvxpReporteMedico
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.FlatAppearance.BorderSize = 0
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(228, 15)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(20, 20)
         Me.btnBuscar.TabIndex = 31
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.btnBuscar.UseVisualStyleBackColor = false
         '
-        'ntIcon
+        'lbIDUsuario
         '
-        Me.ntIcon.Icon = CType(resources.GetObject("ntIcon.Icon"), System.Drawing.Icon)
-        Me.ntIcon.Text = "AVISO"
-        Me.ntIcon.Visible = True
+        Me.lbIDUsuario.AutoSize = true
+        Me.lbIDUsuario.Location = New System.Drawing.Point(29, 173)
+        Me.lbIDUsuario.Name = "lbIDUsuario"
+        Me.lbIDUsuario.Size = New System.Drawing.Size(56, 13)
+        Me.lbIDUsuario.TabIndex = 6
+        Me.lbIDUsuario.Text = "id_usuario"
+        '
+        'lbIDAtencion
+        '
+        Me.lbIDAtencion.AutoSize = true
+        Me.lbIDAtencion.Location = New System.Drawing.Point(29, 189)
+        Me.lbIDAtencion.Name = "lbIDAtencion"
+        Me.lbIDAtencion.Size = New System.Drawing.Size(13, 13)
+        Me.lbIDAtencion.TabIndex = 8
+        Me.lbIDAtencion.Text = "0"
         '
         'dvxpReporteMedico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1031, 729)
+        Me.Controls.Add(Me.lbIDAtencion)
+        Me.Controls.Add(Me.lbIDUsuario)
         Me.Controls.Add(Me.flpnFlotante)
         Me.Controls.Add(Me.rhedctContenidoReporte)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "dvxpReporteMedico"
         Me.Ribbon = Me.RibbonControl1
         Me.Text = "REPORTE MÉDICO"
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemFontEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemRichEditFontSizeEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemAlignment1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemAlignment2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemAlignment3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemAlignment4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RichEditBarController1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.flpnFlotante, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.flpnFlotante.ResumeLayout(False)
-        Me.flpnFlotante.PerformLayout()
-        CType(Me.dgvEstudiosARealizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.RibbonControl1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemFontEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemRichEditFontSizeEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemAlignment1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemAlignment2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemAlignment3,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemAlignment4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RichEditBarController1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.flpnFlotante,System.ComponentModel.ISupportInitialize).EndInit
+        Me.flpnFlotante.ResumeLayout(false)
+        Me.flpnFlotante.PerformLayout
+        CType(Me.dgvEstudiosARealizar,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.dgvResultados,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox3.ResumeLayout(false)
+        Me.GroupBox3.PerformLayout
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
 
     Friend WithEvents rhedctContenidoReporte As DevExpress.XtraRichEdit.RichEditControl
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
@@ -1586,8 +1591,6 @@ Partial Class dvxpReporteMedico
     Friend WithEvents lbEstudiosInexsistentes As Label
     Friend WithEvents dgvEstudiosARealizar As DataGridView
     Friend WithEvents Label3 As Label
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents ntIcon As NotifyIcon
     Friend WithEvents brbtnGuardarInforme As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
@@ -1664,5 +1667,7 @@ Partial Class dvxpReporteMedico
     Friend WithEvents RepositoryItemAlignment3 As DevExpress.XtraRichEdit.Design.RepositoryItemAlignment
     Friend WithEvents RepositoryItemAlignment4 As DevExpress.XtraRichEdit.Design.RepositoryItemAlignment
     Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
-    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents lbIDUsuario As Label
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents lbIDAtencion As Label
 End Class

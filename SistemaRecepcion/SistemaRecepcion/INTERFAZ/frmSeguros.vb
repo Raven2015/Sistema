@@ -1,31 +1,14 @@
 ﻿Imports System.ComponentModel
+Public Class frmSeguros
 
-Public Class frmCentral
     Dim precio_reporte As Integer = 0
     Dim idAtencionActual As Integer = 0
     Dim idClienteActual As Integer = 0
     Dim indicadorAtencion As Integer = 0
     Dim idDetalleActual As Integer = 0
 
-    Private Sub frmCentral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DsListaEntidades.listaEntidad' table. You can move, or remove it, as needed.
-        Me.ListaEntidadTableAdapter.Fill(Me.DsListaEntidades.listaEntidad)
-        'TODO: This line of code loads data into the 'DsPreliminar.medico' table. You can move, or remove it, as needed.
-        Me.MedicoTableAdapter.Fill(Me.DsPreliminar.medico)
-        limpiar()
-        generar_cliente()
-        generar_atencion()
-        generar_detalle()
-        mostrar()
-    End Sub
-
-
-    '$$$$$$$$$$$$$$$$$$$$$$$    FUNCIONES PARA GENERAR ESPACIOS EN BLANCO DE CADA CLASE NECESARIA    $$$$$$$$$$$$$$$$$$$$$$$
-
-    '---------CLIENTE
-    '---------ATENCION
-    '---------DETALLE
-
+    'REGISTRO DE CLIENTE
+    '---Generar Cliente
     Public Sub generar_cliente()
         Try
             Dim dts As New vCliente
@@ -37,6 +20,8 @@ Public Class frmCentral
         End Try
     End Sub
 
+    'REGISTRO DE ATENCION
+    '---Generar Atención
     Public Sub generar_atencion()
         Try
             Dim dts As New vAtencion
@@ -48,6 +33,10 @@ Public Class frmCentral
         End Try
     End Sub
 
+
+
+    'REGISTRO DE DETALLES
+    '---Generar Detalle
     Public Sub generar_detalle()
         Try
             Dim dts As New vDetalleAtencion
@@ -58,15 +47,6 @@ Public Class frmCentral
             MsgBox(ex.Message)
         End Try
     End Sub
-
-
-
-    'ESTE FORMULARIO CONTENDRA LA INFORMACION DE TRES CLASES
-    'CLIENTE
-    'ATENCION
-    'DETALLE DE ATENCION
-    'Por lo cual sera bastante extenso, la primera parte contendra todo lo referente al cliente
-
 
     '$$$$$$$$$$$$$$$$$$$$$$$    CLIENTE    $$$$$$$$$$$$$$$$$$$$$$$
 
@@ -90,7 +70,7 @@ Public Class frmCentral
                 dts.ginstitucion = cbxInstitucion.Text
                 dts.grazon_social = tbRazonSocial.Text
                 dts.gnit = tbNIT.Text
-                dts.gtelefono = tbTelefono.Text
+                dts.gtelefono = ""
                 dts.gcelular = tbCelular.Text
                 dts.gsexo = cbSexo.Text
                 dts.gci = tbci.Text
@@ -99,7 +79,6 @@ Public Class frmCentral
                 If func.insertar(dts) Then
                     'MessageBox.Show("Paciente registrado correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Debug.Write("Registro de paciente OK :)")
-
                 Else
                     MessageBox.Show("El paciente no pudo ser registrado. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -118,11 +97,14 @@ Public Class frmCentral
         tbApellidos.Text = ""
         tbEdad.Text = "0"
         tbDireccion.Text = ""
-        tbTelefono.Text = ""
+
+        '///////////////////////////MODIFICADO//////////////////
+        'tbTelefono.Text = ""
         tbCelular.Text = ""
         tbCodigoAsegurado.Text = ""
         tbRazonSocial.Text = ""
-        cbxInstitucion.SelectedIndex = 0
+        '///////////////////////////MODIFICADO//////////////////
+        'cbxInstitucion.SelectedIndex = 0
         cbSexo.SelectedIndex = 0
         tbci.Text = ""
         tbNIT.Text = ""
@@ -133,7 +115,8 @@ Public Class frmCentral
         pnListaEstudios.Visible = False
         tbMedicoRemitente.Text = ""
         Debug.Write("Limpieza OK :)")
-        tbFechaEstudioVP.Text = Date.Now
+        '///////////////////////////MODIFICADO//////////////////
+        'tbFechaEstudioVP.Text = Date.Now
         'tbInstitucion.Enabled = False
     End Sub
 
@@ -162,12 +145,13 @@ Public Class frmCentral
             Años = Años - 1
         End If
 
-        'TuEdad = MsgBox("Tenes " & Format(Años, "00" & " Años") & Format(Meses, "00" & " Meses ") & Format(Dias, "00" & " Dias"))
+        'TuEdad = MsgBox("Tienes " & Format(Años, "00" & " Años") & Format(Meses, "00" & " Meses ") & Format(Dias, "00" & " Dias"))
         Edad = Años
         Return Edad
     End Function
 
 
+    '----------REVISAR-------------
 
     '-------------- Metodos de Validacion --------------
     '-Nombres
@@ -255,7 +239,8 @@ Public Class frmCentral
             nacimiento = TuEdad(dtpFechaNacimiento.Value, Date.Now)
             'Se coloca el valor de nacimiento en el campo EDAD
             tbEdad.Text = nacimiento
-            tbEdadVP.Text = nacimiento
+            '///////////////////////////MODIFICADO//////////////////
+            'tbEdadVP.Text = nacimiento
         Else
             'En caso de que sea igual se muestra el icono de error
             Me.errorIcono.SetError(sender, "Debe seleccionar una fecha distinta a la actual por favor")
@@ -333,7 +318,7 @@ Public Class frmCentral
             ds.Tables.Add(dt.Copy)
             Dim dv As New DataView(ds.Tables(0))
 
-            dv.RowFilter = "entidad" & " like '" & tbInstitucion.Text & "%' and " & cbCampo.Text & " like '%" & tbBuscar.Text & "%'"
+            dv.RowFilter = "entidad" & " like '" & cbxInstitucion.Text & "%' and " & cbCampo.Text & " like '%" & tbBuscar.Text & "%'"
             'dv.RowFilter = cbCampo.Text & " like '" & tbBuscar.Text & "%'"
 
             If dv.Count <> 0 Then
@@ -574,7 +559,7 @@ Public Class frmCentral
 
 
     '$$$$$$$$$$$$$$$$$$$$$$$    BOTON INSERTAR ESTUDIOS    $$$$$$$$$$$$$$$$$$$$$$$
-    Private Sub btnInsertarEstudios_Click(sender As Object, e As EventArgs) Handles btnInsertarEstudios.Click
+    Private Sub btnInsertarEstudios_Click(sender As Object, e As EventArgs) Handles btnDetalle.Click
         'insertarCliente()
         If btnDatosAtencion.Visible = True Then
             MsgBox("Debe llenar los datos de Atencion Primero")
@@ -593,6 +578,9 @@ Public Class frmCentral
             'limpiar()
             'limpiarEstudios()
             'limpiar_atencion()
+
+            pnDatosAtencion.Visible = False
+            pnListaEstudios.Visible = True
         End If
     End Sub
 
@@ -625,53 +613,59 @@ Public Class frmCentral
 
     '$$$$$$$$$$$$$$$$$$$$$$$    CAMBIOS AUTOMATICOS EN LA INTERFAZ    $$$$$$$$$$$$$$$$$$$$$$$
     Private Sub tbNombres_TextChanged(sender As Object, e As EventArgs) Handles tbNombres.TextChanged
-        tbNombresVP.Text = tbNombres.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbNombresVP.Text = tbNombres.Text
     End Sub
 
     Private Sub tbApellidos_TextChanged(sender As Object, e As EventArgs) Handles tbApellidos.TextChanged
-        tbApellidoVP.Text = tbApellidos.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbApellidoVP.Text = tbApellidos.Text
     End Sub
 
     Private Sub tbDireccion_TextChanged(sender As Object, e As EventArgs) Handles tbDireccion.TextChanged
+        '///////////////////////////MODIFICADO//////////////////
         'tbDireccionVP.Text = tbDireccion.Text
     End Sub
 
     Private Sub tbci_TextChanged(sender As Object, e As EventArgs) Handles tbci.TextChanged
-        tbCiVP.Text = tbci.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbCiVP.Text = tbci.Text
     End Sub
 
     Private Sub cbSexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSexo.SelectedIndexChanged
-        tbSexoVP.Text = cbSexo.Text
-    End Sub
-
-    Private Sub tbTelefono_TextChanged(sender As Object, e As EventArgs) Handles tbTelefono.TextChanged
-        tbTelefonoVP.Text = tbTelefono.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbSexoVP.Text = cbSexo.Text
     End Sub
 
     Private Sub tbCelular_TextChanged(sender As Object, e As EventArgs) Handles tbCelular.TextChanged
-        tbCelularVP.Text = tbCelular.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbCelularVP.Text = tbCelular.Text
     End Sub
 
     Private Sub tbMedicoRemitente_TextChanged(sender As Object, e As EventArgs) Handles tbMedicoRemitente.TextChanged
-        tbMedicoRemitenteVP.Text = tbMedicoRemitente.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbMedicoRemitenteVP.Text = tbMedicoRemitente.Text
     End Sub
 
     Private Sub dtpFechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaNacimiento.ValueChanged
-        tbFechaNacimientoVP.Text = dtpFechaNacimiento.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbFechaNacimientoVP.Text = dtpFechaNacimiento.Text
     End Sub
 
-    Private Sub dtpFechaAtencion_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaAtencion.ValueChanged
-        tbFechaEstudioVP.Text = dtpFechaAtencion.Text
+    Private Sub dtpFechaAtencion_ValueChanged(sender As Object, e As EventArgs)
+        '///////////////////////////MODIFICADO//////////////////
+        ' tbFechaEstudioVP.Text = dtpFechaAtencion.Text
     End Sub
 
     Private Sub tbNIT_TextChanged(sender As Object, e As EventArgs) Handles tbNIT.TextChanged
-        tbNITVP.Text = tbNIT.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbNITVP.Text = tbNIT.Text
     End Sub
 
     Private Sub tbCodigoAsegurado_TextChanged(sender As Object, e As EventArgs) Handles tbCodigoAsegurado.TextChanged
-        tbCodAsegVP.Text = tbCodigoAsegurado.Text
+        '///////////////////////////MODIFICADO//////////////////
+        'tbCodAsegVP.Text = tbCodigoAsegurado.Text
     End Sub
-
 
 
     '-------------------Boton IMPRIMIR-----------------------
@@ -679,16 +673,16 @@ Public Class frmCentral
         'editar_Atencion() 'Cuando el usuario presione el boton imprimir se guardan los datos de la atencion.
         Debug.Write("Valor de IDAtencion>> " & idAtencionActual)
 
-        'insertar_impresion()
+        insertar_impresion()
 
         'Se registra la impresion en en LOG
-        'modLOG.LOG(tbIdUsuario.Text)
+        modLOG.LOG(tbIdUsuario.Text)
 
         frmReporteModificado.tbID.Text = idAtencionActual
         'POSTERIORMENTE SE LLAMA A LA CLASE frmREPORTE PARA IMPRIMIR EL REPORTE DE ATENCION
         frmReporteModificado.ShowDialog()
-    End Sub
 
+    End Sub
 
 
     '---------METODOS PARA OBTENER DATOS DE LA IMPRESION DE CADA REPORTE----------------
@@ -700,7 +694,6 @@ Public Class frmCentral
             Dim resultado As Boolean
             resultado = func.insertar_impresion(idAtencionActual, tbIdUsuario.Text)
             'dgvListado.Columns.Item("Eliminar").Visible = False
-
             If resultado = True Then
                 Debug.Print("Registro Insertado Correctamente")
             Else
@@ -712,21 +705,24 @@ Public Class frmCentral
         End Try
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        frmListaFlotante.tbCI.Text = tbci.Text
-        limpiar()
-        frmListaFlotante.ShowDialog()
-    End Sub
+
+    '///////////////////////////MODIFICADO//////////////////
+    'Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    '    frmListaFlotante.tbCI.Text = tbci.Text
+    '    limpiar()
+    '    frmListaFlotante.ShowDialog()
+    'End Sub
 
     '-------------BOTON  DATOS DE ATENCION----------
     Private Sub btnDatosAtencion_Click(sender As Object, e As EventArgs) Handles btnDatosAtencion.Click
         If Me.ValidateChildren = True And tbNombres.Text <> "" And tbApellidos.Text <> "" And tbCelular.Text <> "" And tbci.Text <> "" And cbSexo.Text <> "" And tbCodigoAsegurado.Text <> "" And tbNIT.Text <> "" Then
             crearCliente()
+            pnDatosPaciente.Visible = False
+            pnDatosAtencion.Visible = True
         Else
             MsgBox("ALGUNOS CAMPOS ESTAN EN BLANCO. INSERTE TODOS LOS DATOS Y VUELVA A INTENTAR POR FAVOR")
         End If
     End Sub
-
 
     Public Sub crearCliente()
         Try
@@ -750,10 +746,13 @@ Public Class frmCentral
             tbCodigoAsegurado.Text = ""
         End If
     End Sub
-    Private Sub cbxInstitucion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxInstitucion.SelectedIndexChanged
-        'textoCodigoAsegurado()
-        tbEntidadSet.Text = cbxInstitucion.Text
-    End Sub
+
+
+    '///////////////////////////MODIFICADO//////////////////
+    'Private Sub cbxInstitucion_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    'textoCodigoAsegurado()
+    '    tbEntidadSet.Text = cbxInstitucion.Text
+    'End Sub
 
 
     '-----------Metodo para limpiar el datagridview de listados
@@ -769,8 +768,42 @@ Public Class frmCentral
         End Try
     End Sub
 
-    Private Sub CLIENTEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLIENTEToolStripMenuItem.Click
-        dlgEditarCliente.ShowDialog()
+
+    Private Sub frmSeguros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DsPreliminar.medico' table. You can move, or remove it, as needed.
+        Me.MedicoTableAdapter.Fill(Me.DsPreliminar.medico)
+        dtpFechaAtencion.Text = Date.Now
+        limpiar()
+        generar_cliente()
+        generar_atencion()
+        generar_detalle()
+        mostrar()
+    End Sub
+
+
+    Dim px, py As Integer
+    Dim mover As Boolean
+
+    Private Sub btnMover_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        mover = False
+    End Sub
+
+    Private Sub btnMover_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+        If mover Then
+            Me.Location = Me.PointToScreen(New Point(Me.MousePosition.X - Me.Location.X - px, Me.MousePosition.Y - Me.Location.Y - py))
+        End If
+    End Sub
+
+    Private Sub btCerrar_Click(sender As Object, e As EventArgs) Handles btCerrar.Click
+        pnDatosAtencion.Visible=False
+        pnListaEstudios.Visible=False
+        pnDatosPaciente.Visible=True
+        Me.Close()
+    End Sub
+
+    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
+        px = e.X
+        py = e.Y
+        mover = True
     End Sub
 End Class
-

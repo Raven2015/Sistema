@@ -57,4 +57,27 @@ Public Class fImpresion
             desconectado()
         End Try
     End Function
+
+    Public Function editar_impresion(ByVal id_atencion As Integer, ByVal id_usuario As Integer)
+        Try
+            conectado()
+            cmd = New SqlCommand("editar_impresion")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = cnn
+
+            cmd.Parameters.AddWithValue("@id_atencion", id_atencion)
+            cmd.Parameters.AddWithValue("@id_usuario", id_usuario)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            desconectado()
+        End Try
+    End Function
 End Class

@@ -36,20 +36,20 @@ Partial Class dlgBuscadorInforme
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblCI = New System.Windows.Forms.Label()
-        Me.lblNombre = New System.Windows.Forms.Label()
-        Me.lblApellido = New System.Windows.Forms.Label()
-        Me.lblFecha = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.lblAutor = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblAtencion = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblCI = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblApellido = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -133,6 +133,7 @@ Partial Class dlgBuscadorInforme
         '
         Me.tbLogin.Location = New System.Drawing.Point(76, 10)
         Me.tbLogin.Name = "tbLogin"
+        Me.tbLogin.ReadOnly = True
         Me.tbLogin.Size = New System.Drawing.Size(126, 20)
         Me.tbLogin.TabIndex = 10
         '
@@ -220,124 +221,6 @@ Partial Class dlgBuscadorInforme
         Me.Panel2.Size = New System.Drawing.Size(986, 58)
         Me.Panel2.TabIndex = 26
         '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.tbLogin)
-        Me.Panel3.Controls.Add(Me.btnBuscar)
-        Me.Panel3.Controls.Add(Me.tbApellido)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.tbNombre)
-        Me.Panel3.Controls.Add(Me.tbCI)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(986, 40)
-        Me.Panel3.TabIndex = 27
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(211, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "APELLIDOS"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(12, 18)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(178, 19)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "DATOS DEL PACIENTE"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(211, 33)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 13)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "NOMBRES"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(451, 9)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 13)
-        Me.Label8.TabIndex = 3
-        Me.Label8.Text = "CI"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblCI
-        '
-        Me.lblCI.AutoSize = True
-        Me.lblCI.ForeColor = System.Drawing.Color.White
-        Me.lblCI.Location = New System.Drawing.Point(527, 9)
-        Me.lblCI.Name = "lblCI"
-        Me.lblCI.Size = New System.Drawing.Size(58, 13)
-        Me.lblCI.TabIndex = 6
-        Me.lblCI.Text = "NINGUNO"
-        '
-        'lblNombre
-        '
-        Me.lblNombre.AutoSize = True
-        Me.lblNombre.ForeColor = System.Drawing.Color.White
-        Me.lblNombre.Location = New System.Drawing.Point(300, 33)
-        Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(58, 13)
-        Me.lblNombre.TabIndex = 5
-        Me.lblNombre.Text = "NINGUNO"
-        '
-        'lblApellido
-        '
-        Me.lblApellido.AutoSize = True
-        Me.lblApellido.ForeColor = System.Drawing.Color.White
-        Me.lblApellido.Location = New System.Drawing.Point(300, 9)
-        Me.lblApellido.Name = "lblApellido"
-        Me.lblApellido.Size = New System.Drawing.Size(58, 13)
-        Me.lblApellido.TabIndex = 4
-        Me.lblApellido.Text = "NINGUNO"
-        '
-        'lblFecha
-        '
-        Me.lblFecha.AutoSize = True
-        Me.lblFecha.ForeColor = System.Drawing.Color.White
-        Me.lblFecha.Location = New System.Drawing.Point(527, 33)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(58, 13)
-        Me.lblFecha.TabIndex = 8
-        Me.lblFecha.Text = "NINGUNO"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(451, 33)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(47, 13)
-        Me.Label13.TabIndex = 7
-        Me.Label13.Text = "FECHA"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lblAutor
         '
         Me.lblAutor.AutoSize = True
@@ -381,6 +264,124 @@ Partial Class dlgBuscadorInforme
         Me.Label12.TabIndex = 9
         Me.Label12.Text = "ATENCIÓN"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.ForeColor = System.Drawing.Color.White
+        Me.lblFecha.Location = New System.Drawing.Point(527, 33)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(58, 13)
+        Me.lblFecha.TabIndex = 8
+        Me.lblFecha.Text = "NINGUNO"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(451, 33)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(47, 13)
+        Me.Label13.TabIndex = 7
+        Me.Label13.Text = "FECHA"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblCI
+        '
+        Me.lblCI.AutoSize = True
+        Me.lblCI.ForeColor = System.Drawing.Color.White
+        Me.lblCI.Location = New System.Drawing.Point(527, 9)
+        Me.lblCI.Name = "lblCI"
+        Me.lblCI.Size = New System.Drawing.Size(58, 13)
+        Me.lblCI.TabIndex = 6
+        Me.lblCI.Text = "NINGUNO"
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(300, 33)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 13)
+        Me.lblNombre.TabIndex = 5
+        Me.lblNombre.Text = "NINGUNO"
+        '
+        'lblApellido
+        '
+        Me.lblApellido.AutoSize = True
+        Me.lblApellido.ForeColor = System.Drawing.Color.White
+        Me.lblApellido.Location = New System.Drawing.Point(300, 9)
+        Me.lblApellido.Name = "lblApellido"
+        Me.lblApellido.Size = New System.Drawing.Size(58, 13)
+        Me.lblApellido.TabIndex = 4
+        Me.lblApellido.Text = "NINGUNO"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(451, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 13)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "CI"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(211, 33)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(68, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "NOMBRES"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(12, 18)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(178, 19)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "DATOS DEL PACIENTE"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(211, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(75, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "APELLIDOS"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.tbLogin)
+        Me.Panel3.Controls.Add(Me.btnBuscar)
+        Me.Panel3.Controls.Add(Me.tbApellido)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.tbNombre)
+        Me.Panel3.Controls.Add(Me.tbCI)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(986, 40)
+        Me.Panel3.TabIndex = 27
         '
         'dlgBuscadorInforme
         '

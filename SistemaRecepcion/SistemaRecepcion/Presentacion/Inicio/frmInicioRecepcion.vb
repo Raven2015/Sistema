@@ -5,6 +5,8 @@
     End Sub
 
     Private Sub btnCentral_Click(sender As Object, e As EventArgs) Handles btnCentral.Click
+        'Se envia el valor de idUsuario al Formulario Central 
+        frmCentral.tbIdUsuario.Text = lbIDUsuario.Text
         frmCentral.ShowDialog()
     End Sub
 
@@ -19,28 +21,34 @@
     End Sub
 
     Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
         frmMenuReportes.ShowDialog()
     End Sub
 
     Private Sub btnArqueos_Click(sender As Object, e As EventArgs) Handles btnArqueos.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
         frmArqueos.ShowDialog()
     End Sub
 
     Private Sub btnComprobante_Click(sender As Object, e As EventArgs) Handles btnComprobante.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
         frmComprobantesCaja.ShowDialog()
     End Sub
 
     Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
         frmCotizacion.ShowDialog()
         frmCotizacion.TopMost = True
     End Sub
 
     Private Sub btnModif_Click(sender As Object, e As EventArgs) Handles btnModif.Click
-        Me.WindowState = FormWindowState.Minimized
+        'Me.WindowState = FormWindowState.Minimized
+        frmModificaciones.tbIdUsuarioEditar.Text = lbIDUsuario.Text
         frmModificaciones.ShowDialog()
+    End Sub
+
+    Private Sub btnSeguros_Click(sender As Object, e As EventArgs)
+        frmSeguros.tbIdUsuario.Text = lbIDUsuario.Text
+        frmSeguros.ShowDialog()
     End Sub
 End Class

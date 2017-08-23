@@ -41,6 +41,10 @@ Partial Class InicioPruebas
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.btnRptModificado = New System.Windows.Forms.Button()
+        Me.btnReporteDuplicado = New System.Windows.Forms.Button()
+        Me.btnReporteOri = New System.Windows.Forms.Button()
+        Me.btnLOG = New System.Windows.Forms.Button()
+        Me.btnSeguro = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnReporteCaja
@@ -214,11 +218,51 @@ Partial Class InicioPruebas
         Me.btnRptModificado.Text = "INFORME M"
         Me.btnRptModificado.UseVisualStyleBackColor = True
         '
+        'btnReporteDuplicado
+        '
+        Me.btnReporteDuplicado.Location = New System.Drawing.Point(360, 70)
+        Me.btnReporteDuplicado.Name = "btnReporteDuplicado"
+        Me.btnReporteDuplicado.Size = New System.Drawing.Size(93, 23)
+        Me.btnReporteDuplicado.TabIndex = 19
+        Me.btnReporteDuplicado.Text = "INFORME D"
+        Me.btnReporteDuplicado.UseVisualStyleBackColor = True
+        '
+        'btnReporteOri
+        '
+        Me.btnReporteOri.Location = New System.Drawing.Point(361, 99)
+        Me.btnReporteOri.Name = "btnReporteOri"
+        Me.btnReporteOri.Size = New System.Drawing.Size(93, 23)
+        Me.btnReporteOri.TabIndex = 20
+        Me.btnReporteOri.Text = "INFORME ORI"
+        Me.btnReporteOri.UseVisualStyleBackColor = True
+        '
+        'btnLOG
+        '
+        Me.btnLOG.Location = New System.Drawing.Point(361, 128)
+        Me.btnLOG.Name = "btnLOG"
+        Me.btnLOG.Size = New System.Drawing.Size(93, 23)
+        Me.btnLOG.TabIndex = 21
+        Me.btnLOG.Text = "LOG"
+        Me.btnLOG.UseVisualStyleBackColor = True
+        '
+        'btnSeguro
+        '
+        Me.btnSeguro.Location = New System.Drawing.Point(361, 157)
+        Me.btnSeguro.Name = "btnSeguro"
+        Me.btnSeguro.Size = New System.Drawing.Size(93, 23)
+        Me.btnSeguro.TabIndex = 22
+        Me.btnSeguro.Text = "SEGUROS"
+        Me.btnSeguro.UseVisualStyleBackColor = True
+        '
         'InicioPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.ClientSize = New System.Drawing.Size(466, 237)
+        Me.Controls.Add(Me.btnSeguro)
+        Me.Controls.Add(Me.btnLOG)
+        Me.Controls.Add(Me.btnReporteOri)
+        Me.Controls.Add(Me.btnReporteDuplicado)
         Me.Controls.Add(Me.btnRptModificado)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -263,4 +307,8 @@ Partial Class InicioPruebas
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents btnRptModificado As Button
+    Friend WithEvents btnReporteDuplicado As Button
+    Friend WithEvents btnReporteOri As Button
+    Friend WithEvents btnLOG As Button
+    Friend WithEvents btnSeguro As Button
 End Class

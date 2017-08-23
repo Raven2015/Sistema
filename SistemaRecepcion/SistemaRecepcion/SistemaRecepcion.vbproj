@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>C:\Users\Adalid\Desktop\SistemaBiomedica130517ARGENTINA\</PublishUrl>
+    <PublishUrl>C:\Users\Adalid\Desktop\SISTR.01\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -76,7 +76,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>IconBegin-02-02-02.ico</ApplicationIcon>
+    <ApplicationIcon>medic.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -192,6 +192,12 @@
     <Compile Include="INTERFAZ\frmContenedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INTERFAZ\frmSeguros.Designer.vb">
+      <DependentUpon>frmSeguros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTERFAZ\frmSeguros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INTERFAZ\MDIContenedor.Designer.vb">
       <DependentUpon>MDIContenedor.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,7 @@
     <Compile Include="Logica\vUsuario.vb" />
     <Compile Include="MODULOS GLOBALES\ExportarExcel.vb" />
     <Compile Include="MODULOS GLOBALES\ExportarWord.vb" />
+    <Compile Include="MODULOS GLOBALES\LOG\modLOG.vb" />
     <Compile Include="MODULOS GLOBALES\MODIFICACIONES\frmModificaciones.Designer.vb">
       <DependentUpon>frmModificaciones.vb</DependentUpon>
     </Compile>
@@ -414,6 +421,12 @@
     <Compile Include="Presentacion\Inicio\frmInicioRecepcion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioSeguros.Designer.vb">
+      <DependentUpon>frmInicioSeguros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Inicio\frmInicioSeguros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Inicio\Ingreso.Designer.vb">
       <DependentUpon>Ingreso.vb</DependentUpon>
     </Compile>
@@ -466,6 +479,18 @@
       <DependentUpon>frmReporteModificado.vb</DependentUpon>
     </Compile>
     <Compile Include="PRUEBAS\frmReporteModificado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBAS\LOG.Designer.vb">
+      <DependentUpon>LOG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRUEBAS\LOG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBAS\ReporteDuplicado.Designer.vb">
+      <DependentUpon>ReporteDuplicado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRUEBAS\ReporteDuplicado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PRUEBAS\ReportePruebas.Designer.vb">
@@ -560,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INTERFAZ\frmContenedor.resx">
       <DependentUpon>frmContenedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTERFAZ\frmSeguros.resx">
+      <DependentUpon>frmSeguros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INTERFAZ\MDIContenedor.resx">
       <DependentUpon>MDIContenedor.vb</DependentUpon>
@@ -658,6 +686,9 @@
     <EmbeddedResource Include="Presentacion\Inicio\frmInicioRecepcion.resx">
       <DependentUpon>frmInicioRecepcion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Inicio\frmInicioSeguros.resx">
+      <DependentUpon>frmInicioSeguros.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio\Ingreso.resx">
       <DependentUpon>Ingreso.vb</DependentUpon>
     </EmbeddedResource>
@@ -684,6 +715,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRUEBAS\frmReporteModificado.resx">
       <DependentUpon>frmReporteModificado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBAS\LOG.resx">
+      <DependentUpon>LOG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBAS\ReporteDuplicado.rdlc" />
+    <EmbeddedResource Include="PRUEBAS\ReporteDuplicado.resx">
+      <DependentUpon>ReporteDuplicado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRUEBAS\ReporteModificado.rdlc" />
     <EmbeddedResource Include="PRUEBAS\ReportePruebas.resx">
@@ -956,6 +994,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IconBegin-02-02-02.ico" />
+    <Content Include="medic.ico" />
     <None Include="Resources\underline-text-option.png" />
     <None Include="Resources\italicize-text.png" />
     <None Include="Resources\bold-text-option.png" />

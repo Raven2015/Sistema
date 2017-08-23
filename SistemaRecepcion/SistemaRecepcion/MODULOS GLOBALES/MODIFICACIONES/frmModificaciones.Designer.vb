@@ -34,9 +34,11 @@ Partial Class frmModificaciones
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.pnContenedor = New System.Windows.Forms.Panel()
         Me.flpnDatosCliente = New DevExpress.Utils.FlyoutPanel()
+        Me.btnCerrarCliente = New System.Windows.Forms.Button()
+        Me.tbIdUsuarioEditar = New System.Windows.Forms.TextBox()
+        Me.tbIDClienteEditar = New System.Windows.Forms.TextBox()
         Me.dgvResultadoclientes = New System.Windows.Forms.DataGridView()
         Me.dtpNacimientoCliente = New System.Windows.Forms.DateTimePicker()
-        Me.tbIDClienteEditar = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbEdadCliente = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -68,6 +70,7 @@ Partial Class frmModificaciones
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.flpnDatosAtencion = New DevExpress.Utils.FlyoutPanel()
+        Me.btnCerrarAtenciones = New System.Windows.Forms.Button()
         Me.dgvResultados = New System.Windows.Forms.DataGridView()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.lbInexistente = New System.Windows.Forms.Label()
@@ -180,6 +183,7 @@ Partial Class frmModificaciones
         Me.RibbonPageGroup2.ItemLinks.Add(Me.brbtnDatosEstudio)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         Me.RibbonPageGroup2.Text = "ESTUDIOS"
+        Me.RibbonPageGroup2.Visible = False
         '
         'RibbonPageGroup3
         '
@@ -187,6 +191,7 @@ Partial Class frmModificaciones
         Me.RibbonPageGroup3.ItemLinks.Add(Me.brbtnPreciosEstudios)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.Text = "PRECIOS"
+        Me.RibbonPageGroup3.Visible = False
         '
         'RibbonStatusBar1
         '
@@ -210,6 +215,8 @@ Partial Class frmModificaciones
         '
         Me.flpnDatosCliente.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.flpnDatosCliente.Appearance.Options.UseBackColor = True
+        Me.flpnDatosCliente.Controls.Add(Me.btnCerrarCliente)
+        Me.flpnDatosCliente.Controls.Add(Me.tbIdUsuarioEditar)
         Me.flpnDatosCliente.Controls.Add(Me.tbIDClienteEditar)
         Me.flpnDatosCliente.Controls.Add(Me.dgvResultadoclientes)
         Me.flpnDatosCliente.Controls.Add(Me.dtpNacimientoCliente)
@@ -241,12 +248,40 @@ Partial Class frmModificaciones
         Me.flpnDatosCliente.Location = New System.Drawing.Point(0, 27)
         Me.flpnDatosCliente.Name = "flpnDatosCliente"
         Me.flpnDatosCliente.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Bottom
-        Me.flpnDatosCliente.Options.CloseOnOuterClick = True
         Me.flpnDatosCliente.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.flpnDatosCliente.OptionsBeakPanel.BeakLocation = DevExpress.Utils.BeakPanelBeakLocation.Bottom
         Me.flpnDatosCliente.OwnerControl = Me.pnContenedor
         Me.flpnDatosCliente.Size = New System.Drawing.Size(800, 220)
         Me.flpnDatosCliente.TabIndex = 2
+        '
+        'btnCerrarCliente
+        '
+        Me.btnCerrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarCliente.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarCliente.Location = New System.Drawing.Point(3, 3)
+        Me.btnCerrarCliente.Name = "btnCerrarCliente"
+        Me.btnCerrarCliente.Size = New System.Drawing.Size(23, 23)
+        Me.btnCerrarCliente.TabIndex = 50
+        Me.btnCerrarCliente.Text = "X"
+        Me.btnCerrarCliente.UseVisualStyleBackColor = True
+        '
+        'tbIdUsuarioEditar
+        '
+        Me.tbIdUsuarioEditar.Location = New System.Drawing.Point(612, 196)
+        Me.tbIdUsuarioEditar.Name = "tbIdUsuarioEditar"
+        Me.tbIdUsuarioEditar.ReadOnly = True
+        Me.tbIdUsuarioEditar.Size = New System.Drawing.Size(85, 21)
+        Me.tbIdUsuarioEditar.TabIndex = 49
+        Me.tbIdUsuarioEditar.Visible = False
+        '
+        'tbIDClienteEditar
+        '
+        Me.tbIDClienteEditar.Location = New System.Drawing.Point(703, 196)
+        Me.tbIDClienteEditar.Name = "tbIDClienteEditar"
+        Me.tbIDClienteEditar.ReadOnly = True
+        Me.tbIDClienteEditar.Size = New System.Drawing.Size(85, 21)
+        Me.tbIDClienteEditar.TabIndex = 46
+        Me.tbIDClienteEditar.Visible = False
         '
         'dgvResultadoclientes
         '
@@ -272,15 +307,6 @@ Partial Class frmModificaciones
         Me.dtpNacimientoCliente.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dtpNacimientoCliente.Size = New System.Drawing.Size(124, 21)
         Me.dtpNacimientoCliente.TabIndex = 48
-        '
-        'tbIDClienteEditar
-        '
-        Me.tbIDClienteEditar.Location = New System.Drawing.Point(703, 196)
-        Me.tbIDClienteEditar.Name = "tbIDClienteEditar"
-        Me.tbIDClienteEditar.ReadOnly = True
-        Me.tbIDClienteEditar.Size = New System.Drawing.Size(85, 21)
-        Me.tbIDClienteEditar.TabIndex = 46
-        Me.tbIDClienteEditar.Visible = False
         '
         'Label20
         '
@@ -532,7 +558,7 @@ Partial Class frmModificaciones
         Me.flpnPreciosEstudios.Controls.Add(Me.TextBox10)
         Me.flpnPreciosEstudios.Controls.Add(Me.TextBox12)
         Me.flpnPreciosEstudios.Controls.Add(Me.TextBox11)
-        Me.flpnPreciosEstudios.Location = New System.Drawing.Point(58, 12)
+        Me.flpnPreciosEstudios.Location = New System.Drawing.Point(58, 14)
         Me.flpnPreciosEstudios.Name = "flpnPreciosEstudios"
         Me.flpnPreciosEstudios.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Bottom
         Me.flpnPreciosEstudios.Options.CloseOnOuterClick = True
@@ -578,6 +604,7 @@ Partial Class frmModificaciones
         '
         Me.flpnDatosAtencion.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.flpnDatosAtencion.Appearance.Options.UseBackColor = True
+        Me.flpnDatosAtencion.Controls.Add(Me.btnCerrarAtenciones)
         Me.flpnDatosAtencion.Controls.Add(Me.dgvResultados)
         Me.flpnDatosAtencion.Controls.Add(Me.btnEliminar)
         Me.flpnDatosAtencion.Controls.Add(Me.lbInexistente)
@@ -594,15 +621,25 @@ Partial Class frmModificaciones
         Me.flpnDatosAtencion.Controls.Add(Me.tbIDAtencion)
         Me.flpnDatosAtencion.Controls.Add(Me.cbxMDestinatario)
         Me.flpnDatosAtencion.Controls.Add(Me.dtpFechaAtencion)
-        Me.flpnDatosAtencion.Location = New System.Drawing.Point(120, 3)
+        Me.flpnDatosAtencion.Location = New System.Drawing.Point(82, 3)
         Me.flpnDatosAtencion.Name = "flpnDatosAtencion"
         Me.flpnDatosAtencion.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Bottom
-        Me.flpnDatosAtencion.Options.CloseOnOuterClick = True
         Me.flpnDatosAtencion.OptionsBeakPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.flpnDatosAtencion.OptionsBeakPanel.BeakLocation = DevExpress.Utils.BeakPanelBeakLocation.Bottom
         Me.flpnDatosAtencion.OwnerControl = Me.pnContenedor
         Me.flpnDatosAtencion.Size = New System.Drawing.Size(797, 220)
         Me.flpnDatosAtencion.TabIndex = 0
+        '
+        'btnCerrarAtenciones
+        '
+        Me.btnCerrarAtenciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarAtenciones.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarAtenciones.Location = New System.Drawing.Point(3, 3)
+        Me.btnCerrarAtenciones.Name = "btnCerrarAtenciones"
+        Me.btnCerrarAtenciones.Size = New System.Drawing.Size(23, 23)
+        Me.btnCerrarAtenciones.TabIndex = 51
+        Me.btnCerrarAtenciones.Text = "X"
+        Me.btnCerrarAtenciones.UseVisualStyleBackColor = True
         '
         'dgvResultados
         '
@@ -924,4 +961,7 @@ Partial Class frmModificaciones
     Friend WithEvents brbtnEditarCliente As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents brbtnDatosCliente As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents dtpNacimientoCliente As DateTimePicker
+    Friend WithEvents tbIdUsuarioEditar As TextBox
+    Friend WithEvents btnCerrarCliente As Button
+    Friend WithEvents btnCerrarAtenciones As Button
 End Class

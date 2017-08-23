@@ -33,6 +33,8 @@ Partial Class frmCentral
         Me.tbFechaEstudioVP = New System.Windows.Forms.TextBox()
         Me.tbFechaNacimientoVP = New System.Windows.Forms.TextBox()
         Me.grbxVIstaPrevia = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tbIdUsuario = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.tbCodAsegVP = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -203,6 +205,8 @@ Partial Class frmCentral
         '
         'grbxVIstaPrevia
         '
+        Me.grbxVIstaPrevia.Controls.Add(Me.Label5)
+        Me.grbxVIstaPrevia.Controls.Add(Me.tbIdUsuario)
         Me.grbxVIstaPrevia.Controls.Add(Me.Panel2)
         Me.grbxVIstaPrevia.Controls.Add(Me.btnImprimir)
         Me.grbxVIstaPrevia.Controls.Add(Me.dgvListadoAtenciones)
@@ -223,6 +227,26 @@ Partial Class frmCentral
         Me.grbxVIstaPrevia.TabIndex = 3
         Me.grbxVIstaPrevia.TabStop = False
         Me.grbxVIstaPrevia.Text = "*"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(274, 622)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 13)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "id_usuario"
+        Me.Label5.Visible = False
+        '
+        'tbIdUsuario
+        '
+        Me.tbIdUsuario.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.tbIdUsuario.Location = New System.Drawing.Point(272, 638)
+        Me.tbIdUsuario.Name = "tbIdUsuario"
+        Me.tbIdUsuario.ReadOnly = True
+        Me.tbIdUsuario.Size = New System.Drawing.Size(62, 23)
+        Me.tbIdUsuario.TabIndex = 64
+        Me.tbIdUsuario.Visible = False
         '
         'Panel2
         '
@@ -684,6 +708,7 @@ Partial Class frmCentral
         Me.tbIDEntidad.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
         Me.tbIDEntidad.Location = New System.Drawing.Point(204, 638)
         Me.tbIDEntidad.Name = "tbIDEntidad"
+        Me.tbIDEntidad.ReadOnly = True
         Me.tbIDEntidad.Size = New System.Drawing.Size(62, 23)
         Me.tbIDEntidad.TabIndex = 55
         Me.tbIDEntidad.Visible = False
@@ -694,6 +719,7 @@ Partial Class frmCentral
         Me.tbIDAtencion.Location = New System.Drawing.Point(68, 638)
         Me.tbIDAtencion.MaxLength = 50
         Me.tbIDAtencion.Name = "tbIDAtencion"
+        Me.tbIDAtencion.ReadOnly = True
         Me.tbIDAtencion.Size = New System.Drawing.Size(62, 23)
         Me.tbIDAtencion.TabIndex = 54
         Me.tbIDAtencion.Visible = False
@@ -703,6 +729,7 @@ Partial Class frmCentral
         Me.tbIDCliente.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
         Me.tbIDCliente.Location = New System.Drawing.Point(136, 638)
         Me.tbIDCliente.Name = "tbIDCliente"
+        Me.tbIDCliente.ReadOnly = True
         Me.tbIDCliente.Size = New System.Drawing.Size(62, 23)
         Me.tbIDCliente.TabIndex = 21
         Me.tbIDCliente.Visible = False
@@ -713,6 +740,7 @@ Partial Class frmCentral
         Me.tbIDDetalle.Location = New System.Drawing.Point(0, 638)
         Me.tbIDDetalle.MaxLength = 50
         Me.tbIDDetalle.Name = "tbIDDetalle"
+        Me.tbIDDetalle.ReadOnly = True
         Me.tbIDDetalle.Size = New System.Drawing.Size(62, 23)
         Me.tbIDDetalle.TabIndex = 53
         Me.tbIDDetalle.Visible = False
@@ -1690,4 +1718,6 @@ Partial Class frmCentral
     Friend WithEvents tbCodAsegVP As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents CLIENTEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label5 As Label
+    Friend WithEvents tbIdUsuario As TextBox
 End Class

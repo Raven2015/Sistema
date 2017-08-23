@@ -26,6 +26,8 @@ Partial Class MDIContenedor
         Me.components = New System.ComponentModel.Container()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.mdiInicio = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnInformeMedico = New System.Windows.Forms.Button()
         Me.btnComprobante = New System.Windows.Forms.Button()
         Me.btnReportes = New System.Windows.Forms.Button()
@@ -55,8 +57,6 @@ Partial Class MDIContenedor
         Me.MODIFICACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tmHora = New System.Windows.Forms.Timer(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.mdiInicio.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
@@ -90,6 +90,25 @@ Partial Class MDIContenedor
         Me.mdiInicio.Name = "mdiInicio"
         Me.mdiInicio.Size = New System.Drawing.Size(1100, 665)
         Me.mdiInicio.TabIndex = 9
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(182, 517)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(80, 13)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Informe Médico"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(153, 404)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 25)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "MÉDICOS"
         '
         'btnInformeMedico
         '
@@ -375,25 +394,6 @@ Partial Class MDIContenedor
         '
         'tmHora
         '
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(153, 404)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 25)
-        Me.Label3.TabIndex = 21
-        Me.Label3.Text = "MÉDICOS"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(182, 517)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(80, 13)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Informe Médico"
         '
         'MDIContenedor
         '

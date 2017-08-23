@@ -90,7 +90,9 @@
         limpiar()
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    '------------------------ Edicion de los datos de atencion ------------------------
+
+    Public Sub modificar_atencion()
         If tbIDAtencion.Text <> 0 Then
             Dim result As DialogResult
             result = MessageBox.Show("Desea editar los datos de la atención?", "Modificando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -123,7 +125,7 @@
         End If
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Public Sub eliminar_atencion()
         If tbIDAtencion.Text <> 0 Then
 
             Dim result As DialogResult
@@ -141,7 +143,7 @@
                         Debug.Write("Atencion Eliminada :)")
                         MsgBox("ATENCIÓN ELIMINADA CORRECTAMENTE")
                     Else
-                        MessageBox.Show("La Atencion no pudo ser eliminada. Intente de nuevo por favor", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("La Atencion no pudo ser eliminada. Intente de nuevo por favor", "Eliminando Registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
 
                 Catch ex As Exception
@@ -149,8 +151,24 @@
                 End Try
             End If
         Else
-            MessageBox.Show("Por favor seleecione una atención primero.", "Guardando datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Por favor seleccione una atención primero.", "Guardando datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        modificar_atencion()
+        editar_impresion_atencion()
+
+        'Se registra en el LOG la impresion del reporte
+        modLOG.LOG(tbIdUsuarioEditar.Text)
+
+        frmReporteDuplicado.tbID.Text = tbIDAtencion.Text
+
+        frmReporteDuplicado.ShowDialog()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        eliminar_atencion()
     End Sub
 
 
@@ -245,8 +263,9 @@
         flpnDatosCliente.HidePopup()
     End Sub
 
-    Private Sub btnModificarClietne_Click(sender As Object, e As EventArgs) Handles btnModificarClietne.Click
+    '-----------METODO PARA MODIFICAR LOS DATOS DE UN CLIENTE
 
+    Public Sub modificar_cliente()
         If tbIDAtencionCliente.Text <> 0 Then
             Dim result As DialogResult
             result = MessageBox.Show("Desea editar los datos del Cliente?", "Modificando Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -281,11 +300,69 @@
                 End Try
             End If
         Else
-            MessageBox.Show("Por favor seleecione una atención primero.", "Guardando datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Por favor seleccione una atención primero.", "Guardando datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    '----------BOTON MODIFICAR CLIENTE
+    Private Sub btnModificarClietne_Click(sender As Object, e As EventArgs) Handles btnModificarClietne.Click
+        modificar_cliente()
+        editar_impresion_cliente()
+
+        'Se registra en el LOG la impresion del reporte
+        modLOG.LOG(tbIdUsuarioEditar.Text)
+
+        frmReporteDuplicado.tbID.Text = tbIDAtencionCliente.Text
+
+        frmReporteDuplicado.ShowDialog()
     End Sub
 
     Private Sub dtpNacimientoCliente_ValueChanged(sender As Object, e As EventArgs) Handles dtpNacimientoCliente.ValueChanged
         tbEdadCliente.Text = modOperacionesAuxiliares.TuEdad(dtpNacimientoCliente.Text, Date.Now)
+    End Sub
+
+    '---------METODOS PARA OBTENER DATOS DE LA IMPRESION DE CADA REPORTE----------------
+
+    '----EDITAR IMPRESION PERMITE CONTROLAR EL NUMERO DE IMPRESIONES DE UN DETERMINADO COMPROBANTE
+    Public Sub editar_impresion_cliente()
+        Try
+            Dim func As New fImpresion
+            Dim resultado As Boolean
+            resultado = func.editar_impresion(tbIDAtencionCliente.Text, tbIdUsuarioEditar.Text)
+            'dgvListado.Columns.Item("Eliminar").Visible = False
+            If resultado = True Then
+                Debug.Print("Registro Editado Correctamente")
+            Else
+                Debug.Print("No se pudo editar el Registro")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub editar_impresion_atencion()
+        Try
+            Dim func As New fImpresion
+            Dim resultado As Boolean
+            resultado = func.editar_impresion(tbIDAtencion.Text, tbIdUsuarioEditar.Text)
+            'dgvListado.Columns.Item("Eliminar").Visible = False
+            If resultado = True Then
+                Debug.Print("Registro Editado Correctamente")
+            Else
+                Debug.Print("No se pudo editar el Registro")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrarCliente.Click
+        flpnDatosCliente.HidePopup()
+    End Sub
+
+    Private Sub btnCerrarAtenciones_Click(sender As Object, e As EventArgs) Handles btnCerrarAtenciones.Click
+        flpnDatosAtencion.HidePopup()
     End Sub
 End Class

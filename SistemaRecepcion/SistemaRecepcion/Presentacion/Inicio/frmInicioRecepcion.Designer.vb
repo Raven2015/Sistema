@@ -27,21 +27,23 @@ Partial Class frmInicioRecepcion
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.lblApellido = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbIDUsuario = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnModif = New System.Windows.Forms.Button()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnArqueos = New System.Windows.Forms.Button()
         Me.btnComprobante = New System.Windows.Forms.Button()
         Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnCentral = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.btnReportes = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.btnArqueos = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblUsuario = New System.Windows.Forms.Label()
-        Me.lblApellido = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnModif = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,6 +96,134 @@ Partial Class frmInicioRecepcion
         Me.Label2.Size = New System.Drawing.Size(72, 13)
         Me.Label2.TabIndex = 39
         Me.Label2.Text = "COTIZACION"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(434, 146)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 52
+        Me.Label11.Text = "REPORTES"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(335, 146)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(60, 13)
+        Me.Label10.TabIndex = 50
+        Me.Label10.Text = "ARQUEOS"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(493, 20)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 17)
+        Me.Label5.TabIndex = 53
+        Me.Label5.Text = "Usuario:"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblUsuario.Location = New System.Drawing.Point(559, 20)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(28, 17)
+        Me.lblUsuario.TabIndex = 54
+        Me.lblUsuario.Text = "----"
+        '
+        'lblApellido
+        '
+        Me.lblApellido.AutoSize = True
+        Me.lblApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellido.ForeColor = System.Drawing.Color.White
+        Me.lblApellido.Location = New System.Drawing.Point(618, 20)
+        Me.lblApellido.Name = "lblApellido"
+        Me.lblApellido.Size = New System.Drawing.Size(28, 17)
+        Me.lblApellido.TabIndex = 55
+        Me.lblApellido.Text = "----"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(514, 145)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
+        Me.Label3.TabIndex = 57
+        Me.Label3.Text = "MODIFICACIONES"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbIDUsuario
+        '
+        Me.lbIDUsuario.AutoSize = True
+        Me.lbIDUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lbIDUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbIDUsuario.ForeColor = System.Drawing.Color.White
+        Me.lbIDUsuario.Location = New System.Drawing.Point(41, 20)
+        Me.lbIDUsuario.Name = "lbIDUsuario"
+        Me.lbIDUsuario.Size = New System.Drawing.Size(28, 17)
+        Me.lbIDUsuario.TabIndex = 59
+        Me.lbIDUsuario.Text = "----"
+        Me.lbIDUsuario.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(12, 20)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(25, 17)
+        Me.Label9.TabIndex = 58
+        Me.Label9.Text = "ID:"
+        Me.Label9.Visible = False
+        '
+        'btnModif
+        '
+        Me.btnModif.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.edit
+        Me.btnModif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnModif.FlatAppearance.BorderSize = 0
+        Me.btnModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModif.Location = New System.Drawing.Point(524, 68)
+        Me.btnModif.Name = "btnModif"
+        Me.btnModif.Size = New System.Drawing.Size(70, 70)
+        Me.btnModif.TabIndex = 56
+        Me.btnModif.UseVisualStyleBackColor = True
+        '
+        'btnReportes
+        '
+        Me.btnReportes.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.copy
+        Me.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnReportes.FlatAppearance.BorderSize = 0
+        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReportes.Location = New System.Drawing.Point(431, 69)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Size = New System.Drawing.Size(70, 70)
+        Me.btnReportes.TabIndex = 51
+        Me.btnReportes.UseVisualStyleBackColor = True
+        '
+        'btnArqueos
+        '
+        Me.btnArqueos.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.browser_6
+        Me.btnArqueos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnArqueos.FlatAppearance.BorderSize = 0
+        Me.btnArqueos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArqueos.Location = New System.Drawing.Point(329, 68)
+        Me.btnArqueos.Name = "btnArqueos"
+        Me.btnArqueos.Size = New System.Drawing.Size(70, 70)
+        Me.btnArqueos.TabIndex = 49
+        Me.btnArqueos.UseVisualStyleBackColor = True
         '
         'btnComprobante
         '
@@ -163,114 +293,14 @@ Partial Class frmInicioRecepcion
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(434, 146)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
-        Me.Label11.TabIndex = 52
-        Me.Label11.Text = "REPORTES"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnReportes
-        '
-        Me.btnReportes.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.copy
-        Me.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnReportes.FlatAppearance.BorderSize = 0
-        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReportes.Location = New System.Drawing.Point(431, 69)
-        Me.btnReportes.Name = "btnReportes"
-        Me.btnReportes.Size = New System.Drawing.Size(70, 70)
-        Me.btnReportes.TabIndex = 51
-        Me.btnReportes.UseVisualStyleBackColor = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(335, 146)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(60, 13)
-        Me.Label10.TabIndex = 50
-        Me.Label10.Text = "ARQUEOS"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnArqueos
-        '
-        Me.btnArqueos.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.browser_6
-        Me.btnArqueos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnArqueos.FlatAppearance.BorderSize = 0
-        Me.btnArqueos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnArqueos.Location = New System.Drawing.Point(329, 68)
-        Me.btnArqueos.Name = "btnArqueos"
-        Me.btnArqueos.Size = New System.Drawing.Size(70, 70)
-        Me.btnArqueos.TabIndex = 49
-        Me.btnArqueos.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(493, 20)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 17)
-        Me.Label5.TabIndex = 53
-        Me.Label5.Text = "Usuario:"
-        '
-        'lblUsuario
-        '
-        Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblUsuario.Location = New System.Drawing.Point(559, 20)
-        Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(28, 17)
-        Me.lblUsuario.TabIndex = 54
-        Me.lblUsuario.Text = "----"
-        '
-        'lblApellido
-        '
-        Me.lblApellido.AutoSize = True
-        Me.lblApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblApellido.ForeColor = System.Drawing.Color.White
-        Me.lblApellido.Location = New System.Drawing.Point(618, 20)
-        Me.lblApellido.Name = "lblApellido"
-        Me.lblApellido.Size = New System.Drawing.Size(28, 17)
-        Me.lblApellido.TabIndex = 55
-        Me.lblApellido.Text = "----"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(514, 145)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(98, 13)
-        Me.Label3.TabIndex = 57
-        Me.Label3.Text = "MODIFICACIONES"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnModif
-        '
-        Me.btnModif.BackgroundImage = Global.SistemaRecepcion.My.Resources.Resources.edit
-        Me.btnModif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnModif.FlatAppearance.BorderSize = 0
-        Me.btnModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModif.Location = New System.Drawing.Point(524, 68)
-        Me.btnModif.Name = "btnModif"
-        Me.btnModif.Size = New System.Drawing.Size(70, 70)
-        Me.btnModif.TabIndex = 56
-        Me.btnModif.UseVisualStyleBackColor = True
-        '
         'frmInicioRecepcion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(715, 180)
+        Me.Controls.Add(Me.lbIDUsuario)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnModif)
         Me.Controls.Add(Me.lblApellido)
@@ -321,4 +351,6 @@ Partial Class frmInicioRecepcion
     Friend WithEvents lblApellido As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnModif As Button
+    Friend WithEvents lbIDUsuario As Label
+    Friend WithEvents Label9 As Label
 End Class

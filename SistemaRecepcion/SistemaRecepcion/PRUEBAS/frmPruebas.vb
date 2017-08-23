@@ -56,7 +56,8 @@
         End Try
     End Sub
 
-    Public Sub insertar()
+    '----INSERTAR IMPRESION PERMITE CREAR UN NUEVO ID DE IMPRESION ASIGNADO A LA ATENCION
+    Public Sub insertar_impresion()
         Try
             Dim func As New fImpresion
             Dim resultado As Boolean
@@ -74,6 +75,28 @@
     End Sub
 
     Private Sub btnImpresion_Click(sender As Object, e As EventArgs) Handles btnImpresion.Click
-        insertar()
+        insertar_impresion()
+    End Sub
+
+    Public Sub editar_impresion()
+        Try
+            Dim func As New fImpresion
+            Dim resultado As Boolean
+            resultado = func.editar_impresion(tbIDAt.Text, tbIDUser.Text)
+            'dgvListado.Columns.Item("Eliminar").Visible = False
+            If resultado = True Then
+                Debug.Print("Registro Editado Correctamente")
+            Else
+                Debug.Print("No se pudo editar el Registro")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        'Modifica el contador de impresion
+        editar_impresion()
     End Sub
 End Class

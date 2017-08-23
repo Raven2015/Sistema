@@ -118,39 +118,39 @@ Public Class dvxpReporteMedico
     End Sub
 
     Private Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
+
+        Dim estudio As String = generar_texto(dgvEstudiosARealizar)
+
         Dim fecha As String = ""
+        Dim fechaDirecto As String = ""
         Dim salto As String = ""
         Dim Contenido As String = ""
         Dim nombre As String = ""
         Dim edad As String = ""
         Dim medico As String = ""
-        Dim fechaDirecto As String = ""
 
+        lbIDAtencion.Text=tbIdAtencion.Text
         'fecha = "La Paz " & Date.Now.Day & " de " & Date.Now.Month & " de " & Date.Now.Year
         fechaDirecto = Date.Now.ToLongDateString()
-        fecha = modOperacionesAuxiliares.cambiar(fechaDirecto)
+        'fecha = modOperacionesAuxiliares.cambiar(fechaDirecto)
+
         salto = vbCrLf
         nombre = vbTab & vbTab & "PACIENTE: " & vbTab & vbTab & tbApellidos.Text & " " & tbNombres.Text
-        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & tbedad.Text
+        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & vbTab & tbedad.Text & " años"
         medico = vbTab & vbTab & "MEDICO: " & vbTab & vbTab & tbMedicoRemitente.Text
 
-        rhedctContenidoReporte.Text = fecha & salto & salto & salto & nombre & salto & edad & salto & medico
+        rhedctContenidoReporte.Text = salto & salto & salto & "La Paz, " & fechaDirecto & salto & salto & nombre & salto & edad & salto & medico
 
-        rhedctContenidoReporte.Document.BeginUpdate()
-        rhedctContenidoReporte.Document.AppendText("First Paragraph" & ControlChars.Lf & "Second Paragraph" & ControlChars.Lf & "Third Paragraph")
-        rhedctContenidoReporte.Document.EndUpdate()
-        Dim pos As DocumentPosition = rhedctContenidoReporte.Document.CaretPosition
-        Dim doc As SubDocument = pos.BeginUpdateDocument()
-        Dim par As Paragraph = doc.Paragraphs.Get(pos)
-        Dim newPos As DocumentPosition = doc.CreatePosition(par.Range.End.ToInt() - 1)
-        doc.InsertText(newPos, "<<Appended to Paragraph End>>")
-        pos.EndUpdateDocument(doc)
+        'rhedctContenidoReporte.Document.BeginUpdate()
+        'rhedctContenidoReporte.Document.AppendText(vbCrLf & estudio)
+        'rhedctContenidoReporte.Document.EndUpdate()
+
     End Sub
 
-    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        ntIcon.BalloonTipText = "AVISO"
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
+        'ntIcon.BalloonTipText = "AVISO"
 
-        ntIcon.ShowBalloonTip(5)
+        'ntIcon.ShowBalloonTip(5)
     End Sub
 
     Private Sub brbtnGuardaInforme_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles brbtnGuardaInforme.ItemClick
@@ -165,11 +165,11 @@ Public Class dvxpReporteMedico
                         Dim dts As New vInformeMedico
                         Dim func As New fInformeMedico
 
-                        dts.gid_atencion = tbIdAtencion.Text
+                        dts.gid_atencion = lbIDAtencion.text
                         dts.ginforme = rhedctContenidoReporte.Text
                         dts.gfecha_informe = Date.Now
-
-
+                        dts.gid_usuario = lbIDUsuario.Text
+                        
                         If func.insertar_informe_medico(dts) Then
                             'MessageBox.Show("Atencion editada correctamente", "Guardando Registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Debug.Write("Informe Guardado exitosamente :)")
@@ -201,20 +201,22 @@ Public Class dvxpReporteMedico
         Dim edad As String = ""
         Dim medico As String = ""
 
+        lbIDAtencion.Text=tbIdAtencion.Text
+
         'fecha = "La Paz " & Date.Now.Day & " de " & Date.Now.Month & " de " & Date.Now.Year
         fechaDirecto = Date.Now.ToLongDateString()
         'fecha = modOperacionesAuxiliares.cambiar(fechaDirecto)
 
         salto = vbCrLf
         nombre = vbTab & vbTab & "PACIENTE: " & vbTab & vbTab & tbApellidos.Text & " " & tbNombres.Text
-        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & vbTab & tbedad.Text
+        edad = vbTab & vbTab & "EDAD: " & vbTab & vbTab & vbTab & tbedad.Text & " años"
         medico = vbTab & vbTab & "MEDICO: " & vbTab & vbTab & tbMedicoRemitente.Text
 
-        rhedctContenidoReporte.Text = salto & salto & "La Paz, " & fechaDirecto & salto & salto & salto & nombre & salto & edad & salto & medico
+        rhedctContenidoReporte.Text = salto & salto & salto & "La Paz, " & fechaDirecto & salto & salto & nombre & salto & edad & salto & medico
 
-        rhedctContenidoReporte.Document.BeginUpdate()
-        rhedctContenidoReporte.Document.AppendText(vbCrLf & estudio & ControlChars.Lf & "Atentamente:  " & ControlChars.Lf & "NOMBRE DEL MEDICO")
-        rhedctContenidoReporte.Document.EndUpdate()
+        'rhedctContenidoReporte.Document.BeginUpdate()
+        'rhedctContenidoReporte.Document.AppendText(vbCrLf & estudio)
+        'rhedctContenidoReporte.Document.EndUpdate()
 
     End Sub
 
@@ -223,16 +225,20 @@ Public Class dvxpReporteMedico
         Dim resultado As String = ""
         Select Case (estudio)
             Case "ESTUDIOS ECOGRAFÍA"
-                resultado = vbCrLf & vbCrLf & "ESTUDIOS DE ECOGRAFÍA" + vbCrLf + "Nota. Conserve estos  estudios  y  muéstrelos  a  su  Medico  Radiólogo  en el siguiente  control  un cambio  mínimo  puede  indicarnos un  cáncer en  estadios  tempranos cuando aun es  CURABLE. " + vbCrLf + "Del 15 al 30% de los  canceres no  puede ser  diagnosticado por  métodos de  imagen,  un  estudio negativo no  contraindica  la  biopsia  si clínicamente   lo  amerita."
+                resultado = vbCrLf & vbCrLf & vbTab & vbTab & vbTab & "ESTUDIOS DE ECOGRAFÍA" + vbCrLf + " "
 
             Case "BIOPSIA GUIADA POR ECOGRAFÍA"
-                resultado = "BIOPSIA GUIADA POR ECOGRAFÍA"
+                resultado = vbCrLf & vbCrLf & vbTab & vbTab & vbTab & "BIOPSIA GUIADA POR ECOGRAFÍA" + vbCrLf + " "
 
             Case "ESTUDIOS CONTRASTADOS"
-                resultado = "ESTUDIOS CONTRASTADOS"
+                resultado = vbCrLf & vbCrLf & vbTab & vbTab & vbTab & "ESTUDIOS CONTRASTADOS" + vbCrLf + " "
 
             Case "ESTUDIO ANATOMÍA PATOLÓGICA"
-                resultado = "ESTUDIO ANATOMÍA PATOLÓGICA"
+                resultado = vbCrLf & vbCrLf & vbTab & vbTab & vbTab & "ESTUDIO ANATOMÍA PATOLÓGICA" + vbCrLf + " "
+
+            Case "ESTUDIOS  DE LA  GLANDULA MAMARIA"
+                resultado = vbCrLf & vbCrLf & vbTab & vbTab & vbTab & "ESTUDIOS  DE LA  GLANDULA MAMARIA" + vbCrLf + " "
+
             Case Else
                 resultado = ""
         End Select
@@ -240,6 +246,7 @@ Public Class dvxpReporteMedico
     End Function
 
     Private Sub brbtnBuscaInforme_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles brbtnBuscaInforme.ItemClick
+        dlgBuscadorInforme.tbLogin.Text = lbIDUsuario.Text
         dlgBuscadorInforme.ShowDialog()
     End Sub
 

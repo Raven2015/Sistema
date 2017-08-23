@@ -74,4 +74,20 @@
     Private Sub btnRptModificado_Click(sender As Object, e As EventArgs) Handles btnRptModificado.Click
         frmReporteModificado.ShowDialog()
     End Sub
+
+    Private Sub btnReporteDuplicado_Click(sender As Object, e As EventArgs) Handles btnReporteDuplicado.Click
+        frmReporteDuplicado.ShowDialog()
+    End Sub
+
+    Private Sub btnReporteOri_Click(sender As Object, e As EventArgs) Handles btnReporteOri.Click
+        ReporteFinal.ShowDialog()
+    End Sub
+
+    Private Sub btnLOG_Click(sender As Object, e As EventArgs) Handles btnLOG.Click
+        LOG.ShowDialog()
+    End Sub
+
+    Private Sub btnSeguro_Click(sender As Object, e As EventArgs) Handles btnSeguro.Click
+        frmSeguros.ShowDialog()
+    End Sub
 End Class
